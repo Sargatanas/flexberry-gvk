@@ -1,0 +1,78 @@
+﻿{
+  "name": "IISGorvodokanalTask",
+  "modelName": "i-i-s-gorvodokanal-task",
+  "className": "Task",
+  "nameSpace": "IIS.Gorvodokanal",
+  "parentModelName": null,
+  "parentClassName": null,
+  "attrs": [
+    {
+      "name": "code",
+      "type": "number",
+      "flexberryType": "int",
+      "notNull": true,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "content",
+      "type": "string",
+      "flexberryType": "string",
+      "notNull": true,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "planeDuration",
+      "type": "date",
+      "flexberryType": "tDate",
+      "notNull": true,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    }
+  ],
+  "belongsTo": [
+    {
+      "polymorphic": false,
+      "presence": true,
+      "name": "request",
+      "relatedTo": "i-i-s-gorvodokanal-request",
+      "inverse": "tasks"
+    }
+  ],
+  "hasMany": [],
+  "projections": [
+    {
+      "name": "TaskE",
+      "modelName": "i-i-s-gorvodokanal-task",
+      "attrs": [
+        {
+          "name": "code",
+          "caption": "Code",
+          "hidden": false,
+          "index": 0
+        },
+        {
+          "name": "content",
+          "caption": "Content",
+          "hidden": false,
+          "index": 1
+        },
+        {
+          "name": "planeDuration",
+          "caption": "Plane duration",
+          "hidden": false,
+          "index": 2
+        }
+      ],
+      "belongsTo": [],
+      "hasMany": []
+    }
+  ],
+  "stored": true,
+  "offline": true,
+  "external": false
+}

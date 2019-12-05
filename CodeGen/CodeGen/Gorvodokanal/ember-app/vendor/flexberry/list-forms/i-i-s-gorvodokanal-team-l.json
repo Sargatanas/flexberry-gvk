@@ -1,0 +1,15 @@
+﻿{
+  "newForm": "i-i-s-gorvodokanal-team-e",
+  "editForm": "i-i-s-gorvodokanal-team-e",
+  "external": false,
+  "caption": "Team",
+  "name": "IISGorvodokanalTeamL",
+  "className": "TeamL",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "i-i-s-gorvodokanal-team",
+      "modelProjection": "TeamL"
+    }
+  ]
+}

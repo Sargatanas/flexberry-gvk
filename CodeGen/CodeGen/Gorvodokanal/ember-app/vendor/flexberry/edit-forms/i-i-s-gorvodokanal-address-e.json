@@ -1,0 +1,14 @@
+﻿{
+  "propertyLookup": [],
+  "external": false,
+  "caption": "Address",
+  "name": "IISGorvodokanalAddressE",
+  "className": "AddressE",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "i-i-s-gorvodokanal-address",
+      "modelProjection": "AddressE"
+    }
+  ]
+}

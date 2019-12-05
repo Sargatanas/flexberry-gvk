@@ -1,0 +1,8 @@
+﻿{
+  "nameSpace": "IIS.Gorvodokanal",
+  "className": "tAppointed",
+  "enumObjects": {
+    "Прикреплено": null,
+    "НеПрикреплено": null
+  }
+}

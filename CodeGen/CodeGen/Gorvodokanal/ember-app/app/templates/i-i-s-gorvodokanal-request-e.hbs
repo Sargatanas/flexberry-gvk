@@ -1,0 +1,199 @@
+<h3 class="ui header">{{t 'forms.i-i-s-gorvodokanal-request-e.caption'}}</h3>
+
+<form class="ui form flexberry-vertical-form" role="form">
+  {{flexberry-error error=error}}
+  <div class="field">
+    <div class="sixteen wide">
+      {{flexberry-validationsummary errors=model.errors}}
+    </div>
+  </div>
+  <div class="field">
+    <div class="flexberry-edit-panel">
+      {{#unless readonly}}
+        <button type="submit" class="ui button save-button" {{action 'save'}}>
+          {{t "forms.edit-form.save-button-text"}}
+        </button>
+        {{#unless model.isNew}}
+          <button type="submit" class="ui button save-del-button" {{action 'delete'}}>
+            {{t "forms.edit-form.delete-button-text"}}
+          </button>
+        {{/unless}}
+      {{/unless}}
+      <button type="submit" class="ui button close-button" {{action 'close'}}>
+        {{t "forms.edit-form.close-button-text"}}
+      </button>
+    </div>
+  </div>
+  <div class="field">
+  {{
+    flexberry-field
+    placeholder=(t 'components.flexberry-field.placeholder')
+    readonly=readonly
+    required=true
+    value=model.index
+    class=(if model.errors.index 'error' '')
+    label=(t 'forms.i-i-s-gorvodokanal-request-e.index-caption')
+  }}
+  {{flexberry-validationmessage error=model.errors.index pointing="pointing"}}
+</div>
+
+<div class="field">
+  <label>{{t 'forms.i-i-s-gorvodokanal-request-e.address-caption'}}</label>
+  {{
+    flexberry-lookup
+    choose='showLookupDialog'
+    remove='removeLookupValue'
+    value=model.address
+    
+    relationName='address'
+    projection='AddressL'
+    title=(t 'forms.i-i-s-gorvodokanal-request-e.address-caption')
+    readonly=readonly
+    componentName="addressLookup"
+  }}
+  {{flexberry-validationmessage error=model.errors.address pointing="pointing"}}
+</div>
+
+<div class="field">
+  {{
+    flexberry-field
+    placeholder=(t 'components.flexberry-field.placeholder')
+    readonly=true
+    required=true
+    value=model.address.street
+    class=(if model.errors.address.street 'error' '')
+    label=(t 'forms.i-i-s-gorvodokanal-request-e.address.street-caption')
+  }}
+  {{flexberry-validationmessage error=model.errors.address.street pointing="pointing"}}
+</div>
+
+<div class="field">
+  {{
+    flexberry-field
+    placeholder=(t 'components.flexberry-field.placeholder')
+    readonly=true
+    required=true
+    value=model.address.house
+    class=(if model.errors.address.house 'error' '')
+    label=(t 'forms.i-i-s-gorvodokanal-request-e.address.house-caption')
+  }}
+  {{flexberry-validationmessage error=model.errors.address.house pointing="pointing"}}
+</div>
+
+<div class="field">
+  {{
+    flexberry-field
+    placeholder=(t 'components.flexberry-field.placeholder')
+    readonly=true
+    required=true
+    value=model.address.build
+    class=(if model.errors.address.build 'error' '')
+    label=(t 'forms.i-i-s-gorvodokanal-request-e.address.build-caption')
+  }}
+  {{flexberry-validationmessage error=model.errors.address.build pointing="pointing"}}
+</div>
+
+<div class="field">
+  {{
+    flexberry-field
+    placeholder=(t 'components.flexberry-field.placeholder')
+    readonly=true
+    required=true
+    value=model.address.floor
+    class=(if model.errors.address.floor 'error' '')
+    label=(t 'forms.i-i-s-gorvodokanal-request-e.address.floor-caption')
+  }}
+  {{flexberry-validationmessage error=model.errors.address.floor pointing="pointing"}}
+</div>
+
+<div class="field">
+  {{
+    flexberry-field
+    placeholder=(t 'components.flexberry-field.placeholder')
+    readonly=true
+    required=true
+    value=model.address.flat
+    class=(if model.errors.address.flat 'error' '')
+    label=(t 'forms.i-i-s-gorvodokanal-request-e.address.flat-caption')
+  }}
+  {{flexberry-validationmessage error=model.errors.address.flat pointing="pointing"}}
+</div>
+
+<div class="field">
+  <label>{{t 'forms.i-i-s-gorvodokanal-request-e.isCompleted-caption'}}</label>
+  {{
+    flexberry-checkbox
+    readonly=readonly
+    value=model.isCompleted
+  }}
+</div>
+
+<div class="field">
+  <label>{{t 'forms.i-i-s-gorvodokanal-request-e.team-caption'}}</label>
+  {{
+    flexberry-lookup
+    choose='showLookupDialog'
+    remove='removeLookupValue'
+    value=model.team
+    
+    relationName='team'
+    projection='TeamL'
+    title=(t 'forms.i-i-s-gorvodokanal-request-e.team-caption')
+    readonly=readonly
+    componentName="teamLookup"
+  }}
+  {{flexberry-validationmessage error=model.errors.team pointing="pointing"}}
+</div>
+
+<div class="field">
+  {{
+    flexberry-field
+    placeholder=(t 'components.flexberry-field.placeholder')
+    readonly=true
+    required=true
+    value=model.team.index
+    class=(if model.errors.team.index 'error' '')
+    label=(t 'forms.i-i-s-gorvodokanal-request-e.team.index-caption')
+  }}
+  {{flexberry-validationmessage error=model.errors.team.index pointing="pointing"}}
+</div>
+
+<div class="field">
+  <label>{{t 'forms.i-i-s-gorvodokanal-request-e.isAppointed-caption'}}</label>
+  {{
+    flexberry-dropdown
+    items=(flexberry-enum 'i-i-s-gorvodokanal-t-appointed')
+    value=model.isAppointed
+    readonly=readonly
+  }}
+  {{flexberry-validationmessage error=model.errors.isAppointed pointing="pointing"}}
+</div>
+
+<div class="field">
+  <label>{{t 'forms.i-i-s-gorvodokanal-request-e.realDuration-caption'}}</label>
+  {{
+    flexberry-datepicker
+    placeholder=(t 'components.flexberry-datepicker.placeholder')
+    readonly=readonly
+    value=model.realDuration
+    class=(if model.errors.realDuration 'error' '')
+  }}
+  {{flexberry-validationmessage error=model.errors.realDuration pointing="pointing"}}
+</div>
+
+<div class="field">
+  <label>{{t 'forms.i-i-s-gorvodokanal-request-e.tasks-caption'}}</label>
+  {{
+    flexberry-groupedit
+    componentName="tasksGroupEdit"
+    mainModelProjection=modelProjection
+    modelProjection=modelProjection.attributes.tasks
+    content=model.tasks
+    readonly=readonly
+    orderable=false
+    class=(if model.errors.tasks 'error' '')
+  }}
+  {{flexberry-validationmessage error=model.errors.tasks pointing="pointing"}}
+</div>
+
+</form>

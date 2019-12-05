@@ -1,0 +1,44 @@
+﻿{
+  "applicationCaption": "Горводоканал",
+  "applicationTitle": "Горводоканал",
+  "items": [
+    {
+      "link": null,
+      "menuName": "заявки",
+      "caption": "Заявки",
+      "title": "Заявки",
+      "children": [
+        {
+          "link": "i-i-s-gorvodokanal-request-l",
+          "menuName": null,
+          "caption": "Все",
+          "title": "",
+          "children": null
+        }
+      ]
+    },
+    {
+      "link": null,
+      "menuName": "списки",
+      "caption": "Списки",
+      "title": "Списки",
+      "children": [
+        {
+          "link": "i-i-s-gorvodokanal-address-l",
+          "menuName": null,
+          "caption": "Адреса",
+          "title": "",
+          "children": null
+        },
+        {
+          "link": "i-i-s-gorvodokanal-team-l",
+          "menuName": null,
+          "caption": "Бригады",
+          "title": "",
+          "children": null
+        }
+      ]
+    }
+  ],
+  "mobile": true
+}

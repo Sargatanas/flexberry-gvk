@@ -1,0 +1,65 @@
+<h3 class="ui header">{{t 'forms.i-i-s-gorvodokanal-task-d.caption'}}</h3>
+
+<form class="ui form flexberry-vertical-form" role="form">
+  {{flexberry-error error=error}}
+  <div class="field">
+    <div class="sixteen wide">
+      {{flexberry-validationsummary errors=model.errors}}
+    </div>
+  </div>
+  <div class="field">
+    <div class="flexberry-edit-panel">
+      {{#unless readonly}}
+        <button type="submit" class="ui button save-button" {{action 'save'}}>
+          {{t "forms.edit-form.save-button-text"}}
+        </button>
+        {{#unless model.isNew}}
+          <button type="submit" class="ui button save-del-button" {{action 'delete'}}>
+            {{t "forms.edit-form.delete-button-text"}}
+          </button>
+        {{/unless}}
+      {{/unless}}
+      <button type="submit" class="ui button close-button" {{action 'close'}}>
+        {{t "forms.edit-form.close-button-text"}}
+      </button>
+    </div>
+  </div>
+  <div class="field">
+  {{
+    flexberry-field
+    placeholder=(t 'components.flexberry-field.placeholder')
+    readonly=readonly
+    required=true
+    value=model.code
+    class=(if model.errors.code 'error' '')
+    label=(t 'forms.i-i-s-gorvodokanal-task-d.code-caption')
+  }}
+  {{flexberry-validationmessage error=model.errors.code pointing="pointing"}}
+</div>
+
+<div class="field">
+  {{
+    flexberry-field
+    placeholder=(t 'components.flexberry-field.placeholder')
+    readonly=readonly
+    required=true
+    value=model.content
+    class=(if model.errors.content 'error' '')
+    label=(t 'forms.i-i-s-gorvodokanal-task-d.content-caption')
+  }}
+  {{flexberry-validationmessage error=model.errors.content pointing="pointing"}}
+</div>
+
+<div class="field">
+  <label>{{t 'forms.i-i-s-gorvodokanal-task-d.planeDuration-caption'}}</label>
+  {{
+    flexberry-datepicker
+    placeholder=(t 'components.flexberry-datepicker.placeholder')
+    readonly=readonly
+    value=model.planeDuration
+    class=(if model.errors.planeDuration 'error' '')
+  }}
+  {{flexberry-validationmessage error=model.errors.planeDuration pointing="pointing"}}
+</div>
+
+</form>

@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>IIS.Caseberry.Logging.BusinessServers</name>
+    </assembly>
+    <members>
+        <member name="F:IIS.Caseberry.Logging.LogChanging.logManager">
+            <summary>
+            Field for <see cref="P:IIS.Caseberry.Logging.LogChanging.LogManager"/>.
+            </summary>
+        </member>
+        <member name="F:IIS.Caseberry.Logging.LogChanging.logManagerIsEmpty">
+            <summary>
+            Flag indicates that LogManager is empty (Unity config for <see cref="T:IIS.Caseberry.Logging.Objects.ILogManager"/> is absent).
+            </summary>
+        </member>
+        <member name="P:IIS.Caseberry.Logging.LogChanging.LogManager">
+            <summary>
+            Получение инстации лог менеджера.
+            </summary>
+        </member>
+    </members>
+</doc>

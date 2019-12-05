@@ -1,0 +1,64 @@
+<h3 class="ui header">{{t 'forms.i-i-s-gorvodokanal-team-e.caption'}}</h3>
+
+<form class="ui form flexberry-vertical-form" role="form">
+  {{flexberry-error error=error}}
+  <div class="field">
+    <div class="sixteen wide">
+      {{flexberry-validationsummary errors=model.errors}}
+    </div>
+  </div>
+  <div class="field">
+    <div class="flexberry-edit-panel">
+      {{#unless readonly}}
+        <button type="submit" class="ui button save-button" {{action 'save'}}>
+          {{t "forms.edit-form.save-button-text"}}
+        </button>
+        {{#unless model.isNew}}
+          <button type="submit" class="ui button save-del-button" {{action 'delete'}}>
+            {{t "forms.edit-form.delete-button-text"}}
+          </button>
+        {{/unless}}
+      {{/unless}}
+      <button type="submit" class="ui button close-button" {{action 'close'}}>
+        {{t "forms.edit-form.close-button-text"}}
+      </button>
+    </div>
+  </div>
+  <div class="field">
+  {{
+    flexberry-field
+    placeholder=(t 'components.flexberry-field.placeholder')
+    readonly=readonly
+    required=true
+    value=model.index
+    class=(if model.errors.index 'error' '')
+    label=(t 'forms.i-i-s-gorvodokanal-team-e.index-caption')
+  }}
+  {{flexberry-validationmessage error=model.errors.index pointing="pointing"}}
+</div>
+
+<div class="field">
+  <label>{{t 'forms.i-i-s-gorvodokanal-team-e.shiftStart-caption'}}</label>
+  {{
+    flexberry-datepicker
+    placeholder=(t 'components.flexberry-datepicker.placeholder')
+    readonly=readonly
+    value=model.shiftStart
+    class=(if model.errors.shiftStart 'error' '')
+  }}
+  {{flexberry-validationmessage error=model.errors.shiftStart pointing="pointing"}}
+</div>
+
+<div class="field">
+  <label>{{t 'forms.i-i-s-gorvodokanal-team-e.shiftEnd-caption'}}</label>
+  {{
+    flexberry-datepicker
+    placeholder=(t 'components.flexberry-datepicker.placeholder')
+    readonly=readonly
+    value=model.shiftEnd
+    class=(if model.errors.shiftEnd 'error' '')
+  }}
+  {{flexberry-validationmessage error=model.errors.shiftEnd pointing="pointing"}}
+</div>
+
+</form>

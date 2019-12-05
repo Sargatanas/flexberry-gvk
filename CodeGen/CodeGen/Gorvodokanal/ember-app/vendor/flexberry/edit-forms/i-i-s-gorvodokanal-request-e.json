@@ -1,0 +1,31 @@
+﻿{
+  "propertyLookup": [
+    {
+      "master": null,
+      "displayAttributeName": null,
+      "required": false,
+      "relationName": "Team",
+      "projection": "TeamL",
+      "detailModelName": null
+    },
+    {
+      "master": null,
+      "displayAttributeName": null,
+      "required": false,
+      "relationName": "Address",
+      "projection": "AddressL",
+      "detailModelName": null
+    }
+  ],
+  "external": false,
+  "caption": "Request",
+  "name": "IISGorvodokanalRequestE",
+  "className": "RequestE",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "i-i-s-gorvodokanal-request",
+      "modelProjection": "RequestE"
+    }
+  ]
+}

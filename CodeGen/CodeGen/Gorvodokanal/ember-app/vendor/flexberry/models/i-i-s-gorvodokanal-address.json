@@ -1,0 +1,159 @@
+﻿{
+  "name": "IISGorvodokanalAddress",
+  "modelName": "i-i-s-gorvodokanal-address",
+  "className": "Address",
+  "nameSpace": "IIS.Gorvodokanal",
+  "parentModelName": null,
+  "parentClassName": null,
+  "attrs": [
+    {
+      "name": "index",
+      "type": "number",
+      "flexberryType": "int",
+      "notNull": true,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "street",
+      "type": "string",
+      "flexberryType": "string",
+      "notNull": true,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "house",
+      "type": "number",
+      "flexberryType": "int",
+      "notNull": true,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "build",
+      "type": "string",
+      "flexberryType": "string",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "floor",
+      "type": "number",
+      "flexberryType": "NullableInt",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "flat",
+      "type": "number",
+      "flexberryType": "NullableInt",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    }
+  ],
+  "belongsTo": [],
+  "hasMany": [],
+  "projections": [
+    {
+      "name": "AddressE",
+      "modelName": "i-i-s-gorvodokanal-address",
+      "attrs": [
+        {
+          "name": "index",
+          "caption": "Индекс адреса",
+          "hidden": false,
+          "index": 0
+        },
+        {
+          "name": "street",
+          "caption": "Улица",
+          "hidden": false,
+          "index": 1
+        },
+        {
+          "name": "house",
+          "caption": "Дом",
+          "hidden": false,
+          "index": 2
+        },
+        {
+          "name": "build",
+          "caption": "Корпус",
+          "hidden": false,
+          "index": 3
+        },
+        {
+          "name": "floor",
+          "caption": "Этаж",
+          "hidden": false,
+          "index": 4
+        },
+        {
+          "name": "flat",
+          "caption": "Квартира",
+          "hidden": false,
+          "index": 5
+        }
+      ],
+      "belongsTo": [],
+      "hasMany": []
+    },
+    {
+      "name": "AddressL",
+      "modelName": "i-i-s-gorvodokanal-address",
+      "attrs": [
+        {
+          "name": "index",
+          "caption": "Индекс адреса",
+          "hidden": true,
+          "index": 0
+        },
+        {
+          "name": "street",
+          "caption": "Улица",
+          "hidden": false,
+          "index": 1
+        },
+        {
+          "name": "house",
+          "caption": "Дом",
+          "hidden": false,
+          "index": 2
+        },
+        {
+          "name": "build",
+          "caption": "Корпус",
+          "hidden": false,
+          "index": 3
+        },
+        {
+          "name": "floor",
+          "caption": "Этаж",
+          "hidden": false,
+          "index": 4
+        },
+        {
+          "name": "flat",
+          "caption": "Квартира",
+          "hidden": false,
+          "index": 5
+        }
+      ],
+      "belongsTo": [],
+      "hasMany": []
+    }
+  ],
+  "stored": true,
+  "offline": true,
+  "external": false
+}

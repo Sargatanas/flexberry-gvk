@@ -1,0 +1,15 @@
+﻿{
+  "newForm": "i-i-s-gorvodokanal-address-e",
+  "editForm": "i-i-s-gorvodokanal-address-e",
+  "external": false,
+  "caption": "Address",
+  "name": "IISGorvodokanalAddressL",
+  "className": "AddressL",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "i-i-s-gorvodokanal-address",
+      "modelProjection": "AddressL"
+    }
+  ]
+}

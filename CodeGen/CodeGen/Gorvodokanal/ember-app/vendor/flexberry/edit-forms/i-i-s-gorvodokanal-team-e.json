@@ -1,0 +1,14 @@
+﻿{
+  "propertyLookup": [],
+  "external": false,
+  "caption": "Team",
+  "name": "IISGorvodokanalTeamE",
+  "className": "TeamE",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "i-i-s-gorvodokanal-team",
+      "modelProjection": "TeamE"
+    }
+  ]
+}

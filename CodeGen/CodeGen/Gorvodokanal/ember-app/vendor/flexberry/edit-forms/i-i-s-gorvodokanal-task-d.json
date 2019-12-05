@@ -1,0 +1,14 @@
+﻿{
+  "propertyLookup": [],
+  "external": false,
+  "caption": "Task",
+  "name": "IISGorvodokanalTaskD",
+  "className": "TaskD",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "i-i-s-gorvodokanal-task",
+      "modelProjection": "TaskE"
+    }
+  ]
+}

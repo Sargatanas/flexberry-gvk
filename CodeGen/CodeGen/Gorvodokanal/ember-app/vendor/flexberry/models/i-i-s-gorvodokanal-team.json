@@ -1,0 +1,96 @@
+﻿{
+  "name": "IISGorvodokanalTeam",
+  "modelName": "i-i-s-gorvodokanal-team",
+  "className": "Team",
+  "nameSpace": "IIS.Gorvodokanal",
+  "parentModelName": null,
+  "parentClassName": null,
+  "attrs": [
+    {
+      "name": "index",
+      "type": "number",
+      "flexberryType": "int",
+      "notNull": true,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "shiftStart",
+      "type": "date",
+      "flexberryType": "tDate",
+      "notNull": true,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "shiftEnd",
+      "type": "date",
+      "flexberryType": "tDate",
+      "notNull": true,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    }
+  ],
+  "belongsTo": [],
+  "hasMany": [],
+  "projections": [
+    {
+      "name": "TeamE",
+      "modelName": "i-i-s-gorvodokanal-team",
+      "attrs": [
+        {
+          "name": "index",
+          "caption": "Индекс бригады",
+          "hidden": false,
+          "index": 0
+        },
+        {
+          "name": "shiftStart",
+          "caption": "Начало смены",
+          "hidden": false,
+          "index": 1
+        },
+        {
+          "name": "shiftEnd",
+          "caption": "Конец смены",
+          "hidden": false,
+          "index": 2
+        }
+      ],
+      "belongsTo": [],
+      "hasMany": []
+    },
+    {
+      "name": "TeamL",
+      "modelName": "i-i-s-gorvodokanal-team",
+      "attrs": [
+        {
+          "name": "index",
+          "caption": "Индекс бригады",
+          "hidden": false,
+          "index": 0
+        },
+        {
+          "name": "shiftStart",
+          "caption": "Начало смены",
+          "hidden": false,
+          "index": 1
+        },
+        {
+          "name": "shiftEnd",
+          "caption": "Конец смены",
+          "hidden": false,
+          "index": 2
+        }
+      ],
+      "belongsTo": [],
+      "hasMany": []
+    }
+  ],
+  "stored": true,
+  "offline": true,
+  "external": false
+}

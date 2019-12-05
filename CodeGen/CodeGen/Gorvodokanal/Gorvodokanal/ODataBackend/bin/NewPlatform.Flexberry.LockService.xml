@@ -1,0 +1,180 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>NewPlatform.Flexberry.LockService</name>
+    </assembly>
+    <members>
+        <member name="T:NewPlatform.Flexberry.Services.ILockService">
+            <summary>
+            Base interface of service for locking objects.
+            </summary>
+        </member>
+        <member name="M:NewPlatform.Flexberry.Services.ILockService.LockObject(System.Object,System.String)">
+            <summary>
+            Locks the object with specified key.
+            </summary>
+            <param name="dataObjectKey">The data object key.</param>
+            <param name="userName">Name of the user who locks the object.</param>
+            <returns>Information about lock.</returns>
+        </member>
+        <member name="M:NewPlatform.Flexberry.Services.ILockService.GetLock(System.Object)">
+            <summary>
+            Gets the lock of object with specified key.
+            </summary>
+            <param name="dataObjectKey">The data object key.</param>
+            <returns>Information about lock.</returns>
+        </member>
+        <member name="M:NewPlatform.Flexberry.Services.ILockService.UnlockObject(System.Object)">
+            <summary>
+            Unlocks the object.
+            </summary>
+            <param name="dataObjectKey">The data object key.</param>
+            <returns>Returns <c>true</c> if object is successfully unlocked or <c>false</c> if it's not exist.</returns>
+        </member>
+        <member name="M:NewPlatform.Flexberry.Services.ILockService.UnlockAllObjects">
+            <summary>
+            Unlocks all objects.
+            </summary>
+        </member>
+        <member name="T:NewPlatform.Flexberry.Services.Lock">
+            <summary>
+            Data object class for storing lock data in the database.
+            </summary>
+        </member>
+        <member name="P:NewPlatform.Flexberry.Services.Lock.LockDate">
+            <summary>
+            Date and time of adding lock.
+            </summary>
+        </member>
+        <member name="T:NewPlatform.Flexberry.Services.Lock.Views">
+            <summary>
+            Class views container
+            </summary>
+        </member>
+        <member name="P:NewPlatform.Flexberry.Services.Lock.Views.V">
+            <summary>
+            "V" view
+            </summary>
+        </member>
+        <member name="P:NewPlatform.Flexberry.Services.Lock.Views.WebLockDataL">
+            <summary>
+            "WebLockDataL" view
+            </summary>
+        </member>
+        <member name="T:NewPlatform.Flexberry.Services.LockData">
+            <summary>
+            Class that represents information about lock.
+            </summary>
+        </member>
+        <member name="P:NewPlatform.Flexberry.Services.LockData.Acquired">
+            <summary>
+            Is lock acquired now?
+            </summary>
+        </member>
+        <member name="P:NewPlatform.Flexberry.Services.LockData.UseName">
+            <summary>
+            User who acquired lock.
+            </summary>
+        </member>
+        <member name="P:NewPlatform.Flexberry.Services.LockData.Key">
+            <summary>
+            The key of the acquired lock.
+            </summary>
+        </member>
+        <member name="M:NewPlatform.Flexberry.Services.LockData.#ctor(System.Object,System.String,System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:NewPlatform.Flexberry.Services.LockData" /> struct.
+            </summary>
+            <param name="lockKey">The key of the acquired lock.</param>
+            <param name="userName">User who acquired lock.</param>
+            <param name="acquired">Is lock acquired now?</param>
+        </member>
+        <member name="T:NewPlatform.Flexberry.Services.LockService">
+            <summary>
+            Base implementation of <see cref="T:NewPlatform.Flexberry.Services.ILockService"/> using <see cref="T:ICSSoft.STORMNET.Business.IDataService"/> for storing data.
+            </summary>
+        </member>
+        <member name="F:NewPlatform.Flexberry.Services.LockService._dataService">
+            <summary>
+            The data service for storing data.
+            </summary>
+        </member>
+        <member name="F:NewPlatform.Flexberry.Services.LockService._lockObj">
+            <summary>
+            The synchronization object.
+            </summary>
+        </member>
+        <member name="P:NewPlatform.Flexberry.Services.LockService.Timeout">
+            <summary>
+            Timeout for locks.
+            </summary>
+        </member>
+        <member name="M:NewPlatform.Flexberry.Services.LockService.#ctor(ICSSoft.STORMNET.Business.IDataService)">
+            <summary>
+            Initializes a new instance of the <see cref="T:NewPlatform.Flexberry.Services.LockService"/> class.
+            </summary>
+            <param name="dataService">The data service for storing data.</param>
+        </member>
+        <member name="M:NewPlatform.Flexberry.Services.LockService.LockObject(System.Object,System.String)">
+            <summary>
+            Locks the object with specified key.
+            </summary>
+            <param name="dataObjectKey">The data object key.</param>
+            <param name="userName">Name of the user who locks the object.</param>
+            <returns>Information about lock.</returns>
+        </member>
+        <member name="M:NewPlatform.Flexberry.Services.LockService.GetLock(System.Object)">
+            <summary>
+            Gets the lock of object with specified key.
+            </summary>
+            <param name="dataObjectKey">The data object key.</param>
+            <returns>Information about lock.</returns>
+        </member>
+        <member name="M:NewPlatform.Flexberry.Services.LockService.UnlockObject(System.Object)">
+            <summary>
+            Unlocks the object.
+            </summary>
+            <param name="dataObjectKey">The data object key.</param>
+            <returns>Returns <c>true</c> if object is successfully unlocked or <c>false</c> if it's not exist.</returns>
+        </member>
+        <member name="M:NewPlatform.Flexberry.Services.LockService.UnlockAllObjects">
+            <summary>
+            Unlocks all objects.
+            TODO: Feature of deleting all objects in the database is not implemented by <see cref="T:ICSSoft.STORMNET.Business.IDataService"/>.
+            </summary>
+        </member>
+        <member name="T:NewPlatform.Flexberry.Services.LockServiceContract">
+            <summary>
+            Contract class for <see cref="T:NewPlatform.Flexberry.Services.ILockService"/>.
+            </summary>
+            <seealso cref="T:NewPlatform.Flexberry.Services.ILockService" />
+        </member>
+        <member name="M:NewPlatform.Flexberry.Services.LockServiceContract.LockObject(System.Object,System.String)">
+            <summary>
+            Contracts for <see cref="M:NewPlatform.Flexberry.Services.ILockService.LockObject(System.Object,System.String)"/>.
+            </summary>
+            <param name="dataObjectKey">The data object key.</param>
+            <param name="userName">Name of the user who locks the object.</param>
+            <returns>Not used.</returns>
+        </member>
+        <member name="M:NewPlatform.Flexberry.Services.LockServiceContract.GetLock(System.Object)">
+            <summary>
+            Contracts for <see cref="M:NewPlatform.Flexberry.Services.ILockService.GetLock(System.Object)"/>.
+            </summary>
+            <param name="dataObjectKey">The data object key.</param>
+            <returns>Not used.</returns>
+        </member>
+        <member name="M:NewPlatform.Flexberry.Services.LockServiceContract.UnlockObject(System.Object)">
+            <summary>
+            Contracts for <see cref="M:NewPlatform.Flexberry.Services.ILockService.UnlockObject(System.Object)"/>.
+            </summary>
+            <param name="dataObjectKey">The data object key.</param>
+            <returns>Not used.</returns>
+        </member>
+        <member name="M:NewPlatform.Flexberry.Services.LockServiceContract.UnlockAllObjects">
+            <summary>
+            Contracts for <see cref="M:NewPlatform.Flexberry.Services.ILockService.UnlockAllObjects"/>.
+            </summary>
+        </member>
+    </members>
+</doc>

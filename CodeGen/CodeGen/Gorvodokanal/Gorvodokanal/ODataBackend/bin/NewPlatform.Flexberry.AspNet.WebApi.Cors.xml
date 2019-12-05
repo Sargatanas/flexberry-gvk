@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>NewPlatform.Flexberry.AspNet.WebApi.Cors</name>
+    </assembly>
+    <members>
+        <member name="T:NewPlatform.Flexberry.AspNet.WebApi.Cors.DynamicCorsPolicyProvider">
+            <summary>
+            Implementation of <see cref="T:System.Web.Http.Cors.ICorsPolicyProvider"/> that allows all origins from HTTP request.
+            </summary>
+            <seealso cref="T:System.Web.Http.Cors.ICorsPolicyProvider" />
+        </member>
+        <member name="F:NewPlatform.Flexberry.AspNet.WebApi.Cors.DynamicCorsPolicyProvider._supportsCredentials">
+            <summary>
+            Keeps value for <see cref="P:System.Web.Cors.CorsPolicy.SupportsCredentials"/>.
+            </summary>
+        </member>
+        <member name="M:NewPlatform.Flexberry.AspNet.WebApi.Cors.DynamicCorsPolicyProvider.#ctor(System.Boolean)">
+            <summary>
+            Default constructor for <see cref="T:NewPlatform.Flexberry.AspNet.WebApi.Cors.DynamicCorsPolicyProvider"/>.
+            </summary>
+            <param name="supportsCredentials">Value for <see cref="P:System.Web.Cors.CorsPolicy.SupportsCredentials"/>.</param>
+        </member>
+        <member name="M:NewPlatform.Flexberry.AspNet.WebApi.Cors.DynamicCorsPolicyProvider.GetCorsPolicyAsync(System.Net.Http.HttpRequestMessage,System.Threading.CancellationToken)">
+            <summary>
+            Gets the <see cref="T:System.Web.Cors.CorsPolicy" />.
+            </summary>
+            <param name="request">The request.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns>The <see cref="T:System.Web.Cors.CorsPolicy" />.</returns>
+        </member>
+    </members>
+</doc>
