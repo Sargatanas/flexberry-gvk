@@ -29,17 +29,17 @@ namespace IIS.Gorvodokanal
     [AutoAltered()]
     [AccessType(ICSSoft.STORMNET.AccessType.none)]
     [View("TaskE", new string[] {
-            "code as \'Code\'",
-            "content as \'Content\'",
-            "planeDuration as \'Plane duration\'"})]
+            "Code as \'Код задачи\'",
+            "Content as \'Детали задачи\'",
+            "PlaneDuration as \'Примерная длительность работ\'"})]
     public class Task : ICSSoft.STORMNET.DataObject
     {
         
-        private int fcode;
+        private int fCode;
         
-        private string fcontent;
+        private string fContent;
         
-        private System.DateTime fplaneDuration;
+        private System.DateTime fPlaneDuration;
         
         private IIS.Gorvodokanal.Request fRequest;
         
@@ -49,99 +49,99 @@ namespace IIS.Gorvodokanal
 
         
         /// <summary>
-        /// code.
+        /// Code.
         /// </summary>
-        // *** Start programmer edit section *** (Task.code CustomAttributes)
+        // *** Start programmer edit section *** (Task.Code CustomAttributes)
 
-        // *** End programmer edit section *** (Task.code CustomAttributes)
+        // *** End programmer edit section *** (Task.Code CustomAttributes)
         [NotNull()]
-        public virtual int code
+        public virtual int Code
         {
             get
             {
-                // *** Start programmer edit section *** (Task.code Get start)
+                // *** Start programmer edit section *** (Task.Code Get start)
 
-                // *** End programmer edit section *** (Task.code Get start)
-                int result = this.fcode;
-                // *** Start programmer edit section *** (Task.code Get end)
+                // *** End programmer edit section *** (Task.Code Get start)
+                int result = this.fCode;
+                // *** Start programmer edit section *** (Task.Code Get end)
 
-                // *** End programmer edit section *** (Task.code Get end)
+                // *** End programmer edit section *** (Task.Code Get end)
                 return result;
             }
             set
             {
-                // *** Start programmer edit section *** (Task.code Set start)
+                // *** Start programmer edit section *** (Task.Code Set start)
 
-                // *** End programmer edit section *** (Task.code Set start)
-                this.fcode = value;
-                // *** Start programmer edit section *** (Task.code Set end)
+                // *** End programmer edit section *** (Task.Code Set start)
+                this.fCode = value;
+                // *** Start programmer edit section *** (Task.Code Set end)
 
-                // *** End programmer edit section *** (Task.code Set end)
+                // *** End programmer edit section *** (Task.Code Set end)
             }
         }
         
         /// <summary>
-        /// content.
+        /// Content.
         /// </summary>
-        // *** Start programmer edit section *** (Task.content CustomAttributes)
+        // *** Start programmer edit section *** (Task.Content CustomAttributes)
 
-        // *** End programmer edit section *** (Task.content CustomAttributes)
+        // *** End programmer edit section *** (Task.Content CustomAttributes)
         [StrLen(255)]
         [NotNull()]
-        public virtual string content
+        public virtual string Content
         {
             get
             {
-                // *** Start programmer edit section *** (Task.content Get start)
+                // *** Start programmer edit section *** (Task.Content Get start)
 
-                // *** End programmer edit section *** (Task.content Get start)
-                string result = this.fcontent;
-                // *** Start programmer edit section *** (Task.content Get end)
+                // *** End programmer edit section *** (Task.Content Get start)
+                string result = this.fContent;
+                // *** Start programmer edit section *** (Task.Content Get end)
 
-                // *** End programmer edit section *** (Task.content Get end)
+                // *** End programmer edit section *** (Task.Content Get end)
                 return result;
             }
             set
             {
-                // *** Start programmer edit section *** (Task.content Set start)
+                // *** Start programmer edit section *** (Task.Content Set start)
 
-                // *** End programmer edit section *** (Task.content Set start)
-                this.fcontent = value;
-                // *** Start programmer edit section *** (Task.content Set end)
+                // *** End programmer edit section *** (Task.Content Set start)
+                this.fContent = value;
+                // *** Start programmer edit section *** (Task.Content Set end)
 
-                // *** End programmer edit section *** (Task.content Set end)
+                // *** End programmer edit section *** (Task.Content Set end)
             }
         }
         
         /// <summary>
-        /// planeDuration.
+        /// PlaneDuration.
         /// </summary>
-        // *** Start programmer edit section *** (Task.planeDuration CustomAttributes)
+        // *** Start programmer edit section *** (Task.PlaneDuration CustomAttributes)
 
-        // *** End programmer edit section *** (Task.planeDuration CustomAttributes)
+        // *** End programmer edit section *** (Task.PlaneDuration CustomAttributes)
         [NotNull()]
-        public virtual System.DateTime planeDuration
+        public virtual System.DateTime PlaneDuration
         {
             get
             {
-                // *** Start programmer edit section *** (Task.planeDuration Get start)
+                // *** Start programmer edit section *** (Task.PlaneDuration Get start)
 
-                // *** End programmer edit section *** (Task.planeDuration Get start)
-                System.DateTime result = this.fplaneDuration;
-                // *** Start programmer edit section *** (Task.planeDuration Get end)
+                // *** End programmer edit section *** (Task.PlaneDuration Get start)
+                System.DateTime result = this.fPlaneDuration;
+                // *** Start programmer edit section *** (Task.PlaneDuration Get end)
 
-                // *** End programmer edit section *** (Task.planeDuration Get end)
+                // *** End programmer edit section *** (Task.PlaneDuration Get end)
                 return result;
             }
             set
             {
-                // *** Start programmer edit section *** (Task.planeDuration Set start)
+                // *** Start programmer edit section *** (Task.PlaneDuration Set start)
 
-                // *** End programmer edit section *** (Task.planeDuration Set start)
-                this.fplaneDuration = value;
-                // *** Start programmer edit section *** (Task.planeDuration Set end)
+                // *** End programmer edit section *** (Task.PlaneDuration Set start)
+                this.fPlaneDuration = value;
+                // *** Start programmer edit section *** (Task.PlaneDuration Set end)
 
-                // *** End programmer edit section *** (Task.planeDuration Set end)
+                // *** End programmer edit section *** (Task.PlaneDuration Set end)
             }
         }
         

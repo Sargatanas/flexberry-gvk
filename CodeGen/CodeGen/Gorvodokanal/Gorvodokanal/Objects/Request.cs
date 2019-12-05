@@ -29,45 +29,47 @@ namespace IIS.Gorvodokanal
     [AutoAltered()]
     [AccessType(ICSSoft.STORMNET.AccessType.none)]
     [View("RequestE", new string[] {
-            "index as \'Номер заявки\'",
+            "Iindex as \'Номер заявки\'",
             "Address as \'Адрес\' on \'-Данные об адресе\'",
-            "Address.street as \'Улица\' on \'-Данные об адресе\'",
-            "Address.house as \'Дом\' on \'-Данные об адресе\'",
-            "Address.build as \'Корпус\' on \'-Данные об адресе\'",
-            "Address.floor as \'Этаж\' on \'-Данные об адресе\'",
-            "Address.flat as \'Квартира\' on \'-Данные об адресе\'",
-            "isCompleted as \'Отметка о закреплении\' on \'-Данные о выполнении\'",
+            "Address.Street as \'Улица\' on \'-Данные об адресе\'",
+            "Address.House as \'Дом\' on \'-Данные об адресе\'",
+            "Address.Build as \'Корпус\' on \'-Данные об адресе\'",
+            "Address.Floor as \'Этаж\' on \'-Данные об адресе\'",
+            "Address.Apartment as \'Квартира\' on \'-Данные об адресе\'",
+            "IsAppointed as \'Отметка о назначении\' on \'-Данные о выполнении\'",
             "Team as \'Бригада\' on \'-Данные о выполнении\'",
-            "Team.index as \'Номер бригады\' on \'-Данные о выполнении\'",
-            "isAppointed as \'Отметка о выполнении\' on \'-Данные о выполнении\'",
-            "realDuration as \'Фактическая длительность работ\' on \'-Данные о выполнении\'"})]
+            "Team.Index as \'Номер бригады\' on \'-Данные о выполнении\'",
+            "Date as \'Дата выполнения работ\' on \'-Данные о выполнении\'",
+            "IsCompleted as \'Отметка о выполнении\' on \'-Данные о выполнении\'",
+            "RealDuration as \'Фактическая длительность работ\' on \'-Данные о выполнении\'"})]
     [AssociatedDetailViewAttribute("RequestE", "Tasks", "TaskE", true, "", "Задачи", true, new string[] {
             ""})]
     [View("RequestL", new string[] {
-            "index as \'Номер заявки\'",
-            "Address.street as \'Улица\' on \'-Данные об адресе\'",
-            "Address.house as \'Дом\' on \'-Данные об адресе\'",
-            "Address.build as \'Корпус\' on \'-Данные об адресе\'",
-            "Address.floor as \'Этаж\' on \'-Данные об адресе\'",
-            "Address.flat as \'Квартира\' on \'-Данные об адресе\'",
-            "isAppointed as \'Отметка о прикреплении\' on \'-Данные о выполнении\'",
-            "Team.index as \'Номер выполняющей бригады\' on \'-Данные о выполнении\'",
-            "isCompleted as \'Отметка о выполнении\' on \'-Данные о выполнении\'",
-            "realDuration as \'Фактическая длительность работ\' on \'-Данные о выполнении\'"})]
-    [AssociatedDetailViewAttribute("RequestL", "Tasks", "TaskE", true, "", "Задачи", true, new string[] {
+            "Iindex as \'Номер заявки\'",
+            "IsAppointed as \'Отметка о назначении\'",
+            "Date as \'Дата выполнения работ\'",
+            "IsCompleted as \'Отметка о выполнении\'",
+            "Team.Index as \'Выполняющая бригада\'",
+            "RealDuration as \'Фактическая длительность работ\'",
+            "Address.Street as \'Улица\' on \'-Данные об адресе\'",
+            "Address.House as \'Дом\' on \'-Данные об адресе\'",
+            "Address.Build as \'Корпус\' on \'-Данные об адресе\'",
+            "Address.Floor as \'Этаж\' on \'-Данные об адресе\'",
+            "Address.Apartment as \'Квартира\' on \'-Данные об адресе\'"})]
+    [AssociatedDetailViewAttribute("RequestL", "Tasks", "TaskE", true, "-Задачи", "", true, new string[] {
             ""})]
     public class Request : ICSSoft.STORMNET.DataObject
     {
         
-        private int findex;
+        private int fIindex;
         
-        private IIS.Gorvodokanal.tAppointed fisAppointed;
+        private IIS.Gorvodokanal.tAppointed fIsAppointed;
         
-        private System.DateTime fdate;
+        private System.DateTime fDate;
         
-        private bool fisCompleted;
+        private bool fIsCompleted = false;
         
-        private System.DateTime frealDuration;
+        private System.DateTime fRealDuration;
         
         private IIS.Gorvodokanal.Team fTeam;
         
@@ -81,160 +83,159 @@ namespace IIS.Gorvodokanal
 
         
         /// <summary>
-        /// index.
+        /// Iindex.
         /// </summary>
-        // *** Start programmer edit section *** (Request.index CustomAttributes)
+        // *** Start programmer edit section *** (Request.Iindex CustomAttributes)
 
-        // *** End programmer edit section *** (Request.index CustomAttributes)
+        // *** End programmer edit section *** (Request.Iindex CustomAttributes)
         [NotNull()]
-        public virtual int index
+        public virtual int Iindex
         {
             get
             {
-                // *** Start programmer edit section *** (Request.index Get start)
+                // *** Start programmer edit section *** (Request.Iindex Get start)
 
-                // *** End programmer edit section *** (Request.index Get start)
-                int result = this.findex;
-                // *** Start programmer edit section *** (Request.index Get end)
+                // *** End programmer edit section *** (Request.Iindex Get start)
+                int result = this.fIindex;
+                // *** Start programmer edit section *** (Request.Iindex Get end)
 
-                // *** End programmer edit section *** (Request.index Get end)
+                // *** End programmer edit section *** (Request.Iindex Get end)
                 return result;
             }
             set
             {
-                // *** Start programmer edit section *** (Request.index Set start)
+                // *** Start programmer edit section *** (Request.Iindex Set start)
 
-                // *** End programmer edit section *** (Request.index Set start)
-                this.findex = value;
-                // *** Start programmer edit section *** (Request.index Set end)
+                // *** End programmer edit section *** (Request.Iindex Set start)
+                this.fIindex = value;
+                // *** Start programmer edit section *** (Request.Iindex Set end)
 
-                // *** End programmer edit section *** (Request.index Set end)
+                // *** End programmer edit section *** (Request.Iindex Set end)
             }
         }
         
         /// <summary>
-        /// isAppointed.
+        /// IsAppointed.
         /// </summary>
-        // *** Start programmer edit section *** (Request.isAppointed CustomAttributes)
+        // *** Start programmer edit section *** (Request.IsAppointed CustomAttributes)
 
-        // *** End programmer edit section *** (Request.isAppointed CustomAttributes)
+        // *** End programmer edit section *** (Request.IsAppointed CustomAttributes)
         [NotNull()]
-        public virtual IIS.Gorvodokanal.tAppointed isAppointed
+        public virtual IIS.Gorvodokanal.tAppointed IsAppointed
         {
             get
             {
-                // *** Start programmer edit section *** (Request.isAppointed Get start)
+                // *** Start programmer edit section *** (Request.IsAppointed Get start)
 
-                // *** End programmer edit section *** (Request.isAppointed Get start)
-                IIS.Gorvodokanal.tAppointed result = this.fisAppointed;
-                // *** Start programmer edit section *** (Request.isAppointed Get end)
+                // *** End programmer edit section *** (Request.IsAppointed Get start)
+                IIS.Gorvodokanal.tAppointed result = this.fIsAppointed;
+                // *** Start programmer edit section *** (Request.IsAppointed Get end)
 
-                // *** End programmer edit section *** (Request.isAppointed Get end)
+                // *** End programmer edit section *** (Request.IsAppointed Get end)
                 return result;
             }
             set
             {
-                // *** Start programmer edit section *** (Request.isAppointed Set start)
+                // *** Start programmer edit section *** (Request.IsAppointed Set start)
 
-                // *** End programmer edit section *** (Request.isAppointed Set start)
-                this.fisAppointed = value;
-                // *** Start programmer edit section *** (Request.isAppointed Set end)
+                // *** End programmer edit section *** (Request.IsAppointed Set start)
+                this.fIsAppointed = value;
+                // *** Start programmer edit section *** (Request.IsAppointed Set end)
 
-                // *** End programmer edit section *** (Request.isAppointed Set end)
+                // *** End programmer edit section *** (Request.IsAppointed Set end)
             }
         }
         
         /// <summary>
-        /// date.
+        /// Date.
         /// </summary>
-        // *** Start programmer edit section *** (Request.date CustomAttributes)
+        // *** Start programmer edit section *** (Request.Date CustomAttributes)
 
-        // *** End programmer edit section *** (Request.date CustomAttributes)
-        public virtual System.DateTime date
+        // *** End programmer edit section *** (Request.Date CustomAttributes)
+        public virtual System.DateTime Date
         {
             get
             {
-                // *** Start programmer edit section *** (Request.date Get start)
+                // *** Start programmer edit section *** (Request.Date Get start)
 
-                // *** End programmer edit section *** (Request.date Get start)
-                System.DateTime result = this.fdate;
-                // *** Start programmer edit section *** (Request.date Get end)
+                // *** End programmer edit section *** (Request.Date Get start)
+                System.DateTime result = this.fDate;
+                // *** Start programmer edit section *** (Request.Date Get end)
 
-                // *** End programmer edit section *** (Request.date Get end)
+                // *** End programmer edit section *** (Request.Date Get end)
                 return result;
             }
             set
             {
-                // *** Start programmer edit section *** (Request.date Set start)
+                // *** Start programmer edit section *** (Request.Date Set start)
 
-                // *** End programmer edit section *** (Request.date Set start)
-                this.fdate = value;
-                // *** Start programmer edit section *** (Request.date Set end)
+                // *** End programmer edit section *** (Request.Date Set start)
+                this.fDate = value;
+                // *** Start programmer edit section *** (Request.Date Set end)
 
-                // *** End programmer edit section *** (Request.date Set end)
+                // *** End programmer edit section *** (Request.Date Set end)
             }
         }
         
         /// <summary>
-        /// isCompleted.
+        /// IsCompleted.
         /// </summary>
-        // *** Start programmer edit section *** (Request.isCompleted CustomAttributes)
+        // *** Start programmer edit section *** (Request.IsCompleted CustomAttributes)
 
-        // *** End programmer edit section *** (Request.isCompleted CustomAttributes)
-        [NotNull()]
-        public virtual bool isCompleted
+        // *** End programmer edit section *** (Request.IsCompleted CustomAttributes)
+        public virtual bool IsCompleted
         {
             get
             {
-                // *** Start programmer edit section *** (Request.isCompleted Get start)
+                // *** Start programmer edit section *** (Request.IsCompleted Get start)
 
-                // *** End programmer edit section *** (Request.isCompleted Get start)
-                bool result = this.fisCompleted;
-                // *** Start programmer edit section *** (Request.isCompleted Get end)
+                // *** End programmer edit section *** (Request.IsCompleted Get start)
+                bool result = this.fIsCompleted;
+                // *** Start programmer edit section *** (Request.IsCompleted Get end)
 
-                // *** End programmer edit section *** (Request.isCompleted Get end)
+                // *** End programmer edit section *** (Request.IsCompleted Get end)
                 return result;
             }
             set
             {
-                // *** Start programmer edit section *** (Request.isCompleted Set start)
+                // *** Start programmer edit section *** (Request.IsCompleted Set start)
 
-                // *** End programmer edit section *** (Request.isCompleted Set start)
-                this.fisCompleted = value;
-                // *** Start programmer edit section *** (Request.isCompleted Set end)
+                // *** End programmer edit section *** (Request.IsCompleted Set start)
+                this.fIsCompleted = value;
+                // *** Start programmer edit section *** (Request.IsCompleted Set end)
 
-                // *** End programmer edit section *** (Request.isCompleted Set end)
+                // *** End programmer edit section *** (Request.IsCompleted Set end)
             }
         }
         
         /// <summary>
-        /// realDuration.
+        /// RealDuration.
         /// </summary>
-        // *** Start programmer edit section *** (Request.realDuration CustomAttributes)
+        // *** Start programmer edit section *** (Request.RealDuration CustomAttributes)
 
-        // *** End programmer edit section *** (Request.realDuration CustomAttributes)
-        public virtual System.DateTime realDuration
+        // *** End programmer edit section *** (Request.RealDuration CustomAttributes)
+        public virtual System.DateTime RealDuration
         {
             get
             {
-                // *** Start programmer edit section *** (Request.realDuration Get start)
+                // *** Start programmer edit section *** (Request.RealDuration Get start)
 
-                // *** End programmer edit section *** (Request.realDuration Get start)
-                System.DateTime result = this.frealDuration;
-                // *** Start programmer edit section *** (Request.realDuration Get end)
+                // *** End programmer edit section *** (Request.RealDuration Get start)
+                System.DateTime result = this.fRealDuration;
+                // *** Start programmer edit section *** (Request.RealDuration Get end)
 
-                // *** End programmer edit section *** (Request.realDuration Get end)
+                // *** End programmer edit section *** (Request.RealDuration Get end)
                 return result;
             }
             set
             {
-                // *** Start programmer edit section *** (Request.realDuration Set start)
+                // *** Start programmer edit section *** (Request.RealDuration Set start)
 
-                // *** End programmer edit section *** (Request.realDuration Set start)
-                this.frealDuration = value;
-                // *** Start programmer edit section *** (Request.realDuration Set end)
+                // *** End programmer edit section *** (Request.RealDuration Set start)
+                this.fRealDuration = value;
+                // *** Start programmer edit section *** (Request.RealDuration Set end)
 
-                // *** End programmer edit section *** (Request.realDuration Set end)
+                // *** End programmer edit section *** (Request.RealDuration Set end)
             }
         }
         

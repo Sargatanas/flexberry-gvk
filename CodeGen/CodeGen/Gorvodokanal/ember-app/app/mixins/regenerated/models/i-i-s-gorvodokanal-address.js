@@ -7,7 +7,7 @@ export let Model = Ember.Mixin.create({
   house: DS.attr('number'),
   build: DS.attr('string'),
   floor: DS.attr('number'),
-  flat: DS.attr('number'),
+  apartment: DS.attr('number'),
   getValidations: function () {
     let parentValidations = this._super();
     let thisValidations = {
@@ -31,19 +31,19 @@ export function defineNamespace(modelClass) {
 
 export let defineProjections = function (modelClass) {
   modelClass.defineProjection('AddressE', 'i-i-s-gorvodokanal-address', {
-    index: Projection.attr('Индекс адреса', { index: 0 }),
+    index: Projection.attr('Код адреса', { index: 0 }),
     street: Projection.attr('Улица', { index: 1 }),
     house: Projection.attr('Дом', { index: 2 }),
     build: Projection.attr('Корпус', { index: 3 }),
     floor: Projection.attr('Этаж', { index: 4 }),
-    flat: Projection.attr('Квартира', { index: 5 })
+    apartment: Projection.attr('Квартира', { index: 5 })
   });
   modelClass.defineProjection('AddressL', 'i-i-s-gorvodokanal-address', {
-    index: Projection.attr('Индекс адреса', { index: 0, hidden: true }),
+    index: Projection.attr('Код адреса', { index: 0 }),
     street: Projection.attr('Улица', { index: 1 }),
     house: Projection.attr('Дом', { index: 2 }),
     build: Projection.attr('Корпус', { index: 3 }),
     floor: Projection.attr('Этаж', { index: 4 }),
-    flat: Projection.attr('Квартира', { index: 5 })
+    apartment: Projection.attr('Квартира', { index: 5 })
   });
 };

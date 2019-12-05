@@ -1,8 +1,8 @@
 export default {
   projections: {
     RequestE: {
-      index: {
-        __caption__: 'index'
+      iindex: {
+        __caption__: 'iindex'
       },
       address: {
         __caption__: 'address',
@@ -18,12 +18,12 @@ export default {
         floor: {
           __caption__: 'floor'
         },
-        flat: {
-          __caption__: 'flat'
+        apartment: {
+          __caption__: 'apartment'
         }
       },
-      isCompleted: {
-        __caption__: 'isCompleted'
+      isAppointed: {
+        __caption__: 'isAppointed'
       },
       team: {
         __caption__: 'team',
@@ -31,8 +31,11 @@ export default {
           __caption__: 'index'
         }
       },
-      isAppointed: {
-        __caption__: 'isAppointed'
+      date: {
+        __caption__: 'date'
+      },
+      isCompleted: {
+        __caption__: 'isCompleted'
       },
       realDuration: {
         __caption__: 'realDuration'
@@ -51,8 +54,26 @@ export default {
       }
     },
     RequestL: {
-      index: {
-        __caption__: 'index'
+      iindex: {
+        __caption__: 'iindex'
+      },
+      isAppointed: {
+        __caption__: 'isAppointed'
+      },
+      date: {
+        __caption__: 'date'
+      },
+      isCompleted: {
+        __caption__: 'isCompleted'
+      },
+      team: {
+        __caption__: 'team',
+        index: {
+          __caption__: 'index'
+        }
+      },
+      realDuration: {
+        __caption__: 'realDuration'
       },
       address: {
         __caption__: 'address',
@@ -68,24 +89,9 @@ export default {
         floor: {
           __caption__: 'floor'
         },
-        flat: {
-          __caption__: 'flat'
+        apartment: {
+          __caption__: 'apartment'
         }
-      },
-      isAppointed: {
-        __caption__: 'isAppointed'
-      },
-      team: {
-        __caption__: 'team',
-        index: {
-          __caption__: 'index'
-        }
-      },
-      isCompleted: {
-        __caption__: 'isCompleted'
-      },
-      realDuration: {
-        __caption__: 'realDuration'
       },
       tasks: {
         __caption__: 'tasks',

@@ -1,0 +1,649 @@
+﻿ERROR 2019-12-05 15:29:36 [20] Property name does not exist: Index
+System.Exception: Property name does not exist: Index
+   в NewPlatform.Flexberry.ORM.ODataService.Controllers.DataObjectController.GetPropertyName(SelectItem item)
+   в NewPlatform.Flexberry.ORM.ODataService.Controllers.DataObjectController.GetPropertiesForDynamicView(ExpandedNavigationSelectItem parent, IEnumerable`1 selectedItems)
+   в NewPlatform.Flexberry.ORM.ODataService.Controllers.DataObjectController.CreateDynamicView()
+   в NewPlatform.Flexberry.ORM.ODataService.Controllers.DataObjectController.Init()
+   в NewPlatform.Flexberry.ORM.ODataService.Controllers.DataObjectController.Get()
+ERROR 2019-12-05 15:29:49 [10] Property name does not exist: Index
+System.Exception: Property name does not exist: Index
+   в NewPlatform.Flexberry.ORM.ODataService.Controllers.DataObjectController.GetPropertyName(SelectItem item)
+   в NewPlatform.Flexberry.ORM.ODataService.Controllers.DataObjectController.GetPropertiesForDynamicView(ExpandedNavigationSelectItem parent, IEnumerable`1 selectedItems)
+   в NewPlatform.Flexberry.ORM.ODataService.Controllers.DataObjectController.CreateDynamicView()
+   в NewPlatform.Flexberry.ORM.ODataService.Controllers.DataObjectController.Init()
+   в NewPlatform.Flexberry.ORM.ODataService.Controllers.DataObjectController.Get()
+ERROR 2019-12-05 15:30:39 [35] Property name does not exist: Index
+System.Exception: Property name does not exist: Index
+   в NewPlatform.Flexberry.ORM.ODataService.Controllers.DataObjectController.GetPropertyName(SelectItem item)
+   в NewPlatform.Flexberry.ORM.ODataService.Controllers.DataObjectController.GetPropertiesForDynamicView(ExpandedNavigationSelectItem parent, IEnumerable`1 selectedItems)
+   в NewPlatform.Flexberry.ORM.ODataService.Controllers.DataObjectController.CreateDynamicView()
+   в NewPlatform.Flexberry.ORM.ODataService.Controllers.DataObjectController.Init()
+   в NewPlatform.Flexberry.ORM.ODataService.Controllers.DataObjectController.Get()
+ERROR 2019-12-05 15:31:12 [33] Property name does not exist: Street
+System.Exception: Property name does not exist: Street
+   в NewPlatform.Flexberry.ORM.ODataService.Controllers.DataObjectController.GetPropertyName(SelectItem item)
+   в NewPlatform.Flexberry.ORM.ODataService.Controllers.DataObjectController.GetPropertiesForDynamicView(ExpandedNavigationSelectItem parent, IEnumerable`1 selectedItems)
+   в NewPlatform.Flexberry.ORM.ODataService.Controllers.DataObjectController.CreateDynamicView()
+   в NewPlatform.Flexberry.ORM.ODataService.Controllers.DataObjectController.Init()
+   в NewPlatform.Flexberry.ORM.ODataService.Controllers.DataObjectController.Get()
+ERROR 2019-12-05 16:14:10 [27] Error on executing:
+SELECT 
+Address,
+Date,
+Iindex,
+IsAppointed,
+IsCompleted,
+RealDuration,
+Team,
+STORMMainObjectKey,
+STORMJoinedMasterKey0,
+STORMJoinedMasterKey1,
+STORMNETDATAOBJECTTYPE
+FROM (
+SELECT 
+Request0.Address as Address,
+Request0.Date as Date,
+Request0.Iindex as Iindex,
+Request0.IsAppointed as IsAppointed,
+Request0.IsCompleted as IsCompleted,
+Request0.RealDuration as RealDuration,
+Request0.Team as Team,
+Request0.primaryKey as STORMMainObjectKey,
+Request0.Address as STORMJoinedMasterKey0,
+Request0.Team as STORMJoinedMasterKey1, cast(0 as numeric) as STORMNETDATAOBJECTTYPE
+FROM 
+Request Request0 
+) STORMGENERATEDQUERY
+WHERE ( STORMMainObjectKey = '{129b7901-31e5-4706-b7e4-5571abdcd401}')
+ICSSoft.STORMNET.Business.ExecutingQueryException: Error on executing:
+SELECT 
+Address,
+Date,
+Iindex,
+IsAppointed,
+IsCompleted,
+RealDuration,
+Team,
+STORMMainObjectKey,
+STORMJoinedMasterKey0,
+STORMJoinedMasterKey1,
+STORMNETDATAOBJECTTYPE
+FROM (
+SELECT 
+Request0.Address as Address,
+Request0.Date as Date,
+Request0.Iindex as Iindex,
+Request0.IsAppointed as IsAppointed,
+Request0.IsCompleted as IsCompleted,
+Request0.RealDuration as RealDuration,
+Request0.Team as Team,
+Request0.primaryKey as STORMMainObjectKey,
+Request0.Address as STORMJoinedMasterKey0,
+Request0.Team as STORMJoinedMasterKey1, cast(0 as numeric) as STORMNETDATAOBJECTTYPE
+FROM 
+Request Request0 
+) STORMGENERATEDQUERY
+WHERE ( STORMMainObjectKey = '{129b7901-31e5-4706-b7e4-5571abdcd401}') ---> Npgsql.NpgsqlException: 42703: столбец request0.iindex не существует
+   в Npgsql.NpgsqlConnector.DoReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage, Boolean isPrependedMessage)
+   в Npgsql.NpgsqlConnector.ReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   в Npgsql.NpgsqlCommand.Execute(CommandBehavior behavior)
+   в Npgsql.NpgsqlCommand.ExecuteDbDataReaderInternal(CommandBehavior behavior)
+   в Npgsql.NpgsqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   в System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   в ICSSoft.STORMNET.Business.SQLDataService.ReadFirst(String query, Object& state, Int32 loadingBufferSize)
+   --- Конец трассировки внутреннего стека исключений ---
+   в ICSSoft.STORMNET.Business.SQLDataService.ReadFirst(String query, Object& state, Int32 loadingBufferSize)
+   в ICSSoft.STORMNET.Business.PostgresDataService.ReadFirst(String query, Object& state, Int32 loadingBufferSize)
+   в ICSSoft.STORMNET.Business.SQLDataService.LoadObjects(LoadingCustomizationStruct customizationStruct, Object& State, DataObjectCache DataObjectCache)
+   в ICSSoft.STORMNET.Business.SQLDataService.LoadObjects(LoadingCustomizationStruct customizationStruct, DataObjectCache DataObjectCache)
+   в ICSSoft.STORMNET.Business.SQLDataService.LoadObjects(LoadingCustomizationStruct customizationStruct)
+   в NewPlatform.Flexberry.ORM.ODataService.Controllers.DataObjectController.ReturnDataObject(Type objType, Object keyValue)
+   в NewPlatform.Flexberry.ORM.ODataService.Controllers.DataObjectController.GetDataObjectByEdmEntity(EdmEntityObject edmEntity, Object key, List`1 dObjs, Boolean endObject)
+   в NewPlatform.Flexberry.ORM.ODataService.Controllers.DataObjectController.UpdateObject(EdmEntityObject edmEntity, Object key)
+   в NewPlatform.Flexberry.ORM.ODataService.Controllers.DataObjectController.Post(EdmEntityObject edmEntity)
+ERROR 2019-12-05 16:59:43 [63] Error on executing:
+SELECT 
+__PrimaryKey,
+Address,
+"Address.__PrimaryKey",
+"Address.Build",
+"Address.Flat",
+"Address.Floor",
+"Address.House",
+"Address.Street",
+Date,
+Iindex,
+IsAppointed,
+IsCompleted,
+RealDuration,
+Team,
+"Team.__PrimaryKey",
+"Team.Index",
+STORMMainObjectKey,
+STORMJoinedMasterKey0,
+STORMJoinedMasterKey1,
+STORMJoinedMasterKey2,
+STORMJoinedMasterKey3,
+STORMNETDATAOBJECTTYPE
+
+FROM (
+SELECT 
+__PrimaryKey,
+Address,
+"Address.__PrimaryKey",
+"Address.Build",
+"Address.Flat",
+"Address.Floor",
+"Address.House",
+"Address.Street",
+Date,
+Iindex,
+IsAppointed,
+IsCompleted,
+RealDuration,
+Team,
+"Team.__PrimaryKey",
+"Team.Index",
+STORMMainObjectKey,
+STORMJoinedMasterKey0,
+STORMJoinedMasterKey1,
+STORMJoinedMasterKey2,
+STORMJoinedMasterKey3,
+STORMNETDATAOBJECTTYPE
+,
+row_number() over (ORDER BY STORMMainObjectKey ) as "RowNumber"
+FROM (
+SELECT 
+Request0.primaryKey as __PrimaryKey,
+Request0.Address as Address,
+RequestAddress0.primaryKey as "Address.__PrimaryKey",
+RequestAddress0.Build as "Address.Build",
+RequestAddress0.Flat as "Address.Flat",
+RequestAddress0.Floor as "Address.Floor",
+RequestAddress0.House as "Address.House",
+RequestAddress0.Street as "Address.Street",
+Request0.Date as Date,
+Request0.Iindex as Iindex,
+Request0.IsAppointed as IsAppointed,
+Request0.IsCompleted as IsCompleted,
+Request0.RealDuration as RealDuration,
+Request0.Team as Team,
+RequestTeam0.primaryKey as "Team.__PrimaryKey",
+RequestTeam0.Index as "Team.Index",
+Request0.primaryKey as STORMMainObjectKey,
+RequestAddress0.primaryKey as STORMJoinedMasterKey0,
+RequestTeam0.primaryKey as STORMJoinedMasterKey1,
+Request0.Address as STORMJoinedMasterKey2,
+Request0.Team as STORMJoinedMasterKey3, cast(0 as numeric) as STORMNETDATAOBJECTTYPE
+FROM 
+((Request Request0 
+	 LEFT JOIN  Address RequestAddress0
+	 ON Request0.Address = RequestAddress0.primaryKey)
+	 LEFT JOIN  Team RequestTeam0
+	 ON Request0.Team = RequestTeam0.primaryKey)
+) STORMGENERATEDQUERY) rn
+
+OFFSET 0 LIMIT 5
+ICSSoft.STORMNET.Business.ExecutingQueryException: Error on executing:
+SELECT 
+__PrimaryKey,
+Address,
+"Address.__PrimaryKey",
+"Address.Build",
+"Address.Flat",
+"Address.Floor",
+"Address.House",
+"Address.Street",
+Date,
+Iindex,
+IsAppointed,
+IsCompleted,
+RealDuration,
+Team,
+"Team.__PrimaryKey",
+"Team.Index",
+STORMMainObjectKey,
+STORMJoinedMasterKey0,
+STORMJoinedMasterKey1,
+STORMJoinedMasterKey2,
+STORMJoinedMasterKey3,
+STORMNETDATAOBJECTTYPE
+
+FROM (
+SELECT 
+__PrimaryKey,
+Address,
+"Address.__PrimaryKey",
+"Address.Build",
+"Address.Flat",
+"Address.Floor",
+"Address.House",
+"Address.Street",
+Date,
+Iindex,
+IsAppointed,
+IsCompleted,
+RealDuration,
+Team,
+"Team.__PrimaryKey",
+"Team.Index",
+STORMMainObjectKey,
+STORMJoinedMasterKey0,
+STORMJoinedMasterKey1,
+STORMJoinedMasterKey2,
+STORMJoinedMasterKey3,
+STORMNETDATAOBJECTTYPE
+,
+row_number() over (ORDER BY STORMMainObjectKey ) as "RowNumber"
+FROM (
+SELECT 
+Request0.primaryKey as __PrimaryKey,
+Request0.Address as Address,
+RequestAddress0.primaryKey as "Address.__PrimaryKey",
+RequestAddress0.Build as "Address.Build",
+RequestAddress0.Flat as "Address.Flat",
+RequestAddress0.Floor as "Address.Floor",
+RequestAddress0.House as "Address.House",
+RequestAddress0.Street as "Address.Street",
+Request0.Date as Date,
+Request0.Iindex as Iindex,
+Request0.IsAppointed as IsAppointed,
+Request0.IsCompleted as IsCompleted,
+Request0.RealDuration as RealDuration,
+Request0.Team as Team,
+RequestTeam0.primaryKey as "Team.__PrimaryKey",
+RequestTeam0.Index as "Team.Index",
+Request0.primaryKey as STORMMainObjectKey,
+RequestAddress0.primaryKey as STORMJoinedMasterKey0,
+RequestTeam0.primaryKey as STORMJoinedMasterKey1,
+Request0.Address as STORMJoinedMasterKey2,
+Request0.Team as STORMJoinedMasterKey3, cast(0 as numeric) as STORMNETDATAOBJECTTYPE
+FROM 
+((Request Request0 
+	 LEFT JOIN  Address RequestAddress0
+	 ON Request0.Address = RequestAddress0.primaryKey)
+	 LEFT JOIN  Team RequestTeam0
+	 ON Request0.Team = RequestTeam0.primaryKey)
+) STORMGENERATEDQUERY) rn
+
+OFFSET 0 LIMIT 5 ---> Npgsql.NpgsqlException: 42703: столбец request0.iindex не существует
+   в Npgsql.NpgsqlConnector.DoReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage, Boolean isPrependedMessage)
+   в Npgsql.NpgsqlConnector.ReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   в Npgsql.NpgsqlCommand.Execute(CommandBehavior behavior)
+   в Npgsql.NpgsqlCommand.ExecuteDbDataReaderInternal(CommandBehavior behavior)
+   в Npgsql.NpgsqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   в System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   в ICSSoft.STORMNET.Business.SQLDataService.ReadFirst(String query, Object& state, Int32 loadingBufferSize)
+   --- Конец трассировки внутреннего стека исключений ---
+   в ICSSoft.STORMNET.Business.SQLDataService.ReadFirst(String query, Object& state, Int32 loadingBufferSize)
+   в ICSSoft.STORMNET.Business.PostgresDataService.ReadFirst(String query, Object& state, Int32 loadingBufferSize)
+   в ICSSoft.STORMNET.Business.SQLDataService.LoadObjects(LoadingCustomizationStruct customizationStruct, Object& State, DataObjectCache DataObjectCache)
+   в ICSSoft.STORMNET.Business.SQLDataService.LoadObjects(LoadingCustomizationStruct customizationStruct, DataObjectCache DataObjectCache)
+   в ICSSoft.STORMNET.Business.SQLDataService.LoadObjects(LoadingCustomizationStruct customizationStruct)
+   в NewPlatform.Flexberry.ORM.ODataService.Controllers.DataObjectController.LoadObjects(LoadingCustomizationStruct lcs, Int32& count, Boolean callExecuteCallbackBeforeGet, Boolean callGetObjectsCount, Boolean callExecuteCallbackAfterGet)
+   в NewPlatform.Flexberry.ORM.ODataService.Controllers.DataObjectController.ExecuteExpression()
+   в NewPlatform.Flexberry.ORM.ODataService.Controllers.DataObjectController.Get()
+ERROR 2019-12-05 16:59:52 [75] Error on executing:
+SELECT 
+__PrimaryKey,
+Address,
+"Address.__PrimaryKey",
+"Address.Build",
+"Address.Flat",
+"Address.Floor",
+"Address.House",
+"Address.Street",
+Date,
+Iindex,
+IsAppointed,
+IsCompleted,
+RealDuration,
+Team,
+"Team.__PrimaryKey",
+"Team.Index",
+STORMMainObjectKey,
+STORMJoinedMasterKey0,
+STORMJoinedMasterKey1,
+STORMJoinedMasterKey2,
+STORMJoinedMasterKey3,
+STORMNETDATAOBJECTTYPE
+
+FROM (
+SELECT 
+__PrimaryKey,
+Address,
+"Address.__PrimaryKey",
+"Address.Build",
+"Address.Flat",
+"Address.Floor",
+"Address.House",
+"Address.Street",
+Date,
+Iindex,
+IsAppointed,
+IsCompleted,
+RealDuration,
+Team,
+"Team.__PrimaryKey",
+"Team.Index",
+STORMMainObjectKey,
+STORMJoinedMasterKey0,
+STORMJoinedMasterKey1,
+STORMJoinedMasterKey2,
+STORMJoinedMasterKey3,
+STORMNETDATAOBJECTTYPE
+,
+row_number() over (ORDER BY STORMMainObjectKey ) as "RowNumber"
+FROM (
+SELECT 
+Request0.primaryKey as __PrimaryKey,
+Request0.Address as Address,
+RequestAddress0.primaryKey as "Address.__PrimaryKey",
+RequestAddress0.Build as "Address.Build",
+RequestAddress0.Flat as "Address.Flat",
+RequestAddress0.Floor as "Address.Floor",
+RequestAddress0.House as "Address.House",
+RequestAddress0.Street as "Address.Street",
+Request0.Date as Date,
+Request0.Iindex as Iindex,
+Request0.IsAppointed as IsAppointed,
+Request0.IsCompleted as IsCompleted,
+Request0.RealDuration as RealDuration,
+Request0.Team as Team,
+RequestTeam0.primaryKey as "Team.__PrimaryKey",
+RequestTeam0.Index as "Team.Index",
+Request0.primaryKey as STORMMainObjectKey,
+RequestAddress0.primaryKey as STORMJoinedMasterKey0,
+RequestTeam0.primaryKey as STORMJoinedMasterKey1,
+Request0.Address as STORMJoinedMasterKey2,
+Request0.Team as STORMJoinedMasterKey3, cast(0 as numeric) as STORMNETDATAOBJECTTYPE
+FROM 
+((Request Request0 
+	 LEFT JOIN  Address RequestAddress0
+	 ON Request0.Address = RequestAddress0.primaryKey)
+	 LEFT JOIN  Team RequestTeam0
+	 ON Request0.Team = RequestTeam0.primaryKey)
+) STORMGENERATEDQUERY) rn
+
+OFFSET 0 LIMIT 5
+ICSSoft.STORMNET.Business.ExecutingQueryException: Error on executing:
+SELECT 
+__PrimaryKey,
+Address,
+"Address.__PrimaryKey",
+"Address.Build",
+"Address.Flat",
+"Address.Floor",
+"Address.House",
+"Address.Street",
+Date,
+Iindex,
+IsAppointed,
+IsCompleted,
+RealDuration,
+Team,
+"Team.__PrimaryKey",
+"Team.Index",
+STORMMainObjectKey,
+STORMJoinedMasterKey0,
+STORMJoinedMasterKey1,
+STORMJoinedMasterKey2,
+STORMJoinedMasterKey3,
+STORMNETDATAOBJECTTYPE
+
+FROM (
+SELECT 
+__PrimaryKey,
+Address,
+"Address.__PrimaryKey",
+"Address.Build",
+"Address.Flat",
+"Address.Floor",
+"Address.House",
+"Address.Street",
+Date,
+Iindex,
+IsAppointed,
+IsCompleted,
+RealDuration,
+Team,
+"Team.__PrimaryKey",
+"Team.Index",
+STORMMainObjectKey,
+STORMJoinedMasterKey0,
+STORMJoinedMasterKey1,
+STORMJoinedMasterKey2,
+STORMJoinedMasterKey3,
+STORMNETDATAOBJECTTYPE
+,
+row_number() over (ORDER BY STORMMainObjectKey ) as "RowNumber"
+FROM (
+SELECT 
+Request0.primaryKey as __PrimaryKey,
+Request0.Address as Address,
+RequestAddress0.primaryKey as "Address.__PrimaryKey",
+RequestAddress0.Build as "Address.Build",
+RequestAddress0.Flat as "Address.Flat",
+RequestAddress0.Floor as "Address.Floor",
+RequestAddress0.House as "Address.House",
+RequestAddress0.Street as "Address.Street",
+Request0.Date as Date,
+Request0.Iindex as Iindex,
+Request0.IsAppointed as IsAppointed,
+Request0.IsCompleted as IsCompleted,
+Request0.RealDuration as RealDuration,
+Request0.Team as Team,
+RequestTeam0.primaryKey as "Team.__PrimaryKey",
+RequestTeam0.Index as "Team.Index",
+Request0.primaryKey as STORMMainObjectKey,
+RequestAddress0.primaryKey as STORMJoinedMasterKey0,
+RequestTeam0.primaryKey as STORMJoinedMasterKey1,
+Request0.Address as STORMJoinedMasterKey2,
+Request0.Team as STORMJoinedMasterKey3, cast(0 as numeric) as STORMNETDATAOBJECTTYPE
+FROM 
+((Request Request0 
+	 LEFT JOIN  Address RequestAddress0
+	 ON Request0.Address = RequestAddress0.primaryKey)
+	 LEFT JOIN  Team RequestTeam0
+	 ON Request0.Team = RequestTeam0.primaryKey)
+) STORMGENERATEDQUERY) rn
+
+OFFSET 0 LIMIT 5 ---> Npgsql.NpgsqlException: 42703: столбец request0.iindex не существует
+   в Npgsql.NpgsqlConnector.DoReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage, Boolean isPrependedMessage)
+   в Npgsql.NpgsqlConnector.ReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   в Npgsql.NpgsqlCommand.Execute(CommandBehavior behavior)
+   в Npgsql.NpgsqlCommand.ExecuteDbDataReaderInternal(CommandBehavior behavior)
+   в Npgsql.NpgsqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   в System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   в ICSSoft.STORMNET.Business.SQLDataService.ReadFirst(String query, Object& state, Int32 loadingBufferSize)
+   --- Конец трассировки внутреннего стека исключений ---
+   в ICSSoft.STORMNET.Business.SQLDataService.ReadFirst(String query, Object& state, Int32 loadingBufferSize)
+   в ICSSoft.STORMNET.Business.PostgresDataService.ReadFirst(String query, Object& state, Int32 loadingBufferSize)
+   в ICSSoft.STORMNET.Business.SQLDataService.LoadObjects(LoadingCustomizationStruct customizationStruct, Object& State, DataObjectCache DataObjectCache)
+   в ICSSoft.STORMNET.Business.SQLDataService.LoadObjects(LoadingCustomizationStruct customizationStruct, DataObjectCache DataObjectCache)
+   в ICSSoft.STORMNET.Business.SQLDataService.LoadObjects(LoadingCustomizationStruct customizationStruct)
+   в NewPlatform.Flexberry.ORM.ODataService.Controllers.DataObjectController.LoadObjects(LoadingCustomizationStruct lcs, Int32& count, Boolean callExecuteCallbackBeforeGet, Boolean callGetObjectsCount, Boolean callExecuteCallbackAfterGet)
+   в NewPlatform.Flexberry.ORM.ODataService.Controllers.DataObjectController.ExecuteExpression()
+   в NewPlatform.Flexberry.ORM.ODataService.Controllers.DataObjectController.Get()
+ERROR 2019-12-05 16:59:54 [75] Error on executing:
+SELECT 
+__PrimaryKey,
+Address,
+"Address.__PrimaryKey",
+"Address.Build",
+"Address.Flat",
+"Address.Floor",
+"Address.House",
+"Address.Street",
+Date,
+Iindex,
+IsAppointed,
+IsCompleted,
+RealDuration,
+Team,
+"Team.__PrimaryKey",
+"Team.Index",
+STORMMainObjectKey,
+STORMJoinedMasterKey0,
+STORMJoinedMasterKey1,
+STORMJoinedMasterKey2,
+STORMJoinedMasterKey3,
+STORMNETDATAOBJECTTYPE
+
+FROM (
+SELECT 
+__PrimaryKey,
+Address,
+"Address.__PrimaryKey",
+"Address.Build",
+"Address.Flat",
+"Address.Floor",
+"Address.House",
+"Address.Street",
+Date,
+Iindex,
+IsAppointed,
+IsCompleted,
+RealDuration,
+Team,
+"Team.__PrimaryKey",
+"Team.Index",
+STORMMainObjectKey,
+STORMJoinedMasterKey0,
+STORMJoinedMasterKey1,
+STORMJoinedMasterKey2,
+STORMJoinedMasterKey3,
+STORMNETDATAOBJECTTYPE
+,
+row_number() over (ORDER BY STORMMainObjectKey ) as "RowNumber"
+FROM (
+SELECT 
+Request0.primaryKey as __PrimaryKey,
+Request0.Address as Address,
+RequestAddress0.primaryKey as "Address.__PrimaryKey",
+RequestAddress0.Build as "Address.Build",
+RequestAddress0.Flat as "Address.Flat",
+RequestAddress0.Floor as "Address.Floor",
+RequestAddress0.House as "Address.House",
+RequestAddress0.Street as "Address.Street",
+Request0.Date as Date,
+Request0.Iindex as Iindex,
+Request0.IsAppointed as IsAppointed,
+Request0.IsCompleted as IsCompleted,
+Request0.RealDuration as RealDuration,
+Request0.Team as Team,
+RequestTeam0.primaryKey as "Team.__PrimaryKey",
+RequestTeam0.Index as "Team.Index",
+Request0.primaryKey as STORMMainObjectKey,
+RequestAddress0.primaryKey as STORMJoinedMasterKey0,
+RequestTeam0.primaryKey as STORMJoinedMasterKey1,
+Request0.Address as STORMJoinedMasterKey2,
+Request0.Team as STORMJoinedMasterKey3, cast(0 as numeric) as STORMNETDATAOBJECTTYPE
+FROM 
+((Request Request0 
+	 LEFT JOIN  Address RequestAddress0
+	 ON Request0.Address = RequestAddress0.primaryKey)
+	 LEFT JOIN  Team RequestTeam0
+	 ON Request0.Team = RequestTeam0.primaryKey)
+) STORMGENERATEDQUERY) rn
+
+OFFSET 0 LIMIT 5
+ICSSoft.STORMNET.Business.ExecutingQueryException: Error on executing:
+SELECT 
+__PrimaryKey,
+Address,
+"Address.__PrimaryKey",
+"Address.Build",
+"Address.Flat",
+"Address.Floor",
+"Address.House",
+"Address.Street",
+Date,
+Iindex,
+IsAppointed,
+IsCompleted,
+RealDuration,
+Team,
+"Team.__PrimaryKey",
+"Team.Index",
+STORMMainObjectKey,
+STORMJoinedMasterKey0,
+STORMJoinedMasterKey1,
+STORMJoinedMasterKey2,
+STORMJoinedMasterKey3,
+STORMNETDATAOBJECTTYPE
+
+FROM (
+SELECT 
+__PrimaryKey,
+Address,
+"Address.__PrimaryKey",
+"Address.Build",
+"Address.Flat",
+"Address.Floor",
+"Address.House",
+"Address.Street",
+Date,
+Iindex,
+IsAppointed,
+IsCompleted,
+RealDuration,
+Team,
+"Team.__PrimaryKey",
+"Team.Index",
+STORMMainObjectKey,
+STORMJoinedMasterKey0,
+STORMJoinedMasterKey1,
+STORMJoinedMasterKey2,
+STORMJoinedMasterKey3,
+STORMNETDATAOBJECTTYPE
+,
+row_number() over (ORDER BY STORMMainObjectKey ) as "RowNumber"
+FROM (
+SELECT 
+Request0.primaryKey as __PrimaryKey,
+Request0.Address as Address,
+RequestAddress0.primaryKey as "Address.__PrimaryKey",
+RequestAddress0.Build as "Address.Build",
+RequestAddress0.Flat as "Address.Flat",
+RequestAddress0.Floor as "Address.Floor",
+RequestAddress0.House as "Address.House",
+RequestAddress0.Street as "Address.Street",
+Request0.Date as Date,
+Request0.Iindex as Iindex,
+Request0.IsAppointed as IsAppointed,
+Request0.IsCompleted as IsCompleted,
+Request0.RealDuration as RealDuration,
+Request0.Team as Team,
+RequestTeam0.primaryKey as "Team.__PrimaryKey",
+RequestTeam0.Index as "Team.Index",
+Request0.primaryKey as STORMMainObjectKey,
+RequestAddress0.primaryKey as STORMJoinedMasterKey0,
+RequestTeam0.primaryKey as STORMJoinedMasterKey1,
+Request0.Address as STORMJoinedMasterKey2,
+Request0.Team as STORMJoinedMasterKey3, cast(0 as numeric) as STORMNETDATAOBJECTTYPE
+FROM 
+((Request Request0 
+	 LEFT JOIN  Address RequestAddress0
+	 ON Request0.Address = RequestAddress0.primaryKey)
+	 LEFT JOIN  Team RequestTeam0
+	 ON Request0.Team = RequestTeam0.primaryKey)
+) STORMGENERATEDQUERY) rn
+
+OFFSET 0 LIMIT 5 ---> Npgsql.NpgsqlException: 42703: столбец request0.iindex не существует
+   в Npgsql.NpgsqlConnector.DoReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage, Boolean isPrependedMessage)
+   в Npgsql.NpgsqlConnector.ReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   в Npgsql.NpgsqlCommand.Execute(CommandBehavior behavior)
+   в Npgsql.NpgsqlCommand.ExecuteDbDataReaderInternal(CommandBehavior behavior)
+   в Npgsql.NpgsqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   в System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   в ICSSoft.STORMNET.Business.SQLDataService.ReadFirst(String query, Object& state, Int32 loadingBufferSize)
+   --- Конец трассировки внутреннего стека исключений ---
+   в ICSSoft.STORMNET.Business.SQLDataService.ReadFirst(String query, Object& state, Int32 loadingBufferSize)
+   в ICSSoft.STORMNET.Business.PostgresDataService.ReadFirst(String query, Object& state, Int32 loadingBufferSize)
+   в ICSSoft.STORMNET.Business.SQLDataService.LoadObjects(LoadingCustomizationStruct customizationStruct, Object& State, DataObjectCache DataObjectCache)
+   в ICSSoft.STORMNET.Business.SQLDataService.LoadObjects(LoadingCustomizationStruct customizationStruct, DataObjectCache DataObjectCache)
+   в ICSSoft.STORMNET.Business.SQLDataService.LoadObjects(LoadingCustomizationStruct customizationStruct)
+   в NewPlatform.Flexberry.ORM.ODataService.Controllers.DataObjectController.LoadObjects(LoadingCustomizationStruct lcs, Int32& count, Boolean callExecuteCallbackBeforeGet, Boolean callGetObjectsCount, Boolean callExecuteCallbackAfterGet)
+   в NewPlatform.Flexberry.ORM.ODataService.Controllers.DataObjectController.ExecuteExpression()
+   в NewPlatform.Flexberry.ORM.ODataService.Controllers.DataObjectController.Get()

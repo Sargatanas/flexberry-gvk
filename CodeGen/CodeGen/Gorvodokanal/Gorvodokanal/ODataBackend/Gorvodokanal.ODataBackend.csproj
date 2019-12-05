@@ -7,7 +7,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{4423E2EC-FDFA-4E55-ABE9-8D2AB848BCB0}</ProjectGuid>
+    <ProjectGuid>{BB6CA3C5-C6D2-4871-B99D-384C125D86DB}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -153,7 +153,7 @@
       <HintPath>..\packages\NewPlatform.Flexberry.LockService.2.0.0\lib\net45\NewPlatform.Flexberry.LockService.dll</HintPath>
     </Reference>
     <Reference Include="UserSettingsService">
-      <HintPath>..\packages\NewPlatform.Flexberry.UserSettingsService.3.0.0\lib\net45\UserSettingsService.dll</HintPath>
+      <HintPath>..\packages\NewPlatform.Flexberry.UserSettingsService.3.1.0-beta01\lib\net45\UserSettingsService.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.Http.WebHost">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
@@ -213,7 +213,7 @@
       <HintPath>System.EnterpriseServices</HintPath>
     </Reference>
     <ProjectReference Include="..\Objects\Gorvodokanal.Objects.csproj">
-      <Project>{d380894a-2027-4c8b-b407-0ab006a8d8d1}</Project>
+      <Project>{765ea8ab-d31b-4392-9440-1fa6a18960d3}</Project>
       <Name>Gorvodokanal.Objects</Name>
     </ProjectReference>
   </ItemGroup>

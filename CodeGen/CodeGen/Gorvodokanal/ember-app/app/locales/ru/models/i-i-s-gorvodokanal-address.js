@@ -2,7 +2,7 @@ export default {
   projections: {
     AddressE: {
       index: {
-        __caption__: 'Индекс адреса'
+        __caption__: 'Код адреса'
       },
       street: {
         __caption__: 'Улица'
@@ -16,13 +16,13 @@ export default {
       floor: {
         __caption__: 'Этаж'
       },
-      flat: {
+      apartment: {
         __caption__: 'Квартира'
       }
     },
     AddressL: {
       index: {
-        __caption__: 'Индекс адреса'
+        __caption__: 'Код адреса'
       },
       street: {
         __caption__: 'Улица'
@@ -36,7 +36,7 @@ export default {
       floor: {
         __caption__: 'Этаж'
       },
-      flat: {
+      apartment: {
         __caption__: 'Квартира'
       }
     }

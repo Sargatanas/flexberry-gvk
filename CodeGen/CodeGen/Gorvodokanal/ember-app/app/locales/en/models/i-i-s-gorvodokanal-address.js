@@ -16,8 +16,8 @@ export default {
       floor: {
         __caption__: 'floor'
       },
-      flat: {
-        __caption__: 'flat'
+      apartment: {
+        __caption__: 'apartment'
       }
     },
     AddressL: {
@@ -36,8 +36,8 @@ export default {
       floor: {
         __caption__: 'floor'
       },
-      flat: {
-        __caption__: 'flat'
+      apartment: {
+        __caption__: 'apartment'
       }
     }
   }

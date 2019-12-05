@@ -9,19 +9,19 @@
             Task.
             </summary>
         </member>
-        <member name="P:IIS.Gorvodokanal.Task.code">
+        <member name="P:IIS.Gorvodokanal.Task.Code">
             <summary>
-            code.
+            Code.
             </summary>
         </member>
-        <member name="P:IIS.Gorvodokanal.Task.content">
+        <member name="P:IIS.Gorvodokanal.Task.Content">
             <summary>
-            content.
+            Content.
             </summary>
         </member>
-        <member name="P:IIS.Gorvodokanal.Task.planeDuration">
+        <member name="P:IIS.Gorvodokanal.Task.PlaneDuration">
             <summary>
-            planeDuration.
+            PlaneDuration.
             </summary>
         </member>
         <member name="P:IIS.Gorvodokanal.Task.Request">
@@ -60,29 +60,29 @@
             Request.
             </summary>
         </member>
-        <member name="P:IIS.Gorvodokanal.Request.index">
+        <member name="P:IIS.Gorvodokanal.Request.Iindex">
             <summary>
-            index.
+            Iindex.
             </summary>
         </member>
-        <member name="P:IIS.Gorvodokanal.Request.isAppointed">
+        <member name="P:IIS.Gorvodokanal.Request.IsAppointed">
             <summary>
-            isAppointed.
+            IsAppointed.
             </summary>
         </member>
-        <member name="P:IIS.Gorvodokanal.Request.date">
+        <member name="P:IIS.Gorvodokanal.Request.Date">
             <summary>
-            date.
+            Date.
             </summary>
         </member>
-        <member name="P:IIS.Gorvodokanal.Request.isCompleted">
+        <member name="P:IIS.Gorvodokanal.Request.IsCompleted">
             <summary>
-            isCompleted.
+            IsCompleted.
             </summary>
         </member>
-        <member name="P:IIS.Gorvodokanal.Request.realDuration">
+        <member name="P:IIS.Gorvodokanal.Request.RealDuration">
             <summary>
-            realDuration.
+            RealDuration.
             </summary>
         </member>
         <member name="P:IIS.Gorvodokanal.Request.Team">
@@ -135,34 +135,34 @@
             Address.
             </summary>
         </member>
-        <member name="P:IIS.Gorvodokanal.Address.index">
+        <member name="P:IIS.Gorvodokanal.Address.Index">
             <summary>
-            index.
+            Index.
             </summary>
         </member>
-        <member name="P:IIS.Gorvodokanal.Address.street">
+        <member name="P:IIS.Gorvodokanal.Address.Street">
             <summary>
-            street.
+            Street.
             </summary>
         </member>
-        <member name="P:IIS.Gorvodokanal.Address.house">
+        <member name="P:IIS.Gorvodokanal.Address.House">
             <summary>
-            house.
+            House.
             </summary>
         </member>
-        <member name="P:IIS.Gorvodokanal.Address.build">
+        <member name="P:IIS.Gorvodokanal.Address.Build">
             <summary>
-            build.
+            Build.
             </summary>
         </member>
-        <member name="P:IIS.Gorvodokanal.Address.floor">
+        <member name="P:IIS.Gorvodokanal.Address.Floor">
             <summary>
-            floor.
+            Floor.
             </summary>
         </member>
-        <member name="P:IIS.Gorvodokanal.Address.flat">
+        <member name="P:IIS.Gorvodokanal.Address.Apartment">
             <summary>
-            flat.
+            Apartment.
             </summary>
         </member>
         <member name="T:IIS.Gorvodokanal.Address.Views">
@@ -185,19 +185,19 @@
             Team.
             </summary>
         </member>
-        <member name="P:IIS.Gorvodokanal.Team.index">
+        <member name="P:IIS.Gorvodokanal.Team.Index">
             <summary>
-            index.
+            Index.
             </summary>
         </member>
-        <member name="P:IIS.Gorvodokanal.Team.shiftStart">
+        <member name="P:IIS.Gorvodokanal.Team.ShiftStart">
             <summary>
-            shiftStart.
+            ShiftStart.
             </summary>
         </member>
-        <member name="P:IIS.Gorvodokanal.Team.shiftEnd">
+        <member name="P:IIS.Gorvodokanal.Team.ShiftEnd">
             <summary>
-            shiftEnd.
+            ShiftEnd.
             </summary>
         </member>
         <member name="T:IIS.Gorvodokanal.Team.Views">

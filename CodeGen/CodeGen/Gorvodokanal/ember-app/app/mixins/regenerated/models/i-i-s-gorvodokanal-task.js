@@ -30,8 +30,8 @@ export function defineNamespace(modelClass) {
 
 export let defineProjections = function (modelClass) {
   modelClass.defineProjection('TaskE', 'i-i-s-gorvodokanal-task', {
-    code: Projection.attr('Code', { index: 0 }),
-    content: Projection.attr('Content', { index: 1 }),
-    planeDuration: Projection.attr('Plane duration', { index: 2 })
+    code: Projection.attr('Код задачи', { index: 0 }),
+    content: Projection.attr('Детали задачи', { index: 1 }),
+    planeDuration: Projection.attr('Примерная длительность работ', { index: 2 })
   });
 };

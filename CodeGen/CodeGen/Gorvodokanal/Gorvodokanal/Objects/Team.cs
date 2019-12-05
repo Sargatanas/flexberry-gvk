@@ -29,21 +29,21 @@ namespace IIS.Gorvodokanal
     [AutoAltered()]
     [AccessType(ICSSoft.STORMNET.AccessType.none)]
     [View("TeamE", new string[] {
-            "index as \'Индекс бригады\'",
-            "shiftStart as \'Начало смены\'",
-            "shiftEnd as \'Конец смены\'"})]
+            "Index as \'Номер бригады\'",
+            "ShiftStart as \'Начало смены\'",
+            "ShiftEnd as \'Конец смены\'"})]
     [View("TeamL", new string[] {
-            "index as \'Индекс бригады\'",
-            "shiftStart as \'Начало смены\'",
-            "shiftEnd as \'Конец смены\'"})]
+            "Index as \'Номер бригады\'",
+            "ShiftStart as \'Начало смены\'",
+            "ShiftEnd as \'Конец смены\'"})]
     public class Team : ICSSoft.STORMNET.DataObject
     {
         
-        private int findex;
+        private int fIndex;
         
-        private System.DateTime fshiftStart;
+        private System.DateTime fShiftStart;
         
-        private System.DateTime fshiftEnd;
+        private System.DateTime fShiftEnd;
         
         // *** Start programmer edit section *** (Team CustomMembers)
 
@@ -51,98 +51,96 @@ namespace IIS.Gorvodokanal
 
         
         /// <summary>
-        /// index.
+        /// Index.
         /// </summary>
-        // *** Start programmer edit section *** (Team.index CustomAttributes)
+        // *** Start programmer edit section *** (Team.Index CustomAttributes)
 
-        // *** End programmer edit section *** (Team.index CustomAttributes)
+        // *** End programmer edit section *** (Team.Index CustomAttributes)
         [NotNull()]
-        public virtual int index
+        public virtual int Index
         {
             get
             {
-                // *** Start programmer edit section *** (Team.index Get start)
+                // *** Start programmer edit section *** (Team.Index Get start)
 
-                // *** End programmer edit section *** (Team.index Get start)
-                int result = this.findex;
-                // *** Start programmer edit section *** (Team.index Get end)
+                // *** End programmer edit section *** (Team.Index Get start)
+                int result = this.fIndex;
+                // *** Start programmer edit section *** (Team.Index Get end)
 
-                // *** End programmer edit section *** (Team.index Get end)
+                // *** End programmer edit section *** (Team.Index Get end)
                 return result;
             }
             set
             {
-                // *** Start programmer edit section *** (Team.index Set start)
+                // *** Start programmer edit section *** (Team.Index Set start)
 
-                // *** End programmer edit section *** (Team.index Set start)
-                this.findex = value;
-                // *** Start programmer edit section *** (Team.index Set end)
+                // *** End programmer edit section *** (Team.Index Set start)
+                this.fIndex = value;
+                // *** Start programmer edit section *** (Team.Index Set end)
 
-                // *** End programmer edit section *** (Team.index Set end)
+                // *** End programmer edit section *** (Team.Index Set end)
             }
         }
         
         /// <summary>
-        /// shiftStart.
+        /// ShiftStart.
         /// </summary>
-        // *** Start programmer edit section *** (Team.shiftStart CustomAttributes)
+        // *** Start programmer edit section *** (Team.ShiftStart CustomAttributes)
 
-        // *** End programmer edit section *** (Team.shiftStart CustomAttributes)
-        [NotNull()]
-        public virtual System.DateTime shiftStart
+        // *** End programmer edit section *** (Team.ShiftStart CustomAttributes)
+        public virtual System.DateTime ShiftStart
         {
             get
             {
-                // *** Start programmer edit section *** (Team.shiftStart Get start)
+                // *** Start programmer edit section *** (Team.ShiftStart Get start)
 
-                // *** End programmer edit section *** (Team.shiftStart Get start)
-                System.DateTime result = this.fshiftStart;
-                // *** Start programmer edit section *** (Team.shiftStart Get end)
+                // *** End programmer edit section *** (Team.ShiftStart Get start)
+                System.DateTime result = this.fShiftStart;
+                // *** Start programmer edit section *** (Team.ShiftStart Get end)
 
-                // *** End programmer edit section *** (Team.shiftStart Get end)
+                // *** End programmer edit section *** (Team.ShiftStart Get end)
                 return result;
             }
             set
             {
-                // *** Start programmer edit section *** (Team.shiftStart Set start)
+                // *** Start programmer edit section *** (Team.ShiftStart Set start)
 
-                // *** End programmer edit section *** (Team.shiftStart Set start)
-                this.fshiftStart = value;
-                // *** Start programmer edit section *** (Team.shiftStart Set end)
+                // *** End programmer edit section *** (Team.ShiftStart Set start)
+                this.fShiftStart = value;
+                // *** Start programmer edit section *** (Team.ShiftStart Set end)
 
-                // *** End programmer edit section *** (Team.shiftStart Set end)
+                // *** End programmer edit section *** (Team.ShiftStart Set end)
             }
         }
         
         /// <summary>
-        /// shiftEnd.
+        /// ShiftEnd.
         /// </summary>
-        // *** Start programmer edit section *** (Team.shiftEnd CustomAttributes)
+        // *** Start programmer edit section *** (Team.ShiftEnd CustomAttributes)
 
-        // *** End programmer edit section *** (Team.shiftEnd CustomAttributes)
-        [NotNull()]
-        public virtual System.DateTime shiftEnd
+        // *** End programmer edit section *** (Team.ShiftEnd CustomAttributes)
+        public virtual System.DateTime ShiftEnd
         {
             get
             {
-                // *** Start programmer edit section *** (Team.shiftEnd Get start)
+                // *** Start programmer edit section *** (Team.ShiftEnd Get start)
 
-                // *** End programmer edit section *** (Team.shiftEnd Get start)
-                System.DateTime result = this.fshiftEnd;
-                // *** Start programmer edit section *** (Team.shiftEnd Get end)
+                // *** End programmer edit section *** (Team.ShiftEnd Get start)
+                System.DateTime result = this.fShiftEnd;
+                // *** Start programmer edit section *** (Team.ShiftEnd Get end)
 
-                // *** End programmer edit section *** (Team.shiftEnd Get end)
+                // *** End programmer edit section *** (Team.ShiftEnd Get end)
                 return result;
             }
             set
             {
-                // *** Start programmer edit section *** (Team.shiftEnd Set start)
+                // *** Start programmer edit section *** (Team.ShiftEnd Set start)
 
-                // *** End programmer edit section *** (Team.shiftEnd Set start)
-                this.fshiftEnd = value;
-                // *** Start programmer edit section *** (Team.shiftEnd Set end)
+                // *** End programmer edit section *** (Team.ShiftEnd Set start)
+                this.fShiftEnd = value;
+                // *** Start programmer edit section *** (Team.ShiftEnd Set end)
 
-                // *** End programmer edit section *** (Team.shiftEnd Set end)
+                // *** End programmer edit section *** (Team.ShiftEnd Set end)
             }
         }
         

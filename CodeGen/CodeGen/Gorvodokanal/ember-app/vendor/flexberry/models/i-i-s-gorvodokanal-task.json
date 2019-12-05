@@ -51,19 +51,19 @@
       "attrs": [
         {
           "name": "code",
-          "caption": "Code",
+          "caption": "Код задачи",
           "hidden": false,
           "index": 0
         },
         {
           "name": "content",
-          "caption": "Content",
+          "caption": "Детали задачи",
           "hidden": false,
           "index": 1
         },
         {
           "name": "planeDuration",
-          "caption": "Plane duration",
+          "caption": "Примерная длительность работ",
           "hidden": false,
           "index": 2
         }

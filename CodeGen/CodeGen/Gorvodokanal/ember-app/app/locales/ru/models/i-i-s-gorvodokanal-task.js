@@ -2,13 +2,13 @@ export default {
   projections: {
     TaskE: {
       code: {
-        __caption__: 'Code'
+        __caption__: 'Код задачи'
       },
       content: {
-        __caption__: 'Content'
+        __caption__: 'Детали задачи'
       },
       planeDuration: {
-        __caption__: 'Plane duration'
+        __caption__: 'Примерная длительность работ'
       }
     }
   }

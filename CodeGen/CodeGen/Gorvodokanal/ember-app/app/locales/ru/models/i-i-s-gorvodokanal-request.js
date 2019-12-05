@@ -1,7 +1,7 @@
 export default {
   projections: {
     RequestE: {
-      index: {
+      iindex: {
         __caption__: 'Номер заявки'
       },
       address: {
@@ -18,12 +18,12 @@ export default {
         floor: {
           __caption__: 'Этаж'
         },
-        flat: {
+        apartment: {
           __caption__: 'Квартира'
         }
       },
-      isCompleted: {
-        __caption__: 'Отметка о закреплении'
+      isAppointed: {
+        __caption__: 'Отметка о назначении'
       },
       team: {
         __caption__: 'Бригада',
@@ -31,7 +31,10 @@ export default {
           __caption__: 'Номер бригады'
         }
       },
-      isAppointed: {
+      date: {
+        __caption__: 'Дата выполнения работ'
+      },
+      isCompleted: {
         __caption__: 'Отметка о выполнении'
       },
       realDuration: {
@@ -40,19 +43,37 @@ export default {
       tasks: {
         __caption__: 'Задачи',
         code: {
-          __caption__: 'Code'
+          __caption__: 'Код задачи'
         },
         content: {
-          __caption__: 'Content'
+          __caption__: 'Детали задачи'
         },
         planeDuration: {
-          __caption__: 'Plane duration'
+          __caption__: 'Примерная длительность работ'
         }
       }
     },
     RequestL: {
-      index: {
+      iindex: {
         __caption__: 'Номер заявки'
+      },
+      isAppointed: {
+        __caption__: 'Отметка о назначении'
+      },
+      date: {
+        __caption__: 'Дата выполнения работ'
+      },
+      isCompleted: {
+        __caption__: 'Отметка о выполнении'
+      },
+      team: {
+        __caption__: 'Выполняющая бригада',
+        index: {
+          __caption__: 'Выполняющая бригада'
+        }
+      },
+      realDuration: {
+        __caption__: 'Фактическая длительность работ'
       },
       address: {
         __caption__: 'Улица',
@@ -68,35 +89,20 @@ export default {
         floor: {
           __caption__: 'Этаж'
         },
-        flat: {
+        apartment: {
           __caption__: 'Квартира'
         }
       },
-      isAppointed: {
-        __caption__: 'Отметка о прикреплении'
-      },
-      team: {
-        __caption__: 'Номер выполняющей бригады',
-        index: {
-          __caption__: 'Номер выполняющей бригады'
-        }
-      },
-      isCompleted: {
-        __caption__: 'Отметка о выполнении'
-      },
-      realDuration: {
-        __caption__: 'Фактическая длительность работ'
-      },
       tasks: {
-        __caption__: 'Задачи',
+        __caption__: '',
         code: {
-          __caption__: 'Code'
+          __caption__: 'Код задачи'
         },
         content: {
-          __caption__: 'Content'
+          __caption__: 'Детали задачи'
         },
         planeDuration: {
-          __caption__: 'Plane duration'
+          __caption__: 'Примерная длительность работ'
         }
       }
     }

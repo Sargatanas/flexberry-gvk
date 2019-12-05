@@ -95,11 +95,11 @@
     placeholder=(t 'components.flexberry-field.placeholder')
     readonly=readonly
     required=true
-    value=model.flat
-    class=(if model.errors.flat 'error' '')
-    label=(t 'forms.i-i-s-gorvodokanal-address-e.flat-caption')
+    value=model.apartment
+    class=(if model.errors.apartment 'error' '')
+    label=(t 'forms.i-i-s-gorvodokanal-address-e.apartment-caption')
   }}
-  {{flexberry-validationmessage error=model.errors.flat pointing="pointing"}}
+  {{flexberry-validationmessage error=model.errors.apartment pointing="pointing"}}
 </div>
 
 </form>

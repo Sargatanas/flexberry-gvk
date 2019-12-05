@@ -19,7 +19,7 @@
       "name": "shiftStart",
       "type": "date",
       "flexberryType": "tDate",
-      "notNull": true,
+      "notNull": false,
       "defaultValue": "",
       "stored": true,
       "ordered": false
@@ -28,7 +28,7 @@
       "name": "shiftEnd",
       "type": "date",
       "flexberryType": "tDate",
-      "notNull": true,
+      "notNull": false,
       "defaultValue": "",
       "stored": true,
       "ordered": false
@@ -43,7 +43,7 @@
       "attrs": [
         {
           "name": "index",
-          "caption": "Индекс бригады",
+          "caption": "Номер бригады",
           "hidden": false,
           "index": 0
         },
@@ -69,7 +69,7 @@
       "attrs": [
         {
           "name": "index",
-          "caption": "Индекс бригады",
+          "caption": "Номер бригады",
           "hidden": false,
           "index": 0
         },

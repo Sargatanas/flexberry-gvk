@@ -30,11 +30,11 @@
     placeholder=(t 'components.flexberry-field.placeholder')
     readonly=readonly
     required=true
-    value=model.index
-    class=(if model.errors.index 'error' '')
-    label=(t 'forms.i-i-s-gorvodokanal-request-e.index-caption')
+    value=model.iindex
+    class=(if model.errors.iindex 'error' '')
+    label=(t 'forms.i-i-s-gorvodokanal-request-e.iindex-caption')
   }}
-  {{flexberry-validationmessage error=model.errors.index pointing="pointing"}}
+  {{flexberry-validationmessage error=model.errors.iindex pointing="pointing"}}
 </div>
 
 <div class="field">
@@ -112,20 +112,22 @@
     placeholder=(t 'components.flexberry-field.placeholder')
     readonly=true
     required=true
-    value=model.address.flat
-    class=(if model.errors.address.flat 'error' '')
-    label=(t 'forms.i-i-s-gorvodokanal-request-e.address.flat-caption')
+    value=model.address.apartment
+    class=(if model.errors.address.apartment 'error' '')
+    label=(t 'forms.i-i-s-gorvodokanal-request-e.address.apartment-caption')
   }}
-  {{flexberry-validationmessage error=model.errors.address.flat pointing="pointing"}}
+  {{flexberry-validationmessage error=model.errors.address.apartment pointing="pointing"}}
 </div>
 
 <div class="field">
-  <label>{{t 'forms.i-i-s-gorvodokanal-request-e.isCompleted-caption'}}</label>
+  <label>{{t 'forms.i-i-s-gorvodokanal-request-e.isAppointed-caption'}}</label>
   {{
-    flexberry-checkbox
+    flexberry-dropdown
+    items=(flexberry-enum 'i-i-s-gorvodokanal-t-appointed')
+    value=model.isAppointed
     readonly=readonly
-    value=model.isCompleted
   }}
+  {{flexberry-validationmessage error=model.errors.isAppointed pointing="pointing"}}
 </div>
 
 <div class="field">
@@ -159,14 +161,24 @@
 </div>
 
 <div class="field">
-  <label>{{t 'forms.i-i-s-gorvodokanal-request-e.isAppointed-caption'}}</label>
+  <label>{{t 'forms.i-i-s-gorvodokanal-request-e.date-caption'}}</label>
   {{
-    flexberry-dropdown
-    items=(flexberry-enum 'i-i-s-gorvodokanal-t-appointed')
-    value=model.isAppointed
+    flexberry-datepicker
+    placeholder=(t 'components.flexberry-datepicker.placeholder')
     readonly=readonly
+    value=model.date
+    class=(if model.errors.date 'error' '')
   }}
-  {{flexberry-validationmessage error=model.errors.isAppointed pointing="pointing"}}
+  {{flexberry-validationmessage error=model.errors.date pointing="pointing"}}
+</div>
+
+<div class="field">
+  <label>{{t 'forms.i-i-s-gorvodokanal-request-e.isCompleted-caption'}}</label>
+  {{
+    flexberry-checkbox
+    readonly=readonly
+    value=model.isCompleted
+  }}
 </div>
 
 <div class="field">

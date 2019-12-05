@@ -52,7 +52,7 @@
       "ordered": false
     },
     {
-      "name": "flat",
+      "name": "apartment",
       "type": "number",
       "flexberryType": "NullableInt",
       "notNull": false,
@@ -70,7 +70,7 @@
       "attrs": [
         {
           "name": "index",
-          "caption": "Индекс адреса",
+          "caption": "Код адреса",
           "hidden": false,
           "index": 0
         },
@@ -99,7 +99,7 @@
           "index": 4
         },
         {
-          "name": "flat",
+          "name": "apartment",
           "caption": "Квартира",
           "hidden": false,
           "index": 5
@@ -114,8 +114,8 @@
       "attrs": [
         {
           "name": "index",
-          "caption": "Индекс адреса",
-          "hidden": true,
+          "caption": "Код адреса",
+          "hidden": false,
           "index": 0
         },
         {
@@ -143,7 +143,7 @@
           "index": 4
         },
         {
-          "name": "flat",
+          "name": "apartment",
           "caption": "Квартира",
           "hidden": false,
           "index": 5

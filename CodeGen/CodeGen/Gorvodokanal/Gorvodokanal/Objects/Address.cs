@@ -29,34 +29,33 @@ namespace IIS.Gorvodokanal
     [AutoAltered()]
     [AccessType(ICSSoft.STORMNET.AccessType.none)]
     [View("AddressE", new string[] {
-            "index as \'Индекс адреса\'",
-            "street as \'Улица\'",
-            "house as \'Дом\'",
-            "build as \'Корпус\'",
-            "floor as \'Этаж\'",
-            "flat as \'Квартира\'"})]
+            "Index as \'Код адреса\'",
+            "Street as \'Улица\'",
+            "House as \'Дом\'",
+            "Build as \'Корпус\'",
+            "Floor as \'Этаж\'",
+            "Apartment as \'Квартира\'"})]
     [View("AddressL", new string[] {
-            "index as \'Индекс адреса\'",
-            "street as \'Улица\'",
-            "house as \'Дом\'",
-            "build as \'Корпус\'",
-            "floor as \'Этаж\'",
-            "flat as \'Квартира\'"}, Hidden=new string[] {
-            "index"})]
+            "Index as \'Код адреса\'",
+            "Street as \'Улица\'",
+            "House as \'Дом\'",
+            "Build as \'Корпус\'",
+            "Floor as \'Этаж\'",
+            "Apartment as \'Квартира\'"})]
     public class Address : ICSSoft.STORMNET.DataObject
     {
         
-        private int findex;
+        private int fIndex;
         
-        private string fstreet;
+        private string fStreet;
         
-        private int fhouse;
+        private int fHouse;
         
-        private string fbuild;
+        private string fBuild;
         
-        private ICSSoft.STORMNET.UserDataTypes.NullableInt ffloor;
+        private ICSSoft.STORMNET.UserDataTypes.NullableInt fFloor;
         
-        private ICSSoft.STORMNET.UserDataTypes.NullableInt fflat;
+        private ICSSoft.STORMNET.UserDataTypes.NullableInt fApartment;
         
         // *** Start programmer edit section *** (Address CustomMembers)
 
@@ -64,193 +63,193 @@ namespace IIS.Gorvodokanal
 
         
         /// <summary>
-        /// index.
+        /// Index.
         /// </summary>
-        // *** Start programmer edit section *** (Address.index CustomAttributes)
+        // *** Start programmer edit section *** (Address.Index CustomAttributes)
 
-        // *** End programmer edit section *** (Address.index CustomAttributes)
+        // *** End programmer edit section *** (Address.Index CustomAttributes)
         [NotNull()]
-        public virtual int index
+        public virtual int Index
         {
             get
             {
-                // *** Start programmer edit section *** (Address.index Get start)
+                // *** Start programmer edit section *** (Address.Index Get start)
 
-                // *** End programmer edit section *** (Address.index Get start)
-                int result = this.findex;
-                // *** Start programmer edit section *** (Address.index Get end)
+                // *** End programmer edit section *** (Address.Index Get start)
+                int result = this.fIndex;
+                // *** Start programmer edit section *** (Address.Index Get end)
 
-                // *** End programmer edit section *** (Address.index Get end)
+                // *** End programmer edit section *** (Address.Index Get end)
                 return result;
             }
             set
             {
-                // *** Start programmer edit section *** (Address.index Set start)
+                // *** Start programmer edit section *** (Address.Index Set start)
 
-                // *** End programmer edit section *** (Address.index Set start)
-                this.findex = value;
-                // *** Start programmer edit section *** (Address.index Set end)
+                // *** End programmer edit section *** (Address.Index Set start)
+                this.fIndex = value;
+                // *** Start programmer edit section *** (Address.Index Set end)
 
-                // *** End programmer edit section *** (Address.index Set end)
+                // *** End programmer edit section *** (Address.Index Set end)
             }
         }
         
         /// <summary>
-        /// street.
+        /// Street.
         /// </summary>
-        // *** Start programmer edit section *** (Address.street CustomAttributes)
+        // *** Start programmer edit section *** (Address.Street CustomAttributes)
 
-        // *** End programmer edit section *** (Address.street CustomAttributes)
+        // *** End programmer edit section *** (Address.Street CustomAttributes)
         [StrLen(255)]
         [NotNull()]
-        public virtual string street
+        public virtual string Street
         {
             get
             {
-                // *** Start programmer edit section *** (Address.street Get start)
+                // *** Start programmer edit section *** (Address.Street Get start)
 
-                // *** End programmer edit section *** (Address.street Get start)
-                string result = this.fstreet;
-                // *** Start programmer edit section *** (Address.street Get end)
+                // *** End programmer edit section *** (Address.Street Get start)
+                string result = this.fStreet;
+                // *** Start programmer edit section *** (Address.Street Get end)
 
-                // *** End programmer edit section *** (Address.street Get end)
+                // *** End programmer edit section *** (Address.Street Get end)
                 return result;
             }
             set
             {
-                // *** Start programmer edit section *** (Address.street Set start)
+                // *** Start programmer edit section *** (Address.Street Set start)
 
-                // *** End programmer edit section *** (Address.street Set start)
-                this.fstreet = value;
-                // *** Start programmer edit section *** (Address.street Set end)
+                // *** End programmer edit section *** (Address.Street Set start)
+                this.fStreet = value;
+                // *** Start programmer edit section *** (Address.Street Set end)
 
-                // *** End programmer edit section *** (Address.street Set end)
+                // *** End programmer edit section *** (Address.Street Set end)
             }
         }
         
         /// <summary>
-        /// house.
+        /// House.
         /// </summary>
-        // *** Start programmer edit section *** (Address.house CustomAttributes)
+        // *** Start programmer edit section *** (Address.House CustomAttributes)
 
-        // *** End programmer edit section *** (Address.house CustomAttributes)
+        // *** End programmer edit section *** (Address.House CustomAttributes)
         [NotNull()]
-        public virtual int house
+        public virtual int House
         {
             get
             {
-                // *** Start programmer edit section *** (Address.house Get start)
+                // *** Start programmer edit section *** (Address.House Get start)
 
-                // *** End programmer edit section *** (Address.house Get start)
-                int result = this.fhouse;
-                // *** Start programmer edit section *** (Address.house Get end)
+                // *** End programmer edit section *** (Address.House Get start)
+                int result = this.fHouse;
+                // *** Start programmer edit section *** (Address.House Get end)
 
-                // *** End programmer edit section *** (Address.house Get end)
+                // *** End programmer edit section *** (Address.House Get end)
                 return result;
             }
             set
             {
-                // *** Start programmer edit section *** (Address.house Set start)
+                // *** Start programmer edit section *** (Address.House Set start)
 
-                // *** End programmer edit section *** (Address.house Set start)
-                this.fhouse = value;
-                // *** Start programmer edit section *** (Address.house Set end)
+                // *** End programmer edit section *** (Address.House Set start)
+                this.fHouse = value;
+                // *** Start programmer edit section *** (Address.House Set end)
 
-                // *** End programmer edit section *** (Address.house Set end)
+                // *** End programmer edit section *** (Address.House Set end)
             }
         }
         
         /// <summary>
-        /// build.
+        /// Build.
         /// </summary>
-        // *** Start programmer edit section *** (Address.build CustomAttributes)
+        // *** Start programmer edit section *** (Address.Build CustomAttributes)
 
-        // *** End programmer edit section *** (Address.build CustomAttributes)
+        // *** End programmer edit section *** (Address.Build CustomAttributes)
         [StrLen(255)]
-        public virtual string build
+        public virtual string Build
         {
             get
             {
-                // *** Start programmer edit section *** (Address.build Get start)
+                // *** Start programmer edit section *** (Address.Build Get start)
 
-                // *** End programmer edit section *** (Address.build Get start)
-                string result = this.fbuild;
-                // *** Start programmer edit section *** (Address.build Get end)
+                // *** End programmer edit section *** (Address.Build Get start)
+                string result = this.fBuild;
+                // *** Start programmer edit section *** (Address.Build Get end)
 
-                // *** End programmer edit section *** (Address.build Get end)
+                // *** End programmer edit section *** (Address.Build Get end)
                 return result;
             }
             set
             {
-                // *** Start programmer edit section *** (Address.build Set start)
+                // *** Start programmer edit section *** (Address.Build Set start)
 
-                // *** End programmer edit section *** (Address.build Set start)
-                this.fbuild = value;
-                // *** Start programmer edit section *** (Address.build Set end)
+                // *** End programmer edit section *** (Address.Build Set start)
+                this.fBuild = value;
+                // *** Start programmer edit section *** (Address.Build Set end)
 
-                // *** End programmer edit section *** (Address.build Set end)
+                // *** End programmer edit section *** (Address.Build Set end)
             }
         }
         
         /// <summary>
-        /// floor.
+        /// Floor.
         /// </summary>
-        // *** Start programmer edit section *** (Address.floor CustomAttributes)
+        // *** Start programmer edit section *** (Address.Floor CustomAttributes)
 
-        // *** End programmer edit section *** (Address.floor CustomAttributes)
-        public virtual ICSSoft.STORMNET.UserDataTypes.NullableInt floor
+        // *** End programmer edit section *** (Address.Floor CustomAttributes)
+        public virtual ICSSoft.STORMNET.UserDataTypes.NullableInt Floor
         {
             get
             {
-                // *** Start programmer edit section *** (Address.floor Get start)
+                // *** Start programmer edit section *** (Address.Floor Get start)
 
-                // *** End programmer edit section *** (Address.floor Get start)
-                ICSSoft.STORMNET.UserDataTypes.NullableInt result = this.ffloor;
-                // *** Start programmer edit section *** (Address.floor Get end)
+                // *** End programmer edit section *** (Address.Floor Get start)
+                ICSSoft.STORMNET.UserDataTypes.NullableInt result = this.fFloor;
+                // *** Start programmer edit section *** (Address.Floor Get end)
 
-                // *** End programmer edit section *** (Address.floor Get end)
+                // *** End programmer edit section *** (Address.Floor Get end)
                 return result;
             }
             set
             {
-                // *** Start programmer edit section *** (Address.floor Set start)
+                // *** Start programmer edit section *** (Address.Floor Set start)
 
-                // *** End programmer edit section *** (Address.floor Set start)
-                this.ffloor = value;
-                // *** Start programmer edit section *** (Address.floor Set end)
+                // *** End programmer edit section *** (Address.Floor Set start)
+                this.fFloor = value;
+                // *** Start programmer edit section *** (Address.Floor Set end)
 
-                // *** End programmer edit section *** (Address.floor Set end)
+                // *** End programmer edit section *** (Address.Floor Set end)
             }
         }
         
         /// <summary>
-        /// flat.
+        /// Apartment.
         /// </summary>
-        // *** Start programmer edit section *** (Address.flat CustomAttributes)
+        // *** Start programmer edit section *** (Address.Apartment CustomAttributes)
 
-        // *** End programmer edit section *** (Address.flat CustomAttributes)
-        public virtual ICSSoft.STORMNET.UserDataTypes.NullableInt flat
+        // *** End programmer edit section *** (Address.Apartment CustomAttributes)
+        public virtual ICSSoft.STORMNET.UserDataTypes.NullableInt Apartment
         {
             get
             {
-                // *** Start programmer edit section *** (Address.flat Get start)
+                // *** Start programmer edit section *** (Address.Apartment Get start)
 
-                // *** End programmer edit section *** (Address.flat Get start)
-                ICSSoft.STORMNET.UserDataTypes.NullableInt result = this.fflat;
-                // *** Start programmer edit section *** (Address.flat Get end)
+                // *** End programmer edit section *** (Address.Apartment Get start)
+                ICSSoft.STORMNET.UserDataTypes.NullableInt result = this.fApartment;
+                // *** Start programmer edit section *** (Address.Apartment Get end)
 
-                // *** End programmer edit section *** (Address.flat Get end)
+                // *** End programmer edit section *** (Address.Apartment Get end)
                 return result;
             }
             set
             {
-                // *** Start programmer edit section *** (Address.flat Set start)
+                // *** Start programmer edit section *** (Address.Apartment Set start)
 
-                // *** End programmer edit section *** (Address.flat Set start)
-                this.fflat = value;
-                // *** Start programmer edit section *** (Address.flat Set end)
+                // *** End programmer edit section *** (Address.Apartment Set start)
+                this.fApartment = value;
+                // *** Start programmer edit section *** (Address.Apartment Set end)
 
-                // *** End programmer edit section *** (Address.flat Set end)
+                // *** End programmer edit section *** (Address.Apartment Set end)
             }
         }
         

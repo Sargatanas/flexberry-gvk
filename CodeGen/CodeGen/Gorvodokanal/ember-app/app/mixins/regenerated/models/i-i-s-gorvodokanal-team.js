@@ -8,9 +8,7 @@ export let Model = Ember.Mixin.create({
   getValidations: function () {
     let parentValidations = this._super();
     let thisValidations = {
-      index: { presence: true },
-      shiftStart: { datetime: true },
-      shiftEnd: { datetime: true }
+      index: { presence: true }
     };
     return Ember.$.extend(true, {}, parentValidations, thisValidations);
   },
@@ -28,12 +26,12 @@ export function defineNamespace(modelClass) {
 
 export let defineProjections = function (modelClass) {
   modelClass.defineProjection('TeamE', 'i-i-s-gorvodokanal-team', {
-    index: Projection.attr('Индекс бригады', { index: 0 }),
+    index: Projection.attr('Номер бригады', { index: 0 }),
     shiftStart: Projection.attr('Начало смены', { index: 1 }),
     shiftEnd: Projection.attr('Конец смены', { index: 2 })
   });
   modelClass.defineProjection('TeamL', 'i-i-s-gorvodokanal-team', {
-    index: Projection.attr('Индекс бригады', { index: 0 }),
+    index: Projection.attr('Номер бригады', { index: 0 }),
     shiftStart: Projection.attr('Начало смены', { index: 1 }),
     shiftEnd: Projection.attr('Конец смены', { index: 2 })
   });

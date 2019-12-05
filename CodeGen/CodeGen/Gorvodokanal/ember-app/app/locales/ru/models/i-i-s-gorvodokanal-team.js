@@ -2,7 +2,7 @@ export default {
   projections: {
     TeamE: {
       index: {
-        __caption__: 'Индекс бригады'
+        __caption__: 'Номер бригады'
       },
       shiftStart: {
         __caption__: 'Начало смены'
@@ -13,7 +13,7 @@ export default {
     },
     TeamL: {
       index: {
-        __caption__: 'Индекс бригады'
+        __caption__: 'Номер бригады'
       },
       shiftStart: {
         __caption__: 'Начало смены'

@@ -4,6 +4,51 @@
         <name>UserSettingsService</name>
     </assembly>
     <members>
+        <member name="T:NewPlatform.Flexberry.FlexberryAdvLimit">
+            <summary>
+            FlexberryAdvLimit.
+            </summary>
+        </member>
+        <member name="P:NewPlatform.Flexberry.FlexberryAdvLimit.User">
+            <summary>
+            User.
+            </summary>
+        </member>
+        <member name="P:NewPlatform.Flexberry.FlexberryAdvLimit.Published">
+            <summary>
+            Published.
+            </summary>
+        </member>
+        <member name="P:NewPlatform.Flexberry.FlexberryAdvLimit.Module">
+            <summary>
+            Module.
+            </summary>
+        </member>
+        <member name="P:NewPlatform.Flexberry.FlexberryAdvLimit.Name">
+            <summary>
+            Name.
+            </summary>
+        </member>
+        <member name="P:NewPlatform.Flexberry.FlexberryAdvLimit.Value">
+            <summary>
+            Value.
+            </summary>
+        </member>
+        <member name="T:NewPlatform.Flexberry.FlexberryAdvLimit.Views">
+            <summary>
+            Class views container.
+            </summary>
+        </member>
+        <member name="P:NewPlatform.Flexberry.FlexberryAdvLimit.Views.FlexberryAdvLimitE">
+            <summary>
+            "FlexberryAdvLimitE" view.
+            </summary>
+        </member>
+        <member name="P:NewPlatform.Flexberry.FlexberryAdvLimit.Views.FlexberryAdvLimitL">
+            <summary>
+            "FlexberryAdvLimitL" view.
+            </summary>
+        </member>
         <member name="T:NewPlatform.Flexberry.FlexberryUserSetting">
             <summary>
             Класс для удобной работы с настройками пользователя в клиентском коде.

@@ -5,5 +5,5 @@ export default {
   'house-caption': 'house',
   'build-caption': 'build',
   'floor-caption': 'floor',
-  'flat-caption': 'flat'
+  'apartment-caption': 'apartment'
 };
