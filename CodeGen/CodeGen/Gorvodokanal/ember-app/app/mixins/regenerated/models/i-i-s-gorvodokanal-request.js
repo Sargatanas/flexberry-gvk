@@ -55,14 +55,14 @@ export let defineProjections = function (modelClass) {
     })
   });
   modelClass.defineProjection('RequestL', 'i-i-s-gorvodokanal-request', {
-    isAppointed: Projection.attr('Отметка о назначении', { index: 0 }),
     address: Projection.belongsTo('i-i-s-gorvodokanal-address', 'Улица', {
-      street: Projection.attr('Улица', { index: 1 }),
-      house: Projection.attr('Дом', { index: 2 }),
-      build: Projection.attr('Корпус', { index: 3 }),
-      floor: Projection.attr('Этаж', { index: 4 }),
-      apartment: Projection.attr('Квартира', { index: 5 })
+      street: Projection.attr('Улица', { index: 0 }),
+      house: Projection.attr('Дом', { index: 1 }),
+      build: Projection.attr('Корпус', { index: 2 }),
+      floor: Projection.attr('Этаж', { index: 3 }),
+      apartment: Projection.attr('Квартира', { index: 4 })
     }, { index: -1, hidden: true }),
+    isAppointed: Projection.attr('Отметка о назначении', { index: 5 }),
     date: Projection.attr('Дата выполнения работ', { index: 6 }),
     isCompleted: Projection.attr('Отметка о выполнении', { index: 7 }),
     team: Projection.belongsTo('i-i-s-gorvodokanal-team', 'Выполняющая бригада', {

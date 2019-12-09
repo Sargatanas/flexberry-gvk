@@ -72,8 +72,6 @@ module.exports = function(environment) {
 
       // Custom property with offline mode settings.
       offline: {
-        dbName: 'ember-app',
-
         // Flag that indicates whether offline mode in application is enabled or not.
         offlineEnabled: true,
 
@@ -152,8 +150,8 @@ module.exports = function(environment) {
     ENV.locationType = 'none';
 
     // keep test console output quieter
-    ENV.APP.LOG_ACTIVE_GENERATION = true;
-    ENV.APP.LOG_VIEW_LOOKUPS = true;
+    ENV.APP.LOG_ACTIVE_GENERATION = false;
+    ENV.APP.LOG_VIEW_LOOKUPS = false;
 
     ENV.APP.rootElement = '#ember-testing';
   }

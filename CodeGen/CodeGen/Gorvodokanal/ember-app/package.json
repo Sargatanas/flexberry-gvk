@@ -40,7 +40,7 @@
     "ember-cli-uglify": "^1.2.0",
     "ember-data": "2.4.3",
     "ember-export-application-global": "^1.0.5",
-    "ember-flexberry": "2.2.0-beta.11",
+    "ember-flexberry": "2.2.0-beta.18",
     "ember-inflector": "1.12.1",
     "ember-link-action": "0.0.34",
     "ember-load-initializers": "^0.5.1",

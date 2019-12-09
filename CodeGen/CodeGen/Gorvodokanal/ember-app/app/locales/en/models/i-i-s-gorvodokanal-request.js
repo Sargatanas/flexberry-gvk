@@ -36,9 +36,6 @@ export default {
       }
     },
     RequestL: {
-      isAppointed: {
-        __caption__: 'isAppointed'
-      },
       address: {
         __caption__: 'address',
         street: {
@@ -56,6 +53,9 @@ export default {
         apartment: {
           __caption__: 'apartment'
         }
+      },
+      isAppointed: {
+        __caption__: 'isAppointed'
       },
       date: {
         __caption__: 'date'

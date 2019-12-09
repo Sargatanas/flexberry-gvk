@@ -36,9 +36,6 @@ export default {
       }
     },
     RequestL: {
-      isAppointed: {
-        __caption__: 'Отметка о назначении'
-      },
       address: {
         __caption__: 'Улица',
         street: {
@@ -56,6 +53,9 @@ export default {
         apartment: {
           __caption__: 'Квартира'
         }
+      },
+      isAppointed: {
+        __caption__: 'Отметка о назначении'
       },
       date: {
         __caption__: 'Дата выполнения работ'
