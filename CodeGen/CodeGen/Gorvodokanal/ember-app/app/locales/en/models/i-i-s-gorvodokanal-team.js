@@ -4,22 +4,34 @@ export default {
       index: {
         __caption__: 'index'
       },
-      shiftStart: {
-        __caption__: 'shiftStart'
+      shiftStartHour: {
+        __caption__: 'shiftStartHour'
       },
-      shiftEnd: {
-        __caption__: 'shiftEnd'
+      shiftStartMinutes: {
+        __caption__: 'shiftStartMinutes'
+      },
+      shiftEndHour: {
+        __caption__: 'shiftEndHour'
+      },
+      shiftEndMinutes: {
+        __caption__: 'shiftEndMinutes'
       }
     },
     TeamL: {
       index: {
         __caption__: 'index'
       },
-      shiftStart: {
-        __caption__: 'shiftStart'
+      shiftStartHour: {
+        __caption__: 'shiftStartHour'
       },
-      shiftEnd: {
-        __caption__: 'shiftEnd'
+      shiftStartMinutes: {
+        __caption__: 'shiftStartMinutes'
+      },
+      shiftEndHour: {
+        __caption__: 'shiftEndHour'
+      },
+      shiftEndMinutes: {
+        __caption__: 'shiftEndMinutes'
       }
     }
   }

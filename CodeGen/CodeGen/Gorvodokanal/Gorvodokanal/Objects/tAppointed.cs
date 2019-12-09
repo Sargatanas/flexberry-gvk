@@ -12,6 +12,7 @@ namespace IIS.Gorvodokanal
 {
     using System;
     using System.Xml;
+    using ICSSoft.STORMNET;
     
     
     // *** Start programmer edit section *** (Using statements)
@@ -31,17 +32,19 @@ namespace IIS.Gorvodokanal
         /// <summary>
         /// 
         /// </summary>
-        // *** Start programmer edit section *** (tAppointed.Прикреплено CustomAttributes)
+        // *** Start programmer edit section *** (tAppointed.Appointed CustomAttributes)
 
-        // *** End programmer edit section *** (tAppointed.Прикреплено CustomAttributes)
-        Прикреплено,
+        // *** End programmer edit section *** (tAppointed.Appointed CustomAttributes)
+        [Caption("назначено")]
+        Appointed,
         
         /// <summary>
         /// 
         /// </summary>
-        // *** Start programmer edit section *** (tAppointed.НеПрикреплено CustomAttributes)
+        // *** Start programmer edit section *** (tAppointed.NotAppointed CustomAttributes)
 
-        // *** End programmer edit section *** (tAppointed.НеПрикреплено CustomAttributes)
-        НеПрикреплено,
+        // *** End programmer edit section *** (tAppointed.NotAppointed CustomAttributes)
+        [Caption("не назначено")]
+        NotAppointed,
     }
 }

@@ -1,6 +1,6 @@
 import { moduleFor, test } from 'ember-qunit';
 
-moduleFor('controller:i-i-s-gorvodokanal-task-d', 'Unit | Controller | i i s gorvodokanal task d', {
+moduleFor('controller:i-i-s-gorvodokanal-task-l', 'Unit | Controller | i i s gorvodokanal task l', {
   // Specify the other units that are required for this test.
   // needs: ['controller:foo']
 });

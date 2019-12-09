@@ -45,7 +45,7 @@ namespace IIS.Gorvodokanal
     public class Address : ICSSoft.STORMNET.DataObject
     {
         
-        private int fIndex;
+        private int fIndex = 1;
         
         private string fStreet;
         
@@ -68,6 +68,7 @@ namespace IIS.Gorvodokanal
         // *** Start programmer edit section *** (Address.Index CustomAttributes)
 
         // *** End programmer edit section *** (Address.Index CustomAttributes)
+        [DisableInsertProperty(true)]
         [NotNull()]
         public virtual int Index
         {

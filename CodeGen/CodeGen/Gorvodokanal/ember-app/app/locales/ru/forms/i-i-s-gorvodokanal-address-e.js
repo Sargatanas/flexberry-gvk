@@ -1,5 +1,5 @@
 export default {
-  caption: 'Address',
+  caption: 'Адрес',
   'index-caption': 'Код адреса',
   'street-caption': 'Улица',
   'house-caption': 'Дом',

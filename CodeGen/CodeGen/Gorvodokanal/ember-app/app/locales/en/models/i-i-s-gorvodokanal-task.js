@@ -7,8 +7,25 @@ export default {
       content: {
         __caption__: 'content'
       },
-      planeDuration: {
-        __caption__: 'planeDuration'
+      planeDurationtHour: {
+        __caption__: 'planeDurationtHour'
+      },
+      planeDurationMinutes: {
+        __caption__: 'planeDurationMinutes'
+      }
+    },
+    TaskL: {
+      code: {
+        __caption__: 'code'
+      },
+      content: {
+        __caption__: 'content'
+      },
+      planeDurationtHour: {
+        __caption__: 'planeDurationtHour'
+      },
+      planeDurationMinutes: {
+        __caption__: 'planeDurationMinutes'
       }
     }
   }

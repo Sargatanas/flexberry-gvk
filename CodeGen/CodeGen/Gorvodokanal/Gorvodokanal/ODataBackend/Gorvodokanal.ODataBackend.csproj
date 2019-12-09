@@ -7,7 +7,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{BB6CA3C5-C6D2-4871-B99D-384C125D86DB}</ProjectGuid>
+    <ProjectGuid>{CD9E5A6E-FA1D-4EC1-9837-B954B4C2DA10}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -213,7 +213,7 @@
       <HintPath>System.EnterpriseServices</HintPath>
     </Reference>
     <ProjectReference Include="..\Objects\Gorvodokanal.Objects.csproj">
-      <Project>{765ea8ab-d31b-4392-9440-1fa6a18960d3}</Project>
+      <Project>{9f2a2f68-f28c-4325-b751-6234addf9b35}</Project>
       <Name>Gorvodokanal.Objects</Name>
     </ProjectReference>
   </ItemGroup>

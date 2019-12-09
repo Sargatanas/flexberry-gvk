@@ -2,7 +2,7 @@
   "nameSpace": "IIS.Gorvodokanal",
   "className": "tAppointed",
   "enumObjects": {
-    "Прикреплено": null,
-    "НеПрикреплено": null
+    "Appointed": "назначено",
+    "NotAppointed": "не назначено"
   }
 }

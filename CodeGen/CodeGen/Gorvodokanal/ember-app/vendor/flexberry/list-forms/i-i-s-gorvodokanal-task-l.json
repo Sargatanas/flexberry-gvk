@@ -1,0 +1,15 @@
+﻿{
+  "newForm": "i-i-s-gorvodokanal-task-e",
+  "editForm": "i-i-s-gorvodokanal-task-e",
+  "external": false,
+  "caption": "Задачи",
+  "name": "IISGorvodokanalTaskL",
+  "className": "TaskL",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "i-i-s-gorvodokanal-task",
+      "modelProjection": "TaskL"
+    }
+  ]
+}

@@ -11,25 +11,43 @@
       "type": "number",
       "flexberryType": "int",
       "notNull": true,
-      "defaultValue": "",
+      "defaultValue": "1",
       "stored": true,
       "ordered": false
     },
     {
-      "name": "shiftStart",
-      "type": "date",
-      "flexberryType": "tDate",
+      "name": "shiftStartHour",
+      "type": "number",
+      "flexberryType": "int",
       "notNull": false,
-      "defaultValue": "",
+      "defaultValue": "8",
       "stored": true,
       "ordered": false
     },
     {
-      "name": "shiftEnd",
-      "type": "date",
-      "flexberryType": "tDate",
+      "name": "shiftStartMinutes",
+      "type": "number",
+      "flexberryType": "int",
       "notNull": false,
-      "defaultValue": "",
+      "defaultValue": "0",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "shiftEndHour",
+      "type": "number",
+      "flexberryType": "int",
+      "notNull": false,
+      "defaultValue": "16",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "shiftEndMinutes",
+      "type": "number",
+      "flexberryType": "int",
+      "notNull": false,
+      "defaultValue": "0",
       "stored": true,
       "ordered": false
     }
@@ -48,16 +66,28 @@
           "index": 0
         },
         {
-          "name": "shiftStart",
-          "caption": "Начало смены",
+          "name": "shiftStartHour",
+          "caption": "Часы",
           "hidden": false,
           "index": 1
         },
         {
-          "name": "shiftEnd",
-          "caption": "Конец смены",
+          "name": "shiftStartMinutes",
+          "caption": "Минуты",
           "hidden": false,
           "index": 2
+        },
+        {
+          "name": "shiftEndHour",
+          "caption": "Часы",
+          "hidden": false,
+          "index": 3
+        },
+        {
+          "name": "shiftEndMinutes",
+          "caption": "Минуты",
+          "hidden": false,
+          "index": 4
         }
       ],
       "belongsTo": [],
@@ -74,16 +104,28 @@
           "index": 0
         },
         {
-          "name": "shiftStart",
-          "caption": "Начало смены",
+          "name": "shiftStartHour",
+          "caption": "Часы",
           "hidden": false,
           "index": 1
         },
         {
-          "name": "shiftEnd",
-          "caption": "Конец смены",
+          "name": "shiftStartMinutes",
+          "caption": "Минуты",
           "hidden": false,
           "index": 2
+        },
+        {
+          "name": "shiftEndHour",
+          "caption": "Часы",
+          "hidden": false,
+          "index": 3
+        },
+        {
+          "name": "shiftEndMinutes",
+          "caption": "Минуты",
+          "hidden": false,
+          "index": 4
         }
       ],
       "belongsTo": [],

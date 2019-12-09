@@ -2,7 +2,7 @@ import Ember from 'ember';
 import DS from 'ember-data';
 import { Projection } from 'ember-flexberry-data';
 export let Model = Ember.Mixin.create({
-  index: DS.attr('number'),
+  index: DS.attr('number', { defaultValue: 1 }),
   street: DS.attr('string'),
   house: DS.attr('number'),
   build: DS.attr('string'),

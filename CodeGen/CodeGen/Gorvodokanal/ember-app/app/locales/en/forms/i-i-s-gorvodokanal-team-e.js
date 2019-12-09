@@ -1,6 +1,8 @@
 export default {
   caption: 'IISGorvodokanalTeamE',
   'index-caption': 'index',
-  'shiftStart-caption': 'shiftStart',
-  'shiftEnd-caption': 'shiftEnd'
+  'shiftStartHour-caption': 'shiftStartHour',
+  'shiftStartMinutes-caption': 'shiftStartMinutes',
+  'shiftEndHour-caption': 'shiftEndHour',
+  'shiftEndMinutes-caption': 'shiftEndMinutes'
 };

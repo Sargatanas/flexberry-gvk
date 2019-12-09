@@ -2,18 +2,20 @@ import Ember from 'ember';
 import DS from 'ember-data';
 import { Projection } from 'ember-flexberry-data';
 export let Model = Ember.Mixin.create({
-  iindex: DS.attr('number'),
+  index: DS.attr('number', { defaultValue: 1 }),
   isAppointed: DS.attr('i-i-s-gorvodokanal-t-appointed'),
   date: DS.attr('date'),
+  startHour: DS.attr('number'),
+  startMinutes: DS.attr('number'),
   isCompleted: DS.attr('boolean', { defaultValue: false }),
-  realDuration: DS.attr('date'),
+  endHour: DS.attr('number'),
+  endMinutes: DS.attr('number'),
   team: DS.belongsTo('i-i-s-gorvodokanal-team', { inverse: null, async: false }),
   address: DS.belongsTo('i-i-s-gorvodokanal-address', { inverse: null, async: false }),
-  tasks: DS.hasMany('i-i-s-gorvodokanal-task', { inverse: 'request', async: false }),
+  tasks: DS.hasMany('i-i-s-gorvodokanal-task-list', { inverse: 'request', async: false }),
   getValidations: function () {
     let parentValidations = this._super();
     let thisValidations = {
-      iindex: { presence: true },
       isAppointed: { presence: true },
       address: { presence: true }
     };
@@ -33,47 +35,47 @@ export function defineNamespace(modelClass) {
 
 export let defineProjections = function (modelClass) {
   modelClass.defineProjection('RequestE', 'i-i-s-gorvodokanal-request', {
-    iindex: Projection.attr('Номер заявки', { index: 0 }),
+    isAppointed: Projection.attr('Отметка о назначении', { index: 1 }),
+    date: Projection.attr('Дата выполнения работ', { index: 3 }),
+    isCompleted: Projection.attr('Отметка о выполнении', { index: 4 }),
+    startHour: Projection.attr('Часы', { index: 5 }),
+    startMinutes: Projection.attr('Минуты', { index: 6 }),
+    endHour: Projection.attr('Часы', { index: 7 }),
+    endMinutes: Projection.attr('Минуты', { index: 8 }),
     address: Projection.belongsTo('i-i-s-gorvodokanal-address', 'Адрес', {
-      street: Projection.attr('Улица', { index: 2 }),
-      house: Projection.attr('Дом', { index: 3 }),
-      build: Projection.attr('Корпус', { index: 4 }),
-      floor: Projection.attr('Этаж', { index: 5 }),
-      apartment: Projection.attr('Квартира', { index: 6 })
-    }, { index: 1 }),
-    isAppointed: Projection.attr('Отметка о назначении', { index: 7 }),
+
+    }, { index: 0 }),
     team: Projection.belongsTo('i-i-s-gorvodokanal-team', 'Бригада', {
-      index: Projection.attr('Номер бригады', { index: 9 })
-    }, { index: 8 }),
-    date: Projection.attr('Дата выполнения работ', { index: 10 }),
-    isCompleted: Projection.attr('Отметка о выполнении', { index: 11 }),
-    realDuration: Projection.attr('Фактическая длительность работ', { index: 12 }),
-    tasks: Projection.hasMany('i-i-s-gorvodokanal-task', 'Задачи', {
-      code: Projection.attr('Код задачи', { index: 0 }),
-      content: Projection.attr('Детали задачи', { index: 1 }),
-      planeDuration: Projection.attr('Примерная длительность работ', { index: 2 })
+
+    }, { index: 2 }),
+    tasks: Projection.hasMany('i-i-s-gorvodokanal-task-list', '', {
+      task: Projection.belongsTo('i-i-s-gorvodokanal-task', 'Задача', {
+
+      }, { index: 0, displayMemberPath: 'content' })
     })
   });
   modelClass.defineProjection('RequestL', 'i-i-s-gorvodokanal-request', {
-    iindex: Projection.attr('Номер заявки', { index: 0 }),
-    isAppointed: Projection.attr('Отметка о назначении', { index: 1 }),
-    date: Projection.attr('Дата выполнения работ', { index: 2 }),
-    isCompleted: Projection.attr('Отметка о выполнении', { index: 3 }),
-    team: Projection.belongsTo('i-i-s-gorvodokanal-team', 'Выполняющая бригада', {
-      index: Projection.attr('Выполняющая бригада', { index: 4 })
-    }, { index: -1, hidden: true }),
-    realDuration: Projection.attr('Фактическая длительность работ', { index: 5 }),
+    isAppointed: Projection.attr('Отметка о назначении', { index: 0 }),
     address: Projection.belongsTo('i-i-s-gorvodokanal-address', 'Улица', {
-      street: Projection.attr('Улица', { index: 6 }),
-      house: Projection.attr('Дом', { index: 7 }),
-      build: Projection.attr('Корпус', { index: 8 }),
-      floor: Projection.attr('Этаж', { index: 9 }),
-      apartment: Projection.attr('Квартира', { index: 10 })
+      street: Projection.attr('Улица', { index: 1 }),
+      house: Projection.attr('Дом', { index: 2 }),
+      build: Projection.attr('Корпус', { index: 3 }),
+      floor: Projection.attr('Этаж', { index: 4 }),
+      apartment: Projection.attr('Квартира', { index: 5 })
     }, { index: -1, hidden: true }),
-    tasks: Projection.hasMany('i-i-s-gorvodokanal-task', '', {
-      code: Projection.attr('Код задачи', { index: 0 }),
-      content: Projection.attr('Детали задачи', { index: 1 }),
-      planeDuration: Projection.attr('Примерная длительность работ', { index: 2 })
+    date: Projection.attr('Дата выполнения работ', { index: 6 }),
+    isCompleted: Projection.attr('Отметка о выполнении', { index: 7 }),
+    team: Projection.belongsTo('i-i-s-gorvodokanal-team', 'Выполняющая бригада', {
+      index: Projection.attr('Выполняющая бригада', { index: 8 })
+    }, { index: -1, hidden: true }),
+    startHour: Projection.attr('Часы', { index: 9 }),
+    startMinutes: Projection.attr('Минуты', { index: 10 }),
+    endHour: Projection.attr('Часы', { index: 11 }),
+    endMinutes: Projection.attr('Минуты', { index: 12 }),
+    tasks: Projection.hasMany('i-i-s-gorvodokanal-task-list', '', {
+      task: Projection.belongsTo('i-i-s-gorvodokanal-task', 'Задача', {
+
+      }, { index: 0, displayMemberPath: 'content' })
     })
   });
 };

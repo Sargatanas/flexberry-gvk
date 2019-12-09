@@ -1,9 +1,9 @@
 ﻿{
   "propertyLookup": [],
   "external": false,
-  "caption": "Task",
-  "name": "IISGorvodokanalTaskD",
-  "className": "TaskD",
+  "caption": "Задача",
+  "name": "IISGorvodokanalTaskE",
+  "className": "TaskE",
   "attrs": [],
   "projections": [
     {

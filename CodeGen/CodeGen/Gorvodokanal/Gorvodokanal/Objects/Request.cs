@@ -29,53 +29,57 @@ namespace IIS.Gorvodokanal
     [AutoAltered()]
     [AccessType(ICSSoft.STORMNET.AccessType.none)]
     [View("RequestE", new string[] {
-            "Iindex as \'Номер заявки\'",
             "Address as \'Адрес\' on \'-Данные об адресе\'",
+            "IsAppointed as \'Отметка о назначении\' on \'-Данные о выполнении\'",
+            "Team as \'Бригада\' on \'-Данные о выполнении\'",
+            "Date as \'Дата выполнения работ\' on \'-Данные о выполнении\'",
+            "IsCompleted as \'Отметка о выполнении\' on \'-Данные о выполнении\'",
+            "StartHour as \'Часы\' on \'-Данные о выполнении\\Начало работ\'",
+            "StartMinutes as \'Минуты\' on \'-Данные о выполнении\\Начало работ\'",
+            "EndHour as \'Часы\' on \'-Данные о выполнении\\Фактическая длительность работ\'",
+            "EndMinutes as \'Минуты\' on \'-Данные о выполнении\\Фактическая длительность работ\'"})]
+    [AssociatedDetailViewAttribute("RequestE", "Tasks", "TaskListE", true, "-Задачи", "", true, new string[] {
+            ""})]
+    [View("RequestL", new string[] {
+            "IsAppointed as \'Отметка о назначении\' on \'-Данные об адресе\'",
             "Address.Street as \'Улица\' on \'-Данные об адресе\'",
             "Address.House as \'Дом\' on \'-Данные об адресе\'",
             "Address.Build as \'Корпус\' on \'-Данные об адресе\'",
             "Address.Floor as \'Этаж\' on \'-Данные об адресе\'",
             "Address.Apartment as \'Квартира\' on \'-Данные об адресе\'",
-            "IsAppointed as \'Отметка о назначении\' on \'-Данные о выполнении\'",
-            "Team as \'Бригада\' on \'-Данные о выполнении\'",
-            "Team.Index as \'Номер бригады\' on \'-Данные о выполнении\'",
             "Date as \'Дата выполнения работ\' on \'-Данные о выполнении\'",
             "IsCompleted as \'Отметка о выполнении\' on \'-Данные о выполнении\'",
-            "RealDuration as \'Фактическая длительность работ\' on \'-Данные о выполнении\'"})]
-    [AssociatedDetailViewAttribute("RequestE", "Tasks", "TaskE", true, "", "Задачи", true, new string[] {
-            ""})]
-    [View("RequestL", new string[] {
-            "Iindex as \'Номер заявки\'",
-            "IsAppointed as \'Отметка о назначении\'",
-            "Date as \'Дата выполнения работ\'",
-            "IsCompleted as \'Отметка о выполнении\'",
-            "Team.Index as \'Выполняющая бригада\'",
-            "RealDuration as \'Фактическая длительность работ\'",
-            "Address.Street as \'Улица\' on \'-Данные об адресе\'",
-            "Address.House as \'Дом\' on \'-Данные об адресе\'",
-            "Address.Build as \'Корпус\' on \'-Данные об адресе\'",
-            "Address.Floor as \'Этаж\' on \'-Данные об адресе\'",
-            "Address.Apartment as \'Квартира\' on \'-Данные об адресе\'"})]
-    [AssociatedDetailViewAttribute("RequestL", "Tasks", "TaskE", true, "-Задачи", "", true, new string[] {
+            "Team.Index as \'Выполняющая бригада\' on \'-Данные о выполнении\'",
+            "StartHour as \'Часы\' on \'-Данные о выполненииНачало работ\'",
+            "StartMinutes as \'Минуты\' on \'-Данные о выполненииНачало работ\'",
+            "EndHour as \'Часы\' on \'-Данные о выполнении\\Фактическая длительность работ\'",
+            "EndMinutes as \'Минуты\' on \'-Данные о выполнении\\Фактическая длительность работ\'"})]
+    [AssociatedDetailViewAttribute("RequestL", "Tasks", "TaskListE", true, "-Задачи", "", true, new string[] {
             ""})]
     public class Request : ICSSoft.STORMNET.DataObject
     {
         
-        private int fIindex;
+        private int fIndex = 1;
         
         private IIS.Gorvodokanal.tAppointed fIsAppointed;
         
         private System.DateTime fDate;
         
+        private int fStartHour;
+        
+        private int fStartMinutes;
+        
         private bool fIsCompleted = false;
         
-        private System.DateTime fRealDuration;
+        private int fEndHour;
+        
+        private int fEndMinutes;
         
         private IIS.Gorvodokanal.Team fTeam;
         
         private IIS.Gorvodokanal.Address fAddress;
         
-        private IIS.Gorvodokanal.DetailArrayOfTask fTasks;
+        private IIS.Gorvodokanal.DetailArrayOfTaskList fTasks;
         
         // *** Start programmer edit section *** (Request CustomMembers)
 
@@ -83,34 +87,33 @@ namespace IIS.Gorvodokanal
 
         
         /// <summary>
-        /// Iindex.
+        /// Index.
         /// </summary>
-        // *** Start programmer edit section *** (Request.Iindex CustomAttributes)
+        // *** Start programmer edit section *** (Request.Index CustomAttributes)
 
-        // *** End programmer edit section *** (Request.Iindex CustomAttributes)
-        [NotNull()]
-        public virtual int Iindex
+        // *** End programmer edit section *** (Request.Index CustomAttributes)
+        public virtual int Index
         {
             get
             {
-                // *** Start programmer edit section *** (Request.Iindex Get start)
+                // *** Start programmer edit section *** (Request.Index Get start)
 
-                // *** End programmer edit section *** (Request.Iindex Get start)
-                int result = this.fIindex;
-                // *** Start programmer edit section *** (Request.Iindex Get end)
+                // *** End programmer edit section *** (Request.Index Get start)
+                int result = this.fIndex;
+                // *** Start programmer edit section *** (Request.Index Get end)
 
-                // *** End programmer edit section *** (Request.Iindex Get end)
+                // *** End programmer edit section *** (Request.Index Get end)
                 return result;
             }
             set
             {
-                // *** Start programmer edit section *** (Request.Iindex Set start)
+                // *** Start programmer edit section *** (Request.Index Set start)
 
-                // *** End programmer edit section *** (Request.Iindex Set start)
-                this.fIindex = value;
-                // *** Start programmer edit section *** (Request.Iindex Set end)
+                // *** End programmer edit section *** (Request.Index Set start)
+                this.fIndex = value;
+                // *** Start programmer edit section *** (Request.Index Set end)
 
-                // *** End programmer edit section *** (Request.Iindex Set end)
+                // *** End programmer edit section *** (Request.Index Set end)
             }
         }
         
@@ -178,6 +181,68 @@ namespace IIS.Gorvodokanal
         }
         
         /// <summary>
+        /// StartHour.
+        /// </summary>
+        // *** Start programmer edit section *** (Request.StartHour CustomAttributes)
+
+        // *** End programmer edit section *** (Request.StartHour CustomAttributes)
+        public virtual int StartHour
+        {
+            get
+            {
+                // *** Start programmer edit section *** (Request.StartHour Get start)
+
+                // *** End programmer edit section *** (Request.StartHour Get start)
+                int result = this.fStartHour;
+                // *** Start programmer edit section *** (Request.StartHour Get end)
+
+                // *** End programmer edit section *** (Request.StartHour Get end)
+                return result;
+            }
+            set
+            {
+                // *** Start programmer edit section *** (Request.StartHour Set start)
+
+                // *** End programmer edit section *** (Request.StartHour Set start)
+                this.fStartHour = value;
+                // *** Start programmer edit section *** (Request.StartHour Set end)
+
+                // *** End programmer edit section *** (Request.StartHour Set end)
+            }
+        }
+        
+        /// <summary>
+        /// StartMinutes.
+        /// </summary>
+        // *** Start programmer edit section *** (Request.StartMinutes CustomAttributes)
+
+        // *** End programmer edit section *** (Request.StartMinutes CustomAttributes)
+        public virtual int StartMinutes
+        {
+            get
+            {
+                // *** Start programmer edit section *** (Request.StartMinutes Get start)
+
+                // *** End programmer edit section *** (Request.StartMinutes Get start)
+                int result = this.fStartMinutes;
+                // *** Start programmer edit section *** (Request.StartMinutes Get end)
+
+                // *** End programmer edit section *** (Request.StartMinutes Get end)
+                return result;
+            }
+            set
+            {
+                // *** Start programmer edit section *** (Request.StartMinutes Set start)
+
+                // *** End programmer edit section *** (Request.StartMinutes Set start)
+                this.fStartMinutes = value;
+                // *** Start programmer edit section *** (Request.StartMinutes Set end)
+
+                // *** End programmer edit section *** (Request.StartMinutes Set end)
+            }
+        }
+        
+        /// <summary>
         /// IsCompleted.
         /// </summary>
         // *** Start programmer edit section *** (Request.IsCompleted CustomAttributes)
@@ -209,33 +274,64 @@ namespace IIS.Gorvodokanal
         }
         
         /// <summary>
-        /// RealDuration.
+        /// EndHour.
         /// </summary>
-        // *** Start programmer edit section *** (Request.RealDuration CustomAttributes)
+        // *** Start programmer edit section *** (Request.EndHour CustomAttributes)
 
-        // *** End programmer edit section *** (Request.RealDuration CustomAttributes)
-        public virtual System.DateTime RealDuration
+        // *** End programmer edit section *** (Request.EndHour CustomAttributes)
+        public virtual int EndHour
         {
             get
             {
-                // *** Start programmer edit section *** (Request.RealDuration Get start)
+                // *** Start programmer edit section *** (Request.EndHour Get start)
 
-                // *** End programmer edit section *** (Request.RealDuration Get start)
-                System.DateTime result = this.fRealDuration;
-                // *** Start programmer edit section *** (Request.RealDuration Get end)
+                // *** End programmer edit section *** (Request.EndHour Get start)
+                int result = this.fEndHour;
+                // *** Start programmer edit section *** (Request.EndHour Get end)
 
-                // *** End programmer edit section *** (Request.RealDuration Get end)
+                // *** End programmer edit section *** (Request.EndHour Get end)
                 return result;
             }
             set
             {
-                // *** Start programmer edit section *** (Request.RealDuration Set start)
+                // *** Start programmer edit section *** (Request.EndHour Set start)
 
-                // *** End programmer edit section *** (Request.RealDuration Set start)
-                this.fRealDuration = value;
-                // *** Start programmer edit section *** (Request.RealDuration Set end)
+                // *** End programmer edit section *** (Request.EndHour Set start)
+                this.fEndHour = value;
+                // *** Start programmer edit section *** (Request.EndHour Set end)
 
-                // *** End programmer edit section *** (Request.RealDuration Set end)
+                // *** End programmer edit section *** (Request.EndHour Set end)
+            }
+        }
+        
+        /// <summary>
+        /// EndMinutes.
+        /// </summary>
+        // *** Start programmer edit section *** (Request.EndMinutes CustomAttributes)
+
+        // *** End programmer edit section *** (Request.EndMinutes CustomAttributes)
+        public virtual int EndMinutes
+        {
+            get
+            {
+                // *** Start programmer edit section *** (Request.EndMinutes Get start)
+
+                // *** End programmer edit section *** (Request.EndMinutes Get start)
+                int result = this.fEndMinutes;
+                // *** Start programmer edit section *** (Request.EndMinutes Get end)
+
+                // *** End programmer edit section *** (Request.EndMinutes Get end)
+                return result;
+            }
+            set
+            {
+                // *** Start programmer edit section *** (Request.EndMinutes Set start)
+
+                // *** End programmer edit section *** (Request.EndMinutes Set start)
+                this.fEndMinutes = value;
+                // *** Start programmer edit section *** (Request.EndMinutes Set end)
+
+                // *** End programmer edit section *** (Request.EndMinutes Set end)
             }
         }
         
@@ -312,7 +408,7 @@ namespace IIS.Gorvodokanal
         // *** Start programmer edit section *** (Request.Tasks CustomAttributes)
 
         // *** End programmer edit section *** (Request.Tasks CustomAttributes)
-        public virtual IIS.Gorvodokanal.DetailArrayOfTask Tasks
+        public virtual IIS.Gorvodokanal.DetailArrayOfTaskList Tasks
         {
             get
             {
@@ -321,9 +417,9 @@ namespace IIS.Gorvodokanal
                 // *** End programmer edit section *** (Request.Tasks Get start)
                 if ((this.fTasks == null))
                 {
-                    this.fTasks = new IIS.Gorvodokanal.DetailArrayOfTask(this);
+                    this.fTasks = new IIS.Gorvodokanal.DetailArrayOfTaskList(this);
                 }
-                IIS.Gorvodokanal.DetailArrayOfTask result = this.fTasks;
+                IIS.Gorvodokanal.DetailArrayOfTaskList result = this.fTasks;
                 // *** Start programmer edit section *** (Request.Tasks Get end)
 
                 // *** End programmer edit section *** (Request.Tasks Get end)

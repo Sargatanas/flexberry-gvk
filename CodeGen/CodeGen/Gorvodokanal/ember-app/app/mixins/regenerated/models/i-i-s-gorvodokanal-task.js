@@ -2,17 +2,15 @@ import Ember from 'ember';
 import DS from 'ember-data';
 import { Projection } from 'ember-flexberry-data';
 export let Model = Ember.Mixin.create({
-  code: DS.attr('number'),
+  code: DS.attr('number', { defaultValue: 1, ordered: true }),
   content: DS.attr('string'),
-  planeDuration: DS.attr('date'),
-  request: DS.belongsTo('i-i-s-gorvodokanal-request', { inverse: 'tasks', async: false }),
+  planeDurationtHour: DS.attr('number', { defaultValue: 0 }),
+  planeDurationMinutes: DS.attr('number', { defaultValue: 0 }),
   getValidations: function () {
     let parentValidations = this._super();
     let thisValidations = {
       code: { presence: true },
-      content: { presence: true },
-      planeDuration: { datetime: true },
-      request: { presence: true }
+      content: { presence: true }
     };
     return Ember.$.extend(true, {}, parentValidations, thisValidations);
   },
@@ -30,8 +28,15 @@ export function defineNamespace(modelClass) {
 
 export let defineProjections = function (modelClass) {
   modelClass.defineProjection('TaskE', 'i-i-s-gorvodokanal-task', {
-    code: Projection.attr('Код задачи', { index: 0 }),
-    content: Projection.attr('Детали задачи', { index: 1 }),
-    planeDuration: Projection.attr('Примерная длительность работ', { index: 2 })
+    code: Projection.attr('Идентификатор', { index: 0 }),
+    content: Projection.attr('Содержание', { index: 1 }),
+    planeDurationtHour: Projection.attr('Часы', { index: 2 }),
+    planeDurationMinutes: Projection.attr('Минуты', { index: 3 })
+  });
+  modelClass.defineProjection('TaskL', 'i-i-s-gorvodokanal-task', {
+    code: Projection.attr('Идентификатор', { index: 0 }),
+    content: Projection.attr('Содержание', { index: 1 }),
+    planeDurationtHour: Projection.attr('Часы', { index: 2 }),
+    planeDurationMinutes: Projection.attr('Минуты', { index: 3 })
   });
 };

@@ -25,19 +25,6 @@
     </div>
   </div>
   <div class="field">
-  {{
-    flexberry-field
-    placeholder=(t 'components.flexberry-field.placeholder')
-    readonly=readonly
-    required=true
-    value=model.iindex
-    class=(if model.errors.iindex 'error' '')
-    label=(t 'forms.i-i-s-gorvodokanal-request-e.iindex-caption')
-  }}
-  {{flexberry-validationmessage error=model.errors.iindex pointing="pointing"}}
-</div>
-
-<div class="field">
   <label>{{t 'forms.i-i-s-gorvodokanal-request-e.address-caption'}}</label>
   {{
     flexberry-lookup
@@ -52,71 +39,6 @@
     componentName="addressLookup"
   }}
   {{flexberry-validationmessage error=model.errors.address pointing="pointing"}}
-</div>
-
-<div class="field">
-  {{
-    flexberry-field
-    placeholder=(t 'components.flexberry-field.placeholder')
-    readonly=true
-    required=true
-    value=model.address.street
-    class=(if model.errors.address.street 'error' '')
-    label=(t 'forms.i-i-s-gorvodokanal-request-e.address.street-caption')
-  }}
-  {{flexberry-validationmessage error=model.errors.address.street pointing="pointing"}}
-</div>
-
-<div class="field">
-  {{
-    flexberry-field
-    placeholder=(t 'components.flexberry-field.placeholder')
-    readonly=true
-    required=true
-    value=model.address.house
-    class=(if model.errors.address.house 'error' '')
-    label=(t 'forms.i-i-s-gorvodokanal-request-e.address.house-caption')
-  }}
-  {{flexberry-validationmessage error=model.errors.address.house pointing="pointing"}}
-</div>
-
-<div class="field">
-  {{
-    flexberry-field
-    placeholder=(t 'components.flexberry-field.placeholder')
-    readonly=true
-    required=true
-    value=model.address.build
-    class=(if model.errors.address.build 'error' '')
-    label=(t 'forms.i-i-s-gorvodokanal-request-e.address.build-caption')
-  }}
-  {{flexberry-validationmessage error=model.errors.address.build pointing="pointing"}}
-</div>
-
-<div class="field">
-  {{
-    flexberry-field
-    placeholder=(t 'components.flexberry-field.placeholder')
-    readonly=true
-    required=true
-    value=model.address.floor
-    class=(if model.errors.address.floor 'error' '')
-    label=(t 'forms.i-i-s-gorvodokanal-request-e.address.floor-caption')
-  }}
-  {{flexberry-validationmessage error=model.errors.address.floor pointing="pointing"}}
-</div>
-
-<div class="field">
-  {{
-    flexberry-field
-    placeholder=(t 'components.flexberry-field.placeholder')
-    readonly=true
-    required=true
-    value=model.address.apartment
-    class=(if model.errors.address.apartment 'error' '')
-    label=(t 'forms.i-i-s-gorvodokanal-request-e.address.apartment-caption')
-  }}
-  {{flexberry-validationmessage error=model.errors.address.apartment pointing="pointing"}}
 </div>
 
 <div class="field">
@@ -148,19 +70,6 @@
 </div>
 
 <div class="field">
-  {{
-    flexberry-field
-    placeholder=(t 'components.flexberry-field.placeholder')
-    readonly=true
-    required=true
-    value=model.team.index
-    class=(if model.errors.team.index 'error' '')
-    label=(t 'forms.i-i-s-gorvodokanal-request-e.team.index-caption')
-  }}
-  {{flexberry-validationmessage error=model.errors.team.index pointing="pointing"}}
-</div>
-
-<div class="field">
   <label>{{t 'forms.i-i-s-gorvodokanal-request-e.date-caption'}}</label>
   {{
     flexberry-datepicker
@@ -182,15 +91,55 @@
 </div>
 
 <div class="field">
-  <label>{{t 'forms.i-i-s-gorvodokanal-request-e.realDuration-caption'}}</label>
   {{
-    flexberry-datepicker
-    placeholder=(t 'components.flexberry-datepicker.placeholder')
+    flexberry-field
+    placeholder=(t 'components.flexberry-field.placeholder')
     readonly=readonly
-    value=model.realDuration
-    class=(if model.errors.realDuration 'error' '')
+    required=true
+    value=model.startHour
+    class=(if model.errors.startHour 'error' '')
+    label=(t 'forms.i-i-s-gorvodokanal-request-e.startHour-caption')
   }}
-  {{flexberry-validationmessage error=model.errors.realDuration pointing="pointing"}}
+  {{flexberry-validationmessage error=model.errors.startHour pointing="pointing"}}
+</div>
+
+<div class="field">
+  {{
+    flexberry-field
+    placeholder=(t 'components.flexberry-field.placeholder')
+    readonly=readonly
+    required=true
+    value=model.startMinutes
+    class=(if model.errors.startMinutes 'error' '')
+    label=(t 'forms.i-i-s-gorvodokanal-request-e.startMinutes-caption')
+  }}
+  {{flexberry-validationmessage error=model.errors.startMinutes pointing="pointing"}}
+</div>
+
+<div class="field">
+  {{
+    flexberry-field
+    placeholder=(t 'components.flexberry-field.placeholder')
+    readonly=readonly
+    required=true
+    value=model.endHour
+    class=(if model.errors.endHour 'error' '')
+    label=(t 'forms.i-i-s-gorvodokanal-request-e.endHour-caption')
+  }}
+  {{flexberry-validationmessage error=model.errors.endHour pointing="pointing"}}
+</div>
+
+<div class="field">
+  {{
+    flexberry-field
+    placeholder=(t 'components.flexberry-field.placeholder')
+    readonly=readonly
+    required=true
+    value=model.endMinutes
+    class=(if model.errors.endMinutes 'error' '')
+    label=(t 'forms.i-i-s-gorvodokanal-request-e.endMinutes-caption')
+  }}
+  {{flexberry-validationmessage error=model.errors.endMinutes pointing="pointing"}}
 </div>
 
 <div class="field">

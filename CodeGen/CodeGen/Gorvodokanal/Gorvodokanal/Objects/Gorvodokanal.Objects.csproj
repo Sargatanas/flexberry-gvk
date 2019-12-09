@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{765EA8AB-D31B-4392-9440-1FA6A18960D3}</ProjectGuid>
+    <ProjectGuid>{9F2A2F68-F28C-4325-B751-6234ADDF9B35}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>IIS.Gorvodokanal</RootNamespace>
@@ -121,9 +121,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Task.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="Request.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -133,7 +130,13 @@
     <Compile Include="Address.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="TaskList.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Team.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Task.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />

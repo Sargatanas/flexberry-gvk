@@ -7,11 +7,11 @@
   "parentClassName": null,
   "attrs": [
     {
-      "name": "iindex",
+      "name": "index",
       "type": "number",
       "flexberryType": "int",
-      "notNull": true,
-      "defaultValue": "",
+      "notNull": false,
+      "defaultValue": "1",
       "stored": true,
       "ordered": false
     },
@@ -34,6 +34,24 @@
       "ordered": false
     },
     {
+      "name": "startHour",
+      "type": "number",
+      "flexberryType": "int",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "startMinutes",
+      "type": "number",
+      "flexberryType": "int",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
       "name": "isCompleted",
       "type": "boolean",
       "flexberryType": "bool",
@@ -43,9 +61,18 @@
       "ordered": false
     },
     {
-      "name": "realDuration",
-      "type": "date",
-      "flexberryType": "tDate",
+      "name": "endHour",
+      "type": "number",
+      "flexberryType": "int",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "endMinutes",
+      "type": "number",
+      "flexberryType": "int",
       "notNull": false,
       "defaultValue": "",
       "stored": true,
@@ -71,7 +98,7 @@
   "hasMany": [
     {
       "name": "tasks",
-      "relatedTo": "i-i-s-gorvodokanal-task",
+      "relatedTo": "i-i-s-gorvodokanal-task-list",
       "inverse": "request"
     }
   ],
@@ -81,32 +108,131 @@
       "modelName": "i-i-s-gorvodokanal-request",
       "attrs": [
         {
-          "name": "iindex",
-          "caption": "Номер заявки",
-          "hidden": false,
-          "index": 0
-        },
-        {
           "name": "isAppointed",
           "caption": "Отметка о назначении",
           "hidden": false,
-          "index": 7
+          "index": 1
         },
         {
           "name": "date",
           "caption": "Дата выполнения работ",
           "hidden": false,
-          "index": 10
+          "index": 3
         },
         {
           "name": "isCompleted",
           "caption": "Отметка о выполнении",
           "hidden": false,
+          "index": 4
+        },
+        {
+          "name": "startHour",
+          "caption": "Часы",
+          "hidden": false,
+          "index": 5
+        },
+        {
+          "name": "startMinutes",
+          "caption": "Минуты",
+          "hidden": false,
+          "index": 6
+        },
+        {
+          "name": "endHour",
+          "caption": "Часы",
+          "hidden": false,
+          "index": 7
+        },
+        {
+          "name": "endMinutes",
+          "caption": "Минуты",
+          "hidden": false,
+          "index": 8
+        }
+      ],
+      "belongsTo": [
+        {
+          "lookupValue": null,
+          "lookupValueField": null,
+          "relationName": "Address",
+          "belongsTo": [],
+          "hidden": false,
+          "attrs": [],
+          "index": 0,
+          "type": "default",
+          "caption": "Адрес",
+          "name": "address",
+          "relatedTo": "i-i-s-gorvodokanal-address",
+          "inverse": null
+        },
+        {
+          "lookupValue": null,
+          "lookupValueField": null,
+          "relationName": "Team",
+          "belongsTo": [],
+          "hidden": false,
+          "attrs": [],
+          "index": 2,
+          "type": "default",
+          "caption": "Бригада",
+          "name": "team",
+          "relatedTo": "i-i-s-gorvodokanal-team",
+          "inverse": null
+        }
+      ],
+      "hasMany": [
+        {
+          "projectionName": "TaskListE",
+          "caption": "",
+          "name": "tasks",
+          "relatedTo": "i-i-s-gorvodokanal-task-list",
+          "inverse": null
+        }
+      ]
+    },
+    {
+      "name": "RequestL",
+      "modelName": "i-i-s-gorvodokanal-request",
+      "attrs": [
+        {
+          "name": "isAppointed",
+          "caption": "Отметка о назначении",
+          "hidden": false,
+          "index": 0
+        },
+        {
+          "name": "date",
+          "caption": "Дата выполнения работ",
+          "hidden": false,
+          "index": 6
+        },
+        {
+          "name": "isCompleted",
+          "caption": "Отметка о выполнении",
+          "hidden": false,
+          "index": 7
+        },
+        {
+          "name": "startHour",
+          "caption": "Часы",
+          "hidden": false,
+          "index": 9
+        },
+        {
+          "name": "startMinutes",
+          "caption": "Минуты",
+          "hidden": false,
+          "index": 10
+        },
+        {
+          "name": "endHour",
+          "caption": "Часы",
+          "hidden": false,
           "index": 11
         },
         {
-          "name": "realDuration",
-          "caption": "Фактическая длительность работ",
+          "name": "endMinutes",
+          "caption": "Минуты",
           "hidden": false,
           "index": 12
         }
@@ -123,108 +249,40 @@
               "name": "street",
               "caption": "Улица",
               "hidden": false,
-              "index": 2
+              "index": 1
             },
             {
               "name": "house",
               "caption": "Дом",
               "hidden": false,
-              "index": 3
+              "index": 2
             },
             {
               "name": "build",
               "caption": "Корпус",
               "hidden": false,
-              "index": 4
+              "index": 3
             },
             {
               "name": "floor",
               "caption": "Этаж",
               "hidden": false,
-              "index": 5
+              "index": 4
             },
             {
               "name": "apartment",
               "caption": "Квартира",
               "hidden": false,
-              "index": 6
+              "index": 5
             }
           ],
-          "index": 1,
+          "index": -1,
           "type": "default",
-          "caption": "Адрес",
+          "caption": "Улица",
           "name": "address",
           "relatedTo": "i-i-s-gorvodokanal-address",
           "inverse": null
         },
-        {
-          "lookupValue": null,
-          "lookupValueField": null,
-          "relationName": "Team",
-          "belongsTo": [],
-          "hidden": false,
-          "attrs": [
-            {
-              "name": "index",
-              "caption": "Номер бригады",
-              "hidden": false,
-              "index": 9
-            }
-          ],
-          "index": 8,
-          "type": "default",
-          "caption": "Бригада",
-          "name": "team",
-          "relatedTo": "i-i-s-gorvodokanal-team",
-          "inverse": null
-        }
-      ],
-      "hasMany": [
-        {
-          "projectionName": "TaskE",
-          "caption": "Задачи",
-          "name": "tasks",
-          "relatedTo": "i-i-s-gorvodokanal-task",
-          "inverse": null
-        }
-      ]
-    },
-    {
-      "name": "RequestL",
-      "modelName": "i-i-s-gorvodokanal-request",
-      "attrs": [
-        {
-          "name": "iindex",
-          "caption": "Номер заявки",
-          "hidden": false,
-          "index": 0
-        },
-        {
-          "name": "isAppointed",
-          "caption": "Отметка о назначении",
-          "hidden": false,
-          "index": 1
-        },
-        {
-          "name": "date",
-          "caption": "Дата выполнения работ",
-          "hidden": false,
-          "index": 2
-        },
-        {
-          "name": "isCompleted",
-          "caption": "Отметка о выполнении",
-          "hidden": false,
-          "index": 3
-        },
-        {
-          "name": "realDuration",
-          "caption": "Фактическая длительность работ",
-          "hidden": false,
-          "index": 5
-        }
-      ],
-      "belongsTo": [
         {
           "lookupValue": null,
           "lookupValueField": null,
@@ -236,7 +294,7 @@
               "name": "index",
               "caption": "Выполняющая бригада",
               "hidden": false,
-              "index": 4
+              "index": 8
             }
           ],
           "index": -1,
@@ -245,59 +303,14 @@
           "name": "team",
           "relatedTo": "i-i-s-gorvodokanal-team",
           "inverse": null
-        },
-        {
-          "lookupValue": null,
-          "lookupValueField": null,
-          "relationName": "Address",
-          "belongsTo": [],
-          "hidden": false,
-          "attrs": [
-            {
-              "name": "street",
-              "caption": "Улица",
-              "hidden": false,
-              "index": 6
-            },
-            {
-              "name": "house",
-              "caption": "Дом",
-              "hidden": false,
-              "index": 7
-            },
-            {
-              "name": "build",
-              "caption": "Корпус",
-              "hidden": false,
-              "index": 8
-            },
-            {
-              "name": "floor",
-              "caption": "Этаж",
-              "hidden": false,
-              "index": 9
-            },
-            {
-              "name": "apartment",
-              "caption": "Квартира",
-              "hidden": false,
-              "index": 10
-            }
-          ],
-          "index": -1,
-          "type": "default",
-          "caption": "Улица",
-          "name": "address",
-          "relatedTo": "i-i-s-gorvodokanal-address",
-          "inverse": null
         }
       ],
       "hasMany": [
         {
-          "projectionName": "TaskE",
+          "projectionName": "TaskListE",
           "caption": "",
           "name": "tasks",
-          "relatedTo": "i-i-s-gorvodokanal-task",
+          "relatedTo": "i-i-s-gorvodokanal-task-list",
           "inverse": null
         }
       ]

@@ -4,65 +4,14 @@
         <name>Gorvodokanal.Objects</name>
     </assembly>
     <members>
-        <member name="T:IIS.Gorvodokanal.Task">
-            <summary>
-            Task.
-            </summary>
-        </member>
-        <member name="P:IIS.Gorvodokanal.Task.Code">
-            <summary>
-            Code.
-            </summary>
-        </member>
-        <member name="P:IIS.Gorvodokanal.Task.Content">
-            <summary>
-            Content.
-            </summary>
-        </member>
-        <member name="P:IIS.Gorvodokanal.Task.PlaneDuration">
-            <summary>
-            PlaneDuration.
-            </summary>
-        </member>
-        <member name="P:IIS.Gorvodokanal.Task.Request">
-            <summary>
-            мастеровая ссылка на шапку IIS.Gorvodokanal.Request.
-            </summary>
-        </member>
-        <member name="T:IIS.Gorvodokanal.Task.Views">
-            <summary>
-            Class views container.
-            </summary>
-        </member>
-        <member name="P:IIS.Gorvodokanal.Task.Views.TaskE">
-            <summary>
-            "TaskE" view.
-            </summary>
-        </member>
-        <member name="T:IIS.Gorvodokanal.DetailArrayOfTask">
-            <summary>
-            Detail array of Task.
-            </summary>
-        </member>
-        <member name="M:IIS.Gorvodokanal.DetailArrayOfTask.#ctor(IIS.Gorvodokanal.Request)">
-            <summary>
-            Construct detail array.
-            </summary>
-            <summary>
-            Returns object with type Task by index.
-            </summary>
-            <summary>
-            Adds object with type Task.
-            </summary>
-        </member>
         <member name="T:IIS.Gorvodokanal.Request">
             <summary>
             Request.
             </summary>
         </member>
-        <member name="P:IIS.Gorvodokanal.Request.Iindex">
+        <member name="P:IIS.Gorvodokanal.Request.Index">
             <summary>
-            Iindex.
+            Index.
             </summary>
         </member>
         <member name="P:IIS.Gorvodokanal.Request.IsAppointed">
@@ -75,14 +24,29 @@
             Date.
             </summary>
         </member>
+        <member name="P:IIS.Gorvodokanal.Request.StartHour">
+            <summary>
+            StartHour.
+            </summary>
+        </member>
+        <member name="P:IIS.Gorvodokanal.Request.StartMinutes">
+            <summary>
+            StartMinutes.
+            </summary>
+        </member>
         <member name="P:IIS.Gorvodokanal.Request.IsCompleted">
             <summary>
             IsCompleted.
             </summary>
         </member>
-        <member name="P:IIS.Gorvodokanal.Request.RealDuration">
+        <member name="P:IIS.Gorvodokanal.Request.EndHour">
             <summary>
-            RealDuration.
+            EndHour.
+            </summary>
+        </member>
+        <member name="P:IIS.Gorvodokanal.Request.EndMinutes">
+            <summary>
+            EndMinutes.
             </summary>
         </member>
         <member name="P:IIS.Gorvodokanal.Request.Team">
@@ -120,12 +84,12 @@
             T appointed.
             </summary>
         </member>
-        <member name="F:IIS.Gorvodokanal.tAppointed.Прикреплено">
+        <member name="F:IIS.Gorvodokanal.tAppointed.Appointed">
             <summary>
             
             </summary>
         </member>
-        <member name="F:IIS.Gorvodokanal.tAppointed.НеПрикреплено">
+        <member name="F:IIS.Gorvodokanal.tAppointed.NotAppointed">
             <summary>
             
             </summary>
@@ -180,6 +144,47 @@
             "AddressL" view.
             </summary>
         </member>
+        <member name="T:IIS.Gorvodokanal.TaskList">
+            <summary>
+            TaskList.
+            </summary>
+        </member>
+        <member name="P:IIS.Gorvodokanal.TaskList.Task">
+            <summary>
+            TaskList.
+            </summary>
+        </member>
+        <member name="P:IIS.Gorvodokanal.TaskList.Request">
+            <summary>
+            мастеровая ссылка на шапку IIS.Gorvodokanal.Request.
+            </summary>
+        </member>
+        <member name="T:IIS.Gorvodokanal.TaskList.Views">
+            <summary>
+            Class views container.
+            </summary>
+        </member>
+        <member name="P:IIS.Gorvodokanal.TaskList.Views.TaskListE">
+            <summary>
+            "TaskListE" view.
+            </summary>
+        </member>
+        <member name="T:IIS.Gorvodokanal.DetailArrayOfTaskList">
+            <summary>
+            Detail array of TaskList.
+            </summary>
+        </member>
+        <member name="M:IIS.Gorvodokanal.DetailArrayOfTaskList.#ctor(IIS.Gorvodokanal.Request)">
+            <summary>
+            Construct detail array.
+            </summary>
+            <summary>
+            Returns object with type TaskList by index.
+            </summary>
+            <summary>
+            Adds object with type TaskList.
+            </summary>
+        </member>
         <member name="T:IIS.Gorvodokanal.Team">
             <summary>
             Team.
@@ -190,14 +195,24 @@
             Index.
             </summary>
         </member>
-        <member name="P:IIS.Gorvodokanal.Team.ShiftStart">
+        <member name="P:IIS.Gorvodokanal.Team.ShiftStartHour">
             <summary>
-            ShiftStart.
+            ShiftStartHour.
             </summary>
         </member>
-        <member name="P:IIS.Gorvodokanal.Team.ShiftEnd">
+        <member name="P:IIS.Gorvodokanal.Team.ShiftStartMinutes">
             <summary>
-            ShiftEnd.
+            ShiftStartMinutes.
+            </summary>
+        </member>
+        <member name="P:IIS.Gorvodokanal.Team.ShiftEndHour">
+            <summary>
+            ShiftEndHour.
+            </summary>
+        </member>
+        <member name="P:IIS.Gorvodokanal.Team.ShiftEndMinutes">
+            <summary>
+            ShiftEndMinutes.
             </summary>
         </member>
         <member name="T:IIS.Gorvodokanal.Team.Views">
@@ -213,6 +228,46 @@
         <member name="P:IIS.Gorvodokanal.Team.Views.TeamL">
             <summary>
             "TeamL" view.
+            </summary>
+        </member>
+        <member name="T:IIS.Gorvodokanal.Task">
+            <summary>
+            Task.
+            </summary>
+        </member>
+        <member name="P:IIS.Gorvodokanal.Task.Code">
+            <summary>
+            Code.
+            </summary>
+        </member>
+        <member name="P:IIS.Gorvodokanal.Task.Content">
+            <summary>
+            Content.
+            </summary>
+        </member>
+        <member name="P:IIS.Gorvodokanal.Task.PlaneDurationtHour">
+            <summary>
+            PlaneDurationtHour.
+            </summary>
+        </member>
+        <member name="P:IIS.Gorvodokanal.Task.PlaneDurationMinutes">
+            <summary>
+            PlaneDurationMinutes.
+            </summary>
+        </member>
+        <member name="T:IIS.Gorvodokanal.Task.Views">
+            <summary>
+            Class views container.
+            </summary>
+        </member>
+        <member name="P:IIS.Gorvodokanal.Task.Views.TaskE">
+            <summary>
+            "TaskE" view.
+            </summary>
+        </member>
+        <member name="P:IIS.Gorvodokanal.Task.Views.TaskL">
+            <summary>
+            "TaskL" view.
             </summary>
         </member>
     </members>

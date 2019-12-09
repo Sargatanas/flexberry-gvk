@@ -1,3 +1,3 @@
 export default {
-  caption: 'Team'
+  caption: 'Бригады'
 };

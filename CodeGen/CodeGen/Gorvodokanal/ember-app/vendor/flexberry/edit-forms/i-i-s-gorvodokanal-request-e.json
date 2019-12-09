@@ -15,10 +15,18 @@
       "relationName": "Address",
       "projection": "AddressL",
       "detailModelName": null
+    },
+    {
+      "master": "task",
+      "displayAttributeName": "content",
+      "required": true,
+      "relationName": "Tasks.Task",
+      "projection": "TaskL",
+      "detailModelName": "i-i-s-gorvodokanal-task-list"
     }
   ],
   "external": false,
-  "caption": "Request",
+  "caption": "Заявка",
   "name": "IISGorvodokanalRequestE",
   "className": "RequestE",
   "attrs": [],

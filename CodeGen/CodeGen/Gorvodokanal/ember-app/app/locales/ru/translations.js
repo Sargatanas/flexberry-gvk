@@ -3,13 +3,15 @@ import EmberFlexberryTranslations from 'ember-flexberry/locales/ru/translations'
 
 import IISGorvodokanalAddressLForm from './forms/i-i-s-gorvodokanal-address-l';
 import IISGorvodokanalRequestLForm from './forms/i-i-s-gorvodokanal-request-l';
+import IISGorvodokanalTaskLForm from './forms/i-i-s-gorvodokanal-task-l';
 import IISGorvodokanalTeamLForm from './forms/i-i-s-gorvodokanal-team-l';
 import IISGorvodokanalAddressEForm from './forms/i-i-s-gorvodokanal-address-e';
 import IISGorvodokanalRequestEForm from './forms/i-i-s-gorvodokanal-request-e';
-import IISGorvodokanalTaskDForm from './forms/i-i-s-gorvodokanal-task-d';
+import IISGorvodokanalTaskEForm from './forms/i-i-s-gorvodokanal-task-e';
 import IISGorvodokanalTeamEForm from './forms/i-i-s-gorvodokanal-team-e';
 import IISGorvodokanalAddressModel from './models/i-i-s-gorvodokanal-address';
 import IISGorvodokanalRequestModel from './models/i-i-s-gorvodokanal-request';
+import IISGorvodokanalTaskListModel from './models/i-i-s-gorvodokanal-task-list';
 import IISGorvodokanalTaskModel from './models/i-i-s-gorvodokanal-task';
 import IISGorvodokanalTeamModel from './models/i-i-s-gorvodokanal-team';
 
@@ -20,6 +22,7 @@ Ember.$.extend(true, translations, {
   models: {
     'i-i-s-gorvodokanal-address': IISGorvodokanalAddressModel,
     'i-i-s-gorvodokanal-request': IISGorvodokanalRequestModel,
+    'i-i-s-gorvodokanal-task-list': IISGorvodokanalTaskListModel,
     'i-i-s-gorvodokanal-task': IISGorvodokanalTaskModel,
     'i-i-s-gorvodokanal-team': IISGorvodokanalTeamModel,
   },
@@ -103,6 +106,10 @@ Ember.$.extend(true, translations, {
             caption: 'Адреса',
             title: ''
           },
+          'i-i-s-gorvodokanal-task-l': {
+            caption: 'Задачи',
+            title: ''
+          },
           'i-i-s-gorvodokanal-team-l': {
             caption: 'Бригады',
             title: ''
@@ -121,10 +128,11 @@ Ember.$.extend(true, translations, {
     },
     'i-i-s-gorvodokanal-address-l': IISGorvodokanalAddressLForm,
     'i-i-s-gorvodokanal-request-l': IISGorvodokanalRequestLForm,
+    'i-i-s-gorvodokanal-task-l': IISGorvodokanalTaskLForm,
     'i-i-s-gorvodokanal-team-l': IISGorvodokanalTeamLForm,
     'i-i-s-gorvodokanal-address-e': IISGorvodokanalAddressEForm,
     'i-i-s-gorvodokanal-request-e': IISGorvodokanalRequestEForm,
-    'i-i-s-gorvodokanal-task-d': IISGorvodokanalTaskDForm,
+    'i-i-s-gorvodokanal-task-e': IISGorvodokanalTaskEForm,
     'i-i-s-gorvodokanal-team-e': IISGorvodokanalTeamEForm,
   },
 

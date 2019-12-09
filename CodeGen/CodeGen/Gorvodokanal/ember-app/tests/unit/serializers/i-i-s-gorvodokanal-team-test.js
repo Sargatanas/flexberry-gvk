@@ -12,6 +12,7 @@ moduleForModel('i-i-s-gorvodokanal-team', 'Unit | Serializer | i-i-s-gorvodokana
 
     'model:i-i-s-gorvodokanal-address',
     'model:i-i-s-gorvodokanal-request',
+    'model:i-i-s-gorvodokanal-task-list',
     'model:i-i-s-gorvodokanal-task',
     'model:i-i-s-gorvodokanal-team'
   ]

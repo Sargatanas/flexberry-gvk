@@ -29,19 +29,25 @@ namespace IIS.Gorvodokanal
     [AutoAltered()]
     [AccessType(ICSSoft.STORMNET.AccessType.none)]
     [View("TaskE", new string[] {
-            "Code as \'Код задачи\'",
-            "Content as \'Детали задачи\'",
-            "PlaneDuration as \'Примерная длительность работ\'"})]
+            "Code as \'Идентификатор\'",
+            "Content as \'Содержание\'",
+            "PlaneDurationtHour as \'Часы\' on \'-Примерная длительность работ\'",
+            "PlaneDurationMinutes as \'Минуты\' on \'-Примерная длительность работ\'"})]
+    [View("TaskL", new string[] {
+            "Code as \'Идентификатор\'",
+            "Content as \'Содержание\'",
+            "PlaneDurationtHour as \'Часы\' on \'-Примерная длительность работ\'",
+            "PlaneDurationMinutes as \'Минуты\' on \'-Примерная длительность работ\'"})]
     public class Task : ICSSoft.STORMNET.DataObject
     {
         
-        private int fCode;
+        private int fCode = 1;
         
         private string fContent;
         
-        private System.DateTime fPlaneDuration;
+        private int fPlaneDurationtHour = 0;
         
-        private IIS.Gorvodokanal.Request fRequest;
+        private int fPlaneDurationMinutes = 0;
         
         // *** Start programmer edit section *** (Task CustomMembers)
 
@@ -54,7 +60,9 @@ namespace IIS.Gorvodokanal
         // *** Start programmer edit section *** (Task.Code CustomAttributes)
 
         // *** End programmer edit section *** (Task.Code CustomAttributes)
+        [DisableInsertProperty(true)]
         [NotNull()]
+        [Order()]
         public virtual int Code
         {
             get
@@ -114,69 +122,64 @@ namespace IIS.Gorvodokanal
         }
         
         /// <summary>
-        /// PlaneDuration.
+        /// PlaneDurationtHour.
         /// </summary>
-        // *** Start programmer edit section *** (Task.PlaneDuration CustomAttributes)
+        // *** Start programmer edit section *** (Task.PlaneDurationtHour CustomAttributes)
 
-        // *** End programmer edit section *** (Task.PlaneDuration CustomAttributes)
-        [NotNull()]
-        public virtual System.DateTime PlaneDuration
+        // *** End programmer edit section *** (Task.PlaneDurationtHour CustomAttributes)
+        public virtual int PlaneDurationtHour
         {
             get
             {
-                // *** Start programmer edit section *** (Task.PlaneDuration Get start)
+                // *** Start programmer edit section *** (Task.PlaneDurationtHour Get start)
 
-                // *** End programmer edit section *** (Task.PlaneDuration Get start)
-                System.DateTime result = this.fPlaneDuration;
-                // *** Start programmer edit section *** (Task.PlaneDuration Get end)
+                // *** End programmer edit section *** (Task.PlaneDurationtHour Get start)
+                int result = this.fPlaneDurationtHour;
+                // *** Start programmer edit section *** (Task.PlaneDurationtHour Get end)
 
-                // *** End programmer edit section *** (Task.PlaneDuration Get end)
+                // *** End programmer edit section *** (Task.PlaneDurationtHour Get end)
                 return result;
             }
             set
             {
-                // *** Start programmer edit section *** (Task.PlaneDuration Set start)
+                // *** Start programmer edit section *** (Task.PlaneDurationtHour Set start)
 
-                // *** End programmer edit section *** (Task.PlaneDuration Set start)
-                this.fPlaneDuration = value;
-                // *** Start programmer edit section *** (Task.PlaneDuration Set end)
+                // *** End programmer edit section *** (Task.PlaneDurationtHour Set start)
+                this.fPlaneDurationtHour = value;
+                // *** Start programmer edit section *** (Task.PlaneDurationtHour Set end)
 
-                // *** End programmer edit section *** (Task.PlaneDuration Set end)
+                // *** End programmer edit section *** (Task.PlaneDurationtHour Set end)
             }
         }
         
         /// <summary>
-        /// мастеровая ссылка на шапку IIS.Gorvodokanal.Request.
+        /// PlaneDurationMinutes.
         /// </summary>
-        // *** Start programmer edit section *** (Task.Request CustomAttributes)
+        // *** Start programmer edit section *** (Task.PlaneDurationMinutes CustomAttributes)
 
-        // *** End programmer edit section *** (Task.Request CustomAttributes)
-        [Agregator()]
-        [NotNull()]
-        [PropertyStorage(new string[] {
-                "Request"})]
-        public virtual IIS.Gorvodokanal.Request Request
+        // *** End programmer edit section *** (Task.PlaneDurationMinutes CustomAttributes)
+        public virtual int PlaneDurationMinutes
         {
             get
             {
-                // *** Start programmer edit section *** (Task.Request Get start)
+                // *** Start programmer edit section *** (Task.PlaneDurationMinutes Get start)
 
-                // *** End programmer edit section *** (Task.Request Get start)
-                IIS.Gorvodokanal.Request result = this.fRequest;
-                // *** Start programmer edit section *** (Task.Request Get end)
+                // *** End programmer edit section *** (Task.PlaneDurationMinutes Get start)
+                int result = this.fPlaneDurationMinutes;
+                // *** Start programmer edit section *** (Task.PlaneDurationMinutes Get end)
 
-                // *** End programmer edit section *** (Task.Request Get end)
+                // *** End programmer edit section *** (Task.PlaneDurationMinutes Get end)
                 return result;
             }
             set
             {
-                // *** Start programmer edit section *** (Task.Request Set start)
+                // *** Start programmer edit section *** (Task.PlaneDurationMinutes Set start)
 
-                // *** End programmer edit section *** (Task.Request Set start)
-                this.fRequest = value;
-                // *** Start programmer edit section *** (Task.Request Set end)
+                // *** End programmer edit section *** (Task.PlaneDurationMinutes Set start)
+                this.fPlaneDurationMinutes = value;
+                // *** Start programmer edit section *** (Task.PlaneDurationMinutes Set end)
 
-                // *** End programmer edit section *** (Task.Request Set end)
+                // *** End programmer edit section *** (Task.PlaneDurationMinutes Set end)
             }
         }
         
@@ -196,48 +199,17 @@ namespace IIS.Gorvodokanal
                     return ICSSoft.STORMNET.Information.GetView("TaskE", typeof(IIS.Gorvodokanal.Task));
                 }
             }
-        }
-    }
-    
-    /// <summary>
-    /// Detail array of Task.
-    /// </summary>
-    // *** Start programmer edit section *** (DetailArrayDetailArrayOfTask CustomAttributes)
-
-    // *** End programmer edit section *** (DetailArrayDetailArrayOfTask CustomAttributes)
-    public class DetailArrayOfTask : ICSSoft.STORMNET.DetailArray
-    {
-        
-        // *** Start programmer edit section *** (IIS.Gorvodokanal.DetailArrayOfTask members)
-
-        // *** End programmer edit section *** (IIS.Gorvodokanal.DetailArrayOfTask members)
-
-        
-        /// <summary>
-        /// Construct detail array.
-        /// </summary>
-        /// <summary>
-        /// Returns object with type Task by index.
-        /// </summary>
-        /// <summary>
-        /// Adds object with type Task.
-        /// </summary>
-        public DetailArrayOfTask(IIS.Gorvodokanal.Request fRequest) : 
-                base(typeof(Task), ((ICSSoft.STORMNET.DataObject)(fRequest)))
-        {
-        }
-        
-        public IIS.Gorvodokanal.Task this[int index]
-        {
-            get
+            
+            /// <summary>
+            /// "TaskL" view.
+            /// </summary>
+            public static ICSSoft.STORMNET.View TaskL
             {
-                return ((IIS.Gorvodokanal.Task)(this.ItemByIndex(index)));
+                get
+                {
+                    return ICSSoft.STORMNET.Information.GetView("TaskL", typeof(IIS.Gorvodokanal.Task));
+                }
             }
-        }
-        
-        public virtual void Add(IIS.Gorvodokanal.Task dataobject)
-        {
-            this.AddObject(((ICSSoft.STORMNET.DataObject)(dataobject)));
         }
     }
 }

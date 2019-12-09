@@ -31,6 +31,11 @@ export default Ember.Controller.extend({
             title: i18n.t('forms.application.sitemap.списки.i-i-s-gorvodokanal-address-l.title'),
             children: null
           }, {
+            link: 'i-i-s-gorvodokanal-task-l',
+            caption: i18n.t('forms.application.sitemap.списки.i-i-s-gorvodokanal-task-l.caption'),
+            title: i18n.t('forms.application.sitemap.списки.i-i-s-gorvodokanal-task-l.title'),
+            children: null
+          }, {
             link: 'i-i-s-gorvodokanal-team-l',
             caption: i18n.t('forms.application.sitemap.списки.i-i-s-gorvodokanal-team-l.caption'),
             title: i18n.t('forms.application.sitemap.списки.i-i-s-gorvodokanal-team-l.title'),

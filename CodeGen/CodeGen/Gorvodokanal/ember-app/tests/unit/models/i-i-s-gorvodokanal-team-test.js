@@ -5,6 +5,7 @@ moduleForModel('i-i-s-gorvodokanal-team', 'Unit | Model | i-i-s-gorvodokanal-tea
   needs: [
     'model:i-i-s-gorvodokanal-address',
     'model:i-i-s-gorvodokanal-request',
+    'model:i-i-s-gorvodokanal-task-list',
     'model:i-i-s-gorvodokanal-task',
     'model:i-i-s-gorvodokanal-team'
   ]

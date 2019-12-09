@@ -1,0 +1,53 @@
+﻿{
+  "name": "IISGorvodokanalTaskList",
+  "modelName": "i-i-s-gorvodokanal-task-list",
+  "className": "TaskList",
+  "nameSpace": "IIS.Gorvodokanal",
+  "parentModelName": null,
+  "parentClassName": null,
+  "attrs": [],
+  "belongsTo": [
+    {
+      "polymorphic": false,
+      "presence": true,
+      "name": "task",
+      "relatedTo": "i-i-s-gorvodokanal-task",
+      "inverse": null
+    },
+    {
+      "polymorphic": false,
+      "presence": true,
+      "name": "request",
+      "relatedTo": "i-i-s-gorvodokanal-request",
+      "inverse": "tasks"
+    }
+  ],
+  "hasMany": [],
+  "projections": [
+    {
+      "name": "TaskListE",
+      "modelName": "i-i-s-gorvodokanal-task-list",
+      "attrs": [],
+      "belongsTo": [
+        {
+          "lookupValue": "Content",
+          "lookupValueField": "content",
+          "relationName": "Task",
+          "belongsTo": [],
+          "hidden": false,
+          "attrs": [],
+          "index": 0,
+          "type": "combo",
+          "caption": "Задача",
+          "name": "task",
+          "relatedTo": "i-i-s-gorvodokanal-task",
+          "inverse": null
+        }
+      ],
+      "hasMany": []
+    }
+  ],
+  "stored": true,
+  "offline": true,
+  "external": false
+}

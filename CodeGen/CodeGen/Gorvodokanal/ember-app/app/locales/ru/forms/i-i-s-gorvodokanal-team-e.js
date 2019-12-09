@@ -1,6 +1,8 @@
 export default {
-  caption: 'Team',
+  caption: 'Бригада',
   'index-caption': 'Номер бригады',
-  'shiftStart-caption': 'Начало смены',
-  'shiftEnd-caption': 'Конец смены'
+  'shiftStartHour-caption': 'Часы',
+  'shiftStartMinutes-caption': 'Минуты',
+  'shiftEndHour-caption': 'Часы',
+  'shiftEndMinutes-caption': 'Минуты'
 };
