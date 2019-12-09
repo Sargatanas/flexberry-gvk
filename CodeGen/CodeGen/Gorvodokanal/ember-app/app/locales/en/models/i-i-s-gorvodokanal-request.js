@@ -1,26 +1,20 @@
 export default {
   projections: {
     RequestE: {
+      index: {
+        __caption__: 'index'
+      },
       isAppointed: {
         __caption__: 'isAppointed'
       },
-      date: {
-        __caption__: 'date'
+      dateStart: {
+        __caption__: 'dateStart'
       },
       isCompleted: {
         __caption__: 'isCompleted'
       },
-      startHour: {
-        __caption__: 'startHour'
-      },
-      startMinutes: {
-        __caption__: 'startMinutes'
-      },
-      endHour: {
-        __caption__: 'endHour'
-      },
-      endMinutes: {
-        __caption__: 'endMinutes'
+      dateEnd: {
+        __caption__: 'dateEnd'
       },
       address: {
         __caption__: 'address'
@@ -57,29 +51,20 @@ export default {
       isAppointed: {
         __caption__: 'isAppointed'
       },
-      date: {
-        __caption__: 'date'
-      },
-      isCompleted: {
-        __caption__: 'isCompleted'
-      },
       team: {
         __caption__: 'team',
         index: {
           __caption__: 'index'
         }
       },
-      startHour: {
-        __caption__: 'startHour'
+      dateStart: {
+        __caption__: 'dateStart'
       },
-      startMinutes: {
-        __caption__: 'startMinutes'
+      isCompleted: {
+        __caption__: 'isCompleted'
       },
-      endHour: {
-        __caption__: 'endHour'
-      },
-      endMinutes: {
-        __caption__: 'endMinutes'
+      dateEnd: {
+        __caption__: 'dateEnd'
       },
       tasks: {
         __caption__: 'tasks',

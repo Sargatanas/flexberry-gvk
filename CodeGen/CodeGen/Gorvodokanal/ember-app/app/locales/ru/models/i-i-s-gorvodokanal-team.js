@@ -4,34 +4,22 @@ export default {
       index: {
         __caption__: 'Номер бригады'
       },
-      shiftStartHour: {
-        __caption__: 'Часы'
+      shiftStart: {
+        __caption__: 'Начало смены'
       },
-      shiftStartMinutes: {
-        __caption__: 'Минуты'
-      },
-      shiftEndHour: {
-        __caption__: 'Часы'
-      },
-      shiftEndMinutes: {
-        __caption__: 'Минуты'
+      shiftEnd: {
+        __caption__: 'Конец смены'
       }
     },
     TeamL: {
       index: {
         __caption__: 'Номер бригады'
       },
-      shiftStartHour: {
-        __caption__: 'Часы'
+      shiftStart: {
+        __caption__: 'Начало смены'
       },
-      shiftStartMinutes: {
-        __caption__: 'Минуты'
-      },
-      shiftEndHour: {
-        __caption__: 'Часы'
-      },
-      shiftEndMinutes: {
-        __caption__: 'Минуты'
+      shiftEnd: {
+        __caption__: 'Конец смены'
       }
     }
   }

@@ -10,7 +10,7 @@
       "name": "index",
       "type": "number",
       "flexberryType": "int",
-      "notNull": false,
+      "notNull": true,
       "defaultValue": "1",
       "stored": true,
       "ordered": false
@@ -25,27 +25,9 @@
       "ordered": false
     },
     {
-      "name": "date",
+      "name": "dateStart",
       "type": "date",
       "flexberryType": "tDate",
-      "notNull": false,
-      "defaultValue": "",
-      "stored": true,
-      "ordered": false
-    },
-    {
-      "name": "startHour",
-      "type": "number",
-      "flexberryType": "int",
-      "notNull": false,
-      "defaultValue": "",
-      "stored": true,
-      "ordered": false
-    },
-    {
-      "name": "startMinutes",
-      "type": "number",
-      "flexberryType": "int",
       "notNull": false,
       "defaultValue": "",
       "stored": true,
@@ -61,18 +43,9 @@
       "ordered": false
     },
     {
-      "name": "endHour",
-      "type": "number",
-      "flexberryType": "int",
-      "notNull": false,
-      "defaultValue": "",
-      "stored": true,
-      "ordered": false
-    },
-    {
-      "name": "endMinutes",
-      "type": "number",
-      "flexberryType": "int",
+      "name": "dateEnd",
+      "type": "date",
+      "flexberryType": "tDate",
       "notNull": false,
       "defaultValue": "",
       "stored": true,
@@ -108,46 +81,34 @@
       "modelName": "i-i-s-gorvodokanal-request",
       "attrs": [
         {
+          "name": "index",
+          "caption": "",
+          "hidden": false,
+          "index": 0
+        },
+        {
           "name": "isAppointed",
           "caption": "Отметка о назначении",
           "hidden": false,
-          "index": 1
+          "index": 2
         },
         {
-          "name": "date",
+          "name": "dateStart",
           "caption": "Дата выполнения работ",
           "hidden": false,
-          "index": 3
+          "index": 4
         },
         {
           "name": "isCompleted",
           "caption": "Отметка о выполнении",
           "hidden": false,
-          "index": 4
-        },
-        {
-          "name": "startHour",
-          "caption": "Часы",
-          "hidden": false,
           "index": 5
         },
         {
-          "name": "startMinutes",
-          "caption": "Минуты",
+          "name": "dateEnd",
+          "caption": "Фактическое время окончания работ",
           "hidden": false,
           "index": 6
-        },
-        {
-          "name": "endHour",
-          "caption": "Часы",
-          "hidden": false,
-          "index": 7
-        },
-        {
-          "name": "endMinutes",
-          "caption": "Минуты",
-          "hidden": false,
-          "index": 8
         }
       ],
       "belongsTo": [
@@ -158,7 +119,7 @@
           "belongsTo": [],
           "hidden": false,
           "attrs": [],
-          "index": 0,
+          "index": 1,
           "type": "default",
           "caption": "Адрес",
           "name": "address",
@@ -172,7 +133,7 @@
           "belongsTo": [],
           "hidden": false,
           "attrs": [],
-          "index": 2,
+          "index": 3,
           "type": "default",
           "caption": "Бригада",
           "name": "team",
@@ -201,40 +162,22 @@
           "index": 5
         },
         {
-          "name": "date",
+          "name": "dateStart",
           "caption": "Дата выполнения работ",
           "hidden": false,
-          "index": 6
+          "index": 7
         },
         {
           "name": "isCompleted",
           "caption": "Отметка о выполнении",
           "hidden": false,
-          "index": 7
+          "index": 8
         },
         {
-          "name": "startHour",
-          "caption": "Часы",
+          "name": "dateEnd",
+          "caption": "Фактическое время окончания работ",
           "hidden": false,
           "index": 9
-        },
-        {
-          "name": "startMinutes",
-          "caption": "Минуты",
-          "hidden": false,
-          "index": 10
-        },
-        {
-          "name": "endHour",
-          "caption": "Часы",
-          "hidden": false,
-          "index": 11
-        },
-        {
-          "name": "endMinutes",
-          "caption": "Минуты",
-          "hidden": false,
-          "index": 12
         }
       ],
       "belongsTo": [
@@ -294,7 +237,7 @@
               "name": "index",
               "caption": "Выполняющая бригада",
               "hidden": false,
-              "index": 8
+              "index": 6
             }
           ],
           "index": -1,

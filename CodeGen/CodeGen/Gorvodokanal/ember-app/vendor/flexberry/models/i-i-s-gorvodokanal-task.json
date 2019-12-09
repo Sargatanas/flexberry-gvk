@@ -7,15 +7,6 @@
   "parentClassName": null,
   "attrs": [
     {
-      "name": "code",
-      "type": "number",
-      "flexberryType": "int",
-      "notNull": true,
-      "defaultValue": "1",
-      "stored": true,
-      "ordered": true
-    },
-    {
       "name": "content",
       "type": "string",
       "flexberryType": "string",
@@ -25,20 +16,11 @@
       "ordered": false
     },
     {
-      "name": "planeDurationtHour",
-      "type": "number",
-      "flexberryType": "int",
+      "name": "planeDuration",
+      "type": "date",
+      "flexberryType": "tDate",
       "notNull": false,
-      "defaultValue": "0",
-      "stored": true,
-      "ordered": false
-    },
-    {
-      "name": "planeDurationMinutes",
-      "type": "number",
-      "flexberryType": "int",
-      "notNull": false,
-      "defaultValue": "0",
+      "defaultValue": "",
       "stored": true,
       "ordered": false
     }
@@ -51,28 +33,16 @@
       "modelName": "i-i-s-gorvodokanal-task",
       "attrs": [
         {
-          "name": "code",
-          "caption": "Идентификатор",
+          "name": "content",
+          "caption": "Содержание",
           "hidden": false,
           "index": 0
         },
         {
-          "name": "content",
-          "caption": "Содержание",
+          "name": "planeDuration",
+          "caption": "Примерная длительность работ",
           "hidden": false,
           "index": 1
-        },
-        {
-          "name": "planeDurationtHour",
-          "caption": "Часы",
-          "hidden": false,
-          "index": 2
-        },
-        {
-          "name": "planeDurationMinutes",
-          "caption": "Минуты",
-          "hidden": false,
-          "index": 3
         }
       ],
       "belongsTo": [],
@@ -83,28 +53,16 @@
       "modelName": "i-i-s-gorvodokanal-task",
       "attrs": [
         {
-          "name": "code",
-          "caption": "Идентификатор",
+          "name": "content",
+          "caption": "Содержание",
           "hidden": false,
           "index": 0
         },
         {
-          "name": "content",
-          "caption": "Содержание",
+          "name": "planeDuration",
+          "caption": "Примерная длительность работ",
           "hidden": false,
           "index": 1
-        },
-        {
-          "name": "planeDurationtHour",
-          "caption": "Часы",
-          "hidden": false,
-          "index": 2
-        },
-        {
-          "name": "planeDurationMinutes",
-          "caption": "Минуты",
-          "hidden": false,
-          "index": 3
         }
       ],
       "belongsTo": [],

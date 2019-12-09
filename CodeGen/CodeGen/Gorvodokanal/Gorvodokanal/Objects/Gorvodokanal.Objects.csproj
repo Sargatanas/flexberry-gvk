@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{299F8590-DDBB-4F12-8219-4408536DE218}</ProjectGuid>
+    <ProjectGuid>{90CBA56D-5698-45C5-811D-1749ECB4C3B4}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>IIS.Gorvodokanal</RootNamespace>

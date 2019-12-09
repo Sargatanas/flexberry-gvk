@@ -1,26 +1,20 @@
 export default {
   projections: {
     RequestE: {
+      index: {
+        __caption__: ''
+      },
       isAppointed: {
         __caption__: 'Отметка о назначении'
       },
-      date: {
+      dateStart: {
         __caption__: 'Дата выполнения работ'
       },
       isCompleted: {
         __caption__: 'Отметка о выполнении'
       },
-      startHour: {
-        __caption__: 'Часы'
-      },
-      startMinutes: {
-        __caption__: 'Минуты'
-      },
-      endHour: {
-        __caption__: 'Часы'
-      },
-      endMinutes: {
-        __caption__: 'Минуты'
+      dateEnd: {
+        __caption__: 'Фактическое время окончания работ'
       },
       address: {
         __caption__: 'Адрес'
@@ -57,29 +51,20 @@ export default {
       isAppointed: {
         __caption__: 'Отметка о назначении'
       },
-      date: {
-        __caption__: 'Дата выполнения работ'
-      },
-      isCompleted: {
-        __caption__: 'Отметка о выполнении'
-      },
       team: {
         __caption__: 'Выполняющая бригада',
         index: {
           __caption__: 'Выполняющая бригада'
         }
       },
-      startHour: {
-        __caption__: 'Часы'
+      dateStart: {
+        __caption__: 'Дата выполнения работ'
       },
-      startMinutes: {
-        __caption__: 'Минуты'
+      isCompleted: {
+        __caption__: 'Отметка о выполнении'
       },
-      endHour: {
-        __caption__: 'Часы'
-      },
-      endMinutes: {
-        __caption__: 'Минуты'
+      dateEnd: {
+        __caption__: 'Фактическое время окончания работ'
       },
       tasks: {
         __caption__: '',

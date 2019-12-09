@@ -30,28 +30,20 @@ namespace IIS.Gorvodokanal
     [AccessType(ICSSoft.STORMNET.AccessType.none)]
     [View("TeamE", new string[] {
             "Index as \'Номер бригады\'",
-            "ShiftStartHour as \'Часы\' on \'-Начало смены\'",
-            "ShiftStartMinutes as \'Минуты\' on \'-Начало смены\'",
-            "ShiftEndHour as \'Часы\' on \'-Конец смены\'",
-            "ShiftEndMinutes as \'Минуты\' on \'-Конец смены\'"})]
+            "ShiftStart as \'Начало смены\'",
+            "ShiftEnd as \'Конец смены\'"})]
     [View("TeamL", new string[] {
             "Index as \'Номер бригады\'",
-            "ShiftStartHour as \'Часы\' on \'-Начало смены\'",
-            "ShiftStartMinutes as \'Минуты\' on \'-Начало смены\'",
-            "ShiftEndHour as \'Часы\' on \'-Конец смены\'",
-            "ShiftEndMinutes as \'Минуты\' on \'-Конец смены\'"})]
+            "ShiftStart as \'Начало смены\'",
+            "ShiftEnd as \'Конец смены\'"})]
     public class Team : ICSSoft.STORMNET.DataObject
     {
         
         private int fIndex = 1;
         
-        private int fShiftStartHour = 8;
+        private System.DateTime fShiftStart;
         
-        private int fShiftStartMinutes = 0;
-        
-        private int fShiftEndHour = 16;
-        
-        private int fShiftEndMinutes = 0;
+        private System.DateTime fShiftEnd;
         
         // *** Start programmer edit section *** (Team CustomMembers)
 
@@ -92,126 +84,64 @@ namespace IIS.Gorvodokanal
         }
         
         /// <summary>
-        /// ShiftStartHour.
+        /// ShiftStart.
         /// </summary>
-        // *** Start programmer edit section *** (Team.ShiftStartHour CustomAttributes)
+        // *** Start programmer edit section *** (Team.ShiftStart CustomAttributes)
 
-        // *** End programmer edit section *** (Team.ShiftStartHour CustomAttributes)
-        public virtual int ShiftStartHour
+        // *** End programmer edit section *** (Team.ShiftStart CustomAttributes)
+        public virtual System.DateTime ShiftStart
         {
             get
             {
-                // *** Start programmer edit section *** (Team.ShiftStartHour Get start)
+                // *** Start programmer edit section *** (Team.ShiftStart Get start)
 
-                // *** End programmer edit section *** (Team.ShiftStartHour Get start)
-                int result = this.fShiftStartHour;
-                // *** Start programmer edit section *** (Team.ShiftStartHour Get end)
+                // *** End programmer edit section *** (Team.ShiftStart Get start)
+                System.DateTime result = this.fShiftStart;
+                // *** Start programmer edit section *** (Team.ShiftStart Get end)
 
-                // *** End programmer edit section *** (Team.ShiftStartHour Get end)
+                // *** End programmer edit section *** (Team.ShiftStart Get end)
                 return result;
             }
             set
             {
-                // *** Start programmer edit section *** (Team.ShiftStartHour Set start)
+                // *** Start programmer edit section *** (Team.ShiftStart Set start)
 
-                // *** End programmer edit section *** (Team.ShiftStartHour Set start)
-                this.fShiftStartHour = value;
-                // *** Start programmer edit section *** (Team.ShiftStartHour Set end)
+                // *** End programmer edit section *** (Team.ShiftStart Set start)
+                this.fShiftStart = value;
+                // *** Start programmer edit section *** (Team.ShiftStart Set end)
 
-                // *** End programmer edit section *** (Team.ShiftStartHour Set end)
+                // *** End programmer edit section *** (Team.ShiftStart Set end)
             }
         }
         
         /// <summary>
-        /// ShiftStartMinutes.
+        /// ShiftEnd.
         /// </summary>
-        // *** Start programmer edit section *** (Team.ShiftStartMinutes CustomAttributes)
+        // *** Start programmer edit section *** (Team.ShiftEnd CustomAttributes)
 
-        // *** End programmer edit section *** (Team.ShiftStartMinutes CustomAttributes)
-        public virtual int ShiftStartMinutes
+        // *** End programmer edit section *** (Team.ShiftEnd CustomAttributes)
+        public virtual System.DateTime ShiftEnd
         {
             get
             {
-                // *** Start programmer edit section *** (Team.ShiftStartMinutes Get start)
+                // *** Start programmer edit section *** (Team.ShiftEnd Get start)
 
-                // *** End programmer edit section *** (Team.ShiftStartMinutes Get start)
-                int result = this.fShiftStartMinutes;
-                // *** Start programmer edit section *** (Team.ShiftStartMinutes Get end)
+                // *** End programmer edit section *** (Team.ShiftEnd Get start)
+                System.DateTime result = this.fShiftEnd;
+                // *** Start programmer edit section *** (Team.ShiftEnd Get end)
 
-                // *** End programmer edit section *** (Team.ShiftStartMinutes Get end)
+                // *** End programmer edit section *** (Team.ShiftEnd Get end)
                 return result;
             }
             set
             {
-                // *** Start programmer edit section *** (Team.ShiftStartMinutes Set start)
+                // *** Start programmer edit section *** (Team.ShiftEnd Set start)
 
-                // *** End programmer edit section *** (Team.ShiftStartMinutes Set start)
-                this.fShiftStartMinutes = value;
-                // *** Start programmer edit section *** (Team.ShiftStartMinutes Set end)
+                // *** End programmer edit section *** (Team.ShiftEnd Set start)
+                this.fShiftEnd = value;
+                // *** Start programmer edit section *** (Team.ShiftEnd Set end)
 
-                // *** End programmer edit section *** (Team.ShiftStartMinutes Set end)
-            }
-        }
-        
-        /// <summary>
-        /// ShiftEndHour.
-        /// </summary>
-        // *** Start programmer edit section *** (Team.ShiftEndHour CustomAttributes)
-
-        // *** End programmer edit section *** (Team.ShiftEndHour CustomAttributes)
-        public virtual int ShiftEndHour
-        {
-            get
-            {
-                // *** Start programmer edit section *** (Team.ShiftEndHour Get start)
-
-                // *** End programmer edit section *** (Team.ShiftEndHour Get start)
-                int result = this.fShiftEndHour;
-                // *** Start programmer edit section *** (Team.ShiftEndHour Get end)
-
-                // *** End programmer edit section *** (Team.ShiftEndHour Get end)
-                return result;
-            }
-            set
-            {
-                // *** Start programmer edit section *** (Team.ShiftEndHour Set start)
-
-                // *** End programmer edit section *** (Team.ShiftEndHour Set start)
-                this.fShiftEndHour = value;
-                // *** Start programmer edit section *** (Team.ShiftEndHour Set end)
-
-                // *** End programmer edit section *** (Team.ShiftEndHour Set end)
-            }
-        }
-        
-        /// <summary>
-        /// ShiftEndMinutes.
-        /// </summary>
-        // *** Start programmer edit section *** (Team.ShiftEndMinutes CustomAttributes)
-
-        // *** End programmer edit section *** (Team.ShiftEndMinutes CustomAttributes)
-        public virtual int ShiftEndMinutes
-        {
-            get
-            {
-                // *** Start programmer edit section *** (Team.ShiftEndMinutes Get start)
-
-                // *** End programmer edit section *** (Team.ShiftEndMinutes Get start)
-                int result = this.fShiftEndMinutes;
-                // *** Start programmer edit section *** (Team.ShiftEndMinutes Get end)
-
-                // *** End programmer edit section *** (Team.ShiftEndMinutes Get end)
-                return result;
-            }
-            set
-            {
-                // *** Start programmer edit section *** (Team.ShiftEndMinutes Set start)
-
-                // *** End programmer edit section *** (Team.ShiftEndMinutes Set start)
-                this.fShiftEndMinutes = value;
-                // *** Start programmer edit section *** (Team.ShiftEndMinutes Set end)
-
-                // *** End programmer edit section *** (Team.ShiftEndMinutes Set end)
+                // *** End programmer edit section *** (Team.ShiftEnd Set end)
             }
         }
         

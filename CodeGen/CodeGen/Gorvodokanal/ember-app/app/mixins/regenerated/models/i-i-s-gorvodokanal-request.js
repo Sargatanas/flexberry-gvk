@@ -4,18 +4,16 @@ import { Projection } from 'ember-flexberry-data';
 export let Model = Ember.Mixin.create({
   index: DS.attr('number', { defaultValue: 1 }),
   isAppointed: DS.attr('i-i-s-gorvodokanal-t-appointed'),
-  date: DS.attr('date'),
-  startHour: DS.attr('number'),
-  startMinutes: DS.attr('number'),
+  dateStart: DS.attr('date'),
   isCompleted: DS.attr('boolean', { defaultValue: false }),
-  endHour: DS.attr('number'),
-  endMinutes: DS.attr('number'),
+  dateEnd: DS.attr('date'),
   team: DS.belongsTo('i-i-s-gorvodokanal-team', { inverse: null, async: false }),
   address: DS.belongsTo('i-i-s-gorvodokanal-address', { inverse: null, async: false }),
   tasks: DS.hasMany('i-i-s-gorvodokanal-task-list', { inverse: 'request', async: false }),
   getValidations: function () {
     let parentValidations = this._super();
     let thisValidations = {
+      index: { presence: true },
       isAppointed: { presence: true },
       address: { presence: true }
     };
@@ -35,19 +33,17 @@ export function defineNamespace(modelClass) {
 
 export let defineProjections = function (modelClass) {
   modelClass.defineProjection('RequestE', 'i-i-s-gorvodokanal-request', {
-    isAppointed: Projection.attr('Отметка о назначении', { index: 1 }),
-    date: Projection.attr('Дата выполнения работ', { index: 3 }),
-    isCompleted: Projection.attr('Отметка о выполнении', { index: 4 }),
-    startHour: Projection.attr('Часы', { index: 5 }),
-    startMinutes: Projection.attr('Минуты', { index: 6 }),
-    endHour: Projection.attr('Часы', { index: 7 }),
-    endMinutes: Projection.attr('Минуты', { index: 8 }),
+    index: Projection.attr('', { index: 0 }),
+    isAppointed: Projection.attr('Отметка о назначении', { index: 2 }),
+    dateStart: Projection.attr('Дата выполнения работ', { index: 4 }),
+    isCompleted: Projection.attr('Отметка о выполнении', { index: 5 }),
+    dateEnd: Projection.attr('Фактическое время окончания работ', { index: 6 }),
     address: Projection.belongsTo('i-i-s-gorvodokanal-address', 'Адрес', {
 
-    }, { index: 0 }),
+    }, { index: 1 }),
     team: Projection.belongsTo('i-i-s-gorvodokanal-team', 'Бригада', {
 
-    }, { index: 2 }),
+    }, { index: 3 }),
     tasks: Projection.hasMany('i-i-s-gorvodokanal-task-list', '', {
       task: Projection.belongsTo('i-i-s-gorvodokanal-task', 'Задача', {
 
@@ -63,15 +59,12 @@ export let defineProjections = function (modelClass) {
       apartment: Projection.attr('Квартира', { index: 4 })
     }, { index: -1, hidden: true }),
     isAppointed: Projection.attr('Отметка о назначении', { index: 5 }),
-    date: Projection.attr('Дата выполнения работ', { index: 6 }),
-    isCompleted: Projection.attr('Отметка о выполнении', { index: 7 }),
     team: Projection.belongsTo('i-i-s-gorvodokanal-team', 'Выполняющая бригада', {
-      index: Projection.attr('Выполняющая бригада', { index: 8 })
+      index: Projection.attr('Выполняющая бригада', { index: 6 })
     }, { index: -1, hidden: true }),
-    startHour: Projection.attr('Часы', { index: 9 }),
-    startMinutes: Projection.attr('Минуты', { index: 10 }),
-    endHour: Projection.attr('Часы', { index: 11 }),
-    endMinutes: Projection.attr('Минуты', { index: 12 }),
+    dateStart: Projection.attr('Дата выполнения работ', { index: 7 }),
+    isCompleted: Projection.attr('Отметка о выполнении', { index: 8 }),
+    dateEnd: Projection.attr('Фактическое время окончания работ', { index: 9 }),
     tasks: Projection.hasMany('i-i-s-gorvodokanal-task-list', '', {
       task: Projection.belongsTo('i-i-s-gorvodokanal-task', 'Задача', {
 

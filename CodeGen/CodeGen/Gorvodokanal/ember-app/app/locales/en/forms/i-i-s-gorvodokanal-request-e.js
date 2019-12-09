@@ -1,12 +1,10 @@
 export default {
   caption: 'IISGorvodokanalRequestE',
+  'index-caption': 'index',
   'isAppointed-caption': 'isAppointed',
-  'date-caption': 'date',
+  'dateStart-caption': 'dateStart',
   'isCompleted-caption': 'isCompleted',
-  'startHour-caption': 'startHour',
-  'startMinutes-caption': 'startMinutes',
-  'endHour-caption': 'endHour',
-  'endMinutes-caption': 'endMinutes',
+  'dateEnd-caption': 'dateEnd',
   'address-caption': 'address',
   'team-caption': 'team',
   'tasks-caption': 'tasks'

@@ -30,19 +30,6 @@
     placeholder=(t 'components.flexberry-field.placeholder')
     readonly=readonly
     required=true
-    value=model.code
-    class=(if model.errors.code 'error' '')
-    label=(t 'forms.i-i-s-gorvodokanal-task-e.code-caption')
-  }}
-  {{flexberry-validationmessage error=model.errors.code pointing="pointing"}}
-</div>
-
-<div class="field">
-  {{
-    flexberry-field
-    placeholder=(t 'components.flexberry-field.placeholder')
-    readonly=readonly
-    required=true
     value=model.content
     class=(if model.errors.content 'error' '')
     label=(t 'forms.i-i-s-gorvodokanal-task-e.content-caption')
@@ -51,29 +38,15 @@
 </div>
 
 <div class="field">
+  <label>{{t 'forms.i-i-s-gorvodokanal-task-e.planeDuration-caption'}}</label>
   {{
-    flexberry-field
-    placeholder=(t 'components.flexberry-field.placeholder')
+    flexberry-datepicker
+    placeholder=(t 'components.flexberry-datepicker.placeholder')
     readonly=readonly
-    required=true
-    value=model.planeDurationtHour
-    class=(if model.errors.planeDurationtHour 'error' '')
-    label=(t 'forms.i-i-s-gorvodokanal-task-e.planeDurationtHour-caption')
+    value=model.planeDuration
+    class=(if model.errors.planeDuration 'error' '')
   }}
-  {{flexberry-validationmessage error=model.errors.planeDurationtHour pointing="pointing"}}
-</div>
-
-<div class="field">
-  {{
-    flexberry-field
-    placeholder=(t 'components.flexberry-field.placeholder')
-    readonly=readonly
-    required=true
-    value=model.planeDurationMinutes
-    class=(if model.errors.planeDurationMinutes 'error' '')
-    label=(t 'forms.i-i-s-gorvodokanal-task-e.planeDurationMinutes-caption')
-  }}
-  {{flexberry-validationmessage error=model.errors.planeDurationMinutes pointing="pointing"}}
+  {{flexberry-validationmessage error=model.errors.planeDuration pointing="pointing"}}
 </div>
 
 </form>

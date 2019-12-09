@@ -38,55 +38,27 @@
 </div>
 
 <div class="field">
+  <label>{{t 'forms.i-i-s-gorvodokanal-team-e.shiftStart-caption'}}</label>
   {{
-    flexberry-field
-    placeholder=(t 'components.flexberry-field.placeholder')
+    flexberry-datepicker
+    placeholder=(t 'components.flexberry-datepicker.placeholder')
     readonly=readonly
-    required=true
-    value=model.shiftStartHour
-    class=(if model.errors.shiftStartHour 'error' '')
-    label=(t 'forms.i-i-s-gorvodokanal-team-e.shiftStartHour-caption')
+    value=model.shiftStart
+    class=(if model.errors.shiftStart 'error' '')
   }}
-  {{flexberry-validationmessage error=model.errors.shiftStartHour pointing="pointing"}}
+  {{flexberry-validationmessage error=model.errors.shiftStart pointing="pointing"}}
 </div>
 
 <div class="field">
+  <label>{{t 'forms.i-i-s-gorvodokanal-team-e.shiftEnd-caption'}}</label>
   {{
-    flexberry-field
-    placeholder=(t 'components.flexberry-field.placeholder')
+    flexberry-datepicker
+    placeholder=(t 'components.flexberry-datepicker.placeholder')
     readonly=readonly
-    required=true
-    value=model.shiftStartMinutes
-    class=(if model.errors.shiftStartMinutes 'error' '')
-    label=(t 'forms.i-i-s-gorvodokanal-team-e.shiftStartMinutes-caption')
+    value=model.shiftEnd
+    class=(if model.errors.shiftEnd 'error' '')
   }}
-  {{flexberry-validationmessage error=model.errors.shiftStartMinutes pointing="pointing"}}
-</div>
-
-<div class="field">
-  {{
-    flexberry-field
-    placeholder=(t 'components.flexberry-field.placeholder')
-    readonly=readonly
-    required=true
-    value=model.shiftEndHour
-    class=(if model.errors.shiftEndHour 'error' '')
-    label=(t 'forms.i-i-s-gorvodokanal-team-e.shiftEndHour-caption')
-  }}
-  {{flexberry-validationmessage error=model.errors.shiftEndHour pointing="pointing"}}
-</div>
-
-<div class="field">
-  {{
-    flexberry-field
-    placeholder=(t 'components.flexberry-field.placeholder')
-    readonly=readonly
-    required=true
-    value=model.shiftEndMinutes
-    class=(if model.errors.shiftEndMinutes 'error' '')
-    label=(t 'forms.i-i-s-gorvodokanal-team-e.shiftEndMinutes-caption')
-  }}
-  {{flexberry-validationmessage error=model.errors.shiftEndMinutes pointing="pointing"}}
+  {{flexberry-validationmessage error=model.errors.shiftEnd pointing="pointing"}}
 </div>
 
 </form>

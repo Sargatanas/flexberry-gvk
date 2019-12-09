@@ -25,6 +25,19 @@
     </div>
   </div>
   <div class="field">
+  {{
+    flexberry-field
+    placeholder=(t 'components.flexberry-field.placeholder')
+    readonly=readonly
+    required=true
+    value=model.index
+    class=(if model.errors.index 'error' '')
+    label=(t 'forms.i-i-s-gorvodokanal-request-e.index-caption')
+  }}
+  {{flexberry-validationmessage error=model.errors.index pointing="pointing"}}
+</div>
+
+<div class="field">
   <label>{{t 'forms.i-i-s-gorvodokanal-request-e.address-caption'}}</label>
   {{
     flexberry-lookup
@@ -70,15 +83,15 @@
 </div>
 
 <div class="field">
-  <label>{{t 'forms.i-i-s-gorvodokanal-request-e.date-caption'}}</label>
+  <label>{{t 'forms.i-i-s-gorvodokanal-request-e.dateStart-caption'}}</label>
   {{
     flexberry-datepicker
     placeholder=(t 'components.flexberry-datepicker.placeholder')
     readonly=readonly
-    value=model.date
-    class=(if model.errors.date 'error' '')
+    value=model.dateStart
+    class=(if model.errors.dateStart 'error' '')
   }}
-  {{flexberry-validationmessage error=model.errors.date pointing="pointing"}}
+  {{flexberry-validationmessage error=model.errors.dateStart pointing="pointing"}}
 </div>
 
 <div class="field">
@@ -91,55 +104,15 @@
 </div>
 
 <div class="field">
+  <label>{{t 'forms.i-i-s-gorvodokanal-request-e.dateEnd-caption'}}</label>
   {{
-    flexberry-field
-    placeholder=(t 'components.flexberry-field.placeholder')
+    flexberry-datepicker
+    placeholder=(t 'components.flexberry-datepicker.placeholder')
     readonly=readonly
-    required=true
-    value=model.startHour
-    class=(if model.errors.startHour 'error' '')
-    label=(t 'forms.i-i-s-gorvodokanal-request-e.startHour-caption')
+    value=model.dateEnd
+    class=(if model.errors.dateEnd 'error' '')
   }}
-  {{flexberry-validationmessage error=model.errors.startHour pointing="pointing"}}
-</div>
-
-<div class="field">
-  {{
-    flexberry-field
-    placeholder=(t 'components.flexberry-field.placeholder')
-    readonly=readonly
-    required=true
-    value=model.startMinutes
-    class=(if model.errors.startMinutes 'error' '')
-    label=(t 'forms.i-i-s-gorvodokanal-request-e.startMinutes-caption')
-  }}
-  {{flexberry-validationmessage error=model.errors.startMinutes pointing="pointing"}}
-</div>
-
-<div class="field">
-  {{
-    flexberry-field
-    placeholder=(t 'components.flexberry-field.placeholder')
-    readonly=readonly
-    required=true
-    value=model.endHour
-    class=(if model.errors.endHour 'error' '')
-    label=(t 'forms.i-i-s-gorvodokanal-request-e.endHour-caption')
-  }}
-  {{flexberry-validationmessage error=model.errors.endHour pointing="pointing"}}
-</div>
-
-<div class="field">
-  {{
-    flexberry-field
-    placeholder=(t 'components.flexberry-field.placeholder')
-    readonly=readonly
-    required=true
-    value=model.endMinutes
-    class=(if model.errors.endMinutes 'error' '')
-    label=(t 'forms.i-i-s-gorvodokanal-request-e.endMinutes-caption')
-  }}
-  {{flexberry-validationmessage error=model.errors.endMinutes pointing="pointing"}}
+  {{flexberry-validationmessage error=model.errors.dateEnd pointing="pointing"}}
 </div>
 
 <div class="field">

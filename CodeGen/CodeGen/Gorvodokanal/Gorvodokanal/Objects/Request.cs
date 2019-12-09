@@ -29,31 +29,26 @@ namespace IIS.Gorvodokanal
     [AutoAltered()]
     [AccessType(ICSSoft.STORMNET.AccessType.none)]
     [View("RequestE", new string[] {
+            "Index",
             "Address as \'Адрес\' on \'-Данные об адресе\'",
             "IsAppointed as \'Отметка о назначении\' on \'-Данные о выполнении\'",
             "Team as \'Бригада\' on \'-Данные о выполнении\'",
-            "Date as \'Дата выполнения работ\' on \'-Данные о выполнении\'",
+            "DateStart as \'Дата выполнения работ\' on \'-Данные о выполнении\'",
             "IsCompleted as \'Отметка о выполнении\' on \'-Данные о выполнении\'",
-            "StartHour as \'Часы\' on \'-Данные о выполнении\\Начало работ\'",
-            "StartMinutes as \'Минуты\' on \'-Данные о выполнении\\Начало работ\'",
-            "EndHour as \'Часы\' on \'-Данные о выполнении\\Фактическая длительность работ\'",
-            "EndMinutes as \'Минуты\' on \'-Данные о выполнении\\Фактическая длительность работ\'"})]
+            "DateEnd as \'Фактическое время окончания работ\' on \'-Данные о выполнении\'"})]
     [AssociatedDetailViewAttribute("RequestE", "Tasks", "TaskListE", true, "-Задачи", "", true, new string[] {
             ""})]
     [View("RequestL", new string[] {
-            "IsAppointed as \'Отметка о назначении\' on \'-Данные об адресе\'",
             "Address.Street as \'Улица\' on \'-Данные об адресе\'",
             "Address.House as \'Дом\' on \'-Данные об адресе\'",
             "Address.Build as \'Корпус\' on \'-Данные об адресе\'",
             "Address.Floor as \'Этаж\' on \'-Данные об адресе\'",
             "Address.Apartment as \'Квартира\' on \'-Данные об адресе\'",
-            "Date as \'Дата выполнения работ\' on \'-Данные о выполнении\'",
-            "IsCompleted as \'Отметка о выполнении\' on \'-Данные о выполнении\'",
+            "IsAppointed as \'Отметка о назначении\' on \'-Данные об адресе\'",
             "Team.Index as \'Выполняющая бригада\' on \'-Данные о выполнении\'",
-            "StartHour as \'Часы\' on \'-Данные о выполненииНачало работ\'",
-            "StartMinutes as \'Минуты\' on \'-Данные о выполненииНачало работ\'",
-            "EndHour as \'Часы\' on \'-Данные о выполнении\\Фактическая длительность работ\'",
-            "EndMinutes as \'Минуты\' on \'-Данные о выполнении\\Фактическая длительность работ\'"})]
+            "DateStart as \'Дата выполнения работ\'",
+            "IsCompleted as \'Отметка о выполнении\' on \'-Данные о выполнении\'",
+            "DateEnd as \'Фактическое время окончания работ\'"})]
     [AssociatedDetailViewAttribute("RequestL", "Tasks", "TaskListE", true, "-Задачи", "", true, new string[] {
             ""})]
     public class Request : ICSSoft.STORMNET.DataObject
@@ -63,17 +58,11 @@ namespace IIS.Gorvodokanal
         
         private IIS.Gorvodokanal.tAppointed fIsAppointed;
         
-        private System.DateTime fDate;
-        
-        private int fStartHour;
-        
-        private int fStartMinutes;
+        private System.DateTime fDateStart = DateTime.Now;
         
         private bool fIsCompleted = false;
         
-        private int fEndHour;
-        
-        private int fEndMinutes;
+        private System.DateTime fDateEnd = DateTime.Now;
         
         private IIS.Gorvodokanal.Team fTeam;
         
@@ -92,6 +81,8 @@ namespace IIS.Gorvodokanal
         // *** Start programmer edit section *** (Request.Index CustomAttributes)
 
         // *** End programmer edit section *** (Request.Index CustomAttributes)
+        [DisableInsertProperty(true)]
+        [NotNull()]
         public virtual int Index
         {
             get
@@ -150,95 +141,33 @@ namespace IIS.Gorvodokanal
         }
         
         /// <summary>
-        /// Date.
+        /// DateStart.
         /// </summary>
-        // *** Start programmer edit section *** (Request.Date CustomAttributes)
+        // *** Start programmer edit section *** (Request.DateStart CustomAttributes)
 
-        // *** End programmer edit section *** (Request.Date CustomAttributes)
-        public virtual System.DateTime Date
+        // *** End programmer edit section *** (Request.DateStart CustomAttributes)
+        public virtual System.DateTime DateStart
         {
             get
             {
-                // *** Start programmer edit section *** (Request.Date Get start)
+                // *** Start programmer edit section *** (Request.DateStart Get start)
 
-                // *** End programmer edit section *** (Request.Date Get start)
-                System.DateTime result = this.fDate;
-                // *** Start programmer edit section *** (Request.Date Get end)
+                // *** End programmer edit section *** (Request.DateStart Get start)
+                System.DateTime result = this.fDateStart;
+                // *** Start programmer edit section *** (Request.DateStart Get end)
 
-                // *** End programmer edit section *** (Request.Date Get end)
+                // *** End programmer edit section *** (Request.DateStart Get end)
                 return result;
             }
             set
             {
-                // *** Start programmer edit section *** (Request.Date Set start)
+                // *** Start programmer edit section *** (Request.DateStart Set start)
 
-                // *** End programmer edit section *** (Request.Date Set start)
-                this.fDate = value;
-                // *** Start programmer edit section *** (Request.Date Set end)
+                // *** End programmer edit section *** (Request.DateStart Set start)
+                this.fDateStart = value;
+                // *** Start programmer edit section *** (Request.DateStart Set end)
 
-                // *** End programmer edit section *** (Request.Date Set end)
-            }
-        }
-        
-        /// <summary>
-        /// StartHour.
-        /// </summary>
-        // *** Start programmer edit section *** (Request.StartHour CustomAttributes)
-
-        // *** End programmer edit section *** (Request.StartHour CustomAttributes)
-        public virtual int StartHour
-        {
-            get
-            {
-                // *** Start programmer edit section *** (Request.StartHour Get start)
-
-                // *** End programmer edit section *** (Request.StartHour Get start)
-                int result = this.fStartHour;
-                // *** Start programmer edit section *** (Request.StartHour Get end)
-
-                // *** End programmer edit section *** (Request.StartHour Get end)
-                return result;
-            }
-            set
-            {
-                // *** Start programmer edit section *** (Request.StartHour Set start)
-
-                // *** End programmer edit section *** (Request.StartHour Set start)
-                this.fStartHour = value;
-                // *** Start programmer edit section *** (Request.StartHour Set end)
-
-                // *** End programmer edit section *** (Request.StartHour Set end)
-            }
-        }
-        
-        /// <summary>
-        /// StartMinutes.
-        /// </summary>
-        // *** Start programmer edit section *** (Request.StartMinutes CustomAttributes)
-
-        // *** End programmer edit section *** (Request.StartMinutes CustomAttributes)
-        public virtual int StartMinutes
-        {
-            get
-            {
-                // *** Start programmer edit section *** (Request.StartMinutes Get start)
-
-                // *** End programmer edit section *** (Request.StartMinutes Get start)
-                int result = this.fStartMinutes;
-                // *** Start programmer edit section *** (Request.StartMinutes Get end)
-
-                // *** End programmer edit section *** (Request.StartMinutes Get end)
-                return result;
-            }
-            set
-            {
-                // *** Start programmer edit section *** (Request.StartMinutes Set start)
-
-                // *** End programmer edit section *** (Request.StartMinutes Set start)
-                this.fStartMinutes = value;
-                // *** Start programmer edit section *** (Request.StartMinutes Set end)
-
-                // *** End programmer edit section *** (Request.StartMinutes Set end)
+                // *** End programmer edit section *** (Request.DateStart Set end)
             }
         }
         
@@ -274,64 +203,33 @@ namespace IIS.Gorvodokanal
         }
         
         /// <summary>
-        /// EndHour.
+        /// DateEnd.
         /// </summary>
-        // *** Start programmer edit section *** (Request.EndHour CustomAttributes)
+        // *** Start programmer edit section *** (Request.DateEnd CustomAttributes)
 
-        // *** End programmer edit section *** (Request.EndHour CustomAttributes)
-        public virtual int EndHour
+        // *** End programmer edit section *** (Request.DateEnd CustomAttributes)
+        public virtual System.DateTime DateEnd
         {
             get
             {
-                // *** Start programmer edit section *** (Request.EndHour Get start)
+                // *** Start programmer edit section *** (Request.DateEnd Get start)
 
-                // *** End programmer edit section *** (Request.EndHour Get start)
-                int result = this.fEndHour;
-                // *** Start programmer edit section *** (Request.EndHour Get end)
+                // *** End programmer edit section *** (Request.DateEnd Get start)
+                System.DateTime result = this.fDateEnd;
+                // *** Start programmer edit section *** (Request.DateEnd Get end)
 
-                // *** End programmer edit section *** (Request.EndHour Get end)
+                // *** End programmer edit section *** (Request.DateEnd Get end)
                 return result;
             }
             set
             {
-                // *** Start programmer edit section *** (Request.EndHour Set start)
+                // *** Start programmer edit section *** (Request.DateEnd Set start)
 
-                // *** End programmer edit section *** (Request.EndHour Set start)
-                this.fEndHour = value;
-                // *** Start programmer edit section *** (Request.EndHour Set end)
+                // *** End programmer edit section *** (Request.DateEnd Set start)
+                this.fDateEnd = value;
+                // *** Start programmer edit section *** (Request.DateEnd Set end)
 
-                // *** End programmer edit section *** (Request.EndHour Set end)
-            }
-        }
-        
-        /// <summary>
-        /// EndMinutes.
-        /// </summary>
-        // *** Start programmer edit section *** (Request.EndMinutes CustomAttributes)
-
-        // *** End programmer edit section *** (Request.EndMinutes CustomAttributes)
-        public virtual int EndMinutes
-        {
-            get
-            {
-                // *** Start programmer edit section *** (Request.EndMinutes Get start)
-
-                // *** End programmer edit section *** (Request.EndMinutes Get start)
-                int result = this.fEndMinutes;
-                // *** Start programmer edit section *** (Request.EndMinutes Get end)
-
-                // *** End programmer edit section *** (Request.EndMinutes Get end)
-                return result;
-            }
-            set
-            {
-                // *** Start programmer edit section *** (Request.EndMinutes Set start)
-
-                // *** End programmer edit section *** (Request.EndMinutes Set start)
-                this.fEndMinutes = value;
-                // *** Start programmer edit section *** (Request.EndMinutes Set end)
-
-                // *** End programmer edit section *** (Request.EndMinutes Set end)
+                // *** End programmer edit section *** (Request.DateEnd Set end)
             }
         }
         

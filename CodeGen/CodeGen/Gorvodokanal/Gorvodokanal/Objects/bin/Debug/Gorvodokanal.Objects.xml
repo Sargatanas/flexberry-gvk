@@ -19,19 +19,9 @@
             IsAppointed.
             </summary>
         </member>
-        <member name="P:IIS.Gorvodokanal.Request.Date">
+        <member name="P:IIS.Gorvodokanal.Request.DateStart">
             <summary>
-            Date.
-            </summary>
-        </member>
-        <member name="P:IIS.Gorvodokanal.Request.StartHour">
-            <summary>
-            StartHour.
-            </summary>
-        </member>
-        <member name="P:IIS.Gorvodokanal.Request.StartMinutes">
-            <summary>
-            StartMinutes.
+            DateStart.
             </summary>
         </member>
         <member name="P:IIS.Gorvodokanal.Request.IsCompleted">
@@ -39,14 +29,9 @@
             IsCompleted.
             </summary>
         </member>
-        <member name="P:IIS.Gorvodokanal.Request.EndHour">
+        <member name="P:IIS.Gorvodokanal.Request.DateEnd">
             <summary>
-            EndHour.
-            </summary>
-        </member>
-        <member name="P:IIS.Gorvodokanal.Request.EndMinutes">
-            <summary>
-            EndMinutes.
+            DateEnd.
             </summary>
         </member>
         <member name="P:IIS.Gorvodokanal.Request.Team">
@@ -195,24 +180,14 @@
             Index.
             </summary>
         </member>
-        <member name="P:IIS.Gorvodokanal.Team.ShiftStartHour">
+        <member name="P:IIS.Gorvodokanal.Team.ShiftStart">
             <summary>
-            ShiftStartHour.
+            ShiftStart.
             </summary>
         </member>
-        <member name="P:IIS.Gorvodokanal.Team.ShiftStartMinutes">
+        <member name="P:IIS.Gorvodokanal.Team.ShiftEnd">
             <summary>
-            ShiftStartMinutes.
-            </summary>
-        </member>
-        <member name="P:IIS.Gorvodokanal.Team.ShiftEndHour">
-            <summary>
-            ShiftEndHour.
-            </summary>
-        </member>
-        <member name="P:IIS.Gorvodokanal.Team.ShiftEndMinutes">
-            <summary>
-            ShiftEndMinutes.
+            ShiftEnd.
             </summary>
         </member>
         <member name="T:IIS.Gorvodokanal.Team.Views">
@@ -235,24 +210,14 @@
             Task.
             </summary>
         </member>
-        <member name="P:IIS.Gorvodokanal.Task.Code">
-            <summary>
-            Code.
-            </summary>
-        </member>
         <member name="P:IIS.Gorvodokanal.Task.Content">
             <summary>
             Content.
             </summary>
         </member>
-        <member name="P:IIS.Gorvodokanal.Task.PlaneDurationtHour">
+        <member name="P:IIS.Gorvodokanal.Task.PlaneDuration">
             <summary>
-            PlaneDurationtHour.
-            </summary>
-        </member>
-        <member name="P:IIS.Gorvodokanal.Task.PlaneDurationMinutes">
-            <summary>
-            PlaneDurationMinutes.
+            PlaneDuration.
             </summary>
         </member>
         <member name="T:IIS.Gorvodokanal.Task.Views">

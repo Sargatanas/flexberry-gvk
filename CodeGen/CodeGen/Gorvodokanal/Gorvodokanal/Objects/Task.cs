@@ -29,64 +29,22 @@ namespace IIS.Gorvodokanal
     [AutoAltered()]
     [AccessType(ICSSoft.STORMNET.AccessType.none)]
     [View("TaskE", new string[] {
-            "Code as \'Идентификатор\'",
             "Content as \'Содержание\'",
-            "PlaneDurationtHour as \'Часы\' on \'-Примерная длительность работ\'",
-            "PlaneDurationMinutes as \'Минуты\' on \'-Примерная длительность работ\'"})]
+            "PlaneDuration as \'Примерная длительность работ\'"})]
     [View("TaskL", new string[] {
-            "Code as \'Идентификатор\'",
             "Content as \'Содержание\'",
-            "PlaneDurationtHour as \'Часы\' on \'-Примерная длительность работ\'",
-            "PlaneDurationMinutes as \'Минуты\' on \'-Примерная длительность работ\'"})]
+            "PlaneDuration as \'Примерная длительность работ\'"})]
     public class Task : ICSSoft.STORMNET.DataObject
     {
         
-        private int fCode = 1;
-        
         private string fContent;
         
-        private int fPlaneDurationtHour = 0;
-        
-        private int fPlaneDurationMinutes = 0;
+        private System.DateTime fPlaneDuration;
         
         // *** Start programmer edit section *** (Task CustomMembers)
 
         // *** End programmer edit section *** (Task CustomMembers)
 
-        
-        /// <summary>
-        /// Code.
-        /// </summary>
-        // *** Start programmer edit section *** (Task.Code CustomAttributes)
-
-        // *** End programmer edit section *** (Task.Code CustomAttributes)
-        [DisableInsertProperty(true)]
-        [NotNull()]
-        [Order()]
-        public virtual int Code
-        {
-            get
-            {
-                // *** Start programmer edit section *** (Task.Code Get start)
-
-                // *** End programmer edit section *** (Task.Code Get start)
-                int result = this.fCode;
-                // *** Start programmer edit section *** (Task.Code Get end)
-
-                // *** End programmer edit section *** (Task.Code Get end)
-                return result;
-            }
-            set
-            {
-                // *** Start programmer edit section *** (Task.Code Set start)
-
-                // *** End programmer edit section *** (Task.Code Set start)
-                this.fCode = value;
-                // *** Start programmer edit section *** (Task.Code Set end)
-
-                // *** End programmer edit section *** (Task.Code Set end)
-            }
-        }
         
         /// <summary>
         /// Content.
@@ -122,64 +80,33 @@ namespace IIS.Gorvodokanal
         }
         
         /// <summary>
-        /// PlaneDurationtHour.
+        /// PlaneDuration.
         /// </summary>
-        // *** Start programmer edit section *** (Task.PlaneDurationtHour CustomAttributes)
+        // *** Start programmer edit section *** (Task.PlaneDuration CustomAttributes)
 
-        // *** End programmer edit section *** (Task.PlaneDurationtHour CustomAttributes)
-        public virtual int PlaneDurationtHour
+        // *** End programmer edit section *** (Task.PlaneDuration CustomAttributes)
+        public virtual System.DateTime PlaneDuration
         {
             get
             {
-                // *** Start programmer edit section *** (Task.PlaneDurationtHour Get start)
+                // *** Start programmer edit section *** (Task.PlaneDuration Get start)
 
-                // *** End programmer edit section *** (Task.PlaneDurationtHour Get start)
-                int result = this.fPlaneDurationtHour;
-                // *** Start programmer edit section *** (Task.PlaneDurationtHour Get end)
+                // *** End programmer edit section *** (Task.PlaneDuration Get start)
+                System.DateTime result = this.fPlaneDuration;
+                // *** Start programmer edit section *** (Task.PlaneDuration Get end)
 
-                // *** End programmer edit section *** (Task.PlaneDurationtHour Get end)
+                // *** End programmer edit section *** (Task.PlaneDuration Get end)
                 return result;
             }
             set
             {
-                // *** Start programmer edit section *** (Task.PlaneDurationtHour Set start)
+                // *** Start programmer edit section *** (Task.PlaneDuration Set start)
 
-                // *** End programmer edit section *** (Task.PlaneDurationtHour Set start)
-                this.fPlaneDurationtHour = value;
-                // *** Start programmer edit section *** (Task.PlaneDurationtHour Set end)
+                // *** End programmer edit section *** (Task.PlaneDuration Set start)
+                this.fPlaneDuration = value;
+                // *** Start programmer edit section *** (Task.PlaneDuration Set end)
 
-                // *** End programmer edit section *** (Task.PlaneDurationtHour Set end)
-            }
-        }
-        
-        /// <summary>
-        /// PlaneDurationMinutes.
-        /// </summary>
-        // *** Start programmer edit section *** (Task.PlaneDurationMinutes CustomAttributes)
-
-        // *** End programmer edit section *** (Task.PlaneDurationMinutes CustomAttributes)
-        public virtual int PlaneDurationMinutes
-        {
-            get
-            {
-                // *** Start programmer edit section *** (Task.PlaneDurationMinutes Get start)
-
-                // *** End programmer edit section *** (Task.PlaneDurationMinutes Get start)
-                int result = this.fPlaneDurationMinutes;
-                // *** Start programmer edit section *** (Task.PlaneDurationMinutes Get end)
-
-                // *** End programmer edit section *** (Task.PlaneDurationMinutes Get end)
-                return result;
-            }
-            set
-            {
-                // *** Start programmer edit section *** (Task.PlaneDurationMinutes Set start)
-
-                // *** End programmer edit section *** (Task.PlaneDurationMinutes Set start)
-                this.fPlaneDurationMinutes = value;
-                // *** Start programmer edit section *** (Task.PlaneDurationMinutes Set end)
-
-                // *** End programmer edit section *** (Task.PlaneDurationMinutes Set end)
+                // *** End programmer edit section *** (Task.PlaneDuration Set end)
             }
         }
         
