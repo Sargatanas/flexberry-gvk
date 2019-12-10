@@ -35,22 +35,17 @@ namespace IIS.Gorvodokanal
             "Team as \'Бригада\' on \'-Данные о выполнении\'",
             "DateStart as \'Дата выполнения работ\' on \'-Данные о выполнении\'",
             "IsCompleted as \'Отметка о выполнении\' on \'-Данные о выполнении\'",
-            "DateEnd as \'Фактическое время окончания работ\' on \'-Данные о выполнении\'"})]
+            "DateEnd as \'Фактическое время окончания работ\' on \'-Данные о выполнении\'"}, Hidden=new string[] {
+            "Index"})]
     [AssociatedDetailViewAttribute("RequestE", "Tasks", "TaskListE", true, "-Задачи", "", true, new string[] {
             ""})]
     [View("RequestL", new string[] {
-            "Address.Street as \'Улица\' on \'-Данные об адресе\'",
-            "Address.House as \'Дом\' on \'-Данные об адресе\'",
-            "Address.Build as \'Корпус\' on \'-Данные об адресе\'",
-            "Address.Floor as \'Этаж\' on \'-Данные об адресе\'",
-            "Address.Apartment as \'Квартира\' on \'-Данные об адресе\'",
-            "IsAppointed as \'Отметка о назначении\' on \'-Данные об адресе\'",
+            "Address.District as \'Адрес\' on \'-Данные об адресе\'",
+            "IsAppointed as \'Отметка о назначении\' on \'-Данные о выполнении\'",
             "Team.Index as \'Выполняющая бригада\' on \'-Данные о выполнении\'",
-            "DateStart as \'Дата выполнения работ\'",
+            "DateStart as \'Дата выполнения работ\' on \'-Данные о выполнении\'",
             "IsCompleted as \'Отметка о выполнении\' on \'-Данные о выполнении\'",
-            "DateEnd as \'Фактическое время окончания работ\'"})]
-    [AssociatedDetailViewAttribute("RequestL", "Tasks", "TaskListE", true, "-Задачи", "", true, new string[] {
-            ""})]
+            "DateEnd as \'Фактическое время окончания работ\' on \'-Данные о выполнении\'"})]
     public class Request : ICSSoft.STORMNET.DataObject
     {
         
@@ -58,15 +53,15 @@ namespace IIS.Gorvodokanal
         
         private IIS.Gorvodokanal.tAppointed fIsAppointed;
         
-        private System.DateTime fDateStart = DateTime.Now;
+        private System.DateTime fDateStart;
         
         private bool fIsCompleted = false;
         
-        private System.DateTime fDateEnd = DateTime.Now;
-        
-        private IIS.Gorvodokanal.Team fTeam;
+        private System.DateTime fDateEnd;
         
         private IIS.Gorvodokanal.Address fAddress;
+        
+        private IIS.Gorvodokanal.Team fTeam;
         
         private IIS.Gorvodokanal.DetailArrayOfTaskList fTasks;
         
@@ -236,39 +231,6 @@ namespace IIS.Gorvodokanal
         /// <summary>
         /// Request.
         /// </summary>
-        // *** Start programmer edit section *** (Request.Team CustomAttributes)
-
-        // *** End programmer edit section *** (Request.Team CustomAttributes)
-        [PropertyStorage(new string[] {
-                "Team"})]
-        public virtual IIS.Gorvodokanal.Team Team
-        {
-            get
-            {
-                // *** Start programmer edit section *** (Request.Team Get start)
-
-                // *** End programmer edit section *** (Request.Team Get start)
-                IIS.Gorvodokanal.Team result = this.fTeam;
-                // *** Start programmer edit section *** (Request.Team Get end)
-
-                // *** End programmer edit section *** (Request.Team Get end)
-                return result;
-            }
-            set
-            {
-                // *** Start programmer edit section *** (Request.Team Set start)
-
-                // *** End programmer edit section *** (Request.Team Set start)
-                this.fTeam = value;
-                // *** Start programmer edit section *** (Request.Team Set end)
-
-                // *** End programmer edit section *** (Request.Team Set end)
-            }
-        }
-        
-        /// <summary>
-        /// Request.
-        /// </summary>
         // *** Start programmer edit section *** (Request.Address CustomAttributes)
 
         // *** End programmer edit section *** (Request.Address CustomAttributes)
@@ -297,6 +259,39 @@ namespace IIS.Gorvodokanal
                 // *** Start programmer edit section *** (Request.Address Set end)
 
                 // *** End programmer edit section *** (Request.Address Set end)
+            }
+        }
+        
+        /// <summary>
+        /// Request.
+        /// </summary>
+        // *** Start programmer edit section *** (Request.Team CustomAttributes)
+
+        // *** End programmer edit section *** (Request.Team CustomAttributes)
+        [PropertyStorage(new string[] {
+                "Team"})]
+        public virtual IIS.Gorvodokanal.Team Team
+        {
+            get
+            {
+                // *** Start programmer edit section *** (Request.Team Get start)
+
+                // *** End programmer edit section *** (Request.Team Get start)
+                IIS.Gorvodokanal.Team result = this.fTeam;
+                // *** Start programmer edit section *** (Request.Team Get end)
+
+                // *** End programmer edit section *** (Request.Team Get end)
+                return result;
+            }
+            set
+            {
+                // *** Start programmer edit section *** (Request.Team Set start)
+
+                // *** End programmer edit section *** (Request.Team Set start)
+                this.fTeam = value;
+                // *** Start programmer edit section *** (Request.Team Set end)
+
+                // *** End programmer edit section *** (Request.Team Set end)
             }
         }
         

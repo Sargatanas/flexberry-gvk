@@ -4,7 +4,7 @@ export let Serializer = Ember.Mixin.create({
   getAttrs: function () {
     let parentAttrs = this._super();
     let attrs = {
-
+      category: { serialize: 'odata-id', deserialize: 'records' }
     };
 
     return Ember.$.extend(true, {}, parentAttrs, attrs);

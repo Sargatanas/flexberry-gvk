@@ -25,16 +25,14 @@
     </div>
   </div>
   <div class="field">
+  <label>{{t 'forms.i-i-s-gorvodokanal-address-e.district-caption'}}</label>
   {{
-    flexberry-field
-    placeholder=(t 'components.flexberry-field.placeholder')
+    flexberry-dropdown
+    items=(flexberry-enum 'i-i-s-gorvodokanal-t-districts')
+    value=model.district
     readonly=readonly
-    required=true
-    value=model.index
-    class=(if model.errors.index 'error' '')
-    label=(t 'forms.i-i-s-gorvodokanal-address-e.index-caption')
   }}
-  {{flexberry-validationmessage error=model.errors.index pointing="pointing"}}
+  {{flexberry-validationmessage error=model.errors.district pointing="pointing"}}
 </div>
 
 <div class="field">
@@ -74,6 +72,19 @@
     label=(t 'forms.i-i-s-gorvodokanal-address-e.build-caption')
   }}
   {{flexberry-validationmessage error=model.errors.build pointing="pointing"}}
+</div>
+
+<div class="field">
+  {{
+    flexberry-field
+    placeholder=(t 'components.flexberry-field.placeholder')
+    readonly=readonly
+    required=true
+    value=model.porch
+    class=(if model.errors.porch 'error' '')
+    label=(t 'forms.i-i-s-gorvodokanal-address-e.porch-caption')
+  }}
+  {{flexberry-validationmessage error=model.errors.porch pointing="pointing"}}
 </div>
 
 <div class="field">

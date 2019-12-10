@@ -1,0 +1,13 @@
+﻿{
+  "nameSpace": "IIS.Gorvodokanal",
+  "className": "tDistricts",
+  "enumObjects": {
+    "Motovilikhinsky": "Мотовилихинский",
+    "Ordzhonikidzevsky": "Орджоникидзовский",
+    "Leninsky": "Ленинский",
+    "Kirovsky": "Кировский",
+    "Dzerzhinsky": "Дзержинский",
+    "Industrialny": "Индустриальный",
+    "Sverdlovsky": "Свердловский"
+  }
+}

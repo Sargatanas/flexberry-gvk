@@ -1,8 +1,8 @@
 export default {
   projections: {
     AddressE: {
-      index: {
-        __caption__: 'index'
+      district: {
+        __caption__: 'district'
       },
       street: {
         __caption__: 'street'
@@ -12,6 +12,9 @@ export default {
       },
       build: {
         __caption__: 'build'
+      },
+      porch: {
+        __caption__: 'porch'
       },
       floor: {
         __caption__: 'floor'
@@ -21,8 +24,8 @@ export default {
       }
     },
     AddressL: {
-      index: {
-        __caption__: 'index'
+      district: {
+        __caption__: 'district'
       },
       street: {
         __caption__: 'street'
@@ -32,6 +35,9 @@ export default {
       },
       build: {
         __caption__: 'build'
+      },
+      porch: {
+        __caption__: 'porch'
       },
       floor: {
         __caption__: 'floor'

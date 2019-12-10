@@ -55,16 +55,16 @@
   "belongsTo": [
     {
       "polymorphic": false,
-      "presence": false,
-      "name": "team",
-      "relatedTo": "i-i-s-gorvodokanal-team",
+      "presence": true,
+      "name": "address",
+      "relatedTo": "i-i-s-gorvodokanal-address",
       "inverse": null
     },
     {
       "polymorphic": false,
-      "presence": true,
-      "name": "address",
-      "relatedTo": "i-i-s-gorvodokanal-address",
+      "presence": false,
+      "name": "team",
+      "relatedTo": "i-i-s-gorvodokanal-team",
       "inverse": null
     }
   ],
@@ -83,7 +83,7 @@
         {
           "name": "index",
           "caption": "",
-          "hidden": false,
+          "hidden": true,
           "index": 0
         },
         {
@@ -159,25 +159,25 @@
           "name": "isAppointed",
           "caption": "Отметка о назначении",
           "hidden": false,
-          "index": 5
+          "index": 1
         },
         {
           "name": "dateStart",
           "caption": "Дата выполнения работ",
           "hidden": false,
-          "index": 7
+          "index": 3
         },
         {
           "name": "isCompleted",
           "caption": "Отметка о выполнении",
           "hidden": false,
-          "index": 8
+          "index": 4
         },
         {
           "name": "dateEnd",
           "caption": "Фактическое время окончания работ",
           "hidden": false,
-          "index": 9
+          "index": 5
         }
       ],
       "belongsTo": [
@@ -189,39 +189,15 @@
           "hidden": false,
           "attrs": [
             {
-              "name": "street",
-              "caption": "Улица",
+              "name": "district",
+              "caption": "Адрес",
               "hidden": false,
               "index": 0
-            },
-            {
-              "name": "house",
-              "caption": "Дом",
-              "hidden": false,
-              "index": 1
-            },
-            {
-              "name": "build",
-              "caption": "Корпус",
-              "hidden": false,
-              "index": 2
-            },
-            {
-              "name": "floor",
-              "caption": "Этаж",
-              "hidden": false,
-              "index": 3
-            },
-            {
-              "name": "apartment",
-              "caption": "Квартира",
-              "hidden": false,
-              "index": 4
             }
           ],
           "index": -1,
           "type": "default",
-          "caption": "Улица",
+          "caption": "Адрес",
           "name": "address",
           "relatedTo": "i-i-s-gorvodokanal-address",
           "inverse": null
@@ -237,7 +213,7 @@
               "name": "index",
               "caption": "Выполняющая бригада",
               "hidden": false,
-              "index": 6
+              "index": 2
             }
           ],
           "index": -1,
@@ -248,15 +224,7 @@
           "inverse": null
         }
       ],
-      "hasMany": [
-        {
-          "projectionName": "TaskListE",
-          "caption": "",
-          "name": "tasks",
-          "relatedTo": "i-i-s-gorvodokanal-task-list",
-          "inverse": null
-        }
-      ]
+      "hasMany": []
     }
   ],
   "stored": true,

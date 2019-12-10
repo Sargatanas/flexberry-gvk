@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{90CBA56D-5698-45C5-811D-1749ECB4C3B4}</ProjectGuid>
+    <ProjectGuid>{B56C521A-7441-4498-97B1-BEDE45874DC9}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>IIS.Gorvodokanal</RootNamespace>
@@ -121,7 +121,19 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CategoryList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Task.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Team.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Request.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TaskList.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="tAppointed.cs">
@@ -130,13 +142,13 @@
     <Compile Include="Address.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="TaskList.cs">
+    <Compile Include="Category.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Team.cs">
+    <Compile Include="tImportance.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Task.cs">
+    <Compile Include="tDistricts.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />

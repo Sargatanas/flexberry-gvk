@@ -1,5 +1,14 @@
 ﻿{
-  "propertyLookup": [],
+  "propertyLookup": [
+    {
+      "master": "category",
+      "displayAttributeName": "name",
+      "required": true,
+      "relationName": "Categories.Category",
+      "projection": "CategoryL",
+      "detailModelName": "i-i-s-gorvodokanal-category-list"
+    }
+  ],
   "external": false,
   "caption": "Бригада",
   "name": "IISGorvodokanalTeamE",

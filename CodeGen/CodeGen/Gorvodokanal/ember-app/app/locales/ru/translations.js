@@ -2,14 +2,18 @@ import Ember from 'ember';
 import EmberFlexberryTranslations from 'ember-flexberry/locales/ru/translations';
 
 import IISGorvodokanalAddressLForm from './forms/i-i-s-gorvodokanal-address-l';
+import IISGorvodokanalCategoryLForm from './forms/i-i-s-gorvodokanal-category-l';
 import IISGorvodokanalRequestLForm from './forms/i-i-s-gorvodokanal-request-l';
 import IISGorvodokanalTaskLForm from './forms/i-i-s-gorvodokanal-task-l';
 import IISGorvodokanalTeamLForm from './forms/i-i-s-gorvodokanal-team-l';
 import IISGorvodokanalAddressEForm from './forms/i-i-s-gorvodokanal-address-e';
+import IISGorvodokanalCategoryEForm from './forms/i-i-s-gorvodokanal-category-e';
 import IISGorvodokanalRequestEForm from './forms/i-i-s-gorvodokanal-request-e';
 import IISGorvodokanalTaskEForm from './forms/i-i-s-gorvodokanal-task-e';
 import IISGorvodokanalTeamEForm from './forms/i-i-s-gorvodokanal-team-e';
 import IISGorvodokanalAddressModel from './models/i-i-s-gorvodokanal-address';
+import IISGorvodokanalCategoryListModel from './models/i-i-s-gorvodokanal-category-list';
+import IISGorvodokanalCategoryModel from './models/i-i-s-gorvodokanal-category';
 import IISGorvodokanalRequestModel from './models/i-i-s-gorvodokanal-request';
 import IISGorvodokanalTaskListModel from './models/i-i-s-gorvodokanal-task-list';
 import IISGorvodokanalTaskModel from './models/i-i-s-gorvodokanal-task';
@@ -21,13 +25,15 @@ Ember.$.extend(true, translations, EmberFlexberryTranslations);
 Ember.$.extend(true, translations, {
   models: {
     'i-i-s-gorvodokanal-address': IISGorvodokanalAddressModel,
+    'i-i-s-gorvodokanal-category-list': IISGorvodokanalCategoryListModel,
+    'i-i-s-gorvodokanal-category': IISGorvodokanalCategoryModel,
     'i-i-s-gorvodokanal-request': IISGorvodokanalRequestModel,
     'i-i-s-gorvodokanal-task-list': IISGorvodokanalTaskListModel,
     'i-i-s-gorvodokanal-task': IISGorvodokanalTaskModel,
     'i-i-s-gorvodokanal-team': IISGorvodokanalTeamModel,
   },
 
-  'application-name': 'Горводоканал',
+  'application-name': 'Горводоканал-Пермь',
 
   forms: {
     loading: {
@@ -67,7 +73,7 @@ Ember.$.extend(true, translations, {
       },
 
       footer: {
-        'application-name': 'Горводоканал',
+        'application-name': 'Горводоканал-Пермь',
         'application-version': {
           caption: 'Версия аддона {{version}}',
           title: 'Это версия аддона ember-flexberry, которая сейчас используется в этом тестовом приложении ' +
@@ -78,8 +84,8 @@ Ember.$.extend(true, translations, {
 
       sitemap: {
         'application-name': {
-          caption: 'Горводоканал',
-          title: 'Горводоканал'
+          caption: 'Горводоканал-Пермь',
+          title: 'Горводоканал, отделение гор.Перми'
         },
         'application-version': {
           caption: 'Версия аддона {{version}}',
@@ -102,12 +108,16 @@ Ember.$.extend(true, translations, {
         списки: {
           caption: 'Списки',
           title: 'Списки',
-          'i-i-s-gorvodokanal-address-l': {
-            caption: 'Адреса',
+          'i-i-s-gorvodokanal-category-l': {
+            caption: 'Категории',
             title: ''
           },
           'i-i-s-gorvodokanal-task-l': {
             caption: 'Задачи',
+            title: ''
+          },
+          'i-i-s-gorvodokanal-address-l': {
+            caption: 'Адреса',
             title: ''
           },
           'i-i-s-gorvodokanal-team-l': {
@@ -127,10 +137,12 @@ Ember.$.extend(true, translations, {
       'delete-error-message-caption': 'Ошибка удаления'
     },
     'i-i-s-gorvodokanal-address-l': IISGorvodokanalAddressLForm,
+    'i-i-s-gorvodokanal-category-l': IISGorvodokanalCategoryLForm,
     'i-i-s-gorvodokanal-request-l': IISGorvodokanalRequestLForm,
     'i-i-s-gorvodokanal-task-l': IISGorvodokanalTaskLForm,
     'i-i-s-gorvodokanal-team-l': IISGorvodokanalTeamLForm,
     'i-i-s-gorvodokanal-address-e': IISGorvodokanalAddressEForm,
+    'i-i-s-gorvodokanal-category-e': IISGorvodokanalCategoryEForm,
     'i-i-s-gorvodokanal-request-e': IISGorvodokanalRequestEForm,
     'i-i-s-gorvodokanal-task-e': IISGorvodokanalTaskEForm,
     'i-i-s-gorvodokanal-team-e': IISGorvodokanalTeamEForm,

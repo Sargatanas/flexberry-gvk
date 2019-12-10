@@ -1,6 +1,6 @@
 ﻿{
-  "applicationCaption": "Горводоканал",
-  "applicationTitle": "Горводоканал",
+  "applicationCaption": "Горводоканал-Пермь",
+  "applicationTitle": "Горводоканал, отделение гор.Перми",
   "items": [
     {
       "link": null,
@@ -24,9 +24,9 @@
       "title": "Списки",
       "children": [
         {
-          "link": "i-i-s-gorvodokanal-address-l",
+          "link": "i-i-s-gorvodokanal-category-l",
           "menuName": null,
-          "caption": "Адреса",
+          "caption": "Категории",
           "title": "",
           "children": null
         },
@@ -34,6 +34,13 @@
           "link": "i-i-s-gorvodokanal-task-l",
           "menuName": null,
           "caption": "Задачи",
+          "title": "",
+          "children": null
+        },
+        {
+          "link": "i-i-s-gorvodokanal-address-l",
+          "menuName": null,
+          "caption": "Адреса",
           "title": "",
           "children": null
         },

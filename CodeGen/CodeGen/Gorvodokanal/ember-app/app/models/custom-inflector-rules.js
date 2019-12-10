@@ -2,6 +2,7 @@ import Inflector from 'ember-inflector';
 
 const inflector = Inflector.inflector;
 
+inflector.irregular('category', 'Categorys');
 inflector.irregular('address', 'Addresss');
 inflector.irregular('request', 'Requests');
 inflector.irregular('list', 'Lists');

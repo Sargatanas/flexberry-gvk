@@ -1,7 +1,7 @@
 import EditFormController from 'ember-flexberry/controllers/edit-form';
 import Ember from 'ember';
 import needSaveCurrentAgregator from 'ember-flexberry/utils/need-save-current-agregator';
-import getCurrentAgregator from 'ember-flexberry/utils/get-current-agregator';
+import getCurrentAgregator from 'ember-flexberry/utils/get-current-agregator'; 
 
 export default EditFormController.extend({
   parentRoute: 'i-i-s-gorvodokanal-request-l',

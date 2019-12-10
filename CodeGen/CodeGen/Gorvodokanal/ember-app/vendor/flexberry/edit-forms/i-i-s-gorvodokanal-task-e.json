@@ -1,5 +1,14 @@
 ﻿{
-  "propertyLookup": [],
+  "propertyLookup": [
+    {
+      "master": null,
+      "displayAttributeName": null,
+      "required": false,
+      "relationName": "Category",
+      "projection": "CategoryL",
+      "detailModelName": null
+    }
+  ],
   "external": false,
   "caption": "Задача",
   "name": "IISGorvodokanalTaskE",

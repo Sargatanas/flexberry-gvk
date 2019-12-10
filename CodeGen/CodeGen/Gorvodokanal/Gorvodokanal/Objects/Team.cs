@@ -31,7 +31,10 @@ namespace IIS.Gorvodokanal
     [View("TeamE", new string[] {
             "Index as \'Номер бригады\'",
             "ShiftStart as \'Начало смены\'",
-            "ShiftEnd as \'Конец смены\'"})]
+            "ShiftEnd as \'Конец смены\'"}, Hidden=new string[] {
+            "Index"})]
+    [AssociatedDetailViewAttribute("TeamE", "Categories", "CategoryListE", true, "-Сферы деятельности", "", true, new string[] {
+            ""})]
     [View("TeamL", new string[] {
             "Index as \'Номер бригады\'",
             "ShiftStart as \'Начало смены\'",
@@ -39,11 +42,13 @@ namespace IIS.Gorvodokanal
     public class Team : ICSSoft.STORMNET.DataObject
     {
         
-        private int fIndex = 1;
+        private int fIndex = 100;
         
         private System.DateTime fShiftStart;
         
         private System.DateTime fShiftEnd;
+        
+        private IIS.Gorvodokanal.DetailArrayOfCategoryList fCategories;
         
         // *** Start programmer edit section *** (Team CustomMembers)
 
@@ -142,6 +147,41 @@ namespace IIS.Gorvodokanal
                 // *** Start programmer edit section *** (Team.ShiftEnd Set end)
 
                 // *** End programmer edit section *** (Team.ShiftEnd Set end)
+            }
+        }
+        
+        /// <summary>
+        /// Team.
+        /// </summary>
+        // *** Start programmer edit section *** (Team.Categories CustomAttributes)
+
+        // *** End programmer edit section *** (Team.Categories CustomAttributes)
+        public virtual IIS.Gorvodokanal.DetailArrayOfCategoryList Categories
+        {
+            get
+            {
+                // *** Start programmer edit section *** (Team.Categories Get start)
+
+                // *** End programmer edit section *** (Team.Categories Get start)
+                if ((this.fCategories == null))
+                {
+                    this.fCategories = new IIS.Gorvodokanal.DetailArrayOfCategoryList(this);
+                }
+                IIS.Gorvodokanal.DetailArrayOfCategoryList result = this.fCategories;
+                // *** Start programmer edit section *** (Team.Categories Get end)
+
+                // *** End programmer edit section *** (Team.Categories Get end)
+                return result;
+            }
+            set
+            {
+                // *** Start programmer edit section *** (Team.Categories Set start)
+
+                // *** End programmer edit section *** (Team.Categories Set start)
+                this.fCategories = value;
+                // *** Start programmer edit section *** (Team.Categories Set end)
+
+                // *** End programmer edit section *** (Team.Categories Set end)
             }
         }
         

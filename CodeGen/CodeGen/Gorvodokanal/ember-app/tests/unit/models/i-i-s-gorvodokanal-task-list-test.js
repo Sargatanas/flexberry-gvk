@@ -4,6 +4,8 @@ moduleForModel('i-i-s-gorvodokanal-task-list', 'Unit | Model | i-i-s-gorvodokana
   // Specify the other units that are required for this test.
   needs: [
     'model:i-i-s-gorvodokanal-address',
+    'model:i-i-s-gorvodokanal-category-list',
+    'model:i-i-s-gorvodokanal-category',
     'model:i-i-s-gorvodokanal-request',
     'model:i-i-s-gorvodokanal-task-list',
     'model:i-i-s-gorvodokanal-task',

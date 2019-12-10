@@ -1,5 +1,8 @@
 export default {
   caption: 'Задача',
-  'content-caption': 'Содержание',
-  'planeDuration-caption': 'Примерная длительность работ'
+  'index-caption': '',
+  'content-caption': 'Детали',
+  'planeDuration-caption': 'Примерная длительность работ',
+  'importance-caption': 'Срочность',
+  'category-caption': 'Категория'
 };

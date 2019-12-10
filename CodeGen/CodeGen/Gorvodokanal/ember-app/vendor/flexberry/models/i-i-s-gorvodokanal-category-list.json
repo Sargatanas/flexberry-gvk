@@ -1,0 +1,53 @@
+﻿{
+  "name": "IISGorvodokanalCategoryList",
+  "modelName": "i-i-s-gorvodokanal-category-list",
+  "className": "CategoryList",
+  "nameSpace": "IIS.Gorvodokanal",
+  "parentModelName": null,
+  "parentClassName": null,
+  "attrs": [],
+  "belongsTo": [
+    {
+      "polymorphic": false,
+      "presence": true,
+      "name": "category",
+      "relatedTo": "i-i-s-gorvodokanal-category",
+      "inverse": null
+    },
+    {
+      "polymorphic": false,
+      "presence": true,
+      "name": "team",
+      "relatedTo": "i-i-s-gorvodokanal-team",
+      "inverse": "categories"
+    }
+  ],
+  "hasMany": [],
+  "projections": [
+    {
+      "name": "CategoryListE",
+      "modelName": "i-i-s-gorvodokanal-category-list",
+      "attrs": [],
+      "belongsTo": [
+        {
+          "lookupValue": "Name",
+          "lookupValueField": "name",
+          "relationName": "Category",
+          "belongsTo": [],
+          "hidden": false,
+          "attrs": [],
+          "index": 0,
+          "type": "standard",
+          "caption": "Категория",
+          "name": "category",
+          "relatedTo": "i-i-s-gorvodokanal-category",
+          "inverse": null
+        }
+      ],
+      "hasMany": []
+    }
+  ],
+  "stored": true,
+  "offline": true,
+  "external": false
+}

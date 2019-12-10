@@ -1,0 +1,15 @@
+﻿{
+  "newForm": "i-i-s-gorvodokanal-category-e",
+  "editForm": "i-i-s-gorvodokanal-category-e",
+  "external": false,
+  "caption": "Категории",
+  "name": "IISGorvodokanalCategoryL",
+  "className": "CategoryL",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "i-i-s-gorvodokanal-category",
+      "modelProjection": "CategoryL"
+    }
+  ]
+}

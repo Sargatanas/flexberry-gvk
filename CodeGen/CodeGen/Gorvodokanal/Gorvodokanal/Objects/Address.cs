@@ -29,29 +29,33 @@ namespace IIS.Gorvodokanal
     [AutoAltered()]
     [AccessType(ICSSoft.STORMNET.AccessType.none)]
     [View("AddressE", new string[] {
-            "Index as \'Код адреса\'",
+            "District as \'Район\'",
             "Street as \'Улица\'",
             "House as \'Дом\'",
             "Build as \'Корпус\'",
+            "Porch as \'Подъезд\'",
             "Floor as \'Этаж\'",
             "Apartment as \'Квартира\'"})]
     [View("AddressL", new string[] {
-            "Index as \'Код адреса\'",
+            "District as \'Район\'",
             "Street as \'Улица\'",
             "House as \'Дом\'",
             "Build as \'Корпус\'",
+            "Porch as \'Подъезд\'",
             "Floor as \'Этаж\'",
             "Apartment as \'Квартира\'"})]
     public class Address : ICSSoft.STORMNET.DataObject
     {
         
-        private int fIndex = 1;
+        private IIS.Gorvodokanal.tDistricts fDistrict;
         
         private string fStreet;
         
         private int fHouse;
         
         private string fBuild;
+        
+        private ICSSoft.STORMNET.UserDataTypes.NullableInt fPorch;
         
         private ICSSoft.STORMNET.UserDataTypes.NullableInt fFloor;
         
@@ -63,35 +67,34 @@ namespace IIS.Gorvodokanal
 
         
         /// <summary>
-        /// Index.
+        /// District.
         /// </summary>
-        // *** Start programmer edit section *** (Address.Index CustomAttributes)
+        // *** Start programmer edit section *** (Address.District CustomAttributes)
 
-        // *** End programmer edit section *** (Address.Index CustomAttributes)
-        [DisableInsertProperty(true)]
+        // *** End programmer edit section *** (Address.District CustomAttributes)
         [NotNull()]
-        public virtual int Index
+        public virtual IIS.Gorvodokanal.tDistricts District
         {
             get
             {
-                // *** Start programmer edit section *** (Address.Index Get start)
+                // *** Start programmer edit section *** (Address.District Get start)
 
-                // *** End programmer edit section *** (Address.Index Get start)
-                int result = this.fIndex;
-                // *** Start programmer edit section *** (Address.Index Get end)
+                // *** End programmer edit section *** (Address.District Get start)
+                IIS.Gorvodokanal.tDistricts result = this.fDistrict;
+                // *** Start programmer edit section *** (Address.District Get end)
 
-                // *** End programmer edit section *** (Address.Index Get end)
+                // *** End programmer edit section *** (Address.District Get end)
                 return result;
             }
             set
             {
-                // *** Start programmer edit section *** (Address.Index Set start)
+                // *** Start programmer edit section *** (Address.District Set start)
 
-                // *** End programmer edit section *** (Address.Index Set start)
-                this.fIndex = value;
-                // *** Start programmer edit section *** (Address.Index Set end)
+                // *** End programmer edit section *** (Address.District Set start)
+                this.fDistrict = value;
+                // *** Start programmer edit section *** (Address.District Set end)
 
-                // *** End programmer edit section *** (Address.Index Set end)
+                // *** End programmer edit section *** (Address.District Set end)
             }
         }
         
@@ -189,6 +192,37 @@ namespace IIS.Gorvodokanal
                 // *** Start programmer edit section *** (Address.Build Set end)
 
                 // *** End programmer edit section *** (Address.Build Set end)
+            }
+        }
+        
+        /// <summary>
+        /// Porch.
+        /// </summary>
+        // *** Start programmer edit section *** (Address.Porch CustomAttributes)
+
+        // *** End programmer edit section *** (Address.Porch CustomAttributes)
+        public virtual ICSSoft.STORMNET.UserDataTypes.NullableInt Porch
+        {
+            get
+            {
+                // *** Start programmer edit section *** (Address.Porch Get start)
+
+                // *** End programmer edit section *** (Address.Porch Get start)
+                ICSSoft.STORMNET.UserDataTypes.NullableInt result = this.fPorch;
+                // *** Start programmer edit section *** (Address.Porch Get end)
+
+                // *** End programmer edit section *** (Address.Porch Get end)
+                return result;
+            }
+            set
+            {
+                // *** Start programmer edit section *** (Address.Porch Set start)
+
+                // *** End programmer edit section *** (Address.Porch Set start)
+                this.fPorch = value;
+                // *** Start programmer edit section *** (Address.Porch Set end)
+
+                // *** End programmer edit section *** (Address.Porch Set end)
             }
         }
         

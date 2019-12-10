@@ -1,0 +1,11 @@
+﻿{
+  "nameSpace": "IIS.Gorvodokanal",
+  "className": "tImportance",
+  "enumObjects": {
+    "NotImportant": "не срочно (0)",
+    "LowImportance": "малая срочность (1)",
+    "MiddleImportance": "средняя срочность (2)",
+    "HighImportance": "высокая срочность (3)",
+    "ExtrimlyImportant": "как можно скорее (4)"
+  }
+}

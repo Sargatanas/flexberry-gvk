@@ -32,20 +32,8 @@ export default {
     RequestL: {
       address: {
         __caption__: 'address',
-        street: {
-          __caption__: 'street'
-        },
-        house: {
-          __caption__: 'house'
-        },
-        build: {
-          __caption__: 'build'
-        },
-        floor: {
-          __caption__: 'floor'
-        },
-        apartment: {
-          __caption__: 'apartment'
+        district: {
+          __caption__: 'district'
         }
       },
       isAppointed: {
@@ -65,12 +53,6 @@ export default {
       },
       dateEnd: {
         __caption__: 'dateEnd'
-      },
-      tasks: {
-        __caption__: 'tasks',
-        task: {
-          __caption__: 'task'
-        }
       }
     }
   }

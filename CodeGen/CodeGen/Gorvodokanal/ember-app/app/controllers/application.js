@@ -26,14 +26,19 @@ export default Ember.Controller.extend({
           caption: i18n.t('forms.application.sitemap.списки.caption'),
           title: i18n.t('forms.application.sitemap.списки.title'),
           children: [{
-            link: 'i-i-s-gorvodokanal-address-l',
-            caption: i18n.t('forms.application.sitemap.списки.i-i-s-gorvodokanal-address-l.caption'),
-            title: i18n.t('forms.application.sitemap.списки.i-i-s-gorvodokanal-address-l.title'),
+            link: 'i-i-s-gorvodokanal-category-l',
+            caption: i18n.t('forms.application.sitemap.списки.i-i-s-gorvodokanal-category-l.caption'),
+            title: i18n.t('forms.application.sitemap.списки.i-i-s-gorvodokanal-category-l.title'),
             children: null
           }, {
             link: 'i-i-s-gorvodokanal-task-l',
             caption: i18n.t('forms.application.sitemap.списки.i-i-s-gorvodokanal-task-l.caption'),
             title: i18n.t('forms.application.sitemap.списки.i-i-s-gorvodokanal-task-l.title'),
+            children: null
+          }, {
+            link: 'i-i-s-gorvodokanal-address-l',
+            caption: i18n.t('forms.application.sitemap.списки.i-i-s-gorvodokanal-address-l.caption'),
+            title: i18n.t('forms.application.sitemap.списки.i-i-s-gorvodokanal-address-l.title'),
             children: null
           }, {
             link: 'i-i-s-gorvodokanal-team-l',

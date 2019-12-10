@@ -9,6 +9,12 @@ export default {
       },
       shiftEnd: {
         __caption__: 'shiftEnd'
+      },
+      categories: {
+        __caption__: 'categories',
+        category: {
+          __caption__: 'category'
+        }
       }
     },
     TeamL: {

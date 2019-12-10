@@ -7,11 +7,11 @@
   "parentClassName": null,
   "attrs": [
     {
-      "name": "index",
-      "type": "number",
-      "flexberryType": "int",
+      "name": "district",
+      "type": "i-i-s-gorvodokanal-t-districts",
+      "flexberryType": "tDistricts",
       "notNull": true,
-      "defaultValue": "1",
+      "defaultValue": "",
       "stored": true,
       "ordered": false
     },
@@ -37,6 +37,15 @@
       "name": "build",
       "type": "string",
       "flexberryType": "string",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "porch",
+      "type": "number",
+      "flexberryType": "NullableInt",
       "notNull": false,
       "defaultValue": "",
       "stored": true,
@@ -69,8 +78,8 @@
       "modelName": "i-i-s-gorvodokanal-address",
       "attrs": [
         {
-          "name": "index",
-          "caption": "Код адреса",
+          "name": "district",
+          "caption": "Район",
           "hidden": false,
           "index": 0
         },
@@ -93,16 +102,22 @@
           "index": 3
         },
         {
+          "name": "porch",
+          "caption": "Подъезд",
+          "hidden": false,
+          "index": 4
+        },
+        {
           "name": "floor",
           "caption": "Этаж",
           "hidden": false,
-          "index": 4
+          "index": 5
         },
         {
           "name": "apartment",
           "caption": "Квартира",
           "hidden": false,
-          "index": 5
+          "index": 6
         }
       ],
       "belongsTo": [],
@@ -113,8 +128,8 @@
       "modelName": "i-i-s-gorvodokanal-address",
       "attrs": [
         {
-          "name": "index",
-          "caption": "Код адреса",
+          "name": "district",
+          "caption": "Район",
           "hidden": false,
           "index": 0
         },
@@ -137,16 +152,22 @@
           "index": 3
         },
         {
+          "name": "porch",
+          "caption": "Подъезд",
+          "hidden": false,
+          "index": 4
+        },
+        {
           "name": "floor",
           "caption": "Этаж",
           "hidden": false,
-          "index": 4
+          "index": 5
         },
         {
           "name": "apartment",
           "caption": "Квартира",
           "hidden": false,
-          "index": 5
+          "index": 6
         }
       ],
       "belongsTo": [],

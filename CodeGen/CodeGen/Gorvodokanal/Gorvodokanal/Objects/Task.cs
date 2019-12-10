@@ -29,22 +29,67 @@ namespace IIS.Gorvodokanal
     [AutoAltered()]
     [AccessType(ICSSoft.STORMNET.AccessType.none)]
     [View("TaskE", new string[] {
-            "Content as \'Содержание\'",
-            "PlaneDuration as \'Примерная длительность работ\'"})]
+            "Index",
+            "Category as \'Категория\'",
+            "Content as \'Детали\'",
+            "PlaneDuration as \'Примерная длительность работ\'",
+            "Importance as \'Срочность\'"}, Hidden=new string[] {
+            "Index"})]
     [View("TaskL", new string[] {
-            "Content as \'Содержание\'",
-            "PlaneDuration as \'Примерная длительность работ\'"})]
+            "Category.Name as \'Категория\'",
+            "Content as \'Детали\'",
+            "PlaneDuration as \'Примерная длительность работ\'",
+            "Importance as \'Срочнось\'"})]
     public class Task : ICSSoft.STORMNET.DataObject
     {
+        
+        private int fIndex = 1;
         
         private string fContent;
         
         private System.DateTime fPlaneDuration;
         
+        private IIS.Gorvodokanal.tImportance fImportance;
+        
+        private IIS.Gorvodokanal.Category fCategory;
+        
         // *** Start programmer edit section *** (Task CustomMembers)
 
         // *** End programmer edit section *** (Task CustomMembers)
 
+        
+        /// <summary>
+        /// Index.
+        /// </summary>
+        // *** Start programmer edit section *** (Task.Index CustomAttributes)
+
+        // *** End programmer edit section *** (Task.Index CustomAttributes)
+        [DisableInsertProperty(true)]
+        [NotNull()]
+        public virtual int Index
+        {
+            get
+            {
+                // *** Start programmer edit section *** (Task.Index Get start)
+
+                // *** End programmer edit section *** (Task.Index Get start)
+                int result = this.fIndex;
+                // *** Start programmer edit section *** (Task.Index Get end)
+
+                // *** End programmer edit section *** (Task.Index Get end)
+                return result;
+            }
+            set
+            {
+                // *** Start programmer edit section *** (Task.Index Set start)
+
+                // *** End programmer edit section *** (Task.Index Set start)
+                this.fIndex = value;
+                // *** Start programmer edit section *** (Task.Index Set end)
+
+                // *** End programmer edit section *** (Task.Index Set end)
+            }
+        }
         
         /// <summary>
         /// Content.
@@ -107,6 +152,71 @@ namespace IIS.Gorvodokanal
                 // *** Start programmer edit section *** (Task.PlaneDuration Set end)
 
                 // *** End programmer edit section *** (Task.PlaneDuration Set end)
+            }
+        }
+        
+        /// <summary>
+        /// Importance.
+        /// </summary>
+        // *** Start programmer edit section *** (Task.Importance CustomAttributes)
+
+        // *** End programmer edit section *** (Task.Importance CustomAttributes)
+        public virtual IIS.Gorvodokanal.tImportance Importance
+        {
+            get
+            {
+                // *** Start programmer edit section *** (Task.Importance Get start)
+
+                // *** End programmer edit section *** (Task.Importance Get start)
+                IIS.Gorvodokanal.tImportance result = this.fImportance;
+                // *** Start programmer edit section *** (Task.Importance Get end)
+
+                // *** End programmer edit section *** (Task.Importance Get end)
+                return result;
+            }
+            set
+            {
+                // *** Start programmer edit section *** (Task.Importance Set start)
+
+                // *** End programmer edit section *** (Task.Importance Set start)
+                this.fImportance = value;
+                // *** Start programmer edit section *** (Task.Importance Set end)
+
+                // *** End programmer edit section *** (Task.Importance Set end)
+            }
+        }
+        
+        /// <summary>
+        /// Task.
+        /// </summary>
+        // *** Start programmer edit section *** (Task.Category CustomAttributes)
+
+        // *** End programmer edit section *** (Task.Category CustomAttributes)
+        [PropertyStorage(new string[] {
+                "Category"})]
+        [NotNull()]
+        public virtual IIS.Gorvodokanal.Category Category
+        {
+            get
+            {
+                // *** Start programmer edit section *** (Task.Category Get start)
+
+                // *** End programmer edit section *** (Task.Category Get start)
+                IIS.Gorvodokanal.Category result = this.fCategory;
+                // *** Start programmer edit section *** (Task.Category Get end)
+
+                // *** End programmer edit section *** (Task.Category Get end)
+                return result;
+            }
+            set
+            {
+                // *** Start programmer edit section *** (Task.Category Set start)
+
+                // *** End programmer edit section *** (Task.Category Set start)
+                this.fCategory = value;
+                // *** Start programmer edit section *** (Task.Category Set end)
+
+                // *** End programmer edit section *** (Task.Category Set end)
             }
         }
         

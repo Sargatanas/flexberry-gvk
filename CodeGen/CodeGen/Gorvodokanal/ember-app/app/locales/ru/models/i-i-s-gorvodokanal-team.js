@@ -9,6 +9,12 @@ export default {
       },
       shiftEnd: {
         __caption__: 'Конец смены'
+      },
+      categories: {
+        __caption__: '',
+        category: {
+          __caption__: 'Категория'
+        }
       }
     },
     TeamL: {

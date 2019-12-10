@@ -1,0 +1,14 @@
+﻿{
+  "propertyLookup": [],
+  "external": false,
+  "caption": "Категория",
+  "name": "IISGorvodokanalCategoryE",
+  "className": "CategoryE",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "i-i-s-gorvodokanal-category",
+      "modelProjection": "CategoryE"
+    }
+  ]
+}

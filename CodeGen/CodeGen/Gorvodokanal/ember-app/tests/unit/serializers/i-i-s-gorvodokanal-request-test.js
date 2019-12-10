@@ -9,8 +9,12 @@ moduleForModel('i-i-s-gorvodokanal-request', 'Unit | Serializer | i-i-s-gorvodok
     'transform:guid',
 
     'transform:i-i-s-gorvodokanal-t-appointed',
+    'transform:i-i-s-gorvodokanal-t-districts',
+    'transform:i-i-s-gorvodokanal-t-importance',
 
     'model:i-i-s-gorvodokanal-address',
+    'model:i-i-s-gorvodokanal-category-list',
+    'model:i-i-s-gorvodokanal-category',
     'model:i-i-s-gorvodokanal-request',
     'model:i-i-s-gorvodokanal-task-list',
     'model:i-i-s-gorvodokanal-task',

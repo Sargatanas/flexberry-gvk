@@ -7,6 +7,15 @@
   "parentClassName": null,
   "attrs": [
     {
+      "name": "index",
+      "type": "number",
+      "flexberryType": "int",
+      "notNull": true,
+      "defaultValue": "1",
+      "stored": true,
+      "ordered": false
+    },
+    {
       "name": "content",
       "type": "string",
       "flexberryType": "string",
@@ -23,9 +32,26 @@
       "defaultValue": "",
       "stored": true,
       "ordered": false
+    },
+    {
+      "name": "importance",
+      "type": "i-i-s-gorvodokanal-t-importance",
+      "flexberryType": "tImportance",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
     }
   ],
-  "belongsTo": [],
+  "belongsTo": [
+    {
+      "polymorphic": false,
+      "presence": true,
+      "name": "category",
+      "relatedTo": "i-i-s-gorvodokanal-category",
+      "inverse": null
+    }
+  ],
   "hasMany": [],
   "projections": [
     {
@@ -33,19 +59,46 @@
       "modelName": "i-i-s-gorvodokanal-task",
       "attrs": [
         {
-          "name": "content",
-          "caption": "Содержание",
-          "hidden": false,
+          "name": "index",
+          "caption": "",
+          "hidden": true,
           "index": 0
+        },
+        {
+          "name": "content",
+          "caption": "Детали",
+          "hidden": false,
+          "index": 2
         },
         {
           "name": "planeDuration",
           "caption": "Примерная длительность работ",
           "hidden": false,
-          "index": 1
+          "index": 3
+        },
+        {
+          "name": "importance",
+          "caption": "Срочность",
+          "hidden": false,
+          "index": 4
         }
       ],
-      "belongsTo": [],
+      "belongsTo": [
+        {
+          "lookupValue": null,
+          "lookupValueField": null,
+          "relationName": "Category",
+          "belongsTo": [],
+          "hidden": false,
+          "attrs": [],
+          "index": 1,
+          "type": "default",
+          "caption": "Категория",
+          "name": "category",
+          "relatedTo": "i-i-s-gorvodokanal-category",
+          "inverse": null
+        }
+      ],
       "hasMany": []
     },
     {
@@ -54,18 +107,46 @@
       "attrs": [
         {
           "name": "content",
-          "caption": "Содержание",
+          "caption": "Детали",
           "hidden": false,
-          "index": 0
+          "index": 1
         },
         {
           "name": "planeDuration",
           "caption": "Примерная длительность работ",
           "hidden": false,
-          "index": 1
+          "index": 2
+        },
+        {
+          "name": "importance",
+          "caption": "Срочнось",
+          "hidden": false,
+          "index": 3
         }
       ],
-      "belongsTo": [],
+      "belongsTo": [
+        {
+          "lookupValue": null,
+          "lookupValueField": null,
+          "relationName": "Category",
+          "belongsTo": [],
+          "hidden": false,
+          "attrs": [
+            {
+              "name": "name",
+              "caption": "Категория",
+              "hidden": false,
+              "index": 0
+            }
+          ],
+          "index": -1,
+          "type": "default",
+          "caption": "Категория",
+          "name": "category",
+          "relatedTo": "i-i-s-gorvodokanal-category",
+          "inverse": null
+        }
+      ],
       "hasMany": []
     }
   ],

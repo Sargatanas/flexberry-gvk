@@ -4,16 +4,16 @@
       "master": null,
       "displayAttributeName": null,
       "required": false,
-      "relationName": "Team",
-      "projection": "TeamL",
+      "relationName": "Address",
+      "projection": "AddressL",
       "detailModelName": null
     },
     {
       "master": null,
       "displayAttributeName": null,
       "required": false,
-      "relationName": "Address",
-      "projection": "AddressL",
+      "relationName": "Team",
+      "projection": "TeamL",
       "detailModelName": null
     },
     {

@@ -11,6 +11,11 @@ Router.map(function () {
   { path: 'i-i-s-gorvodokanal-address-e/:id' });
   this.route('i-i-s-gorvodokanal-address-e.new',
   { path: 'i-i-s-gorvodokanal-address-e/new' });
+  this.route('i-i-s-gorvodokanal-category-l');
+  this.route('i-i-s-gorvodokanal-category-e',
+  { path: 'i-i-s-gorvodokanal-category-e/:id' });
+  this.route('i-i-s-gorvodokanal-category-e.new',
+  { path: 'i-i-s-gorvodokanal-category-e/new' });
   this.route('i-i-s-gorvodokanal-request-l');
   this.route('i-i-s-gorvodokanal-request-e',
   { path: 'i-i-s-gorvodokanal-request-e/:id' });

@@ -1,0 +1,75 @@
+﻿{
+  "name": "IISGorvodokanalCategory",
+  "modelName": "i-i-s-gorvodokanal-category",
+  "className": "Category",
+  "nameSpace": "IIS.Gorvodokanal",
+  "parentModelName": null,
+  "parentClassName": null,
+  "attrs": [
+    {
+      "name": "code",
+      "type": "number",
+      "flexberryType": "int",
+      "notNull": true,
+      "defaultValue": "1",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "name",
+      "type": "string",
+      "flexberryType": "string",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    }
+  ],
+  "belongsTo": [],
+  "hasMany": [],
+  "projections": [
+    {
+      "name": "CategoryE",
+      "modelName": "i-i-s-gorvodokanal-category",
+      "attrs": [
+        {
+          "name": "code",
+          "caption": "Код",
+          "hidden": true,
+          "index": 0
+        },
+        {
+          "name": "name",
+          "caption": "Наименование",
+          "hidden": false,
+          "index": 1
+        }
+      ],
+      "belongsTo": [],
+      "hasMany": []
+    },
+    {
+      "name": "CategoryL",
+      "modelName": "i-i-s-gorvodokanal-category",
+      "attrs": [
+        {
+          "name": "code",
+          "caption": "Код",
+          "hidden": false,
+          "index": 0
+        },
+        {
+          "name": "name",
+          "caption": "Наименование",
+          "hidden": false,
+          "index": 1
+        }
+      ],
+      "belongsTo": [],
+      "hasMany": []
+    }
+  ],
+  "stored": true,
+  "offline": true,
+  "external": false
+}

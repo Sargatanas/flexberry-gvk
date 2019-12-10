@@ -25,19 +25,6 @@
     </div>
   </div>
   <div class="field">
-  {{
-    flexberry-field
-    placeholder=(t 'components.flexberry-field.placeholder')
-    readonly=readonly
-    required=true
-    value=model.index
-    class=(if model.errors.index 'error' '')
-    label=(t 'forms.i-i-s-gorvodokanal-request-e.index-caption')
-  }}
-  {{flexberry-validationmessage error=model.errors.index pointing="pointing"}}
-</div>
-
-<div class="field">
   <label>{{t 'forms.i-i-s-gorvodokanal-request-e.address-caption'}}</label>
   {{
     flexberry-lookup

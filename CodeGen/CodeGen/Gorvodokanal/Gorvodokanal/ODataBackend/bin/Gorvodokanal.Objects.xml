@@ -4,6 +4,132 @@
         <name>Gorvodokanal.Objects</name>
     </assembly>
     <members>
+        <member name="T:IIS.Gorvodokanal.CategoryList">
+            <summary>
+            Category list.
+            </summary>
+        </member>
+        <member name="P:IIS.Gorvodokanal.CategoryList.Category">
+            <summary>
+            Category list.
+            </summary>
+        </member>
+        <member name="P:IIS.Gorvodokanal.CategoryList.Team">
+            <summary>
+            мастеровая ссылка на шапку IIS.Gorvodokanal.Team.
+            </summary>
+        </member>
+        <member name="T:IIS.Gorvodokanal.CategoryList.Views">
+            <summary>
+            Class views container.
+            </summary>
+        </member>
+        <member name="P:IIS.Gorvodokanal.CategoryList.Views.CategoryListE">
+            <summary>
+            "CategoryListE" view.
+            </summary>
+        </member>
+        <member name="T:IIS.Gorvodokanal.DetailArrayOfCategoryList">
+            <summary>
+            Detail array of CategoryList.
+            </summary>
+        </member>
+        <member name="M:IIS.Gorvodokanal.DetailArrayOfCategoryList.#ctor(IIS.Gorvodokanal.Team)">
+            <summary>
+            Construct detail array.
+            </summary>
+            <summary>
+            Returns object with type CategoryList by index.
+            </summary>
+            <summary>
+            Adds object with type CategoryList.
+            </summary>
+        </member>
+        <member name="T:IIS.Gorvodokanal.Task">
+            <summary>
+            Task.
+            </summary>
+        </member>
+        <member name="P:IIS.Gorvodokanal.Task.Index">
+            <summary>
+            Index.
+            </summary>
+        </member>
+        <member name="P:IIS.Gorvodokanal.Task.Content">
+            <summary>
+            Content.
+            </summary>
+        </member>
+        <member name="P:IIS.Gorvodokanal.Task.PlaneDuration">
+            <summary>
+            PlaneDuration.
+            </summary>
+        </member>
+        <member name="P:IIS.Gorvodokanal.Task.Importance">
+            <summary>
+            Importance.
+            </summary>
+        </member>
+        <member name="P:IIS.Gorvodokanal.Task.Category">
+            <summary>
+            Task.
+            </summary>
+        </member>
+        <member name="T:IIS.Gorvodokanal.Task.Views">
+            <summary>
+            Class views container.
+            </summary>
+        </member>
+        <member name="P:IIS.Gorvodokanal.Task.Views.TaskE">
+            <summary>
+            "TaskE" view.
+            </summary>
+        </member>
+        <member name="P:IIS.Gorvodokanal.Task.Views.TaskL">
+            <summary>
+            "TaskL" view.
+            </summary>
+        </member>
+        <member name="T:IIS.Gorvodokanal.Team">
+            <summary>
+            Team.
+            </summary>
+        </member>
+        <member name="P:IIS.Gorvodokanal.Team.Index">
+            <summary>
+            Index.
+            </summary>
+        </member>
+        <member name="P:IIS.Gorvodokanal.Team.ShiftStart">
+            <summary>
+            ShiftStart.
+            </summary>
+        </member>
+        <member name="P:IIS.Gorvodokanal.Team.ShiftEnd">
+            <summary>
+            ShiftEnd.
+            </summary>
+        </member>
+        <member name="P:IIS.Gorvodokanal.Team.Categories">
+            <summary>
+            Team.
+            </summary>
+        </member>
+        <member name="T:IIS.Gorvodokanal.Team.Views">
+            <summary>
+            Class views container.
+            </summary>
+        </member>
+        <member name="P:IIS.Gorvodokanal.Team.Views.TeamE">
+            <summary>
+            "TeamE" view.
+            </summary>
+        </member>
+        <member name="P:IIS.Gorvodokanal.Team.Views.TeamL">
+            <summary>
+            "TeamL" view.
+            </summary>
+        </member>
         <member name="T:IIS.Gorvodokanal.Request">
             <summary>
             Request.
@@ -34,12 +160,12 @@
             DateEnd.
             </summary>
         </member>
-        <member name="P:IIS.Gorvodokanal.Request.Team">
+        <member name="P:IIS.Gorvodokanal.Request.Address">
             <summary>
             Request.
             </summary>
         </member>
-        <member name="P:IIS.Gorvodokanal.Request.Address">
+        <member name="P:IIS.Gorvodokanal.Request.Team">
             <summary>
             Request.
             </summary>
@@ -62,71 +188,6 @@
         <member name="P:IIS.Gorvodokanal.Request.Views.RequestL">
             <summary>
             "RequestL" view.
-            </summary>
-        </member>
-        <member name="T:IIS.Gorvodokanal.tAppointed">
-            <summary>
-            T appointed.
-            </summary>
-        </member>
-        <member name="F:IIS.Gorvodokanal.tAppointed.Appointed">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="F:IIS.Gorvodokanal.tAppointed.NotAppointed">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="T:IIS.Gorvodokanal.Address">
-            <summary>
-            Address.
-            </summary>
-        </member>
-        <member name="P:IIS.Gorvodokanal.Address.Index">
-            <summary>
-            Index.
-            </summary>
-        </member>
-        <member name="P:IIS.Gorvodokanal.Address.Street">
-            <summary>
-            Street.
-            </summary>
-        </member>
-        <member name="P:IIS.Gorvodokanal.Address.House">
-            <summary>
-            House.
-            </summary>
-        </member>
-        <member name="P:IIS.Gorvodokanal.Address.Build">
-            <summary>
-            Build.
-            </summary>
-        </member>
-        <member name="P:IIS.Gorvodokanal.Address.Floor">
-            <summary>
-            Floor.
-            </summary>
-        </member>
-        <member name="P:IIS.Gorvodokanal.Address.Apartment">
-            <summary>
-            Apartment.
-            </summary>
-        </member>
-        <member name="T:IIS.Gorvodokanal.Address.Views">
-            <summary>
-            Class views container.
-            </summary>
-        </member>
-        <member name="P:IIS.Gorvodokanal.Address.Views.AddressE">
-            <summary>
-            "AddressE" view.
-            </summary>
-        </member>
-        <member name="P:IIS.Gorvodokanal.Address.Views.AddressL">
-            <summary>
-            "AddressL" view.
             </summary>
         </member>
         <member name="T:IIS.Gorvodokanal.TaskList">
@@ -170,69 +231,174 @@
             Adds object with type TaskList.
             </summary>
         </member>
-        <member name="T:IIS.Gorvodokanal.Team">
+        <member name="T:IIS.Gorvodokanal.tAppointed">
             <summary>
-            Team.
+            T appointed.
             </summary>
         </member>
-        <member name="P:IIS.Gorvodokanal.Team.Index">
+        <member name="F:IIS.Gorvodokanal.tAppointed.Appointed">
             <summary>
-            Index.
+            
             </summary>
         </member>
-        <member name="P:IIS.Gorvodokanal.Team.ShiftStart">
+        <member name="F:IIS.Gorvodokanal.tAppointed.NotAppointed">
             <summary>
-            ShiftStart.
+            
             </summary>
         </member>
-        <member name="P:IIS.Gorvodokanal.Team.ShiftEnd">
+        <member name="T:IIS.Gorvodokanal.Address">
             <summary>
-            ShiftEnd.
+            Address.
             </summary>
         </member>
-        <member name="T:IIS.Gorvodokanal.Team.Views">
+        <member name="P:IIS.Gorvodokanal.Address.District">
+            <summary>
+            District.
+            </summary>
+        </member>
+        <member name="P:IIS.Gorvodokanal.Address.Street">
+            <summary>
+            Street.
+            </summary>
+        </member>
+        <member name="P:IIS.Gorvodokanal.Address.House">
+            <summary>
+            House.
+            </summary>
+        </member>
+        <member name="P:IIS.Gorvodokanal.Address.Build">
+            <summary>
+            Build.
+            </summary>
+        </member>
+        <member name="P:IIS.Gorvodokanal.Address.Porch">
+            <summary>
+            Porch.
+            </summary>
+        </member>
+        <member name="P:IIS.Gorvodokanal.Address.Floor">
+            <summary>
+            Floor.
+            </summary>
+        </member>
+        <member name="P:IIS.Gorvodokanal.Address.Apartment">
+            <summary>
+            Apartment.
+            </summary>
+        </member>
+        <member name="T:IIS.Gorvodokanal.Address.Views">
             <summary>
             Class views container.
             </summary>
         </member>
-        <member name="P:IIS.Gorvodokanal.Team.Views.TeamE">
+        <member name="P:IIS.Gorvodokanal.Address.Views.AddressE">
             <summary>
-            "TeamE" view.
+            "AddressE" view.
             </summary>
         </member>
-        <member name="P:IIS.Gorvodokanal.Team.Views.TeamL">
+        <member name="P:IIS.Gorvodokanal.Address.Views.AddressL">
             <summary>
-            "TeamL" view.
+            "AddressL" view.
             </summary>
         </member>
-        <member name="T:IIS.Gorvodokanal.Task">
+        <member name="T:IIS.Gorvodokanal.Category">
             <summary>
-            Task.
+            Category.
             </summary>
         </member>
-        <member name="P:IIS.Gorvodokanal.Task.Content">
+        <member name="P:IIS.Gorvodokanal.Category.Code">
             <summary>
-            Content.
+            Code.
             </summary>
         </member>
-        <member name="P:IIS.Gorvodokanal.Task.PlaneDuration">
+        <member name="P:IIS.Gorvodokanal.Category.Name">
             <summary>
-            PlaneDuration.
+            Name.
             </summary>
         </member>
-        <member name="T:IIS.Gorvodokanal.Task.Views">
+        <member name="T:IIS.Gorvodokanal.Category.Views">
             <summary>
             Class views container.
             </summary>
         </member>
-        <member name="P:IIS.Gorvodokanal.Task.Views.TaskE">
+        <member name="P:IIS.Gorvodokanal.Category.Views.CategoryE">
             <summary>
-            "TaskE" view.
+            "CategoryE" view.
             </summary>
         </member>
-        <member name="P:IIS.Gorvodokanal.Task.Views.TaskL">
+        <member name="P:IIS.Gorvodokanal.Category.Views.CategoryL">
             <summary>
-            "TaskL" view.
+            "CategoryL" view.
+            </summary>
+        </member>
+        <member name="T:IIS.Gorvodokanal.tImportance">
+            <summary>
+            tImportance.
+            </summary>
+        </member>
+        <member name="F:IIS.Gorvodokanal.tImportance.NotImportant">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:IIS.Gorvodokanal.tImportance.LowImportance">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:IIS.Gorvodokanal.tImportance.MiddleImportance">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:IIS.Gorvodokanal.tImportance.HighImportance">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:IIS.Gorvodokanal.tImportance.ExtrimlyImportant">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:IIS.Gorvodokanal.tDistricts">
+            <summary>
+            T districts.
+            </summary>
+        </member>
+        <member name="F:IIS.Gorvodokanal.tDistricts.Motovilikhinsky">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:IIS.Gorvodokanal.tDistricts.Ordzhonikidzevsky">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:IIS.Gorvodokanal.tDistricts.Leninsky">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:IIS.Gorvodokanal.tDistricts.Kirovsky">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:IIS.Gorvodokanal.tDistricts.Dzerzhinsky">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:IIS.Gorvodokanal.tDistricts.Industrialny">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:IIS.Gorvodokanal.tDistricts.Sverdlovsky">
+            <summary>
+            
             </summary>
         </member>
     </members>

@@ -1,8 +1,8 @@
 export default {
   projections: {
     AddressE: {
-      index: {
-        __caption__: 'Код адреса'
+      district: {
+        __caption__: 'Район'
       },
       street: {
         __caption__: 'Улица'
@@ -12,6 +12,9 @@ export default {
       },
       build: {
         __caption__: 'Корпус'
+      },
+      porch: {
+        __caption__: 'Подъезд'
       },
       floor: {
         __caption__: 'Этаж'
@@ -21,8 +24,8 @@ export default {
       }
     },
     AddressL: {
-      index: {
-        __caption__: 'Код адреса'
+      district: {
+        __caption__: 'Район'
       },
       street: {
         __caption__: 'Улица'
@@ -32,6 +35,9 @@ export default {
       },
       build: {
         __caption__: 'Корпус'
+      },
+      porch: {
+        __caption__: 'Подъезд'
       },
       floor: {
         __caption__: 'Этаж'

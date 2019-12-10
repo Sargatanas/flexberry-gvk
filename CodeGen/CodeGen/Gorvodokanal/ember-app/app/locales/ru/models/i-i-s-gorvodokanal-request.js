@@ -31,21 +31,9 @@ export default {
     },
     RequestL: {
       address: {
-        __caption__: 'Улица',
-        street: {
-          __caption__: 'Улица'
-        },
-        house: {
-          __caption__: 'Дом'
-        },
-        build: {
-          __caption__: 'Корпус'
-        },
-        floor: {
-          __caption__: 'Этаж'
-        },
-        apartment: {
-          __caption__: 'Квартира'
+        __caption__: 'Адрес',
+        district: {
+          __caption__: 'Адрес'
         }
       },
       isAppointed: {
@@ -65,12 +53,6 @@ export default {
       },
       dateEnd: {
         __caption__: 'Фактическое время окончания работ'
-      },
-      tasks: {
-        __caption__: '',
-        task: {
-          __caption__: 'Задача'
-        }
       }
     }
   }

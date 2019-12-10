@@ -4,8 +4,8 @@ export let Serializer = Ember.Mixin.create({
   getAttrs: function () {
     let parentAttrs = this._super();
     let attrs = {
-      team: { serialize: 'odata-id', deserialize: 'records' },
       address: { serialize: 'odata-id', deserialize: 'records' },
+      team: { serialize: 'odata-id', deserialize: 'records' },
       tasks: { serialize: false, deserialize: 'records' }
     };
 

@@ -25,6 +25,23 @@
     </div>
   </div>
   <div class="field">
+  <label>{{t 'forms.i-i-s-gorvodokanal-task-e.category-caption'}}</label>
+  {{
+    flexberry-lookup
+    choose='showLookupDialog'
+    remove='removeLookupValue'
+    value=model.category
+    
+    relationName='category'
+    projection='CategoryL'
+    title=(t 'forms.i-i-s-gorvodokanal-task-e.category-caption')
+    readonly=readonly
+    componentName="categoryLookup"
+  }}
+  {{flexberry-validationmessage error=model.errors.category pointing="pointing"}}
+</div>
+
+<div class="field">
   {{
     flexberry-field
     placeholder=(t 'components.flexberry-field.placeholder')
@@ -47,6 +64,17 @@
     class=(if model.errors.planeDuration 'error' '')
   }}
   {{flexberry-validationmessage error=model.errors.planeDuration pointing="pointing"}}
+</div>
+
+<div class="field">
+  <label>{{t 'forms.i-i-s-gorvodokanal-task-e.importance-caption'}}</label>
+  {{
+    flexberry-dropdown
+    items=(flexberry-enum 'i-i-s-gorvodokanal-t-importance')
+    value=model.importance
+    readonly=readonly
+  }}
+  {{flexberry-validationmessage error=model.errors.importance pointing="pointing"}}
 </div>
 
 </form>
