@@ -31,6 +31,7 @@ Router.map(function () {
   { path: 'i-i-s-gorvodokanal-team-e/:id' });
   this.route('i-i-s-gorvodokanal-team-e.new',
   { path: 'i-i-s-gorvodokanal-team-e/new' });
+  this.route('temp');
 });
 
 export default Router;

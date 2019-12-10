@@ -34,6 +34,24 @@ export default {
         __caption__: 'Адрес',
         district: {
           __caption__: 'Адрес'
+        },
+        street: {
+          __caption__: ''
+        },
+        house: {
+          __caption__: ''
+        },
+        build: {
+          __caption__: ''
+        },
+        porch: {
+          __caption__: ''
+        },
+        floor: {
+          __caption__: ''
+        },
+        apartment: {
+          __caption__: ''
         }
       },
       isAppointed: {
@@ -53,6 +71,12 @@ export default {
       },
       dateEnd: {
         __caption__: 'Фактическое время окончания работ'
+      },
+      tasks: {
+        __caption__: '',
+        task: {
+          __caption__: 'Задача'
+        }
       }
     }
   }

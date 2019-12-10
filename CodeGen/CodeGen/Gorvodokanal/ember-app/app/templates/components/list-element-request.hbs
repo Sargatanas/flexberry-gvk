@@ -1,0 +1,64 @@
+<div class="cl-element c-request">
+  <div class="cl-element-header">
+    Заявка № <span>{{request.index}}</span>
+  </div>
+
+  <div class="cl-element-body">
+    <div class="cl-row">
+      <div class="cl-row-header">Адрес</div>
+      <div class="cl-row-content">
+        {{request.fullAddress}}
+      </div>
+    </div>
+
+    <div class="cl-row">
+      <div class="cl-row-header">Задачи</div>
+      <div class="cl-row-content">
+        {{#each request.tasks as |taskListElement|}}
+          {{compact-element-task task=taskListElement.task}}
+        {{/each}}
+      </div>
+    </div>
+
+    <div class="cl-row">
+      <div class="cl-row-header">Общая длительность работ</div>
+      <div class="cl-row-content">
+        {{getTimeString request.fullDuration 'full'}}
+      </div>
+    </div>
+
+    {{#if (isEqual request.isAppointed 'назначено')}}
+      <hr>
+      <div class="cl-row">
+        <div class="cl-row-header">Выполняющая бригада</div>
+        <div class="cl-row-content">
+          {{request.team.index}}
+        </div>
+      </div>
+
+      <div class="cl-row">
+        <div class="cl-row-header">Дата и время выполнения</div>
+        <div class="cl-row-content">
+          {{getDateTimeString request.dateStart}}
+        </div>
+      </div>
+
+      {{#if request.isCompleted}}
+        <hr>
+        <div class="cl-row">
+          <div class="cl-row-header">Фактическое время выполнения</div>
+          <div class="cl-row-content">
+            {{getTimeString request.dateEnd 'full' 'UTC'}}
+            <div class="cl-row-content__status cl-row-content__status_{{getCompletedStatus request.fullDuration request.dateEnd}}">
+              {{#if (isEqual (getCompletedStatus request.fullDuration request.dateEnd) 'completed')}}
+                выполнено без замечаний
+              {{else}}
+                не уложились в срок
+              {{/if}}
+            </div>
+          </div>
+        </div>
+      {{/if}}
+    {{/if}}
+  </div>
+</div>

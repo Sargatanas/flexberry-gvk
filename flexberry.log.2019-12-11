@@ -1,0 +1,148 @@
+﻿ERROR 2019-12-11 13:16:35 [6] Property name does not exist: Name
+System.Exception: Property name does not exist: Name
+   в NewPlatform.Flexberry.ORM.ODataService.Controllers.DataObjectController.GetPropertyName(SelectItem item)
+   в NewPlatform.Flexberry.ORM.ODataService.Controllers.DataObjectController.GetPropertiesForDynamicView(ExpandedNavigationSelectItem parent, IEnumerable`1 selectedItems)
+   в NewPlatform.Flexberry.ORM.ODataService.Controllers.DataObjectController.CreateDynamicView()
+   в NewPlatform.Flexberry.ORM.ODataService.Controllers.DataObjectController.Init()
+   в NewPlatform.Flexberry.ORM.ODataService.Controllers.DataObjectController.Get()
+ERROR 2019-12-11 13:17:56 [53] Property name does not exist: Name
+System.Exception: Property name does not exist: Name
+   в NewPlatform.Flexberry.ORM.ODataService.Controllers.DataObjectController.GetPropertyName(SelectItem item)
+   в NewPlatform.Flexberry.ORM.ODataService.Controllers.DataObjectController.GetPropertiesForDynamicView(ExpandedNavigationSelectItem parent, IEnumerable`1 selectedItems)
+   в NewPlatform.Flexberry.ORM.ODataService.Controllers.DataObjectController.CreateDynamicView()
+   в NewPlatform.Flexberry.ORM.ODataService.Controllers.DataObjectController.Init()
+   в NewPlatform.Flexberry.ORM.ODataService.Controllers.DataObjectController.Get()
+ERROR 2019-12-11 13:18:12 [27] Property name does not exist: Name
+System.Exception: Property name does not exist: Name
+   в NewPlatform.Flexberry.ORM.ODataService.Controllers.DataObjectController.GetPropertyName(SelectItem item)
+   в NewPlatform.Flexberry.ORM.ODataService.Controllers.DataObjectController.GetPropertiesForDynamicView(ExpandedNavigationSelectItem parent, IEnumerable`1 selectedItems)
+   в NewPlatform.Flexberry.ORM.ODataService.Controllers.DataObjectController.CreateDynamicView()
+   в NewPlatform.Flexberry.ORM.ODataService.Controllers.DataObjectController.Init()
+   в NewPlatform.Flexberry.ORM.ODataService.Controllers.DataObjectController.Get()
+ERROR 2019-12-11 13:18:12 [6] Property name does not exist: Name
+System.Exception: Property name does not exist: Name
+   в NewPlatform.Flexberry.ORM.ODataService.Controllers.DataObjectController.GetPropertyName(SelectItem item)
+   в NewPlatform.Flexberry.ORM.ODataService.Controllers.DataObjectController.GetPropertiesForDynamicView(ExpandedNavigationSelectItem parent, IEnumerable`1 selectedItems)
+   в NewPlatform.Flexberry.ORM.ODataService.Controllers.DataObjectController.CreateDynamicView()
+   в NewPlatform.Flexberry.ORM.ODataService.Controllers.DataObjectController.Init()
+   в NewPlatform.Flexberry.ORM.ODataService.Controllers.DataObjectController.Get()
+ERROR 2019-12-11 14:45:02 [44] Не найдены данные для работы подсистемы аудита: не удалось определить текущего пользователя
+ICSSoft.STORMNET.Business.Audit.Exceptions.DataNotFoundAuditException: Не найдены данные для работы подсистемы аудита: не удалось определить текущего пользователя
+   в ICSSoft.STORMNET.Business.Audit.AuditService.GetCurrentUserInfo(AppMode curMode, Boolean needNameNotLogin)
+   в ICSSoft.STORMNET.Business.Audit.AuditService.AddEditAuditInformation(DataObject operationedObject)
+   в ICSSoft.STORMNET.Business.SQLDataService.GenerateQueriesForUpdateObjects(StringCollection deleteQueries, StringCollection deleteTables, StringCollection updateQueries, StringCollection updateFirstQueries, StringCollection updateTables, StringCollection insertQueries, StringCollection insertTables, SortedList tableOperations, StringCollection queryOrder, Boolean checkLoadedProps, ArrayList processingObjects, DataObjectCache dataObjectCache, List`1 auditObjects, DataObject[] dobjects)
+   в ICSSoft.STORMNET.Business.SQLDataService.UpdateObjects(DataObject[]& objects, DataObjectCache DataObjectCache, Boolean AlwaysThrowException)
+   в ICSSoft.STORMNET.Business.SQLDataService.UpdateObjects(DataObject[]& objects, DataObjectCache DataObjectCache)
+   в ICSSoft.STORMNET.Business.SQLDataService.UpdateObjects(DataObject[]& objects)
+   в NewPlatform.Flexberry.ORM.ODataService.Controllers.DataObjectController.UpdateObject(EdmEntityObject edmEntity, Object key)
+   в NewPlatform.Flexberry.ORM.ODataService.Controllers.DataObjectController.Patch(Guid key, EdmEntityObject edmEntity)
+ERROR 2019-12-11 14:46:52 [62] Не найдены данные для работы подсистемы аудита: не удалось определить текущего пользователя
+ICSSoft.STORMNET.Business.Audit.Exceptions.DataNotFoundAuditException: Не найдены данные для работы подсистемы аудита: не удалось определить текущего пользователя
+   в ICSSoft.STORMNET.Business.Audit.AuditService.GetCurrentUserInfo(AppMode curMode, Boolean needNameNotLogin)
+   в ICSSoft.STORMNET.Business.Audit.AuditService.AddEditAuditInformation(DataObject operationedObject)
+   в ICSSoft.STORMNET.Business.SQLDataService.GenerateQueriesForUpdateObjects(StringCollection deleteQueries, StringCollection deleteTables, StringCollection updateQueries, StringCollection updateFirstQueries, StringCollection updateTables, StringCollection insertQueries, StringCollection insertTables, SortedList tableOperations, StringCollection queryOrder, Boolean checkLoadedProps, ArrayList processingObjects, DataObjectCache dataObjectCache, List`1 auditObjects, DataObject[] dobjects)
+   в ICSSoft.STORMNET.Business.SQLDataService.UpdateObjects(DataObject[]& objects, DataObjectCache DataObjectCache, Boolean AlwaysThrowException)
+   в ICSSoft.STORMNET.Business.SQLDataService.UpdateObjects(DataObject[]& objects, DataObjectCache DataObjectCache)
+   в ICSSoft.STORMNET.Business.SQLDataService.UpdateObjects(DataObject[]& objects)
+   в NewPlatform.Flexberry.ORM.ODataService.Controllers.DataObjectController.UpdateObject(EdmEntityObject edmEntity, Object key)
+   в NewPlatform.Flexberry.ORM.ODataService.Controllers.DataObjectController.Patch(Guid key, EdmEntityObject edmEntity)
+ERROR 2019-12-11 14:51:23 [55] Не найдены данные для работы подсистемы аудита: не удалось определить текущего пользователя
+ICSSoft.STORMNET.Business.Audit.Exceptions.DataNotFoundAuditException: Не найдены данные для работы подсистемы аудита: не удалось определить текущего пользователя
+   в ICSSoft.STORMNET.Business.Audit.AuditService.GetCurrentUserInfo(AppMode curMode, Boolean needNameNotLogin)
+   в ICSSoft.STORMNET.Business.Audit.AuditService.AddEditAuditInformation(DataObject operationedObject)
+   в ICSSoft.STORMNET.Business.SQLDataService.GenerateQueriesForUpdateObjects(StringCollection deleteQueries, StringCollection deleteTables, StringCollection updateQueries, StringCollection updateFirstQueries, StringCollection updateTables, StringCollection insertQueries, StringCollection insertTables, SortedList tableOperations, StringCollection queryOrder, Boolean checkLoadedProps, ArrayList processingObjects, DataObjectCache dataObjectCache, List`1 auditObjects, DataObject[] dobjects)
+   в ICSSoft.STORMNET.Business.SQLDataService.UpdateObjects(DataObject[]& objects, DataObjectCache DataObjectCache, Boolean AlwaysThrowException)
+   в ICSSoft.STORMNET.Business.SQLDataService.UpdateObjects(DataObject[]& objects, DataObjectCache DataObjectCache)
+   в ICSSoft.STORMNET.Business.SQLDataService.UpdateObjects(DataObject[]& objects)
+   в NewPlatform.Flexberry.ORM.ODataService.Controllers.DataObjectController.UpdateObject(EdmEntityObject edmEntity, Object key)
+   в NewPlatform.Flexberry.ORM.ODataService.Controllers.DataObjectController.Patch(Guid key, EdmEntityObject edmEntity)
+ERROR 2019-12-11 14:56:23 [24] Не найдены данные для работы подсистемы аудита: не удалось определить текущего пользователя
+ICSSoft.STORMNET.Business.Audit.Exceptions.DataNotFoundAuditException: Не найдены данные для работы подсистемы аудита: не удалось определить текущего пользователя
+   в ICSSoft.STORMNET.Business.Audit.AuditService.GetCurrentUserInfo(AppMode curMode, Boolean needNameNotLogin)
+   в ICSSoft.STORMNET.Business.Audit.AuditService.AddEditAuditInformation(DataObject operationedObject)
+   в ICSSoft.STORMNET.Business.SQLDataService.GenerateQueriesForUpdateObjects(StringCollection deleteQueries, StringCollection deleteTables, StringCollection updateQueries, StringCollection updateFirstQueries, StringCollection updateTables, StringCollection insertQueries, StringCollection insertTables, SortedList tableOperations, StringCollection queryOrder, Boolean checkLoadedProps, ArrayList processingObjects, DataObjectCache dataObjectCache, List`1 auditObjects, DataObject[] dobjects)
+   в ICSSoft.STORMNET.Business.SQLDataService.UpdateObjects(DataObject[]& objects, DataObjectCache DataObjectCache, Boolean AlwaysThrowException)
+   в ICSSoft.STORMNET.Business.SQLDataService.UpdateObjects(DataObject[]& objects, DataObjectCache DataObjectCache)
+   в ICSSoft.STORMNET.Business.SQLDataService.UpdateObjects(DataObject[]& objects)
+   в NewPlatform.Flexberry.ORM.ODataService.Controllers.DataObjectController.UpdateObject(EdmEntityObject edmEntity, Object key)
+   в NewPlatform.Flexberry.ORM.ODataService.Controllers.DataObjectController.Patch(Guid key, EdmEntityObject edmEntity)
+ERROR 2019-12-11 14:56:28 [50] Не найдены данные для работы подсистемы аудита: не удалось определить текущего пользователя
+ICSSoft.STORMNET.Business.Audit.Exceptions.DataNotFoundAuditException: Не найдены данные для работы подсистемы аудита: не удалось определить текущего пользователя
+   в ICSSoft.STORMNET.Business.Audit.AuditService.GetCurrentUserInfo(AppMode curMode, Boolean needNameNotLogin)
+   в ICSSoft.STORMNET.Business.Audit.AuditService.AddEditAuditInformation(DataObject operationedObject)
+   в ICSSoft.STORMNET.Business.SQLDataService.GenerateQueriesForUpdateObjects(StringCollection deleteQueries, StringCollection deleteTables, StringCollection updateQueries, StringCollection updateFirstQueries, StringCollection updateTables, StringCollection insertQueries, StringCollection insertTables, SortedList tableOperations, StringCollection queryOrder, Boolean checkLoadedProps, ArrayList processingObjects, DataObjectCache dataObjectCache, List`1 auditObjects, DataObject[] dobjects)
+   в ICSSoft.STORMNET.Business.SQLDataService.UpdateObjects(DataObject[]& objects, DataObjectCache DataObjectCache, Boolean AlwaysThrowException)
+   в ICSSoft.STORMNET.Business.SQLDataService.UpdateObjects(DataObject[]& objects, DataObjectCache DataObjectCache)
+   в ICSSoft.STORMNET.Business.SQLDataService.UpdateObjects(DataObject[]& objects)
+   в NewPlatform.Flexberry.ORM.ODataService.Controllers.DataObjectController.UpdateObject(EdmEntityObject edmEntity, Object key)
+   в NewPlatform.Flexberry.ORM.ODataService.Controllers.DataObjectController.Patch(Guid key, EdmEntityObject edmEntity)
+ERROR 2019-12-11 14:59:27 [24] Не найдены данные для работы подсистемы аудита: не удалось определить текущего пользователя
+ICSSoft.STORMNET.Business.Audit.Exceptions.DataNotFoundAuditException: Не найдены данные для работы подсистемы аудита: не удалось определить текущего пользователя
+   в ICSSoft.STORMNET.Business.Audit.AuditService.GetCurrentUserInfo(AppMode curMode, Boolean needNameNotLogin)
+   в ICSSoft.STORMNET.Business.Audit.AuditService.AddEditAuditInformation(DataObject operationedObject)
+   в ICSSoft.STORMNET.Business.SQLDataService.GenerateQueriesForUpdateObjects(StringCollection deleteQueries, StringCollection deleteTables, StringCollection updateQueries, StringCollection updateFirstQueries, StringCollection updateTables, StringCollection insertQueries, StringCollection insertTables, SortedList tableOperations, StringCollection queryOrder, Boolean checkLoadedProps, ArrayList processingObjects, DataObjectCache dataObjectCache, List`1 auditObjects, DataObject[] dobjects)
+   в ICSSoft.STORMNET.Business.SQLDataService.UpdateObjects(DataObject[]& objects, DataObjectCache DataObjectCache, Boolean AlwaysThrowException)
+   в ICSSoft.STORMNET.Business.SQLDataService.UpdateObjects(DataObject[]& objects, DataObjectCache DataObjectCache)
+   в ICSSoft.STORMNET.Business.SQLDataService.UpdateObjects(DataObject[]& objects)
+   в NewPlatform.Flexberry.ORM.ODataService.Controllers.DataObjectController.UpdateObject(EdmEntityObject edmEntity, Object key)
+   в NewPlatform.Flexberry.ORM.ODataService.Controllers.DataObjectController.Patch(Guid key, EdmEntityObject edmEntity)
+ERROR 2019-12-11 15:04:18 [50] Не найдены данные для работы подсистемы аудита: не удалось определить текущего пользователя
+ICSSoft.STORMNET.Business.Audit.Exceptions.DataNotFoundAuditException: Не найдены данные для работы подсистемы аудита: не удалось определить текущего пользователя
+   в ICSSoft.STORMNET.Business.Audit.AuditService.GetCurrentUserInfo(AppMode curMode, Boolean needNameNotLogin)
+   в ICSSoft.STORMNET.Business.Audit.AuditService.AddEditAuditInformation(DataObject operationedObject)
+   в ICSSoft.STORMNET.Business.SQLDataService.GenerateQueriesForUpdateObjects(StringCollection deleteQueries, StringCollection deleteTables, StringCollection updateQueries, StringCollection updateFirstQueries, StringCollection updateTables, StringCollection insertQueries, StringCollection insertTables, SortedList tableOperations, StringCollection queryOrder, Boolean checkLoadedProps, ArrayList processingObjects, DataObjectCache dataObjectCache, List`1 auditObjects, DataObject[] dobjects)
+   в ICSSoft.STORMNET.Business.SQLDataService.UpdateObjects(DataObject[]& objects, DataObjectCache DataObjectCache, Boolean AlwaysThrowException)
+   в ICSSoft.STORMNET.Business.SQLDataService.UpdateObjects(DataObject[]& objects, DataObjectCache DataObjectCache)
+   в ICSSoft.STORMNET.Business.SQLDataService.UpdateObjects(DataObject[]& objects)
+   в NewPlatform.Flexberry.ORM.ODataService.Controllers.DataObjectController.UpdateObject(EdmEntityObject edmEntity, Object key)
+   в NewPlatform.Flexberry.ORM.ODataService.Controllers.DataObjectController.Patch(Guid key, EdmEntityObject edmEntity)
+ERROR 2019-12-11 15:28:48 [55] Не найдены данные для работы подсистемы аудита: не удалось определить текущего пользователя
+ICSSoft.STORMNET.Business.Audit.Exceptions.DataNotFoundAuditException: Не найдены данные для работы подсистемы аудита: не удалось определить текущего пользователя
+   в ICSSoft.STORMNET.Business.Audit.AuditService.GetCurrentUserInfo(AppMode curMode, Boolean needNameNotLogin)
+   в ICSSoft.STORMNET.Business.Audit.AuditService.AddEditAuditInformation(DataObject operationedObject)
+   в ICSSoft.STORMNET.Business.SQLDataService.GenerateQueriesForUpdateObjects(StringCollection deleteQueries, StringCollection deleteTables, StringCollection updateQueries, StringCollection updateFirstQueries, StringCollection updateTables, StringCollection insertQueries, StringCollection insertTables, SortedList tableOperations, StringCollection queryOrder, Boolean checkLoadedProps, ArrayList processingObjects, DataObjectCache dataObjectCache, List`1 auditObjects, DataObject[] dobjects)
+   в ICSSoft.STORMNET.Business.SQLDataService.UpdateObjects(DataObject[]& objects, DataObjectCache DataObjectCache, Boolean AlwaysThrowException)
+   в ICSSoft.STORMNET.Business.SQLDataService.UpdateObjects(DataObject[]& objects, DataObjectCache DataObjectCache)
+   в ICSSoft.STORMNET.Business.SQLDataService.UpdateObjects(DataObject[]& objects)
+   в NewPlatform.Flexberry.ORM.ODataService.Controllers.DataObjectController.UpdateObject(EdmEntityObject edmEntity, Object key)
+   в NewPlatform.Flexberry.ORM.ODataService.Controllers.DataObjectController.Patch(Guid key, EdmEntityObject edmEntity)
+ERROR 2019-12-11 15:31:11 [19] Не найдены данные для работы подсистемы аудита: не удалось определить текущего пользователя
+ICSSoft.STORMNET.Business.Audit.Exceptions.DataNotFoundAuditException: Не найдены данные для работы подсистемы аудита: не удалось определить текущего пользователя
+   в ICSSoft.STORMNET.Business.Audit.AuditService.GetCurrentUserInfo(AppMode curMode, Boolean needNameNotLogin)
+   в ICSSoft.STORMNET.Business.Audit.AuditService.AddEditAuditInformation(DataObject operationedObject)
+   в ICSSoft.STORMNET.Business.SQLDataService.GenerateQueriesForUpdateObjects(StringCollection deleteQueries, StringCollection deleteTables, StringCollection updateQueries, StringCollection updateFirstQueries, StringCollection updateTables, StringCollection insertQueries, StringCollection insertTables, SortedList tableOperations, StringCollection queryOrder, Boolean checkLoadedProps, ArrayList processingObjects, DataObjectCache dataObjectCache, List`1 auditObjects, DataObject[] dobjects)
+   в ICSSoft.STORMNET.Business.SQLDataService.UpdateObjects(DataObject[]& objects, DataObjectCache DataObjectCache, Boolean AlwaysThrowException)
+   в ICSSoft.STORMNET.Business.SQLDataService.UpdateObjects(DataObject[]& objects, DataObjectCache DataObjectCache)
+   в ICSSoft.STORMNET.Business.SQLDataService.UpdateObjects(DataObject[]& objects)
+   в NewPlatform.Flexberry.ORM.ODataService.Controllers.DataObjectController.UpdateObject(EdmEntityObject edmEntity, Object key)
+   в NewPlatform.Flexberry.ORM.ODataService.Controllers.DataObjectController.Patch(Guid key, EdmEntityObject edmEntity)
+ERROR 2019-12-11 15:33:07 [47] Не найдены данные для работы подсистемы аудита: не удалось определить текущего пользователя
+ICSSoft.STORMNET.Business.Audit.Exceptions.DataNotFoundAuditException: Не найдены данные для работы подсистемы аудита: не удалось определить текущего пользователя
+   в ICSSoft.STORMNET.Business.Audit.AuditService.GetCurrentUserInfo(AppMode curMode, Boolean needNameNotLogin)
+   в ICSSoft.STORMNET.Business.Audit.AuditService.AddEditAuditInformation(DataObject operationedObject)
+   в ICSSoft.STORMNET.Business.SQLDataService.GenerateQueriesForUpdateObjects(StringCollection deleteQueries, StringCollection deleteTables, StringCollection updateQueries, StringCollection updateFirstQueries, StringCollection updateTables, StringCollection insertQueries, StringCollection insertTables, SortedList tableOperations, StringCollection queryOrder, Boolean checkLoadedProps, ArrayList processingObjects, DataObjectCache dataObjectCache, List`1 auditObjects, DataObject[] dobjects)
+   в ICSSoft.STORMNET.Business.SQLDataService.UpdateObjects(DataObject[]& objects, DataObjectCache DataObjectCache, Boolean AlwaysThrowException)
+   в ICSSoft.STORMNET.Business.SQLDataService.UpdateObjects(DataObject[]& objects, DataObjectCache DataObjectCache)
+   в ICSSoft.STORMNET.Business.SQLDataService.UpdateObjects(DataObject[]& objects)
+   в NewPlatform.Flexberry.ORM.ODataService.Controllers.DataObjectController.UpdateObject(EdmEntityObject edmEntity, Object key)
+   в NewPlatform.Flexberry.ORM.ODataService.Controllers.DataObjectController.Patch(Guid key, EdmEntityObject edmEntity)
+ERROR 2019-12-11 15:33:49 [19] Не найдены данные для работы подсистемы аудита: не удалось определить текущего пользователя
+ICSSoft.STORMNET.Business.Audit.Exceptions.DataNotFoundAuditException: Не найдены данные для работы подсистемы аудита: не удалось определить текущего пользователя
+   в ICSSoft.STORMNET.Business.Audit.AuditService.GetCurrentUserInfo(AppMode curMode, Boolean needNameNotLogin)
+   в ICSSoft.STORMNET.Business.Audit.AuditService.AddEditAuditInformation(DataObject operationedObject)
+   в ICSSoft.STORMNET.Business.SQLDataService.GenerateQueriesForUpdateObjects(StringCollection deleteQueries, StringCollection deleteTables, StringCollection updateQueries, StringCollection updateFirstQueries, StringCollection updateTables, StringCollection insertQueries, StringCollection insertTables, SortedList tableOperations, StringCollection queryOrder, Boolean checkLoadedProps, ArrayList processingObjects, DataObjectCache dataObjectCache, List`1 auditObjects, DataObject[] dobjects)
+   в ICSSoft.STORMNET.Business.SQLDataService.UpdateObjects(DataObject[]& objects, DataObjectCache DataObjectCache, Boolean AlwaysThrowException)
+   в ICSSoft.STORMNET.Business.SQLDataService.UpdateObjects(DataObject[]& objects, DataObjectCache DataObjectCache)
+   в ICSSoft.STORMNET.Business.SQLDataService.UpdateObjects(DataObject[]& objects)
+   в NewPlatform.Flexberry.ORM.ODataService.Controllers.DataObjectController.UpdateObject(EdmEntityObject edmEntity, Object key)
+   в NewPlatform.Flexberry.ORM.ODataService.Controllers.DataObjectController.Patch(Guid key, EdmEntityObject edmEntity)
+ERROR 2019-12-11 15:35:11 [47] Не найдены данные для работы подсистемы аудита: не удалось определить текущего пользователя
+ICSSoft.STORMNET.Business.Audit.Exceptions.DataNotFoundAuditException: Не найдены данные для работы подсистемы аудита: не удалось определить текущего пользователя
+   в ICSSoft.STORMNET.Business.Audit.AuditService.GetCurrentUserInfo(AppMode curMode, Boolean needNameNotLogin)
+   в ICSSoft.STORMNET.Business.Audit.AuditService.AddEditAuditInformation(DataObject operationedObject)
+   в ICSSoft.STORMNET.Business.SQLDataService.GenerateQueriesForUpdateObjects(StringCollection deleteQueries, StringCollection deleteTables, StringCollection updateQueries, StringCollection updateFirstQueries, StringCollection updateTables, StringCollection insertQueries, StringCollection insertTables, SortedList tableOperations, StringCollection queryOrder, Boolean checkLoadedProps, ArrayList processingObjects, DataObjectCache dataObjectCache, List`1 auditObjects, DataObject[] dobjects)
+   в ICSSoft.STORMNET.Business.SQLDataService.UpdateObjects(DataObject[]& objects, DataObjectCache DataObjectCache, Boolean AlwaysThrowException)
+   в ICSSoft.STORMNET.Business.SQLDataService.UpdateObjects(DataObject[]& objects, DataObjectCache DataObjectCache)
+   в ICSSoft.STORMNET.Business.SQLDataService.UpdateObjects(DataObject[]& objects)
+   в NewPlatform.Flexberry.ORM.ODataService.Controllers.DataObjectController.UpdateObject(EdmEntityObject edmEntity, Object key)
+   в NewPlatform.Flexberry.ORM.ODataService.Controllers.DataObjectController.Patch(Guid key, EdmEntityObject edmEntity)

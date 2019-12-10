@@ -37,7 +37,7 @@
           "hidden": false,
           "attrs": [],
           "index": 0,
-          "type": "combo",
+          "type": "standard",
           "caption": "Задача",
           "name": "task",
           "relatedTo": "i-i-s-gorvodokanal-task",

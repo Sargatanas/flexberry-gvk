@@ -1,6 +1,7 @@
 import Ember from 'ember';
 import DS from 'ember-data';
 import { Projection } from 'ember-flexberry-data';
+
 export let Model = Ember.Mixin.create({
   index: DS.attr('number', { defaultValue: 1 }),
   isAppointed: DS.attr('i-i-s-gorvodokanal-t-appointed'),
@@ -52,14 +53,33 @@ export let defineProjections = function (modelClass) {
   });
   modelClass.defineProjection('RequestL', 'i-i-s-gorvodokanal-request', {
     address: Projection.belongsTo('i-i-s-gorvodokanal-address', 'Адрес', {
-      district: Projection.attr('Адрес', { index: 0 })
+      district: Projection.attr('Адрес', { index: 0 }),
+      street: Projection.attr('', { index: 1, hidden: true }),
+      house: Projection.attr('', { index: 2, hidden: true }),
+      build: Projection.attr('', { index: 3, hidden: true }),
+      porch: Projection.attr('', { index: 4, hidden: true }),
+      floor: Projection.attr('', { index: 5, hidden: true }),
+      apartment: Projection.attr('', { index: 6, hidden: true })
     }, { index: -1, hidden: true }),
-    isAppointed: Projection.attr('Отметка о назначении', { index: 1 }),
+
+    isAppointed: Projection.attr('Отметка о назначении', { index: 7 }),
+
     team: Projection.belongsTo('i-i-s-gorvodokanal-team', 'Выполняющая бригада', {
-      index: Projection.attr('Выполняющая бригада', { index: 2 })
+      index: Projection.attr('Выполняющая бригада', { index: 8 })
     }, { index: -1, hidden: true }),
-    dateStart: Projection.attr('Дата выполнения работ', { index: 3 }),
-    isCompleted: Projection.attr('Отметка о выполнении', { index: 4 }),
-    dateEnd: Projection.attr('Фактическое время окончания работ', { index: 5 })
+
+    dateStart: Projection.attr('Дата выполнения работ', { index: 9 }),
+    isCompleted: Projection.attr('Отметка о выполнении', { index: 10 }),
+    dateEnd: Projection.attr('Фактическое время окончания работ', { index: 11 }),
+    index: Projection.attr('', { index: 12, hidden: true }),
+
+    tasks: Projection.hasMany('i-i-s-gorvodokanal-task-list', '', {
+      task: Projection.belongsTo('i-i-s-gorvodokanal-task', 'Задача', {
+        index: Projection.attr('', { index: 0, hidden: true }),
+        content: Projection.attr('Детали', { index: 2 }),
+        planeDuration: Projection.attr('Примерная длительность работ', { index: 3 }),
+        importance: Projection.attr('Срочность', { index: 4 })
+      }, { index: 0, displayMemberPath: 'content' })
+    })
   });
 };

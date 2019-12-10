@@ -30,7 +30,12 @@ namespace IIS.Gorvodokanal
     [Caption("Список задач")]
     [AccessType(ICSSoft.STORMNET.AccessType.none)]
     [View("TaskListE", new string[] {
-            "Task as \'Задача\'"})]
+            "Task as \'Задача\'",
+            "Task.Index",
+            "Task.Content",
+            "Task.PlaneDuration",
+            "Task.Importance"}, Hidden=new string[] {
+            "Task.Importance"})]
     [MasterViewDefineAttribute("TaskListE", "Task", ICSSoft.STORMNET.LookupTypeEnum.Combo, "", "Content")]
     public class TaskList : ICSSoft.STORMNET.DataObject
     {

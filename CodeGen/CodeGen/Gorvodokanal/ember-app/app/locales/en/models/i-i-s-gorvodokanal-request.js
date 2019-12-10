@@ -34,6 +34,24 @@ export default {
         __caption__: 'address',
         district: {
           __caption__: 'district'
+        },
+        street: {
+          __caption__: 'street'
+        },
+        house: {
+          __caption__: 'house'
+        },
+        build: {
+          __caption__: 'build'
+        },
+        porch: {
+          __caption__: 'porch'
+        },
+        floor: {
+          __caption__: 'floor'
+        },
+        apartment: {
+          __caption__: 'apartment'
         }
       },
       isAppointed: {
@@ -53,6 +71,12 @@ export default {
       },
       dateEnd: {
         __caption__: 'dateEnd'
+      },
+      tasks: {
+        __caption__: 'tasks',
+        task: {
+          __caption__: 'task'
+        }
       }
     }
   }

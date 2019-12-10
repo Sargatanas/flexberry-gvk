@@ -2,11 +2,11 @@
 
 module.exports = function(environment) {
   // Replace this local address to remote when backed will be published.
-  var backendUrl = 'http://localhost:6500';
+  var backendUrl = 'http://localhost:6600';
 
   if (environment === 'development-loc') {
     // Use `ember s -e development-loc` command for local backend usage.
-    backendUrl = 'http://localhost:6500';
+    backendUrl = 'http://localhost:6600';
   }
 
 

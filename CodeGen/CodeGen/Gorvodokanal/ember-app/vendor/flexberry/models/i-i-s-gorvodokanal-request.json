@@ -159,25 +159,25 @@
           "name": "isAppointed",
           "caption": "Отметка о назначении",
           "hidden": false,
-          "index": 1
+          "index": 7
         },
         {
           "name": "dateStart",
           "caption": "Дата выполнения работ",
           "hidden": false,
-          "index": 3
+          "index": 9
         },
         {
           "name": "isCompleted",
           "caption": "Отметка о выполнении",
           "hidden": false,
-          "index": 4
+          "index": 10
         },
         {
           "name": "dateEnd",
           "caption": "Фактическое время окончания работ",
           "hidden": false,
-          "index": 5
+          "index": 11
         }
       ],
       "belongsTo": [
@@ -193,6 +193,42 @@
               "caption": "Адрес",
               "hidden": false,
               "index": 0
+            },
+            {
+              "name": "street",
+              "caption": "",
+              "hidden": true,
+              "index": 1
+            },
+            {
+              "name": "house",
+              "caption": "",
+              "hidden": true,
+              "index": 2
+            },
+            {
+              "name": "build",
+              "caption": "",
+              "hidden": true,
+              "index": 3
+            },
+            {
+              "name": "porch",
+              "caption": "",
+              "hidden": true,
+              "index": 4
+            },
+            {
+              "name": "floor",
+              "caption": "",
+              "hidden": true,
+              "index": 5
+            },
+            {
+              "name": "apartment",
+              "caption": "",
+              "hidden": true,
+              "index": 6
             }
           ],
           "index": -1,
@@ -213,7 +249,7 @@
               "name": "index",
               "caption": "Выполняющая бригада",
               "hidden": false,
-              "index": 2
+              "index": 8
             }
           ],
           "index": -1,
@@ -224,7 +260,15 @@
           "inverse": null
         }
       ],
-      "hasMany": []
+      "hasMany": [
+        {
+          "projectionName": "TaskListE",
+          "caption": "",
+          "name": "tasks",
+          "relatedTo": "i-i-s-gorvodokanal-task-list",
+          "inverse": null
+        }
+      ]
     }
   ],
   "stored": true,

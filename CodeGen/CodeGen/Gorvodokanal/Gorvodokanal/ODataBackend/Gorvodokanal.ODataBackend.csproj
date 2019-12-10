@@ -7,7 +7,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{8621450C-7095-4CE9-AA30-A693CAA39AB7}</ProjectGuid>
+    <ProjectGuid>{72E0585C-E070-4A49-BFD1-6B06D40EF54A}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -23,6 +23,12 @@
     </SccAuxPath>
     <SccProvider>
     </SccProvider>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -99,55 +105,55 @@
       <HintPath>..\packages\Unity.Container.5.8.6\lib\net45\Unity.Container.dll</HintPath>
     </Reference>
     <Reference Include="ChangesToSqlBTMonitor">
-      <HintPath>..\packages\NewPlatform.Flexberry.ORM.5.0.0\lib\net45\ChangesToSqlBTMonitor.dll</HintPath>
+      <HintPath>..\packages\NewPlatform.Flexberry.ORM.5.0.1\lib\net45\ChangesToSqlBTMonitor.dll</HintPath>
     </Reference>
     <Reference Include="ExternalLangDef">
-      <HintPath>..\packages\NewPlatform.Flexberry.ORM.5.0.0\lib\net45\ExternalLangDef.dll</HintPath>
+      <HintPath>..\packages\NewPlatform.Flexberry.ORM.5.0.1\lib\net45\ExternalLangDef.dll</HintPath>
     </Reference>
     <Reference Include="ICSSoft.Services.CurrentUserService">
-      <HintPath>..\packages\NewPlatform.Flexberry.ORM.5.0.0\lib\net45\ICSSoft.Services.CurrentUserService.dll</HintPath>
+      <HintPath>..\packages\NewPlatform.Flexberry.ORM.5.0.1\lib\net45\ICSSoft.Services.CurrentUserService.dll</HintPath>
     </Reference>
     <Reference Include="ICSSoft.Services.UnityFactory">
-      <HintPath>..\packages\NewPlatform.Flexberry.ORM.5.0.0\lib\net45\ICSSoft.Services.UnityFactory.dll</HintPath>
+      <HintPath>..\packages\NewPlatform.Flexberry.ORM.5.0.1\lib\net45\ICSSoft.Services.UnityFactory.dll</HintPath>
     </Reference>
     <Reference Include="ICSSoft.STORMNET.Business">
-      <HintPath>..\packages\NewPlatform.Flexberry.ORM.5.0.0\lib\net45\ICSSoft.STORMNET.Business.dll</HintPath>
+      <HintPath>..\packages\NewPlatform.Flexberry.ORM.5.0.1\lib\net45\ICSSoft.STORMNET.Business.dll</HintPath>
     </Reference>
     <Reference Include="ICSSoft.STORMNET.Business.DRDataService">
-      <HintPath>..\packages\NewPlatform.Flexberry.ORM.5.0.0\lib\net45\ICSSoft.STORMNET.Business.DRDataService.dll</HintPath>
+      <HintPath>..\packages\NewPlatform.Flexberry.ORM.5.0.1\lib\net45\ICSSoft.STORMNET.Business.DRDataService.dll</HintPath>
     </Reference>
     <Reference Include="ICSSoft.STORMNET.Business.LINQProvider">
-      <HintPath>..\packages\NewPlatform.Flexberry.ORM.5.0.0\lib\net45\ICSSoft.STORMNET.Business.LINQProvider.dll</HintPath>
+      <HintPath>..\packages\NewPlatform.Flexberry.ORM.5.0.1\lib\net45\ICSSoft.STORMNET.Business.LINQProvider.dll</HintPath>
     </Reference>
     <Reference Include="ICSSoft.STORMNET.Business.LockService">
-      <HintPath>..\packages\NewPlatform.Flexberry.ORM.5.0.0\lib\net45\ICSSoft.STORMNET.Business.LockService.dll</HintPath>
+      <HintPath>..\packages\NewPlatform.Flexberry.ORM.5.0.1\lib\net45\ICSSoft.STORMNET.Business.LockService.dll</HintPath>
     </Reference>
     <Reference Include="ICSSoft.STORMNET.Business.MSSQLDataService">
-      <HintPath>..\packages\NewPlatform.Flexberry.ORM.5.0.0\lib\net45\ICSSoft.STORMNET.Business.MSSQLDataService.dll</HintPath>
+      <HintPath>..\packages\NewPlatform.Flexberry.ORM.5.0.1\lib\net45\ICSSoft.STORMNET.Business.MSSQLDataService.dll</HintPath>
     </Reference>
     <Reference Include="ICSSoft.STORMNET.Business.ODBCDataService">
-      <HintPath>..\packages\NewPlatform.Flexberry.ORM.5.0.0\lib\net45\ICSSoft.STORMNET.Business.ODBCDataService.dll</HintPath>
+      <HintPath>..\packages\NewPlatform.Flexberry.ORM.5.0.1\lib\net45\ICSSoft.STORMNET.Business.ODBCDataService.dll</HintPath>
     </Reference>
     <Reference Include="ICSSoft.STORMNET.Business.OracleDataService">
-      <HintPath>..\packages\NewPlatform.Flexberry.ORM.5.0.0\lib\net45\ICSSoft.STORMNET.Business.OracleDataService.dll</HintPath>
+      <HintPath>..\packages\NewPlatform.Flexberry.ORM.5.0.1\lib\net45\ICSSoft.STORMNET.Business.OracleDataService.dll</HintPath>
     </Reference>
     <Reference Include="ICSSoft.STORMNET.Business.PostgresDataService">
-      <HintPath>..\packages\NewPlatform.Flexberry.ORM.5.0.0\lib\net45\ICSSoft.STORMNET.Business.PostgresDataService.dll</HintPath>
+      <HintPath>..\packages\NewPlatform.Flexberry.ORM.5.0.1\lib\net45\ICSSoft.STORMNET.Business.PostgresDataService.dll</HintPath>
     </Reference>
     <Reference Include="ICSSoft.STORMNET.Collections">
-      <HintPath>..\packages\NewPlatform.Flexberry.ORM.5.0.0\lib\net45\ICSSoft.STORMNET.Collections.dll</HintPath>
+      <HintPath>..\packages\NewPlatform.Flexberry.ORM.5.0.1\lib\net45\ICSSoft.STORMNET.Collections.dll</HintPath>
     </Reference>
     <Reference Include="ICSSoft.STORMNET.DataObject">
-      <HintPath>..\packages\NewPlatform.Flexberry.ORM.5.0.0\lib\net45\ICSSoft.STORMNET.DataObject.dll</HintPath>
+      <HintPath>..\packages\NewPlatform.Flexberry.ORM.5.0.1\lib\net45\ICSSoft.STORMNET.DataObject.dll</HintPath>
     </Reference>
     <Reference Include="ICSSoft.STORMNET.FunctionalLanguage">
-      <HintPath>..\packages\NewPlatform.Flexberry.ORM.5.0.0\lib\net45\ICSSoft.STORMNET.FunctionalLanguage.dll</HintPath>
+      <HintPath>..\packages\NewPlatform.Flexberry.ORM.5.0.1\lib\net45\ICSSoft.STORMNET.FunctionalLanguage.dll</HintPath>
     </Reference>
     <Reference Include="ICSSoft.STORMNET.Tools">
-      <HintPath>..\packages\NewPlatform.Flexberry.ORM.5.0.0\lib\net45\ICSSoft.STORMNET.Tools.dll</HintPath>
+      <HintPath>..\packages\NewPlatform.Flexberry.ORM.5.0.1\lib\net45\ICSSoft.STORMNET.Tools.dll</HintPath>
     </Reference>
     <Reference Include="ICSSoft.STORMNET.UserDataTypes">
-      <HintPath>..\packages\NewPlatform.Flexberry.ORM.5.0.0\lib\net45\ICSSoft.STORMNET.UserDataTypes.dll</HintPath>
+      <HintPath>..\packages\NewPlatform.Flexberry.ORM.5.0.1\lib\net45\ICSSoft.STORMNET.UserDataTypes.dll</HintPath>
     </Reference>
     <Reference Include="NewPlatform.Flexberry.LockService">
       <HintPath>..\packages\NewPlatform.Flexberry.LockService.2.0.0\lib\net45\NewPlatform.Flexberry.LockService.dll</HintPath>
@@ -213,7 +219,7 @@
       <HintPath>System.EnterpriseServices</HintPath>
     </Reference>
     <ProjectReference Include="..\Objects\Gorvodokanal.Objects.csproj">
-      <Project>{b56c521a-7441-4498-97b1-bede45874dc9}</Project>
+      <Project>{51a40b66-8c0d-421d-80b9-82eeb949142c}</Project>
       <Name>Gorvodokanal.Objects</Name>
     </ProjectReference>
   </ItemGroup>
@@ -246,12 +252,13 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>False</UseIIS>
+          <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>6500</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>
-          </IISUrl>
+          <IISUrl>http://localhost:6600/</IISUrl>
+          <OverrideIISAppRootUrl>True</OverrideIISAppRootUrl>
+          <IISAppRootUrl>http://localhost:6600/</IISAppRootUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

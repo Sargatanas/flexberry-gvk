@@ -41,11 +41,25 @@ namespace IIS.Gorvodokanal
             ""})]
     [View("RequestL", new string[] {
             "Address.District as \'Адрес\' on \'-Данные об адресе\'",
+            "Address.Street",
+            "Address.House",
+            "Address.Build",
+            "Address.Porch",
+            "Address.Floor",
+            "Address.Apartment",
             "IsAppointed as \'Отметка о назначении\' on \'-Данные о выполнении\'",
             "Team.Index as \'Выполняющая бригада\' on \'-Данные о выполнении\'",
             "DateStart as \'Дата выполнения работ\' on \'-Данные о выполнении\'",
             "IsCompleted as \'Отметка о выполнении\' on \'-Данные о выполнении\'",
-            "DateEnd as \'Фактическое время окончания работ\' on \'-Данные о выполнении\'"})]
+            "DateEnd as \'Фактическое время окончания работ\' on \'-Данные о выполнении\'"}, Hidden=new string[] {
+            "Address.Street",
+            "Address.House",
+            "Address.Build",
+            "Address.Porch",
+            "Address.Floor",
+            "Address.Apartment"})]
+    [AssociatedDetailViewAttribute("RequestL", "Tasks", "TaskListE", true, "", "", false, new string[] {
+            ""})]
     public class Request : ICSSoft.STORMNET.DataObject
     {
         
