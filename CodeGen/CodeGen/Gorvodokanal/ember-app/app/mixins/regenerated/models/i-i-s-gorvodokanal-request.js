@@ -3,11 +3,11 @@ import DS from 'ember-data';
 import { Projection } from 'ember-flexberry-data';
 
 export let Model = Ember.Mixin.create({
-  index: DS.attr('number', { defaultValue: 1 }),
+  index: DS.attr('number'),
   isAppointed: DS.attr('i-i-s-gorvodokanal-t-appointed'),
-  dateStart: DS.attr('date'),
+  dateStart: DS.attr('date', { defaultValue: null }),
   isCompleted: DS.attr('boolean', { defaultValue: false }),
-  dateEnd: DS.attr('date'),
+  dateEnd: DS.attr('date', { defaultValue: null }),
   address: DS.belongsTo('i-i-s-gorvodokanal-address', { inverse: null, async: false }),
   team: DS.belongsTo('i-i-s-gorvodokanal-team', { inverse: null, async: false }),
   tasks: DS.hasMany('i-i-s-gorvodokanal-task-list', { inverse: 'request', async: false }),
@@ -52,6 +52,7 @@ export let defineProjections = function (modelClass) {
     })
   });
   modelClass.defineProjection('RequestL', 'i-i-s-gorvodokanal-request', {
+    index: Projection.attr('', { index: 0, hidden: true }),
     address: Projection.belongsTo('i-i-s-gorvodokanal-address', 'Адрес', {
       district: Projection.attr('Адрес', { index: 0 }),
       street: Projection.attr('', { index: 1, hidden: true }),
@@ -71,14 +72,15 @@ export let defineProjections = function (modelClass) {
     dateStart: Projection.attr('Дата выполнения работ', { index: 9 }),
     isCompleted: Projection.attr('Отметка о выполнении', { index: 10 }),
     dateEnd: Projection.attr('Фактическое время окончания работ', { index: 11 }),
-    index: Projection.attr('', { index: 12, hidden: true }),
-
     tasks: Projection.hasMany('i-i-s-gorvodokanal-task-list', '', {
       task: Projection.belongsTo('i-i-s-gorvodokanal-task', 'Задача', {
         index: Projection.attr('', { index: 0, hidden: true }),
         content: Projection.attr('Детали', { index: 2 }),
         planeDuration: Projection.attr('Примерная длительность работ', { index: 3 }),
-        importance: Projection.attr('Срочность', { index: 4 })
+        importance: Projection.attr('Срочность', { index: 4 }),
+        category: Projection.belongsTo('i-i-s-gorvodokanal-category', 'Категория', {
+
+        }, { index: 1 })
       }, { index: 0, displayMemberPath: 'content' })
     })
   });

@@ -27,7 +27,7 @@
     {
       "name": "dateStart",
       "type": "date",
-      "flexberryType": "tDate",
+      "flexberryType": "NullableDateTime",
       "notNull": false,
       "defaultValue": "",
       "stored": true,
@@ -45,7 +45,7 @@
     {
       "name": "dateEnd",
       "type": "date",
-      "flexberryType": "tDate",
+      "flexberryType": "NullableDateTime",
       "notNull": false,
       "defaultValue": "",
       "stored": true,

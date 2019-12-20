@@ -1,0 +1,43 @@
+{{#each tasks as |task|}}
+  <div class="element-body-task {{taskClass}}"
+       {{action "toggleTask" style on='click'}}
+       style="top: {{getTaskShift task}}px;
+              z-index: {{getZIndex currentHour endHour dayId}}">
+
+    <div class="element-body-task-detail">
+      <span class="element-body-task-detail__header">№ заявки:</span>
+      {{task.index}}
+    </div>
+
+    <div class="element-body-task-detail">
+      <span class="element-body-task-detail__header">Срочность: </span>
+      {{task.importance}}
+    </div>
+
+    <ol class="element-body-task-detail element-body-task-detail_list">
+      <li class="element-body-task-detail__header" value="0">Задачи:</li>
+        {{#each (getTaskList task) as |taskElement|}}
+          <li class="element-body-task-detail__element">
+             {{taskElement.content}}
+          </li>
+        {{/each}}
+    </ol>
+
+    <div class="element-body-task-detail">
+      <span class="element-body-task-detail__header">Адрес:</span>
+      {{task.fullAddress}}
+    </div>
+
+    {{#if (invertBool free)}}
+      <div class="element-body-task-detail">
+        <span class="element-body-task-detail__header">Время начала: </span>
+        {{getTimeString task.dateStart 'full' 'UTC'}}
+      </div>
+    {{/if}}
+
+    <div class="element-body-task-detail">
+      <span class="element-body-task-detail__header">Предварительная длительность работ: </span>
+      {{getTimeString task.fullDuration 'full'}}
+    </div>
+  </div>
+{{/each}}

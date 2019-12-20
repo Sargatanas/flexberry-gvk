@@ -1,0 +1,40 @@
+<div class="form-body__element {{comparisonDates (getDate date.id date.value) (getDate day.id date.value)}}">
+    <div class="element-header">
+        <div class="element-header__cell element-header__cell_day">
+            {{toUpperCase day.rus}}
+        </div>
+        <div class="element-header__cell element-header__cell_data" id='{{day.en}}'>
+            {{getDateString date.value day.id}}
+        </div>
+        <div class="element-header__cell element-header__cell_total-tasks">
+            Всего задач:
+            <span
+                id='total-tasks-{{day.en}}'
+                class="element-header__cell-content element-header__cell-content_{{day.en}}">
+                {{totalTask}}
+            </span>
+        </div>
+    </div>
+    {{#if (isTotalCountEmpty totalTask)}}
+        <table
+            class="element-body"
+            id="table-content">
+            <tr class="element-body__row">
+                <th class="element-body__cell">
+                    Время
+                </th>
+                <th class="element-body__cell">
+                    Детали задачи
+                </th>
+            </tr>
+            {{#each (getShiftBorders shiftOptions) as |hour|}}
+                {{table-row hour=hour
+                            date=(getDate day.id date.value)
+                            currentDate=(getDateForm (getDate day.id date.value))
+                            taskList=taskList
+                            dayId=day.id
+                            endHour=shiftOptions.end}}
+            {{/each}}
+        </table>
+    {{/if}}
+</div>

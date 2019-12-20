@@ -4,9 +4,9 @@ import timeString from '../utils/time-string';
 export function getTimeString(params/*, hash*/) {
   let date = params[0];
   let status = params[1];
-  let UTC = params[2];
+  let parameterUTC = params[2];
 
-  return timeString(date, status, UTC);
+  return timeString(date, status, parameterUTC);
 }
 
 export default Ember.Helper.helper(getTimeString);

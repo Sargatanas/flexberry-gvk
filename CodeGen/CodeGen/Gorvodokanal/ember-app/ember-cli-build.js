@@ -21,6 +21,9 @@ module.exports = function(defaults) {
         images: false,
         fonts: true
       }
+    },
+    'ember-cli-babel': {
+      'includePolyfill': true
     }
 
     // Add options here

@@ -12,15 +12,10 @@ export default Ember.Controller.extend({
           title: i18n.t('forms.application.sitemap.index.title'),
           children: null
         }, {
-          link: null,
+          link: 'i-i-s-gorvodokanal-request-l',
           caption: i18n.t('forms.application.sitemap.заявки.caption'),
           title: i18n.t('forms.application.sitemap.заявки.title'),
-          children: [{
-            link: 'i-i-s-gorvodokanal-request-l',
-            caption: i18n.t('forms.application.sitemap.заявки.i-i-s-gorvodokanal-request-l.caption'),
-            title: i18n.t('forms.application.sitemap.заявки.i-i-s-gorvodokanal-request-l.title'),
-            children: null
-          }]
+          children: null
         }, {
           link: null,
           caption: i18n.t('forms.application.sitemap.списки.caption'),

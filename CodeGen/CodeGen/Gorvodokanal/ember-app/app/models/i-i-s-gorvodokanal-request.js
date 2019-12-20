@@ -49,6 +49,27 @@ let Model = Projection.Model.extend(Offline.ModelMixin, RequestMixin, {
 
     return date;
   }),
+
+  importance: Ember.computed('tasks', function() {
+    let taskList = this.get('tasks');
+
+    let importance = 0;
+    let importanceList = {
+      'не срочно (0)': 0,
+      'малая срочность (1)': 1,
+      'средняя срочность (2)': 2,
+      'высокая срочность (3)': 3,
+      'как можно скорее (4)': 4
+    }
+
+    taskList.forEach(taskListElement => {
+      let task = taskListElement.get('task');
+      let taskImportance = task.get('importance');
+      importance = Math.max(importance, importanceList[taskImportance]);
+    });
+
+    return importance;
+  }),
 });
 
 defineNamespace(Model);
