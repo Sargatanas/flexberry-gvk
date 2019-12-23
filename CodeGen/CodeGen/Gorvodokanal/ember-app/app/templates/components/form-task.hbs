@@ -24,6 +24,11 @@
     </ol>
 
     <div class="element-body-task-detail">
+      <span class="element-body-task-detail__header">Предварительная длительность работ: </span>
+      {{getTimeString request.fullDuration 'full'}}
+    </div>
+
+    <div class="element-body-task-detail">
       <span class="element-body-task-detail__header">Адрес:</span>
       {{request.fullAddress}}
     </div>
@@ -33,11 +38,17 @@
         <span class="element-body-task-detail__header">Время начала: </span>
         {{getTimeString request.dateStart 'full' 'UTC'}}
       </div>
+      <button onclick={{action "disappoint" request}} class="element-body-task__button">
+        Открепить заявку
+      </button>
+    {{else}}
+      <div class="element-body-task-detail">
+        <span class="element-body-task-detail__header">Предварительное время начала: </span>
+        {{getTimeString request.planeDateStart 'full' 'UTC'}}
+      </div>
+      <button onclick={{action "appoint" request team lastRequest}} class="element-body-task__button">
+        Присвоить заявку бригаде
+      </button>
     {{/if}}
-
-    <div class="element-body-task-detail">
-      <span class="element-body-task-detail__header">Предварительная длительность работ: </span>
-      {{getTimeString request.fullDuration 'full'}}
-    </div>
   </div>
 {{/each}}

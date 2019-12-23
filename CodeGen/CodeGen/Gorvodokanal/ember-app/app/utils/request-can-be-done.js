@@ -20,7 +20,6 @@ export default function requestCanBeDone(team, requests, selectedRequests, date)
   shiftEnd.setHours(team.get('shiftEnd').getHours() + 1);
 
   lastRequest = lastRequest ? getRequestInfo(lastRequest, currentDate) : getRequestInfo(lastRequest, currentDate, shiftStart);
-  console.log(lastRequest);
 
   let tasksPlane = [];
   requestList.forEach(request => {
@@ -38,7 +37,6 @@ export default function requestCanBeDone(team, requests, selectedRequests, date)
       lastRequest = requestInfo;
       isEmptyDay = false;
 
-      console.log(request.get('index'), requestInfo.end.getTime(), shiftEnd.getTime());
       request.set('planeDateStart', requestStart);
       request.save();
 

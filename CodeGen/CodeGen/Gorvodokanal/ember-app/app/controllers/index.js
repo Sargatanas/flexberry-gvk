@@ -6,6 +6,7 @@ import dateNullable from '../utils/date-nullable';
 import dateString from '../utils/date-string';
 import dateStringToForm from '../utils/data-string-to-form';
 import requestCanBeDone from '../utils/request-can-be-done';
+import lastRequest from '../utils/last-request';
 
 import { Query } from 'ember-flexberry-data';
 
@@ -43,6 +44,7 @@ export default Ember.Controller.extend({
   taskCount: '',
 
   freeRequestList: [],
+  lastRequest: null,
 
   isTasksCreated: false,
   isShowTable: false,
@@ -57,8 +59,6 @@ export default Ember.Controller.extend({
 
   inputTeamId: '',
   inputDate: '',
-
-  temp: [],
 
   actions: {
       async validateInputs() {
@@ -153,7 +153,7 @@ export default Ember.Controller.extend({
       },
 
       setDefaulData() {
-        let date = '2019-11-28';
+        let date = '2019-11-26';
         let teamId = '101';
 
         this.setProperties({
@@ -234,7 +234,7 @@ export default Ember.Controller.extend({
       context.setProperties({
           teamShiftInfo: {
               start: currentTeam.get('shiftStart').getUTCHours(),
-              end: currentTeam.get('shiftEnd').getUTCHours(),
+              end: currentTeam.get('shiftEnd').getUTCHours() - 1,
           }
       });
 
@@ -263,13 +263,15 @@ export default Ember.Controller.extend({
       });
 
       nonSelectedRequests = requestCanBeDone(currentTeam, nonSelectedRequests, selectedRequests, date);
+      let lastRequest = lastRequest(selectedRequests, date);
 
       context.setProperties({
           isTasksCreated: true,
           requestList: selectedRequests,
           freeRequestList: nonSelectedRequests,
           requestList: selectedRequests,
-          taskCount: dates
+          taskCount: dates,
+          lastRequest: lastRequest,
       });
 
       context.showTable();
