@@ -6,18 +6,11 @@
     </div>
     <div class="element-body-task-detail">
       <span class="element-body-task-detail__header">Начало смены:</span>
-      {{team.timeStart}}
+      {{getTimeString team.shiftStart 'not-full' 'UTC'}}
     </div>
     <div class="element-body-task-detail">
       <span class="element-body-task-detail__header">Окончаение смены:</span>
-      {{team.timeEnd}}
-    </div> 
-
-    <h3>Заявки закрепленные за бригадой</h3>
-    {{#if team.tasks}}
-      {{form-task  comment='Это от бригады №' num=team.index  tasks=team.tasks}}
-    {{else}}
-      -- нет заявок --
-    {{/if}} 
+      {{getTimeString team.shiftEnd 'not-full' 'UTC'}}
+    </div>
   </div>
-{{/each}}  
+{{/each}}

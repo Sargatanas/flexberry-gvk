@@ -4,6 +4,9 @@ export default {
       index: {
         __caption__: 'index'
       },
+      planeDateStart: {
+        __caption__: 'planeDateStart'
+      },
       isAppointed: {
         __caption__: 'isAppointed'
       },
@@ -71,6 +74,12 @@ export default {
       },
       dateEnd: {
         __caption__: 'dateEnd'
+      },
+      index: {
+        __caption__: 'index'
+      },
+      planeDateStart: {
+        __caption__: 'planeDateStart'
       },
       tasks: {
         __caption__: 'tasks',

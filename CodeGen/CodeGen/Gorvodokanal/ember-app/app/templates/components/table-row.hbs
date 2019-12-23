@@ -3,16 +3,30 @@
 </td>
 <td class="element-body__cell query-hour-{{hour}}"
     data-name="{{getDateForm date}}">
-        {{#each taskList as |task|}}
+        {{#each requestList as |request|}}
             {{form-task comment='Это выбранные'
-                        taskClass="element-body-task_resize"
+                        requestClass="element-body-task_resize"
                         dayId=dayId
                         endHour=endHour
                         currentHour=hour
-                        tasks=(getTask task
-                                       task.dateStart
-                                       currentDate
-                                       hour)
+                        requests=(getTask request
+                                          request.dateStart
+                                          currentDate
+                                          hour)
                         free=false}}
+        {{/each}}
+        {{#each freeRequestList as |request|}}
+          {{log 'Shadow' request.planeDateStart}}
+          {{form-task comment='Это призрачные'
+                      requestClass="element-body-task_resize"
+                      shadowRequestClass='element-body-task_shadow'
+                      dayId=dayId
+                      endHour=endHour
+                      currentHour=hour
+                      requests=(getTask request
+                                        request.planeDateStart
+                                        currentDate
+                                        hour)
+                      free=true}}
         {{/each}}
 </td>

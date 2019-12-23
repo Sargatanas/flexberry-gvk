@@ -160,6 +160,11 @@
             DateEnd.
             </summary>
         </member>
+        <member name="P:IIS.Gorvodokanal.Request.PlaneDateStart">
+            <summary>
+            PlaneDateStart.
+            </summary>
+        </member>
         <member name="P:IIS.Gorvodokanal.Request.Address">
             <summary>
             Request.

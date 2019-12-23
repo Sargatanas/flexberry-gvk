@@ -199,7 +199,6 @@ background: rgb(226, 226, 226);
 
   width: 100%;
   box-sizing: border-box;
-  padding: 20px;
 }
 
 .form-body__element {
@@ -219,37 +218,40 @@ background: rgb(226, 226, 226);
   box-shadow: 0 5px 20px rgba(0,0,0,0.5);
 }
 
+
 .element-header {
   display: flex;
   box-sizing: border-box;
   margin-bottom: 10px;
+
+  &__cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 100px;
+    height: 30px;
+
+    margin-right: 10px;
+    padding: 5px 10px;
+
+    background: rgb(187, 206, 224);
+
+    &:last-child {
+      margin-right: 0;
+    }
+    .form-body__element_last & {
+      background: rgb(196, 196, 196);
+    }
+    .form-body__element_current & {
+      background: rgb(186, 223, 161);
+    }
+
+    &_total-tasks {
+      margin-left: auto;
+    }
+  }
 }
 
-.element-header__cell {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-width: 100px;
-  height: 30px;
-
-  margin-right: 10px;
-  padding: 5px 10px;
-
-  background: rgb(187, 206, 224);
-}
-.element-header__cell:last-child {
-  margin-right: 0;
-}
-.form-body__element_last .element-header__cell {
-  background: rgb(196, 196, 196);
-}
-.form-body__element_current .element-header__cell {
-  background: rgb(186, 223, 161);
-}
-
-.element-header__cell_total-tasks {
-  margin-left: auto;
-}
 
 .element-body {
   width: 100%;
@@ -257,138 +259,154 @@ background: rgb(226, 226, 226);
 
   border-collapse: separate;
   border-spacing: 2px;
-}
 
-.element-body__cell {
-  position: relative;
-  height: 30px;
-  box-sizing: border-box;
+  &__cell {
+    position: relative;
+    height: 30px;
+    box-sizing: border-box;
 
-  background: @base-color-dark;
+    background: @base-color-dark;
 
-  text-align: center;
-  user-select: none;
-}
-.element-body__cell:first-child {
-  width: 100px;
-  box-sizing: border-box;
-}
-.form-body__element_last .element-body__cell {
-  background: rgb(196, 196, 196);
-}
-.form-body__element_current .element-body__cell {
-  background: rgb(186, 223, 161);
-}
-.element-header__cell-content {
-  margin-left: 5px;
-}
+    text-align: center;
+    user-select: none;
 
-.element-body-task {
-  position: absolute;
-  top: 0;
-  left: 10px;
+    &:first-child {
+      width: 100px;
+      box-sizing: border-box;
+    }
+    .form-body__element_last & {
+      background: rgb(196, 196, 196);
+    }
+    .form-body__element_current & {
+      background: rgb(186, 223, 161);
+    }
 
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+    &-content {
+      margin-left: 5px;
+    }
+  }
 
-  width: 80%;
-  min-width: 400px;
-  overflow: hidden;
-  box-sizing: border-box;
+  &-task {
+    position: absolute;
+    top: 0;
+    left: 10px;
 
-  margin-bottom: 10px;
-  padding: 5px 30px 10px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 
-  border-radius: 5px;
-  background: white;
-  box-shadow: 5px 5px 10px 0 rgba(0,0,0,0.5);
+    width: 80%;
+    min-width: 400px;
+    overflow: hidden;
+    box-sizing: border-box;
 
-  cursor: pointer;
-  user-select: none;
-  transition-duration: 0.3s;
-}
-.element-body-task_resize {
-  height: 30px;
-}
-.element-body-task_open {
-  height: auto;
-}
-.element-body-task_not-table {
-  position: static;
-}
-.element-body-task_resize:before {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
+    margin-bottom: 10px;
+    padding: 5px 30px 10px 10px;
 
-  width: 100%;
-  height: 10px;
+    border-radius: 5px;
+    background: white;
+    box-shadow: 5px 5px 10px 0 rgba(0,0,0,0.5);
 
-  background: linear-gradient(rgba(128, 128, 128, 0) 0%, white 50%);
-}
-.element-body-task_resize:after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  right: 5px;
-  z-index: 10;
+    cursor: pointer;
+    user-select: none;
+    transition-duration: 0.3s;
 
-  width: 20px;
-  height: 100%;
+    &_resize {
+      height: 30px;
 
-  background: white url('/assets/images/double-bottom.png') no-repeat 50% 10px;
-  background-size: 100% auto;
-}
-.element-body-task_open:after {
-  content: '';
-  position: absolute;
-  bottom: 10px;
-  right: 5px;
-  z-index: 10;
+      &:before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
 
-  width: 20px;
-  height: 20px;
+        width: 100%;
+        height: 10px;
 
-  background: white url('/assets/images/double-top.png') no-repeat 50% 50%;
-  background-size: 100% auto;
-}
+        background: linear-gradient(rgba(128, 128, 128, 0) 0%, white 50%);
+      }
+      &:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        right: 5px;
+        z-index: 10;
 
-.element-body-task-detail {
-  width: 100%;
+        width: 20px;
+        height: 100%;
 
-  margin: 0 0 5px 0;
-  text-align: left;
+        background: white url('/assets/images/double-bottom.png') no-repeat 50% 10px;
+        background-size: 100% auto;
+      }
+    }
 
-  border-radius: 5px;
-}
-.element-body-task-detail__element {
-  margin-left: 15px;
-}
-.element-body-task-detail_list {
-  padding-left: 10px;
-}
+    &_shadow {
+      opacity: 0.3;
+    }
 
-.element-body-task-detail__header {
-  margin-bottom: 5px;
-  font-weight: bold;
-  list-style-type: none;
+    &_open {
+      height: auto;
+      opacity: 1;
+
+      &:after {
+        content: '';
+        position: absolute;
+        bottom: 10px;
+        right: 5px;
+        z-index: 10;
+
+        width: 20px;
+        height: 20px;
+
+        background: white url('/assets/images/double-top.png') no-repeat 50% 50%;
+        background-size: 100% auto;
+      }
+    }
+
+    &_not-table {
+      border: 1px solid lightgrey;
+      position: static;
+    }
+
+    &-detail {
+      width: 100%;
+
+      margin: 0 0 5px 0;
+      text-align: left;
+
+      border-radius: 5px;
+
+      &__element {
+        margin-left: 15px;
+      }
+
+      &_list {
+        padding-left: 10px;
+      }
+
+      &__header {
+        margin-bottom: 5px;
+        font-weight: bold;
+        list-style-type: none;
+      }
+    }
+  }
 }
 
 .form-footer {
   width: 100%;
   box-sizing: border-box;
-  padding: 20px;
-}
-.form-footer__title {
-  width: 100%;
-  box-sizing: border-box;
-  padding: 10px;
-  background: rgb(219, 219, 219);
-  color: rgb(73, 73, 73);
-  font-weight: normal;
-}
-.form-footer__button {
-  margin-top: 10px;
+  padding: 20px 0;
+
+   &__title {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    background: rgb(219, 219, 219);
+    color: rgb(73, 73, 73);
+    font-weight: normal;
+  }
+  &__button {
+    margin-top: 10px;
+  }
 }

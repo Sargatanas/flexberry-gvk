@@ -4,6 +4,9 @@ export default {
       index: {
         __caption__: ''
       },
+      planeDateStart: {
+        __caption__: ''
+      },
       isAppointed: {
         __caption__: 'Отметка о назначении'
       },
@@ -71,6 +74,12 @@ export default {
       },
       dateEnd: {
         __caption__: 'Фактическое время окончания работ'
+      },
+      index: {
+        __caption__: ''
+      },
+      planeDateStart: {
+        __caption__: ''
       },
       tasks: {
         __caption__: '',

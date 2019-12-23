@@ -41,7 +41,12 @@
             Для применения новых параметров нажмите enter
         </div>
     </header>
+
     {{#if isShowTable}}
+        {{form-team teams=teamList}}
+        <h2 class="form-body__title">
+            Расписание на неделю
+        </h2>
         <main
             class="form-body"
             id="table">
@@ -50,7 +55,8 @@
                                  day=day
                                  date=date
                                  status=status
-                                 taskList=requestList
+                                 requestList=requestList
+                                 freeRequestList=freeRequestList
                                  shiftOptions=teamShiftInfo
                                  totalTask=(getTotalTask (getDateForm (getDate day.id date.value)) taskCount)}}
                 {{/each}}
@@ -61,11 +67,15 @@
             <h2 class="form-footer__title">
                 Свободные заявки
             </h2>
-            {{form-task taskClass="element-body-task_not-table"
-                        teamId=inputTeamId
-                        tasks=freeRequestList
-                        team=teamList
-                        free=true}}
+            {{#if freeRequestList}}
+              {{form-task requestClass="element-body-task_not-table"
+                          teamId=inputTeamId
+                          requests=freeRequestList
+                          team=teamList
+                          free=true}}
+            {{else}}
+              <div>-нет заявок-</div>
+            {{/if}}
         </footer>
     {{/if}}
 </div>

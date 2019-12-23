@@ -30,13 +30,15 @@ namespace IIS.Gorvodokanal
     [AccessType(ICSSoft.STORMNET.AccessType.none)]
     [View("RequestE", new string[] {
             "Index",
+            "PlaneDateStart",
             "Address as \'Адрес\' on \'-Данные об адресе\'",
             "IsAppointed as \'Отметка о назначении\' on \'-Данные о выполнении\'",
             "Team as \'Бригада\' on \'-Данные о выполнении\'",
             "DateStart as \'Дата выполнения работ\' on \'-Данные о выполнении\'",
             "IsCompleted as \'Отметка о выполнении\' on \'-Данные о выполнении\'",
             "DateEnd as \'Фактическое время окончания работ\' on \'-Данные о выполнении\'"}, Hidden=new string[] {
-            "Index"})]
+            "Index",
+            "PlaneDateStart"})]
     [AssociatedDetailViewAttribute("RequestE", "Tasks", "TaskListE", true, "-Задачи", "", true, new string[] {
             ""})]
     [View("RequestL", new string[] {
@@ -51,13 +53,17 @@ namespace IIS.Gorvodokanal
             "Team.Index as \'Выполняющая бригада\' on \'-Данные о выполнении\'",
             "DateStart as \'Дата выполнения работ\' on \'-Данные о выполнении\'",
             "IsCompleted as \'Отметка о выполнении\' on \'-Данные о выполнении\'",
-            "DateEnd as \'Фактическое время окончания работ\' on \'-Данные о выполнении\'"}, Hidden=new string[] {
+            "DateEnd as \'Фактическое время окончания работ\' on \'-Данные о выполнении\'",
+            "Index",
+            "PlaneDateStart"}, Hidden=new string[] {
             "Address.Street",
             "Address.House",
             "Address.Build",
             "Address.Porch",
             "Address.Floor",
-            "Address.Apartment"})]
+            "Address.Apartment",
+            "Index",
+            "PlaneDateStart"})]
     [AssociatedDetailViewAttribute("RequestL", "Tasks", "TaskListE", true, "", "", false, new string[] {
             ""})]
     public class Request : ICSSoft.STORMNET.DataObject
@@ -67,11 +73,13 @@ namespace IIS.Gorvodokanal
         
         private IIS.Gorvodokanal.tAppointed fIsAppointed;
         
-        private System.DateTime fDateStart;
+        private ICSSoft.STORMNET.UserDataTypes.NullableDateTime fDateStart;
         
         private bool fIsCompleted = false;
         
-        private System.DateTime fDateEnd;
+        private ICSSoft.STORMNET.UserDataTypes.NullableDateTime fDateEnd;
+        
+        private ICSSoft.STORMNET.UserDataTypes.NullableDateTime fPlaneDateStart;
         
         private IIS.Gorvodokanal.Address fAddress;
         
@@ -155,14 +163,14 @@ namespace IIS.Gorvodokanal
         // *** Start programmer edit section *** (Request.DateStart CustomAttributes)
 
         // *** End programmer edit section *** (Request.DateStart CustomAttributes)
-        public virtual System.DateTime DateStart
+        public virtual ICSSoft.STORMNET.UserDataTypes.NullableDateTime DateStart
         {
             get
             {
                 // *** Start programmer edit section *** (Request.DateStart Get start)
 
                 // *** End programmer edit section *** (Request.DateStart Get start)
-                System.DateTime result = this.fDateStart;
+                ICSSoft.STORMNET.UserDataTypes.NullableDateTime result = this.fDateStart;
                 // *** Start programmer edit section *** (Request.DateStart Get end)
 
                 // *** End programmer edit section *** (Request.DateStart Get end)
@@ -217,14 +225,14 @@ namespace IIS.Gorvodokanal
         // *** Start programmer edit section *** (Request.DateEnd CustomAttributes)
 
         // *** End programmer edit section *** (Request.DateEnd CustomAttributes)
-        public virtual System.DateTime DateEnd
+        public virtual ICSSoft.STORMNET.UserDataTypes.NullableDateTime DateEnd
         {
             get
             {
                 // *** Start programmer edit section *** (Request.DateEnd Get start)
 
                 // *** End programmer edit section *** (Request.DateEnd Get start)
-                System.DateTime result = this.fDateEnd;
+                ICSSoft.STORMNET.UserDataTypes.NullableDateTime result = this.fDateEnd;
                 // *** Start programmer edit section *** (Request.DateEnd Get end)
 
                 // *** End programmer edit section *** (Request.DateEnd Get end)
@@ -239,6 +247,37 @@ namespace IIS.Gorvodokanal
                 // *** Start programmer edit section *** (Request.DateEnd Set end)
 
                 // *** End programmer edit section *** (Request.DateEnd Set end)
+            }
+        }
+        
+        /// <summary>
+        /// PlaneDateStart.
+        /// </summary>
+        // *** Start programmer edit section *** (Request.PlaneDateStart CustomAttributes)
+
+        // *** End programmer edit section *** (Request.PlaneDateStart CustomAttributes)
+        public virtual ICSSoft.STORMNET.UserDataTypes.NullableDateTime PlaneDateStart
+        {
+            get
+            {
+                // *** Start programmer edit section *** (Request.PlaneDateStart Get start)
+
+                // *** End programmer edit section *** (Request.PlaneDateStart Get start)
+                ICSSoft.STORMNET.UserDataTypes.NullableDateTime result = this.fPlaneDateStart;
+                // *** Start programmer edit section *** (Request.PlaneDateStart Get end)
+
+                // *** End programmer edit section *** (Request.PlaneDateStart Get end)
+                return result;
+            }
+            set
+            {
+                // *** Start programmer edit section *** (Request.PlaneDateStart Set start)
+
+                // *** End programmer edit section *** (Request.PlaneDateStart Set start)
+                this.fPlaneDateStart = value;
+                // *** Start programmer edit section *** (Request.PlaneDateStart Set end)
+
+                // *** End programmer edit section *** (Request.PlaneDateStart Set end)
             }
         }
         

@@ -50,6 +50,15 @@
       "defaultValue": "",
       "stored": true,
       "ordered": false
+    },
+    {
+      "name": "planeDateStart",
+      "type": "date",
+      "flexberryType": "NullableDateTime",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
     }
   ],
   "belongsTo": [
@@ -87,28 +96,34 @@
           "index": 0
         },
         {
+          "name": "planeDateStart",
+          "caption": "",
+          "hidden": true,
+          "index": 1
+        },
+        {
           "name": "isAppointed",
           "caption": "Отметка о назначении",
           "hidden": false,
-          "index": 2
+          "index": 3
         },
         {
           "name": "dateStart",
           "caption": "Дата выполнения работ",
           "hidden": false,
-          "index": 4
+          "index": 5
         },
         {
           "name": "isCompleted",
           "caption": "Отметка о выполнении",
           "hidden": false,
-          "index": 5
+          "index": 6
         },
         {
           "name": "dateEnd",
           "caption": "Фактическое время окончания работ",
           "hidden": false,
-          "index": 6
+          "index": 7
         }
       ],
       "belongsTo": [
@@ -119,7 +134,7 @@
           "belongsTo": [],
           "hidden": false,
           "attrs": [],
-          "index": 1,
+          "index": 2,
           "type": "default",
           "caption": "Адрес",
           "name": "address",
@@ -133,7 +148,7 @@
           "belongsTo": [],
           "hidden": false,
           "attrs": [],
-          "index": 3,
+          "index": 4,
           "type": "default",
           "caption": "Бригада",
           "name": "team",
@@ -178,6 +193,18 @@
           "caption": "Фактическое время окончания работ",
           "hidden": false,
           "index": 11
+        },
+        {
+          "name": "index",
+          "caption": "",
+          "hidden": true,
+          "index": 12
+        },
+        {
+          "name": "planeDateStart",
+          "caption": "",
+          "hidden": true,
+          "index": 13
         }
       ],
       "belongsTo": [

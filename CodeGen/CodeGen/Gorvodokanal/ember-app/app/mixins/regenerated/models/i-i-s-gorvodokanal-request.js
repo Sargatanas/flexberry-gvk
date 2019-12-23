@@ -5,9 +5,10 @@ import { Projection } from 'ember-flexberry-data';
 export let Model = Ember.Mixin.create({
   index: DS.attr('number'),
   isAppointed: DS.attr('i-i-s-gorvodokanal-t-appointed'),
-  dateStart: DS.attr('date', { defaultValue: null }),
+  dateStart: DS.attr('date'),
   isCompleted: DS.attr('boolean', { defaultValue: false }),
-  dateEnd: DS.attr('date', { defaultValue: null }),
+  dateEnd: DS.attr('date'),
+  planeDateStart: DS.attr('date'),
   address: DS.belongsTo('i-i-s-gorvodokanal-address', { inverse: null, async: false }),
   team: DS.belongsTo('i-i-s-gorvodokanal-team', { inverse: null, async: false }),
   tasks: DS.hasMany('i-i-s-gorvodokanal-task-list', { inverse: 'request', async: false }),
@@ -35,16 +36,17 @@ export function defineNamespace(modelClass) {
 export let defineProjections = function (modelClass) {
   modelClass.defineProjection('RequestE', 'i-i-s-gorvodokanal-request', {
     index: Projection.attr('', { index: 0, hidden: true }),
-    isAppointed: Projection.attr('Отметка о назначении', { index: 2 }),
-    dateStart: Projection.attr('Дата выполнения работ', { index: 4 }),
-    isCompleted: Projection.attr('Отметка о выполнении', { index: 5 }),
-    dateEnd: Projection.attr('Фактическое время окончания работ', { index: 6 }),
+    planeDateStart: Projection.attr('', { index: 1, hidden: true }),
+    isAppointed: Projection.attr('Отметка о назначении', { index: 3 }),
+    dateStart: Projection.attr('Дата выполнения работ', { index: 5 }),
+    isCompleted: Projection.attr('Отметка о выполнении', { index: 6 }),
+    dateEnd: Projection.attr('Фактическое время окончания работ', { index: 7 }),
     address: Projection.belongsTo('i-i-s-gorvodokanal-address', 'Адрес', {
 
-    }, { index: 1 }),
+    }, { index: 2 }),
     team: Projection.belongsTo('i-i-s-gorvodokanal-team', 'Бригада', {
 
-    }, { index: 3 }),
+    }, { index: 4 }),
     tasks: Projection.hasMany('i-i-s-gorvodokanal-task-list', '', {
       task: Projection.belongsTo('i-i-s-gorvodokanal-task', 'Задача', {
 
@@ -72,6 +74,8 @@ export let defineProjections = function (modelClass) {
     dateStart: Projection.attr('Дата выполнения работ', { index: 9 }),
     isCompleted: Projection.attr('Отметка о выполнении', { index: 10 }),
     dateEnd: Projection.attr('Фактическое время окончания работ', { index: 11 }),
+    index: Projection.attr('', { index: 12, hidden: true }),
+    planeDateStart: Projection.attr('', { index: 13, hidden: true }),
     tasks: Projection.hasMany('i-i-s-gorvodokanal-task-list', '', {
       task: Projection.belongsTo('i-i-s-gorvodokanal-task', 'Задача', {
         index: Projection.attr('', { index: 0, hidden: true }),

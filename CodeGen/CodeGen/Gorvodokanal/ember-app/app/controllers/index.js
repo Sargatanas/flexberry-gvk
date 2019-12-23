@@ -17,6 +17,10 @@ export default Ember.Controller.extend({
     this.controllerFor('application').setActiveClass(routeName);
   },
 
+  init() {
+    this._super(...arguments);
+  },
+
   week: [
       { id: 0, rus: 'пн', en: 'mon' },
       { id: 1, rus: 'вт', en: 'tue' },
@@ -258,6 +262,7 @@ export default Ember.Controller.extend({
       });
 
       nonSelectedRequests = requestCanBeDone(currentTeam, nonSelectedRequests, selectedRequests, date);
+      nonSelectedRequests = nonSelectedRequests === [] ? false : nonSelectedRequests;
 
       context.setProperties({
           isTasksCreated: true,

@@ -22,7 +22,9 @@ export default function requestCanBeDone(team, requests, selectedRequests, date)
   let tasksPlane = [];
   requestList.forEach(request => {
     let requestStart = dateNullable(new Date(dateForm(currentDate)));
-    requestStart.setUTCHours(lastRequest.end.getUTCHours());
+    console.log(requestStart);
+    requestStart.setHours(lastRequest.end.getHours());
+    console.log(requestStart);
 
     if (!isEmptyDay) {
       requestStart.setUTCHours(requestStart.getUTCHours() + 1);
@@ -34,6 +36,9 @@ export default function requestCanBeDone(team, requests, selectedRequests, date)
     if (requestInfo.end.getTime() <= shiftEnd.getTime()) {
       lastRequest = requestInfo;
       isEmptyDay = false;
+
+      request.set('planeDateStart', requestStart);
+      request.save();
 
       tasksPlane.push(request);
     }
@@ -157,7 +162,7 @@ function getRequestInfo(request, currentDate, start) {
     requestStart.setUTCMinutes(request.get("dateStart").getUTCMinutes());
   }
 
-  let requestEnd = new Date(currentDate);
+  let requestEnd = new Date(dateForm(currentDate));
   requestEnd.setUTCHours(requestStart.getUTCHours() + requestDuration.hours);
   requestEnd.setUTCMinutes(requestStart.getUTCMinutes() + requestDuration.minutes);
 
