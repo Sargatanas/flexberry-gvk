@@ -9,15 +9,18 @@ export default function requestCanBeDone(team, requests, selectedRequests, date)
   let teamRequests = [...selectedRequests];
 
   let lastRequest = getLastRequest(teamRequests, date);
+  let isEmptyDay = lastRequest ? false : true;
 
   let currentDate = date;
   currentDate = dateNullable(currentDate);
 
-  let shiftEnd = new Date(currentDate);
-  shiftEnd.setUTCHours(team.get('shiftEnd').getUTCHours());
+  let shiftStart = new Date(dateForm(currentDate));
+  shiftStart.setHours(team.get('shiftStart').getHours());
+  let shiftEnd = new Date(dateForm(currentDate));
+  shiftEnd.setHours(team.get('shiftEnd').getHours() + 1);
 
-  lastRequest = lastRequest ? getRequestInfo(lastRequest, currentDate) : getRequestInfo(lastRequest, currentDate, currentDate);
-  let isEmptyDay = lastRequest ? false : true;
+  lastRequest = lastRequest ? getRequestInfo(lastRequest, currentDate) : getRequestInfo(lastRequest, currentDate, shiftStart);
+  console.log(lastRequest);
 
   let tasksPlane = [];
   requestList.forEach(request => {
@@ -25,9 +28,9 @@ export default function requestCanBeDone(team, requests, selectedRequests, date)
     requestStart.setHours(lastRequest.end.getHours());
 
     if (!isEmptyDay) {
-      requestStart.setUTCHours(requestStart.getUTCHours() + 1);
+      requestStart.setHours(requestStart.getHours() + 1);
     }
-    requestStart.setUTCMinutes(lastRequest.end.getUTCMinutes());
+    requestStart.setMinutes(lastRequest.end.getMinutes());
 
     let requestInfo = getRequestInfo(request, currentDate, requestStart);
 
@@ -35,6 +38,7 @@ export default function requestCanBeDone(team, requests, selectedRequests, date)
       lastRequest = requestInfo;
       isEmptyDay = false;
 
+      console.log(request.get('index'), requestInfo.end.getTime(), shiftEnd.getTime());
       request.set('planeDateStart', requestStart);
       request.save();
 
@@ -58,13 +62,13 @@ function sortTaskList(requestList) {
 
     let fullDuration = getFullDuration(tasks, 'planeDuration');
     let duration = {
-      hours: fullDuration.getUTCHours(),
-      minutes: fullDuration.getUTCMinutes(),
+      hours: fullDuration.getHours(),
+      minutes: fullDuration.getMinutes(),
     }
 
     let time = duration.hours * 60 + duration.minutes;
 
-    let importance = getSummmaryImportance(tasks);
+    let importance = getImportance(tasks);
 
     sortTaskList.push({
       index: index,
@@ -85,7 +89,7 @@ function sortTaskList(requestList) {
   return newTaskList;
 }
 
-function getSummmaryImportance(tasks) {
+function getImportance(tasks) {
   let summryImpotance = 0;
   tasks.forEach((task) => {
     let current = 0;
@@ -113,25 +117,21 @@ function getSummmaryImportance(tasks) {
 
 function getLastRequest(requests, date) {
   let lastRequest = '';
+  let lastDate = new Date(dateForm(date));
 
   requests.forEach((request) => {
-    let requestDate = new Date(request.get('dateStart'));
-    requestDate = dateNullable(requestDate);
+    let requestDate = new Date(dateForm(request.get('dateStart')));
 
-    if (requestDate.getTime() === date.getTime()) {
-      lastRequest = lastRequest === '' ? request : lastRequest;
-
-      let lastTime = lastRequest.get("dateStart").getUTCHours() * 60 + lastRequest.get("dateStart").getUTCMinutes();
-      let currentTime = request.get("dateStart").getUTCHours() * 60 + request.get("dateStart").getUTCMinutes();
-
-      lastRequest = currentTime > lastTime ? request : lastRequest;
+    if (dateNullable(lastDate).getTime() === dateNullable(requestDate).getTime()) {
+      lastRequest = requestDate.getTime() >= lastDate.getTime() ? request : lastRequest;
+      lastDate = requestDate;
     }
   });
 
   return lastRequest;
 }
 
-function getRequestInfo(request, currentDate, start) {
+function getRequestInfo(request, currentDate, dateStart) {
   let requestDuration = {
     hours: 0,
     minutes: 0
@@ -152,17 +152,17 @@ function getRequestInfo(request, currentDate, start) {
   }
 
   let requestStart = '';
-  if (start) {
-    requestStart = start;
+  if (dateStart) {
+    requestStart = dateStart;
   } else {
     requestStart = new Date(dateForm(currentDate));
-    requestStart.setUTCHours(request.get("dateStart").getUTCHours());
-    requestStart.setUTCMinutes(request.get("dateStart").getUTCMinutes());
+    requestStart.setHours(request.get("dateStart").getHours());
+    requestStart.setMinutes(request.get("dateStart").getMinutes());
   }
 
   let requestEnd = new Date(dateForm(currentDate));
-  requestEnd.setUTCHours(requestStart.getUTCHours() + requestDuration.hours);
-  requestEnd.setUTCMinutes(requestStart.getUTCMinutes() + requestDuration.minutes);
+  requestEnd.setHours(requestStart.getHours() + requestDuration.hours);
+  requestEnd.setMinutes(requestStart.getMinutes() + requestDuration.minutes);
 
   return {
     request: request,

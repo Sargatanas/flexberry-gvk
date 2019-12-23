@@ -153,24 +153,26 @@ export default Ember.Controller.extend({
       },
 
       setDefaulData() {
-          this.setProperties({
-              isShowButtons: true,
-              inputTeamId: '101',
-              inputDate: '2019-11-26',
-              errors: {
-                  team: [],
-                  date: []
-              },
-              errorsStyle: '',
-              date: {
-                  id: new Date('2019-11-26').getDay() - 1,
-                  value: dateNullable(new Date('2019-11-26'))
-              }
-          });
-          this.createTask();
+        let date = '2019-11-28';
+        let teamId = '101';
+
+        this.setProperties({
+            isShowButtons: true,
+            inputTeamId: teamId,
+            inputDate: date,
+            errors: {
+                team: [],
+                date: []
+            },
+            errorsStyle: '',
+            date: {
+                id: new Date(date).getDay() - 1,
+                value: dateNullable(new Date(date))
+            }
+        });
+        this.createTask();
       }
   },
-
 
   async selectRecords(name, projectionName, parameters, object) {
     let store = this.store;
@@ -197,7 +199,6 @@ export default Ember.Controller.extend({
 
     return selectedRecords;
   },
-
 
   async createTask() {
       this.setProperties({
@@ -262,7 +263,6 @@ export default Ember.Controller.extend({
       });
 
       nonSelectedRequests = requestCanBeDone(currentTeam, nonSelectedRequests, selectedRequests, date);
-      nonSelectedRequests = nonSelectedRequests === [] ? false : nonSelectedRequests;
 
       context.setProperties({
           isTasksCreated: true,
