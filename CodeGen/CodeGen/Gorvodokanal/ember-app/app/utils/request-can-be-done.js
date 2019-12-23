@@ -14,7 +14,7 @@ export default function requestCanBeDone(team, requests, selectedRequests, date)
   currentDate = dateNullable(currentDate);
 
   let shiftEnd = new Date(currentDate);
-  shiftEnd.setHours(team.get('shiftEnd').getUTCHours());
+  shiftEnd.setUTCHours(team.get('shiftEnd').getUTCHours());
 
   lastRequest = lastRequest ? getRequestInfo(lastRequest, currentDate) : getRequestInfo(lastRequest, currentDate, currentDate);
   let isEmptyDay = lastRequest ? false : true;
@@ -23,22 +23,17 @@ export default function requestCanBeDone(team, requests, selectedRequests, date)
   requestList.forEach(request => {
     let requestStart = dateNullable(new Date(dateForm(currentDate)));
     requestStart.setUTCHours(lastRequest.end.getUTCHours());
+
     if (!isEmptyDay) {
       requestStart.setUTCHours(requestStart.getUTCHours() + 1);
     }
     requestStart.setUTCMinutes(lastRequest.end.getUTCMinutes());
 
-    let taskInfo = getRequestInfo(request, currentDate, requestStart);
+    let requestInfo = getRequestInfo(request, currentDate, requestStart);
 
-    if (taskInfo.end.getTime() <= shiftEnd.getTime()) {
-     lastRequest = taskInfo;
+    if (requestInfo.end.getTime() <= shiftEnd.getTime()) {
+      lastRequest = requestInfo;
       isEmptyDay = false;
-
-      request.set('currentDate', dateForm(currentDate));
-      request.set('startTime', {
-        hours: taskInfo.start.getUTCHours(),
-        minutes: taskInfo.start.getUTCMinutes(),
-      });
 
       tasksPlane.push(request);
     }
@@ -157,7 +152,7 @@ function getRequestInfo(request, currentDate, start) {
   if (start) {
     requestStart = start;
   } else {
-    requestStart = new Date(currentDate);
+    requestStart = new Date(dateForm(currentDate));
     requestStart.setUTCHours(request.get("dateStart").getUTCHours());
     requestStart.setUTCMinutes(request.get("dateStart").getUTCMinutes());
   }

@@ -111,7 +111,6 @@ export default Ember.Controller.extend({
                   name: '',
                   error: ''
               };
-              console.log(teamErrors);
           } else if (isNaN(teamIndex) || (Number(teamIndex) < 1)) {
               errorElement.name = 'add-team-id';
               errorElement.content = 'Номер бригады должен выражаться положительным целым числом';
@@ -133,7 +132,7 @@ export default Ember.Controller.extend({
                 error: ''
             };
           }
-          
+
           this.setProperties({
             errors: {
               team: teamErrors,
