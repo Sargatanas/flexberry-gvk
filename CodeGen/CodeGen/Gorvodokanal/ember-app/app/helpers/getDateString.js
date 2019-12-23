@@ -6,7 +6,7 @@ export function getDateString(params) {
     let date = params[0];
     let index = params[1];
 
-    let currentDate = index ? dateShift(index, date) : date;
+    let currentDate = index !== '' ? dateShift(index, date) : date;
     return dateString(currentDate);
 }
 

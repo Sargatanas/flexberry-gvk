@@ -22,9 +22,7 @@ export default function requestCanBeDone(team, requests, selectedRequests, date)
   let tasksPlane = [];
   requestList.forEach(request => {
     let requestStart = dateNullable(new Date(dateForm(currentDate)));
-    console.log(requestStart);
     requestStart.setHours(lastRequest.end.getHours());
-    console.log(requestStart);
 
     if (!isEmptyDay) {
       requestStart.setUTCHours(requestStart.getUTCHours() + 1);
