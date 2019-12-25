@@ -1,33 +1,42 @@
-<td class="element-body__cell">
-    {{hour}}:00
-</td>
-<td class="element-body__cell query-hour-{{hour}}"
-    data-name="{{getDateForm date}}">
-        {{#each requestList as |request|}}
-            {{form-task comment='Это выбранные'
-                        requestClass="element-body-task_resize"
-                        dayId=dayId
-                        endHour=endHour
-                        currentHour=hour
-                        requests=(getTask request
-                                          request.dateStart
-                                          currentDate
-                                          hour)
-                        free=false}}
-        {{/each}}
-        {{#each freeRequestList as |request|}}
-          {{form-task comment='Это призрачные'
-                      requestClass="element-body-task_resize"
-                      shadowRequestClass='element-body-task_shadow'
-                      team=team
-                      lastRequest=lastRequest
-                      dayId=dayId
-                      endHour=endHour
-                      currentHour=hour
-                      requests=(getTask request
-                                        request.planeDateStart
-                                        currentDate
-                                        hour)
-                      free=true}}
-        {{/each}}
-</td>
+{{#if status}}
+  <td class="element-body__cell element-body__cell_empty"></td>
+  <td class="element-body__cell element-body__cell_empty"></td>
+{{else}}
+  <td class="element-body__cell">
+      {{hour}}:00
+  </td>
+  <td class="element-body__cell query-hour-{{hour}}"
+      data-name="{{getDateForm date}}">
+    {{#each requestList as |request|}}
+        {{form-task comment='Это выбранные'
+                    requestClass="element-body-task_resize"
+                    reestablishRequestClass=''
+                    dayId=dayId
+                    endHour=endHour
+                    currentHour=hour
+                    isShowTable=isShowTable
+                    requests=(getTask request
+                                      currentDate
+                                      hour)
+                    free=false
+                    reestablish=false}}
+    {{/each}}
+    {{#each freeRequestList as |request|}}
+      {{form-task comment='Это призрачные'
+                  requestClass="element-body-task_resize"
+                  shadowRequestClass='element-body-task_shadow'
+                  reestablishRequestClass=''
+                  team=team
+                  lastRequest=lastRequest
+                  dayId=dayId
+                  endHour=endHour
+                  currentHour=hour
+                  isShowTable=isShowTable
+                  requests=(getTask request
+                                    currentDate
+                                    hour)
+                  free=true
+                  reestablish=false}}
+    {{/each}}
+  </td>
+{{/if}}

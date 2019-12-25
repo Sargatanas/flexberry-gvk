@@ -6,7 +6,7 @@ import dateNullable from '../utils/date-nullable';
 import dateString from '../utils/date-string';
 import dateStringToForm from '../utils/data-string-to-form';
 import requestCanBeDone from '../utils/request-can-be-done';
-import lastRequest from '../utils/last-request';
+import getLastRequest from '../utils/get-last-request';
 
 import { Query } from 'ember-flexberry-data';
 
@@ -171,7 +171,16 @@ export default Ember.Controller.extend({
             }
         });
         this.createTask();
-      }
+      },
+
+      reloadTable() {
+        this.setProperties({
+          isShowButtons: false,
+          isTasksCreated: false,
+          isShowTable: false,
+        });
+        this.createTask();
+      },
   },
 
   async selectRecords(name, projectionName, parameters, object) {
@@ -201,9 +210,7 @@ export default Ember.Controller.extend({
   },
 
   async createTask() {
-      this.setProperties({
-          isShowTable: false
-      });
+      this.set('isShowTable', false);
 
       let teamIndex = Number(this.get('inputTeamId'));
 
@@ -263,7 +270,7 @@ export default Ember.Controller.extend({
       });
 
       nonSelectedRequests = requestCanBeDone(currentTeam, nonSelectedRequests, selectedRequests, date);
-      let lastRequest = lastRequest(selectedRequests, date);
+      let lastRequest = getLastRequest(selectedRequests, date, currentTeam);
 
       context.setProperties({
           isTasksCreated: true,

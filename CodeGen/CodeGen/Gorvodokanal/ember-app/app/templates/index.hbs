@@ -47,7 +47,7 @@
         <h2 class="form-body__title">
             Расписание на неделю
         </h2>
-        <main
+        <div
             class="form-body"
             id="table">
                 {{#each week as |day|}}
@@ -60,9 +60,10 @@
                                  lastRequest=lastRequest
                                  shiftOptions=teamShiftInfo
                                  team=teamList
+                                 isShowTable=isShowTable
                                  totalTask=(getTotalTask (getDateForm (getDate day.id date.value)) taskCount)}}
                 {{/each}}
-        </main>
+        </div>
     {{/if}}
     {{#if isTasksCreated}}
         <footer class="form-footer">
@@ -78,6 +79,7 @@
             {{else}}
               <div>-нет заявок-</div>
             {{/if}}
+            <div class="form-footer__reload" onclick={{action "reloadTable"}}></div>
         </footer>
     {{/if}}
 </div>

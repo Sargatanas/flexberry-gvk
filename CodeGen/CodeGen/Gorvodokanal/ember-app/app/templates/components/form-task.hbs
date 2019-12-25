@@ -1,5 +1,5 @@
 {{#each requests as |request|}}
-  <div class="element-body-task {{requestClass}} {{shadowRequestClass}}"
+  <div class="element-body-task {{requestClass}} {{shadowRequestClass}} {{reestablishRequestClass}}"
        {{action "toggleTask" style on='click'}}
        style="top: {{getTaskShift request free}}px;
               z-index: {{getZIndex currentHour endHour dayId}}">
@@ -38,17 +38,27 @@
         <span class="element-body-task-detail__header">Время начала: </span>
         {{getTimeString request.dateStart 'full' 'UTC'}}
       </div>
-      <button onclick={{action "disappoint" request}} class="element-body-task__button">
-        Открепить заявку
-      </button>
     {{else}}
       <div class="element-body-task-detail">
         <span class="element-body-task-detail__header">Предварительное время начала: </span>
         {{getTimeString request.planeDateStart 'full' 'UTC'}}
       </div>
-      <button onclick={{action "appoint" request team lastRequest}} class="element-body-task__button">
-        Присвоить заявку бригаде
+    {{/if}}
+
+    {{#if reestablish}}
+      <button onclick={{action "appoint" request team lastRequest isShowTable}} class="element-body-task__button">
+        Восстановить заявку
       </button>
+    {{else}}
+      {{#if (invertBool free)}}
+        <button onclick={{action "disappoint" request isShowTable}} class="element-body-task__button">
+          Открепить заявку
+        </button>
+      {{else}}
+        <button onclick={{action "appoint" request team lastRequest isShowTable}} class="element-body-task__button">
+          Присвоить заявку бригаде
+        </button>
+      {{/if}}
     {{/if}}
   </div>
 {{/each}}

@@ -1,16 +1,10 @@
 import Ember from 'ember';
+import getTasks from '../utils/get-tasks';
 
 export function getTaskList(params/*, hash*/) {
   let request = params[0];
 
-  let tasks = [];
-  let taskList = request.get('tasks');
-  taskList.forEach(taskListElement => {
-    let task = taskListElement.get('task');
-    tasks.push(task);
-  });
-
-  return tasks;
+  return getTasks(request);
 }
 
 export default Ember.Helper.helper(getTaskList);

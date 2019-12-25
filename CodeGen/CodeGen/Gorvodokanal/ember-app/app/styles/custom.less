@@ -108,8 +108,6 @@
   width: 100%;
   max-width: 1200px;
 
-  margin: auto;
-
   font-size: 0.9em;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
@@ -280,6 +278,9 @@ background: rgb(226, 226, 226);
     .form-body__element_current & {
       background: rgb(186, 223, 161);
     }
+    .form-body__element &_empty {
+      background: rgba(0, 0, 0, 0.2);
+    }
 
     &-content {
       margin-left: 5px;
@@ -370,6 +371,15 @@ background: rgb(226, 226, 226);
       position: static;
     }
 
+    &_reestablish {
+      color: red;
+      opacity: 0.5;
+
+      &.element-body-task_open {
+        opacity: 1;
+      }
+    }
+
     &-detail {
       width: 100%;
 
@@ -415,5 +425,20 @@ background: rgb(226, 226, 226);
   }
   &__button {
     margin-top: 10px;
+  }
+
+  &__reload {
+    position: fixed;
+    right: 15px;
+    bottom: 55px;
+
+    width: 40px;
+    height: 40px;
+
+    border-radius: 10px;
+    background: rgb(79, 115, 176) url('/assets/images/reload.png') no-repeat 50% 50%;
+    background-size: 60% auto;
+
+    cursor: pointer;
   }
 }
