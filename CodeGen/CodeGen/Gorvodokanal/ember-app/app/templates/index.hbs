@@ -37,18 +37,21 @@
                 {{currentDateString}}
         </label>
         {{input-error errors=errors.date}}
-        <div class="form__comment form-comment_inner">
+        <div class="form__comment form__comment_inner">
             Для применения новых параметров нажмите enter
         </div>
+        {{!-- {{#if isShowTable}}
+          {{form-team teams=teamList}}
+        {{/if}} --}}
     </header>
 
     {{#if isShowTable}}
-        {{form-team teams=teamList}}
-        <h2 class="form-body__title">
+    <main class="form-body">
+      <h2 class="form-body__title">
             Расписание на неделю
         </h2>
         <div
-            class="form-body"
+            class="form-body__content"
             id="table">
                 {{#each week as |day|}}
                     {{table-form hours=hours
@@ -64,12 +67,14 @@
                                  totalTask=(getTotalTask (getDateForm (getDate day.id date.value)) taskCount)}}
                 {{/each}}
         </div>
+    </main>
     {{/if}}
     {{#if isTasksCreated}}
         <footer class="form-footer">
             <h2 class="form-footer__title">
                 Свободные заявки
             </h2>
+            <div class="form-footer__hr"></div>
             {{#if freeRequestList}}
               {{form-task requestClass="element-body-task_not-table"
                           teamId=inputTeamId
