@@ -1,4 +1,9 @@
-<h3 class="ui header">{{t 'forms.i-i-s-gorvodokanal-request-e.caption'}}</h3>
+<h3 class="ui header">
+  {{t 'forms.i-i-s-gorvodokanal-request-e.caption'}} #
+  {{#unless model.isNew}}
+    {{model.index}}
+  {{/unless}}
+</h3>
 
 <form class="ui form flexberry-vertical-form" role="form">
   {{flexberry-error error=error}}
@@ -27,22 +32,23 @@
       </button>
     </div>
   </div>
-  <div class="field">
-  <label>{{t 'forms.i-i-s-gorvodokanal-request-e.address-caption'}}</label>
-  {{
-    flexberry-lookup
-    choose='showLookupDialog'
-    remove='removeLookupValue'
-    value=model.address
 
-    relationName='address'
-    projection='AddressL'
-    title=(t 'forms.i-i-s-gorvodokanal-request-e.address-caption')
-    readonly=readonly
-    componentName="addressLookup"
-  }}
-  {{flexberry-validationmessage error=model.errors.address pointing="pointing"}}
-</div>
+  <div class="field">
+    <label>{{t 'forms.i-i-s-gorvodokanal-request-e.address-caption'}}</label>
+    {{
+      flexberry-lookup
+      choose='showLookupDialog'
+      remove='removeLookupValue'
+      value=model.address
+
+      relationName='address'
+      projection='AddressL'
+      title=(t 'forms.i-i-s-gorvodokanal-request-e.address-caption')
+      readonly=readonly
+      componentName="addressLookup"
+    }}
+    {{flexberry-validationmessage error=model.errors.address pointing="pointing"}}
+  </div>
 
 <div class="field">
   <label>{{t 'forms.i-i-s-gorvodokanal-request-e.isAppointed-caption'}}</label>
@@ -62,12 +68,13 @@
     choose='showLookupDialog'
     remove='removeLookupValue'
     value=model.team
-
     relationName='team'
     projection='TeamL'
     title=(t 'forms.i-i-s-gorvodokanal-request-e.team-caption')
-    readonly=readonly
+    readonly=false
     componentName="teamLookup"
+    dropdown=true
+    displayAttributeName='index'
   }}
   {{flexberry-validationmessage error=model.errors.team pointing="pointing"}}
 </div>

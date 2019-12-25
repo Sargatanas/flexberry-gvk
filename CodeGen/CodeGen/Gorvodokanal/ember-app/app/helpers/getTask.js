@@ -6,15 +6,15 @@ export function getTask(params) {
   let currentDate = new Date(params[1]);
   let currentHour = Number(params[2]);
 
-  let taskDate = task.get('dateStart') ? task.get('dateStart') : task.get('planeDateStart');
+  let taskDate = task.get('dateStart');
 
   if (taskDate) {
     let taskHour = taskDate.getUTCHours();
 
     if ((currentDate.getTime() === dateNullable(taskDate).getTime()) && (currentHour === taskHour)) {
-      return [task];
+      return task;
     }
-  } 
+  }
   return '';
 }
 

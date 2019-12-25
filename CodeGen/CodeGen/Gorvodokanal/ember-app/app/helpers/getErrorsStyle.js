@@ -4,7 +4,7 @@ export function getErrorsStyle(params) {
   let errors = params[0];
 
   if (errors && (errors.length === 0)) {
-    return 'form-header-errors_none';
+    return 'custom-form-header-errors_none';
   }
   return '';
 }

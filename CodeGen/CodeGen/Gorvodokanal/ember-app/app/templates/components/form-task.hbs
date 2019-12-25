@@ -1,64 +1,63 @@
-{{#each requests as |request|}}
-  <div class="element-body-task {{requestClass}} {{shadowRequestClass}} {{reestablishRequestClass}}"
-       {{action "toggleTask" style on='click'}}
-       style="top: {{getTaskShift request free}}px;
-              z-index: {{getZIndex currentHour endHour dayId}}">
+<div class="element-body-task {{requestClass}} {{shadowRequestClass}} {{reestablishRequestClass}}"
+      {{action "toggleTask" style on='click'}}
+      style="top: {{getTaskShift request free}}px;
+            z-index: {{getZIndex currentHour endHour dayId}}">
 
-    <div class="element-body-task-detail">
-      <span class="element-body-task-detail__header">№ заявки:</span>
-      {{request.index}}
-    </div>
-
-    <div class="element-body-task-detail">
-      <span class="element-body-task-detail__header">Срочность: </span>
-      {{request.importance}}
-    </div>
-
-    <ol class="element-body-task-detail element-body-task-detail_list">
-      <li class="element-body-task-detail__header" value="0">Задачи:</li>
-        {{#each (getTaskList request) as |requestElement|}}
-          <li class="element-body-task-detail__element">
-             {{requestElement.content}}
-          </li>
-        {{/each}}
-    </ol>
-
-    <div class="element-body-task-detail">
-      <span class="element-body-task-detail__header">Предварительная длительность работ: </span>
-      {{getTimeString request.fullDuration 'full'}}
-    </div>
-
-    <div class="element-body-task-detail">
-      <span class="element-body-task-detail__header">Адрес:</span>
-      {{request.fullAddress}}
-    </div>
-
-    {{#if (invertBool free)}}
-      <div class="element-body-task-detail">
-        <span class="element-body-task-detail__header">Время начала: </span>
-        {{getTimeString request.dateStart 'full' 'UTC'}}
-      </div>
-    {{else}}
-      <div class="element-body-task-detail">
-        <span class="element-body-task-detail__header">Предварительное время начала: </span>
-        {{getTimeString request.planeDateStart 'full' 'UTC'}}
-      </div>
-    {{/if}}
-
-    {{#if reestablish}}
-      <button onclick={{action "appoint" request team lastRequest isShowTable}} class="element-body-task__button">
-        Восстановить заявку
-      </button>
-    {{else}}
-      {{#if (invertBool free)}}
-        <button onclick={{action "disappoint" request isShowTable}} class="element-body-task__button">
-          Открепить заявку
-        </button>
-      {{else}}
-        <button onclick={{action "appoint" request team lastRequest isShowTable}} class="element-body-task__button">
-          Присвоить заявку бригаде
-        </button>
-      {{/if}}
-    {{/if}}
+  <div class="element-body-task-detail">
+    <span class="element-body-task-detail__header">№ заявки:</span>
+    {{request.index}}
   </div>
-{{/each}}
+
+  <div class="element-body-task-detail">
+    <span class="element-body-task-detail__header">Срочность: </span>
+    {{request.importance}}
+  </div>
+
+  <ol class="element-body-task-detail element-body-task-detail_list">
+    <li class="element-body-task-detail__header" value="0">Задачи:</li>
+      {{#each (getTaskList request) as |requestElement|}}
+        <li class="element-body-task-detail__element">
+            {{requestElement.content}}
+        </li>
+      {{/each}}
+  </ol>
+
+  <div class="element-body-task-detail">
+    <span class="element-body-task-detail__header">Предварительная длительность работ: </span>
+    {{getTimeString request.fullDuration 'full'}}
+  </div>
+
+  <div class="element-body-task-detail">
+    <span class="element-body-task-detail__header">Адрес:</span>
+    {{request.fullAddress}}
+  </div>
+
+  {{#if (invertBool free)}}
+    <div class="element-body-task-detail">
+      <span class="element-body-task-detail__header">Время начала: </span>
+      {{getTimeString request.dateStart 'full' 'UTC'}}
+    </div>
+  {{else}}
+    <div class="element-body-task-detail">
+      <span class="element-body-task-detail__header">Выбрать время выполнения заявки: </span>
+      {{#each timeSpaces as |timeSpace|}}
+        <div class="element-body-task-detail__selector"
+             onclick={{action 'appoint' request team timeSpace.start}}>
+          {{getTimeString timeSpace.start 'full' 'UTC'}}-{{getTimeString timeSpace.start 'full' 'UTC' timeDuration}}
+        </div>
+      {{/each}}
+    </div>
+  {{/if}}
+
+  {{#if reestablish}}
+    {{!-- <button onclick={{action "appoint" request team lastRequest isShowTable}} class="element-body-task__button">
+      Восстановить заявку
+    </button> --}}
+  {{else}}
+    {{#if (invertBool free)}}
+      <button onclick={{action "disappoint" request isShowTable}} class="element-body-task__button">
+        Открепить заявку
+      </button>
+    {{/if}}
+  {{/if}}
+</div>

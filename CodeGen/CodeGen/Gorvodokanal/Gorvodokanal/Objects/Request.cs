@@ -69,7 +69,7 @@ namespace IIS.Gorvodokanal
     public class Request : ICSSoft.STORMNET.DataObject
     {
         
-        private int fIndex = 1;
+        private int fIndex = 1000;
         
         private IIS.Gorvodokanal.tAppointed fIsAppointed;
         

@@ -1,5 +1,5 @@
-<div class="form">
-    <div class="form__comment">
+<div class="custom-form">
+    <div class="custom-form__comment">
         Для теста рекомендуется использовать следующие параметры:
         <ol>
             <li>дефолтные значения</li>
@@ -7,17 +7,17 @@
             <li>бригада 102, дата 26.11.2019</li>
         </ol>
         {{#if (invertBool isShowButtons)}}
-              <button class="form-header__element form-header__element_button form-header__element_small-button"
+              <button class="custom-form-header__element custom-form-header__element_button custom-form-header__element_small-button"
                       {{action "setDefaulData"}}>
                   Заполнить по дефолту
               </button>
         {{/if}}
     </div>
 
-    <header class="form-header">
-        <label class="form-header__element" for="team-id">
+    <header class="custom-form-header">
+        <label class="custom-form-header__element" for="team-id">
             Номер бригады:
-            {{input class="form-header__input"
+            {{input class="custom-form-header__input"
                     type="number"
                     id="add-team-id"
                     enter="validateInputs"
@@ -26,10 +26,10 @@
         {{input-error errors=errors.team}}
 
         <label
-            class="form-header__element"
+            class="custom-form-header__element"
             for="add-date">
                 Дата (в формате ДД.ММ.ГГГГ):
-                {{input class="form-header__input"
+                {{input class="custom-form-header__input"
                         type="date"
                         id="add-date"
                         enter="validateInputs"
@@ -37,21 +37,18 @@
                 {{currentDateString}}
         </label>
         {{input-error errors=errors.date}}
-        <div class="form__comment form__comment_inner">
+        <div class="custom-form__comment custom-form__comment_inner">
             Для применения новых параметров нажмите enter
         </div>
-        {{!-- {{#if isShowTable}}
-          {{form-team teams=teamList}}
-        {{/if}} --}}
     </header>
 
     {{#if isShowTable}}
-    <main class="form-body">
-      <h2 class="form-body__title">
+    <main class="custom-form-body">
+      <h2 class="custom-form-body__title">
             Расписание на неделю
         </h2>
         <div
-            class="form-body__content"
+            class="custom-form-body__content"
             id="table">
                 {{#each week as |day|}}
                     {{table-form hours=hours
@@ -70,21 +67,25 @@
     </main>
     {{/if}}
     {{#if isTasksCreated}}
-        <footer class="form-footer">
-            <h2 class="form-footer__title">
+        <footer class="custom-form-footer">
+            <h2 class="custom-form-footer__title">
                 Свободные заявки
             </h2>
-            <div class="form-footer__hr"></div>
+            <div class="custom-form-footer__hr"></div>
             {{#if freeRequestList}}
-              {{form-task requestClass="element-body-task_not-table"
-                          teamId=inputTeamId
-                          requests=freeRequestList
-                          team=teamList
-                          free=true}}
+              {{#each freeRequestList as |requestElement|}}
+                {{form-task requestClass="element-body-task_not-table"
+                                 teamId=inputTeamId
+                                 request=requestElement.request
+                                 timeSpaces=requestElement.planeTimeSpaces
+                                 timeDuration=requestElement.timeDuration
+                                 team=teamList
+                                 reloadTable='reloadTable'
+                                 free=true}}
+              {{/each}}
             {{else}}
               <div>-нет заявок-</div>
             {{/if}}
-            {{!-- <div class="form-footer__reload" onclick={{action "reloadTable"}}></div> --}}
         </footer>
     {{/if}}
 </div>

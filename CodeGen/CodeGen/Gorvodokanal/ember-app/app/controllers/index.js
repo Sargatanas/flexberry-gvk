@@ -53,7 +53,7 @@ export default Ember.Controller.extend({
       team: [],
       date: []
   },
-  errorsStyle: 'form-header-errors_none',
+  errorsStyle: 'custom-form-header-errors_none',
   currentDateString: '',
   isShowButtons: false,
 

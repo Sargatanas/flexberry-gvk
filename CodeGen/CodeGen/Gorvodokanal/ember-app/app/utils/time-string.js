@@ -1,8 +1,14 @@
 import dateForm from './date-form';
 
-export default function timeString(date, status, parameterUTC) {
+export default function timeString(date, status, parameterUTC, shift) {
   let currentDate = new Date(dateForm(date));
   let timeString = '';
+
+  if (shift) {
+    currentDate.setHours(currentDate.getHours() + shift.getHours());
+    currentDate.setMinutes(currentDate.getMinutes() + shift.getMinutes());
+    currentDate.setSeconds(currentDate.getSeconds() + shift.getSeconds());
+  }
 
   if (parameterUTC) {
     timeString += currentDate.getUTCHours() <= 9 ? '0' + currentDate.getUTCHours() : currentDate.getUTCHours();

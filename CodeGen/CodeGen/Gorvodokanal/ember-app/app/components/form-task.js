@@ -25,13 +25,13 @@ export default Ember.Component.extend({
             }
         },
 
-        async appoint(request, teamList, lastRequest) {
+        async appoint(request, teamList, timeSpace) {
           let team = teamList[0];
+
           request.set('team', team);
           request.set('isAppointed', 'назначено');
 
-          let dateStart = new Date(dateForm(lastRequest.end));
-          dateStart.setHours(dateStart.getHours() + lastRequest.shift);
+          let dateStart = new Date(dateForm(timeSpace));
           request.set('dateStart', dateStart);
           request.set('planeDateStart', null);
 

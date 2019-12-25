@@ -6,7 +6,6 @@ export default Ember.Component.extend({
 
     actions: {
       reloadTable() {
-        console.log('123');
         this.sendAction('reloadTable');
       }
     },

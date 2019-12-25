@@ -3,7 +3,7 @@ import DS from 'ember-data';
 import { Projection } from 'ember-flexberry-data';
 
 export let Model = Ember.Mixin.create({
-  index: DS.attr('number'),
+  index: DS.attr('number', { defaultValue: 1000 }),
   isAppointed: DS.attr('i-i-s-gorvodokanal-t-appointed'),
   dateStart: DS.attr('date'),
   isCompleted: DS.attr('boolean', { defaultValue: false }),
@@ -35,7 +35,7 @@ export function defineNamespace(modelClass) {
 
 export let defineProjections = function (modelClass) {
   modelClass.defineProjection('RequestE', 'i-i-s-gorvodokanal-request', {
-    index: Projection.attr('', { index: 0, hidden: true }),
+    index: Projection.attr('', { index: 0}),
     planeDateStart: Projection.attr('', { index: 1, hidden: true }),
     isAppointed: Projection.attr('Отметка о назначении', { index: 3 }),
     dateStart: Projection.attr('Дата выполнения работ', { index: 5 }),

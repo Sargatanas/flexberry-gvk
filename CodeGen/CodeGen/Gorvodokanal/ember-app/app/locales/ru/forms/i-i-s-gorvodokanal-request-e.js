@@ -1,6 +1,6 @@
 export default {
   caption: 'Заявка',
-  'index-caption': '',
+  'index-caption': 'Индекс',
   'isAppointed-caption': 'Отметка о назначении',
   'dateStart-caption': 'Дата выполнения работ',
   'isCompleted-caption': 'Отметка о выполнении',

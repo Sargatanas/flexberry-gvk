@@ -8,37 +8,19 @@
   <td class="element-body__cell query-hour-{{hour}}"
       data-name="{{getDateForm date}}">
     {{#each requestList as |request|}}
+      {{#if (getTask request currentDate hour)}}
         {{form-task comment='Это выбранные'
                     requestClass="element-body-task_resize"
-                    reestablishRequestClass=''
                     dayId=dayId
                     team=team
                     lastRequest=lastRequest
                     endHour=endHour
                     currentHour=hour
-                    requests=(getTask request
-                                      currentDate
-                                      hour)
+                    request=(getTask request currentDate hour)
                     free=false
                     reestablish=false
                     reloadTable='reloadTable'}}
-    {{/each}}
-    {{#each freeRequestList as |request|}}
-      {{form-task comment='Это призрачные'
-                  requestClass="element-body-task_resize"
-                  shadowRequestClass='element-body-task_shadow'
-                  reestablishRequestClass=''
-                  team=team
-                  lastRequest=lastRequest
-                  dayId=dayId
-                  endHour=endHour
-                  currentHour=hour
-                  requests=(getTask request
-                                    currentDate
-                                    hour)
-                  free=true
-                  reestablish=false
-                  reloadTable='reloadTable'}}
+      {{/if}}
     {{/each}}
   </td>
 {{/if}}
