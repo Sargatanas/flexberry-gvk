@@ -12,14 +12,16 @@
                     requestClass="element-body-task_resize"
                     reestablishRequestClass=''
                     dayId=dayId
+                    team=team
+                    lastRequest=lastRequest
                     endHour=endHour
                     currentHour=hour
-                    isShowTable=isShowTable
                     requests=(getTask request
                                       currentDate
                                       hour)
                     free=false
-                    reestablish=false}}
+                    reestablish=false
+                    reloadTable='reloadTable'}}
     {{/each}}
     {{#each freeRequestList as |request|}}
       {{form-task comment='Это призрачные'
@@ -31,12 +33,12 @@
                   dayId=dayId
                   endHour=endHour
                   currentHour=hour
-                  isShowTable=isShowTable
                   requests=(getTask request
                                     currentDate
                                     hour)
                   free=true
-                  reestablish=false}}
+                  reestablish=false
+                  reloadTable='reloadTable'}}
     {{/each}}
   </td>
 {{/if}}

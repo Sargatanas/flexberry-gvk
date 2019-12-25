@@ -25,8 +25,7 @@ export default Ember.Component.extend({
             }
         },
 
-        appoint(request, teamList, lastRequest) {
-          /* this.set('isShowTable', false); */
+        async appoint(request, teamList, lastRequest) {
           let team = teamList[0];
           request.set('team', team);
           request.set('isAppointed', 'назначено');
@@ -36,21 +35,20 @@ export default Ember.Component.extend({
           request.set('dateStart', dateStart);
           request.set('planeDateStart', null);
 
-          request.save();
+          let save = await request.save();
           this.set('free', false);
           this.set('reestablish', false);
           this.set('shadowRequestClass', '');
           this.set('reestablishRequestClass', '');
 
-          this.set('isShowTable', true);
+          this.sendAction('reloadTable');
         },
 
-        disappoint(request) {/*
-          this.set('isShowTable', false); */
+        async disappoint(request) {
           request.set('team', null);
           request.set('isAppointed', 'не назначено');
 
-          request.save();
+          let save = await request.save();
 
           this.set('reestablish', true);
           this.set('reestablishRequestClass', 'element-body-task_reestablish');
@@ -60,7 +58,7 @@ export default Ember.Component.extend({
             requestClass: 'element-body-task_resize'
           });
 
-          this.set('isShowTable', true);
+          this.sendAction('reloadTable');
         },
     },
 });

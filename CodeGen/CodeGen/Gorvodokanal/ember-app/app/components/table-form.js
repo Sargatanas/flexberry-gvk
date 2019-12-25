@@ -1,12 +1,9 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-    tagName: 'tr',
-    classNames: ['element-body__row'],
-
     actions: {
       reloadTable() {
-        console.log('123');
+        console.log('456');
         this.sendAction('reloadTable');
       }
     },

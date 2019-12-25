@@ -60,7 +60,7 @@
                                  lastRequest=lastRequest
                                  shiftOptions=teamShiftInfo
                                  team=teamList
-                                 isShowTable=isShowTable
+                                 reloadTable='reloadTable'
                                  totalTask=(getTotalTask (getDateForm (getDate day.id date.value)) taskCount)}}
                 {{/each}}
         </div>
@@ -79,7 +79,7 @@
             {{else}}
               <div>-нет заявок-</div>
             {{/if}}
-            <div class="form-footer__reload" onclick={{action "reloadTable"}}></div>
+            {{!-- <div class="form-footer__reload" onclick={{action "reloadTable"}}></div> --}}
         </footer>
     {{/if}}
 </div>
