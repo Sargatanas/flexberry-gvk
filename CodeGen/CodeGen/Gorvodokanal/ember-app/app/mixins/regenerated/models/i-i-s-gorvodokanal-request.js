@@ -56,13 +56,13 @@ export let defineProjections = function (modelClass) {
   modelClass.defineProjection('RequestL', 'i-i-s-gorvodokanal-request', {
     index: Projection.attr('', { index: 0, hidden: true }),
     address: Projection.belongsTo('i-i-s-gorvodokanal-address', 'Адрес', {
-      district: Projection.attr('Адрес', { index: 0 }),
-      street: Projection.attr('', { index: 1, hidden: true }),
-      house: Projection.attr('', { index: 2, hidden: true }),
-      build: Projection.attr('', { index: 3, hidden: true }),
-      porch: Projection.attr('', { index: 4, hidden: true }),
-      floor: Projection.attr('', { index: 5, hidden: true }),
-      apartment: Projection.attr('', { index: 6, hidden: true })
+      district: Projection.attr('Район', { index: 0, hidden: true }),
+      street: Projection.attr('Улица', { index: 1}),
+      house: Projection.attr('Дом', { index: 2}),
+      build: Projection.attr('Корпус', { index: 3}),
+      porch: Projection.attr('Подъезд', { index: 4}),
+      floor: Projection.attr('Этаж', { index: 5}),
+      apartment: Projection.attr('Квартира', { index: 6})
     }, { index: -1, hidden: true }),
 
     isAppointed: Projection.attr('Отметка о назначении', { index: 7 }),

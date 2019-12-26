@@ -50,7 +50,8 @@
     {{flexberry-validationmessage error=model.errors.address pointing="pointing"}}
   </div>
 
-<div class="field">
+<div class="field"
+     onclick={{action 'clearAppoint' model.isAppointed}}>
   <label>{{t 'forms.i-i-s-gorvodokanal-request-e.isAppointed-caption'}}</label>
   {{
     flexberry-dropdown
@@ -61,70 +62,77 @@
   {{flexberry-validationmessage error=model.errors.isAppointed pointing="pointing"}}
 </div>
 
-<div class="field">
-  <label>{{t 'forms.i-i-s-gorvodokanal-request-e.team-caption'}}</label>
-  {{
-    flexberry-lookup
-    choose='showLookupDialog'
-    remove='removeLookupValue'
-    value=model.team
-    relationName='team'
-    projection='TeamL'
-    title=(t 'forms.i-i-s-gorvodokanal-request-e.team-caption')
-    readonly=false
-    componentName="teamLookup"
-    dropdown=true
-    displayAttributeName='index'
-  }}
-  {{flexberry-validationmessage error=model.errors.team pointing="pointing"}}
-</div>
+{{#if (isEqual model.isAppointed 'назначено')}}
+  <div class="field">
+    <label>{{t 'forms.i-i-s-gorvodokanal-request-e.team-caption'}}</label>
+    {{
+      flexberry-lookup
+      choose='showLookupDialog'
+      remove='removeLookupValue'
+      value=model.team
+      relationName='team'
+      projection='TeamL'
+      title=(t 'forms.i-i-s-gorvodokanal-request-e.team-caption')
+      readonly=false
+      componentName="teamLookup"
+      dropdown=true
+      displayAttributeName='index'
+    }}
+    {{flexberry-validationmessage error=model.errors.team pointing="pointing"}}
+  </div>
 
-<div class="field">
-  <label>{{t 'forms.i-i-s-gorvodokanal-request-e.dateStart-caption'}}</label>
-  {{
-    flexberry-datepicker
-    placeholder=(t 'components.flexberry-datepicker.placeholder')
-    readonly=readonly
-    value=model.dateStart
-    class=(if model.errors.dateStart 'error' '')
-  }}
-  {{flexberry-validationmessage error=model.errors.dateStart pointing="pointing"}}
-</div>
+  <div class="field">
+    <label>{{t 'forms.i-i-s-gorvodokanal-request-e.dateStart-caption'}}</label>
+    {{
+      flexberry-datepicker
+      placeholder=(t 'components.flexberry-datepicker.placeholder')
+      readonly=readonly
+      value=model.dateStart
+      class=(if model.errors.dateStart 'error' '')
+    }}
+    {{flexberry-validationmessage error=model.errors.dateStart pointing="pointing"}}
+  </div>
 
-<div class="field">
-  <label>{{t 'forms.i-i-s-gorvodokanal-request-e.isCompleted-caption'}}</label>
-  {{
-    flexberry-checkbox
-    readonly=readonly
-    value=model.isCompleted
-  }}
-</div>
+  <div class="field"
+       onclick={{action 'clearCompleted' model.isCompleted}}>
+    <label>{{t 'forms.i-i-s-gorvodokanal-request-e.isCompleted-caption'}}
+      {{
+      flexberry-checkbox
+      readonly=readonly
+      value=model.isCompleted
+    }}
+    </label>
 
-<div class="field">
-  <label>{{t 'forms.i-i-s-gorvodokanal-request-e.dateEnd-caption'}}</label>
-  {{
-    flexberry-datepicker
-    placeholder=(t 'components.flexberry-datepicker.placeholder')
-    readonly=readonly
-    value=model.dateEnd
-    class=(if model.errors.dateEnd 'error' '')
-  }}
-  {{flexberry-validationmessage error=model.errors.dateEnd pointing="pointing"}}
-</div>
+  </div>
 
-<div class="field">
-  <label>{{t 'forms.i-i-s-gorvodokanal-request-e.tasks-caption'}}</label>
-  {{
-    flexberry-groupedit
-    componentName="tasksGroupEdit"
-    mainModelProjection=modelProjection
-    modelProjection=modelProjection.attributes.tasks
-    content=model.tasks
-    readonly=readonly
-    orderable=false
-    class=(if model.errors.tasks 'error' '')
-  }}
-  {{flexberry-validationmessage error=model.errors.tasks pointing="pointing"}}
-</div>
+  {{#if model.isCompleted}}
+    <div class="field">
+      <label>{{t 'forms.i-i-s-gorvodokanal-request-e.dateEnd-caption'}}</label>
+        {{
+          flexberry-datepicker
+          placeholder=(t 'components.flexberry-datepicker.placeholder')
+          readonly=readonly
+          value=model.dateEnd
+          class=(if model.errors.dateEnd 'error' '')
+        }}
+        {{flexberry-validationmessage error=model.errors.dateEnd pointing="pointing"}}
+      </div>
+    {{/if}}
+  {{/if}}
+
+  <div class="field">
+    <label>{{t 'forms.i-i-s-gorvodokanal-request-e.tasks-caption'}}</label>
+    {{
+      flexberry-groupedit
+      componentName="tasksGroupEdit"
+      mainModelProjection=modelProjection
+      modelProjection=modelProjection.attributes.tasks
+      content=model.tasks
+      readonly=readonly
+      orderable=false
+      class=(if model.errors.tasks 'error' '')
+    }}
+    {{flexberry-validationmessage error=model.errors.tasks pointing="pointing"}}
+  </div>
 
 </form>

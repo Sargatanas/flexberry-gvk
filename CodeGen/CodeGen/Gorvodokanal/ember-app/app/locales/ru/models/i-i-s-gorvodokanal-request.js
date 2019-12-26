@@ -36,25 +36,25 @@ export default {
       address: {
         __caption__: 'Адрес',
         district: {
-          __caption__: 'Адрес'
+          __caption__: 'Район'
         },
         street: {
-          __caption__: ''
+          __caption__: 'Улица'
         },
         house: {
-          __caption__: ''
+          __caption__: 'Дом'
         },
         build: {
-          __caption__: ''
+          __caption__: 'Корпус'
         },
         porch: {
-          __caption__: ''
+          __caption__: 'Подъезд'
         },
         floor: {
-          __caption__: ''
+          __caption__: 'Этаж'
         },
         apartment: {
-          __caption__: ''
+          __caption__: 'Квартира'
         }
       },
       isAppointed: {
