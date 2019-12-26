@@ -508,3 +508,29 @@
     }
   }
 }
+
+.custom-icon {
+  width: 50px;
+  height: 50px;
+
+  border-radius: 10px 0 0 10px;
+  background: rgb(79, 115, 176) no-repeat 50% 50%;
+  background-size: 70% auto;
+
+  &_timetable {
+    background-image: url('/assets/images/timetable.png');
+  }
+
+  &__container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    border-radius: 10px;
+    background: rgb(236, 236, 236);
+    font-size: 1.2em;
+  }
+
+  &__text {
+    margin-left: 20px;
+  }
+}

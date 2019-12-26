@@ -125,6 +125,11 @@ Ember.$.extend(true, translations, {
             title: ''
           }
         },
+        timetable: {
+          caption: 'Расписание',
+          title: 'Расписание',
+        },
+
       }
     },
 

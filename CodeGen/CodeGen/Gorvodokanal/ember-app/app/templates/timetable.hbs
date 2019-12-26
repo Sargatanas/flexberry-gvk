@@ -1,0 +1,91 @@
+<div class="custom-form">
+    <div class="custom-form__comment">
+        Для теста рекомендуется использовать следующие параметры:
+        <ol>
+            <li>дефолтные значения</li>
+            <li>бригада 101, дата 28.11.2019</li>
+            <li>бригада 102, дата 26.11.2019</li>
+        </ol>
+        {{#if (invertBool isShowButtons)}}
+              <button class="custom-form-header__element custom-form-header__element_button custom-form-header__element_small-button"
+                      {{action "setDefaulData"}}>
+                  Заполнить по дефолту
+              </button>
+        {{/if}}
+    </div>
+
+    <header class="custom-form-header">
+        <label class="custom-form-header__element" for="team-id">
+            Номер бригады:
+            {{input class="custom-form-header__input"
+                    type="number"
+                    id="add-team-id"
+                    enter="validateInputs"
+                    value=inputTeamId}}
+        </label>
+        {{input-error errors=errors.team}}
+
+        <label
+            class="custom-form-header__element"
+            for="add-date">
+                Дата (в формате ДД.ММ.ГГГГ):
+                {{input class="custom-form-header__input"
+                        type="date"
+                        id="add-date"
+                        enter="validateInputs"
+                        value=inputDate}}
+                {{currentDateString}}
+        </label>
+        {{input-error errors=errors.date}}
+        <div class="custom-form__comment custom-form__comment_inner">
+            Для применения новых параметров нажмите enter
+        </div>
+    </header>
+
+    {{#if isShowTable}}
+    <main class="custom-form-body">
+      <h2 class="custom-form-body__title">
+            Расписание на неделю
+        </h2>
+        <div
+            class="custom-form-body__content"
+            id="table">
+                {{#each week as |day|}}
+                    {{table-form hours=hours
+                                 day=day
+                                 date=date
+                                 status=status
+                                 requestList=requestList
+                                 freeRequestList=freeRequestList
+                                 lastRequest=lastRequest
+                                 shiftOptions=teamShiftInfo
+                                 team=teamList
+                                 reloadTable='reloadTable'
+                                 totalTask=(getTotalTask (getDateForm (getDate day.id date.value)) taskCount)}}
+                {{/each}}
+        </div>
+    </main>
+    {{/if}}
+    {{#if isTasksCreated}}
+        {{!-- <footer class="custom-form-footer">
+            <h2 class="custom-form-footer__title">
+                Свободные заявки
+            </h2>
+            <div class="custom-form-footer__hr"></div>
+            {{#if freeRequestList}}
+              {{#each freeRequestList as |requestElement|}}
+                {{form-task requestClass="element-body-task_not-table"
+                                 teamId=inputTeamId
+                                 request=requestElement.request
+                                 timeSpaces=requestElement.planeTimeSpaces
+                                 timeDuration=requestElement.timeDuration
+                                 team=teamList
+                                 reloadTable='reloadTable'
+                                 free=true}}
+              {{/each}}
+            {{else}}
+              <div>-нет заявок-</div>
+            {{/if}}
+        </footer> --}}
+    {{/if}}
+</div>

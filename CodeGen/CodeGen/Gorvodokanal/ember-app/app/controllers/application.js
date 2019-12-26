@@ -11,6 +11,12 @@ export default Ember.Controller.extend({
           caption: i18n.t('forms.application.sitemap.index.caption'),
           title: i18n.t('forms.application.sitemap.index.title'),
           children: null
+        },
+        {
+          link: 'timetable',
+          caption: i18n.t('forms.application.sitemap.timetable.caption'),
+          title: i18n.t('forms.application.sitemap.timetable.title'),
+          children: null
         }, {
           link: 'i-i-s-gorvodokanal-request-l',
           caption: i18n.t('forms.application.sitemap.заявки.caption'),
