@@ -5,9 +5,9 @@ export function comparisonDates(params) {
   let comparingDate = params[1];
 
   if (currentDate.getTime() > comparingDate.getTime()) {
-    return 'custom-form-body__element_last';
+    return 'last';
   } else if (currentDate.getTime() === comparingDate.getTime()) {
-    return 'custom-form-body__element_current';
+    return 'current';
   }
 
   return '';

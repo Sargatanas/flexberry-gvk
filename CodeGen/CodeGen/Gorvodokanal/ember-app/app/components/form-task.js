@@ -26,6 +26,7 @@ export default Ember.Component.extend({
         },
 
         async appoint(request, teamList, timeSpace) {
+          console.log(team);
           let team = teamList[0];
 
           request.set('team', team);

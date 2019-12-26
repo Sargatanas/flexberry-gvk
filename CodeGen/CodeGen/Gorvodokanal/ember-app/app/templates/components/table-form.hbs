@@ -1,4 +1,5 @@
-<div class="custom-form-body__element {{comparisonDates (getDate date.id date.value) (getDate day.id date.value)}}">
+<div class="custom-form-body__element custom-form-body__element_{{comparisonDates (getDate date.id date.value) (getDate day.id date.value)}}">
+  <div class="custom-form-body__element-content">
     <div class="element-header">
         <div class="element-header__cell element-header__cell_day">
             {{toUpperCase day.rus}}
@@ -33,7 +34,6 @@
                             currentDate=(getDateForm (getDate day.id date.value))
                             requestList=requestList
                             freeRequestList=freeRequestList
-                            lastRequest=lastRequest
                             team=team
                             dayId=day.id
                             endHour=shiftOptions.end
@@ -42,4 +42,28 @@
                {{table-row status='empty'}}
         </table>
     {{/if}}
+  </div>
+
+  {{#if (isEqual (comparisonDates (getDate date.id date.value) (getDate day.id date.value)) 'current')}}
+    <div class="custom-form-footer">
+      <h2 class="custom-form-footer__title">
+          Свободные заявки
+      </h2>
+      <div class="custom-form-footer__hr"></div>
+      {{#if freeRequestList}}
+        {{#each freeRequestList as |requestElement|}}
+          {{form-task requestClass="element-body-task_not-table"
+                            teamId=inputTeamId
+                            request=requestElement.request
+                            timeSpaces=requestElement.planeTimeSpaces
+                            timeDuration=requestElement.timeDuration
+                            team=team
+                            reloadTable='reloadTable'
+                            free=true}}
+        {{/each}}
+      {{else}}
+        <div>-нет заявок-</div>
+      {{/if}}
+    </div>
+  {{/if}}
 </div>
