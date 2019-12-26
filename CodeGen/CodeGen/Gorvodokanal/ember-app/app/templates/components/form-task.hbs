@@ -37,6 +37,10 @@
       <span class="element-body-task-detail__header">Время начала: </span>
       {{getTimeString request.dateStart 'full' 'UTC'}}
     </div>
+    <div class="element-body-task-detail">
+      <span class="element-body-task-detail__header">Плановое время окончания: </span>
+      {{getTimeString request.dateStart 'full' 'UTC' request.fullDuration}}
+    </div>
   {{else}}
     <div class="element-body-task-detail">
       <span class="element-body-task-detail__header">Выбрать время выполнения заявки: </span>

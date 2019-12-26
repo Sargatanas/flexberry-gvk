@@ -8,6 +8,7 @@ export default function requestCanBeDone(team, nonselectedRequests, selectedRequ
   let freeRequests = [...nonselectedRequests];
   let teamRequests = [...selectedRequests];
 
+  teamRequests = getCurrentRequests(teamRequests, currentDate);
   teamRequests = setFullDuration(teamRequests);
   teamRequests = setImportance(teamRequests);
   teamRequests = setTimeStart(teamRequests);
@@ -56,7 +57,7 @@ export default function requestCanBeDone(team, nonselectedRequests, selectedRequ
       let current = new Date(dateForm(timeSpace.start));
 
       current = setTimeProperties(start, current, shift);
-      if (current.getTime() < end.getTime()) {
+      if (current.getTime() <= end.getTime()) {
         requestInfo.planeTimeSpaces.push(timeSpace);
       }
     });
@@ -66,6 +67,21 @@ export default function requestCanBeDone(team, nonselectedRequests, selectedRequ
     }
   });
   return freeRequestList;
+}
+
+/* Выбор заявок текущего дня */
+function getCurrentRequests(requests, date) {
+  let currentRequests = [];
+
+  requests.forEach((request) => {
+    let dateStart = dateNullable(new Date(dateForm(request.get('dateStart'))));
+    let currentDate = dateNullable(new Date(dateForm(date)));
+    if (dateStart.getTime() === currentDate.getTime()) {
+      currentRequests.push(request);
+    }
+  });
+
+  return currentRequests;
 }
 
 /* Расчет полной плановой длительности работ */
@@ -195,7 +211,7 @@ function getTimespaces(requests, date, team) {
         let requestEnd = new Date(dateForm(requests[i + 1].get('dateStart')));
         end = setTimeProperties(requestEnd, end, shift);
       }
-      
+
     } else if (i === requests.length - 1) {
 
       shift.hours = requests[i].get('fullDuration').getHours() + 1;
