@@ -154,7 +154,7 @@ export default Ember.Controller.extend({
 
       setDefaulData() {
         let date = '2019-11-26';
-        let teamId = '101';
+        let teamId = '103';
 
         this.setProperties({
             isShowButtons: true,

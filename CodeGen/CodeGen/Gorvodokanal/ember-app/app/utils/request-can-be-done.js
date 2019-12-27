@@ -46,6 +46,7 @@ export default function requestCanBeDone(team, nonselectedRequests, selectedRequ
     };
 
     let shift = {
+      date: 0,
       hours: fullDuration.getHours(),
       minutes: fullDuration.getMinutes(),
       seconds: fullDuration.getSeconds(),
@@ -169,6 +170,7 @@ function getRequestConfines(request, currentDate) {
 
 /* Перенос времени */
 function setTimeProperties(input, output, shift) {
+  output.setDate(input.getDate() + shift.date);
   output.setHours(input.getHours() + shift.hours);
   output.setMinutes(input.getMinutes() + shift.minutes);
   output.setSeconds(input.getSeconds() + shift.seconds);
@@ -178,15 +180,16 @@ function setTimeProperties(input, output, shift) {
 /* Свободные временные промежутки */
 function getTimespaces(requests, date, team) {
   let shiftStart = dateNullable(new Date(dateForm(date)));
-  shiftStart.setHours(team.get('shiftStart').getHours());
+  shiftStart.setHours(team.get('shiftStart').getUTCHours() + 5);
   let shiftEnd = dateNullable(new Date(dateForm(date)));
-  shiftEnd.setHours(team.get('shiftEnd').getHours());
+  shiftEnd.setHours(team.get('shiftEnd').getUTCHours() + 5);
   let timeSpaces = [];
 
   for (let i = -1; i < requests.length; i++) {
     let start = dateNullable(new Date(dateForm(date)));
     let end = dateNullable(new Date(dateForm(date)));
     let shift = {
+      date: 0,
       hours: 0,
       minutes: 0,
       seconds: 0
@@ -194,17 +197,20 @@ function getTimespaces(requests, date, team) {
 
     if (i === -1) {
 
+      shift.date = 0;
       shift.hours = 0;
       shift.minutes = 0;
       shift.seconds = 0;
       start = setTimeProperties(shiftStart, start, shift);
 
+      shift.date = 0;
       shift.hours = 0;
       shift.minutes = 0;
       shift.seconds = 0;
       end = setTimeProperties(shiftEnd, end, shift);
 
       if (requests.length !== 0) {
+        shift.date = 0;
         shift.hours = -1;
         shift.minutes = 0;
         shift.seconds = 0;
@@ -214,12 +220,14 @@ function getTimespaces(requests, date, team) {
 
     } else if (i === requests.length - 1) {
 
+      shift.date = 0;
       shift.hours = requests[i].get('fullDuration').getHours() + 1;
       shift.minutes = requests[i].get('fullDuration').getMinutes();
       shift.seconds = requests[i].get('fullDuration').getSeconds();
       let requestStart = new Date(dateForm(requests[i].get('dateStart')));
       start = setTimeProperties(requestStart, start, shift);
 
+      shift.date = 0;
       shift.hours = 0;
       shift.minutes = 0;
       shift.seconds = 0;
@@ -227,12 +235,14 @@ function getTimespaces(requests, date, team) {
 
     } else {
 
+      shift.date = 0;
       shift.hours = requests[i].get('fullDuration').getHours() + 1;
       shift.minutes = requests[i].get('fullDuration').getMinutes();
       shift.seconds = requests[i].get('fullDuration').getSeconds();
       let requestStart = new Date(dateForm(requests[i].get('dateStart')));
       start = setTimeProperties(requestStart, start, shift);
 
+      shift.date = 0;
       shift.hours = -1;
       shift.minutes = 0;
       shift.seconds = 0;

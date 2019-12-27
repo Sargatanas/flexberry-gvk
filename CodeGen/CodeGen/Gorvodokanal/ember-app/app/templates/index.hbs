@@ -2,3 +2,40 @@
   <div class="custom-icon custom-icon_timetable"></div>
   <div class="custom-icon__text">{{ t "forms.application.sitemap.timetable.caption" }}</div>
 {{/link-to}}
+{{#link-to 'i-i-s-gorvodokanal-request-e.new' class="custom-icon__container"}}
+  <div class="custom-icon custom-icon_new-request"></div>
+  <div class="custom-icon__text">Новая заявка</div>
+{{/link-to}}
+
+{{#if topCrashAdresses}}
+  <h2>Топ 5 наиболее аварийных адресов</h2>
+  {{#each topCrashAdresses as |element|}}
+    <div>{{element.address.fullAddress}} (всего аварий: {{element.count}})</div>
+  {{/each}}
+{{/if}}
+
+{{#if teamCompletedRequests}}
+  <h2>Информация о количестве выполненных заявок</h2>
+  {{#each teamCompletedRequests as |element|}}
+    <div>Бригада {{element.team.index}} ---- {{element.count}}</div>
+  {{/each}}
+{{/if}}
+
+{{#if totalTimePerMonth}}
+  <h2>Информация об общем времени работы бригад по месяцам</h2>
+  {{#each totalTimePerMonth as |month|}}
+    <h3>{{month.name.ru}}</h3>
+    {{#each month.content as |content|}}
+      <div>Бригада: {{content.team.index}}</div>
+      <div>Время работы: {{getTimeString content.total}}</div>
+      <hr>
+    {{/each}}
+  {{/each}}
+{{/if}}
+
+{{#if topStandingTeams}}
+  <h2>Топ 5 простаивающих бригад</h2>
+  {{#each topStandingTeams as |element|}}
+    <div>Бригада {{element.team.index}} ---- общее время работы {{getTimeString element.total}}</div>
+  {{/each}}
+{{/if}}
