@@ -7,35 +7,89 @@
   <div class="custom-icon__text">Новая заявка</div>
 {{/link-to}}
 
-{{#if topCrashAdresses}}
-  <h2>Топ 5 наиболее аварийных адресов</h2>
-  {{#each topCrashAdresses as |element|}}
-    <div>{{element.address.fullAddress}} (всего аварий: {{element.count}})</div>
-  {{/each}}
-{{/if}}
 
-{{#if teamCompletedRequests}}
-  <h2>Информация о количестве выполненных заявок</h2>
-  {{#each teamCompletedRequests as |element|}}
-    <div>Бригада {{element.team.index}} ---- {{element.count}}</div>
-  {{/each}}
-{{/if}}
+<div class="custom-info">
+  {{#if topCrashAdresses}}
+    <div class="custom-info-element">
+      <h2 class="custom-info-element__title">
+        Топ 5 наиболее аварийных адресов
+      </h2>
+      <div class="custom-info-element__body">
+        {{#each topCrashAdresses as |element|}}
+          <div class="custom-info-element__row">
+            {{element.address.fullAddress}}
+            <span class="custom-info-element__special">
+              {{element.count}}
+            </span>
+          </div>
+        {{/each}}
+      </div>
+    </div>
+  {{/if}}
 
-{{#if totalTimePerMonth}}
-  <h2>Информация об общем времени работы бригад по месяцам</h2>
-  {{#each totalTimePerMonth as |month|}}
-    <h3>{{month.name.ru}}</h3>
-    {{#each month.content as |content|}}
-      <div>Бригада: {{content.team.index}}</div>
-      <div>Время работы: {{getTimeString content.total}}</div>
-      <hr>
-    {{/each}}
-  {{/each}}
-{{/if}}
+  {{#if teamCompletedRequests}}
+    <div class="custom-info-element">
+      <h2 class="custom-info-element__title">
+        Информация о количестве выполненных заявок
+      </h2>
+      <div class="custom-info-element__body">
+        {{#each teamCompletedRequests as |element|}}
+          <div class="custom-info-element__row">
+            Бригада {{element.team.index}}
+            <span class="custom-info-element__special">
+              {{element.count}}
+            </span>
+          </div>
+        {{/each}}
+      </div>
+    </div>
+  {{/if}}
 
-{{#if topStandingTeams}}
-  <h2>Топ 5 простаивающих бригад</h2>
-  {{#each topStandingTeams as |element|}}
-    <div>Бригада {{element.team.index}} ---- общее время работы {{getTimeString element.total}}</div>
-  {{/each}}
-{{/if}}
+  {{#if totalTimePerMonth}}
+    <div class="custom-info-element">
+      <h2 class="custom-info-element__title">
+        Информация об общем времени работы бригад по месяцам
+      </h2>
+        {{#each totalTimePerMonth as |month|}}
+          <input id="{{month.name.en}}"
+                 type="checkbox"
+                 class="custom-info-element__checkbox">
+          <div class="custom-info-element__body custom-info-element__body_small">
+            <label for="{{month.name.en}}">
+              <h3 class="custom-info-element__checkbox-label">
+                {{month.name.ru}}
+              </h3>
+            </label>
+            <div class="custom-info-element__row-container">
+              {{#each month.content as |content|}}
+                  <div class="custom-info-element__row">
+                    Бригада: {{content.team.index}}
+                    <span class="custom-info-element__special">
+                      {{getTimeString content.total "full"}}
+                    </span>
+                  </div>
+              {{/each}}
+            </div>
+          </div>
+        {{/each}}
+    </div>
+  {{/if}}
+
+  {{#if topStandingTeams}}
+    <div class="custom-info-element">
+      <h2 class="custom-info-element__title">
+        Топ 5 простаивающих бригад
+      </h2>
+      <div class="custom-info-element__body">
+        {{#each topStandingTeams as |element|}}
+          <div class="custom-info-element__row">
+            Бригада {{element.team.index}}
+            <span class="custom-info-element__special">
+              {{getTimeString element.total}}
+            </span>
+          </div>
+        {{/each}}
+      </div>
+    </div>
+  {{/if}}
+</div>
