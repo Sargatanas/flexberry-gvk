@@ -3,6 +3,8 @@ import { Query } from 'ember-flexberry-data';
 import dateForm from '../utils/date-form';
 import dateNullable from '../utils/date-nullable';
 
+import config from '../config/environment';
+
 export default Ember.Controller.extend({
   topCrashAdresses: null,
   teamCompletedRequests: null,
@@ -30,11 +32,11 @@ export default Ember.Controller.extend({
       property: 'tasks'
     }];
 
-    let topCrashAdresses = await this.getTopCrashAddresses(5);
+
+    let topCrashAdresses = await this.getTopCrashAddresses();
     let teamCompletedRequests = await this.getTeamCompletedRequests();
     let totalTimePerMonth = await this.getTotalTimePerMonth();
     let topStandingTeams = await this.getTopStandingTeams(5);
-    console.log('topStandingTeams', topStandingTeams);
     this.setProperties({
       'topCrashAdresses': topCrashAdresses,
       'teamCompletedRequests': teamCompletedRequests,
@@ -43,17 +45,17 @@ export default Ember.Controller.extend({
     });
   },
 
-  async getRecords(name, projectionName, property) {
-    let store = this.store;
-    let builder = new Query.Builder(store, name);
-
-    builder.selectByProjection(projectionName);
-    let result = await store.query(name, builder.build());
-
-    if (property) {
-      this.set(property, result);
-    }
-
+  async getRecords(url) {
+    let result = await Ember.$.ajax({
+      type: 'GET',
+      xhrFields: { withCredentials: true },
+      url: `${config.APP.backendUrls.api}/${url}`,
+      success(result) {
+      },
+      error(reject) {
+        console.log(reject);
+      },
+    });
     return result;
   },
 
@@ -74,211 +76,126 @@ export default Ember.Controller.extend({
   },
 
   /* БД 1 */
-  async getTopCrashAddresses(count) {
-    let addresses = await this.getRecords('i-i-s-gorvodokanal-address', 'AddressL');
-    let requests = await this.getRecords('i-i-s-gorvodokanal-request', 'RequestL');
-
-    let addressesCount = [];
-    addresses.forEach((address) => {
-      addressesCount.push({
-        address: address,
-        count: 0
+  async getTopCrashAddresses() {
+    let rawCrashAdresses = await this.getRecords('getTopEmergencyAddresses');
+    let store = this.store;
+    let topCrashAdresses = [];
+    rawCrashAdresses.forEach((rawCrashAddress) => {
+      let rawAddress = JSON.parse(rawCrashAddress);
+      let address = store.createRecord('i-i-s-gorvodokanal-address', {
+        district: rawAddress.district,
+        street: rawAddress.street,
+        house: rawAddress.house,
+        build: rawAddress.build,
+        porch: rawAddress.porch,
+        floor: rawAddress.floor,
+        apartment: rawAddress.apartment,
+        count: rawAddress.count
       });
+      topCrashAdresses.push(address);
     });
-
-    requests.forEach((request) => {
-      let address = request.get('address');
-
-      addressesCount.forEach((addressCount) => {
-        if (addressCount.address.get('id') === address.get('id')) {
-          addressCount.count++;
-        }
-      });
-    });
-
-    addressesCount.sort((a, b) => {
-      return b.count - a.count;
-    });
-
-    return addressesCount.slice(0, count);
+    return topCrashAdresses;
   },
 
   /* БД 2 */
   async getTeamCompletedRequests() {
-    let requests = await this.getRecords('i-i-s-gorvodokanal-request', 'RequestL');
-    let teams = await this.getRecords('i-i-s-gorvodokanal-team', 'TeamL');
-
-    let teamsCount = [];
-    teams.forEach((team) => {
-      teamsCount.push({
-        team: team,
-        count: 0
+    let rawTeamCompletedRequests = await this.getRecords('getTeamCompletedRequests');
+    let store = this.store;
+    let teamCompletedRequests = [];
+    rawTeamCompletedRequests.forEach((rawTeamCompletedRequest) => {
+      let rawTeam = JSON.parse(rawTeamCompletedRequest);
+      let team = store.createRecord('i-i-s-gorvodokanal-team', {
+        index: rawTeam.teamIndex,
+        count: rawTeam.count
       });
+      teamCompletedRequests.push(team);
     });
-
-    requests.forEach((request) => {
-      let team = request.get('team');
-
-      if (team) {
-        teamsCount.forEach((teamCount) => {
-          if ((teamCount.team.get('id') === team.get('id')) && (request.get('isCompleted'))) {
-            teamCount.count++;
-          }
-        });
-      }
-    });
-
-    teamsCount.sort((a, b) => {
-      return b.count - a.count;
-    });
-
-    return teamsCount;
+    return teamCompletedRequests;
   },
 
   /* БД 4 */
   async getTotalTimePerMonth() {
-    let requests = await this.getRecords('i-i-s-gorvodokanal-request', 'RequestL');
-    let teams = await this.getRecords('i-i-s-gorvodokanal-team', 'TeamL');
+    let rawTeamTotalTime = await this.getRecords('getTotalTimePerMonth');
+    let store = this.store;
+
     let monthNames = [{
       en: 'January', ru: 'Январь'
     }, {
       en: 'February', ru: 'Февраль'
-    },{
+    }, {
       en: 'March', ru: 'Март'
-    },{
+    }, {
       en: 'April', ru: 'Апрель'
-    },{
+    }, {
       en: 'May', ru: 'Май'
-    },{
+    }, {
       en: 'June', ru: 'Июнь'
-    },{
+    }, {
       en: 'July', ru: 'Июль'
-    },{
+    }, {
       en: 'August', ru: 'Август'
-    },{
+    }, {
       en: 'September', ru: 'Сентябрь'
-    },{
+    }, {
       en: 'October', ru: 'Октябрь'
-    },{
+    }, {
       en: 'November', ru: 'Ноябрь'
-    },{
+    }, {
       en: 'December', ru: 'Декабрь'
     },];
 
-    let monthList = {};
-    requests.forEach((request) => {
-      if (request.get('isCompleted')) {
-        let start = request.get('dateStart');
-        let end = request.get('dateEnd');
-        let duration = this.subDates(end, start);
-        let team = request.get('team');
+    let teamTotalTime = {};
+    rawTeamTotalTime.forEach((element) => {
+      let rawTeam = JSON.parse(element);
 
-        let month = start.getUTCMonth();
+      let rawDuration = rawTeam.fullDuration.split(':');
+      let duration = new Date();
+      duration.setHours(Number(rawDuration[0]));
+      duration.setMinutes(Number(rawDuration[1]));
+      duration.setSeconds(Number(rawDuration[2]));
 
-        if (Object.keys(monthList).includes(String(month))) {
-          let monthElement = monthList[month];
-          let date = monthElement.defaultDate;
-          let completed = false;
+      let team = store.createRecord('i-i-s-gorvodokanal-team', {
+        index: rawTeam.teamIndex,
+        total: duration
+      });
 
-          monthElement.content.forEach((element) => {
-            if (element.team.get('id') === team.get('id')) {
-              element.total = this.sumDates(element.total, duration);
-              completed = true;
-            }
-          });
-
-          if (!completed) {
-            monthElement.content.push({
-              team: team,
-              total: this.sumDates(date, duration)
-            });
-          }
-        } else {
-          monthList[month] = {}; // заводим новый блок под месяц
-          let monthElement = monthList[month]; // получаем объект
-          monthElement['name'] = monthNames[month];
-          monthElement['content'] = [];
-
-          let date = new Date(); // получаем первую дату месяца (только текущий год)
-          date = dateNullable(date);
-          date.setMonth(month);
-          date.setDate(1);
-          monthElement['defaultDate'] = date;
-
-          let content = {
-            team: request.get('team'),
-            total: this.sumDates(date, duration)
-          };
-          monthElement.content.push(content); // заполняем первую запись о бригаде
-        }
+      if (Object.keys(teamTotalTime).indexOf(rawTeam.month) === -1) {
+        teamTotalTime[rawTeam.month] = {
+          name: monthNames[Number(rawTeam.month) - 1],
+          content: []
+        };
       }
+      teamTotalTime[rawTeam.month].content.push(team);
     });
 
-    teams.forEach((team) => {
-      for (let key in monthList) {
-        let monthElement = monthList[key];
-        let date = monthElement.defaultDate;
-        let isInclude = false;
-
-        monthElement.content.forEach((element) => {
-          if (element.team.get('id') === team.get('id')) {
-            isInclude = true;
-          }
-        });
-
-        if (!isInclude) {
-          monthElement.content.push({
-            team: team,
-            total: date
-          });
-        }
-      };
-    });
-
-    let monthArray = [];
-    for (let key in monthList) {
-      monthArray.push(monthList[key]);
+    let result = [];
+    for (let key in teamTotalTime) {
+      result.push(teamTotalTime[key]);
     }
-    return monthArray;
+
+    return result;
   },
 
   /* БД 5 */
-  async getTopStandingTeams(count) {
-    let monthList = await this.getTotalTimePerMonth();
-    let teams = await this.getRecords('i-i-s-gorvodokanal-team', 'TeamL');
+  async getTopStandingTeams() {
+    let rawTopStandingTeams = await this.getRecords('getTopStandingTeams');
+    let store = this.store;
+    let topStandingTeams = [];
+    rawTopStandingTeams.forEach((rawTopStandingTeam) => {
+      let rawTeam = JSON.parse(rawTopStandingTeam);
 
-    let date = new Date(); // получаем первую дату текущего года
-    date = dateNullable(date);
-    date.setMonth(0);
-    date.setDate(1);
+      let rawDuration = rawTeam.fullDuration.split(':');
+      let duration = new Date();
+      duration.setHours(Number(rawDuration[0]));
+      duration.setMinutes(Number(rawDuration[1]));
+      duration.setSeconds(Number(rawDuration[2]));
 
-    let totalTimeList = {};
-    teams.forEach((team) => {
-      totalTimeList[team.get('index')] = {
-        team: team,
-        total: date
-      };
-    });
-
-    monthList.forEach((monthElement) => {
-      monthElement.content.forEach((element) => {
-        if (element.team) {
-          let index = element.team.get('index');
-          let time = element.total;
-          totalTimeList[index].total = this.sumDates(totalTimeList[index].total, time);
-        }
+      let team = store.createRecord('i-i-s-gorvodokanal-team', {
+        index: rawTeam.teamIndex,
+        total: duration
       });
+      topStandingTeams.push(team);
     });
-
-    let topStandigTeams = [];
-    for (let key in totalTimeList) {
-      let element = totalTimeList[key];
-      topStandigTeams.push(element);
-    }
-    topStandigTeams.sort((a, b) => {
-      return a.total - b.total;
-    });
-
-    return topStandigTeams.slice(0, count);
+    return topStandingTeams;
   }
 });

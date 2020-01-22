@@ -17,7 +17,7 @@
       <div class="custom-info-element__body">
         {{#each topCrashAdresses as |element|}}
           <div class="custom-info-element__row">
-            {{element.address.fullAddress}}
+            {{element.fullAddress}}
             <span class="custom-info-element__special">
               {{element.count}}
             </span>
@@ -35,7 +35,7 @@
       <div class="custom-info-element__body">
         {{#each teamCompletedRequests as |element|}}
           <div class="custom-info-element__row">
-            Бригада {{element.team.index}}
+            Бригада {{element.index}}
             <span class="custom-info-element__special">
               {{element.count}}
             </span>
@@ -63,7 +63,7 @@
             <div class="custom-info-element__row-container">
               {{#each month.content as |content|}}
                   <div class="custom-info-element__row">
-                    Бригада: {{content.team.index}}
+                    Бригада: {{content.index}}
                     <span class="custom-info-element__special">
                       {{getTimeString content.total "full"}}
                     </span>
@@ -83,7 +83,7 @@
       <div class="custom-info-element__body">
         {{#each topStandingTeams as |element|}}
           <div class="custom-info-element__row">
-            Бригада {{element.team.index}}
+            Бригада {{element.index}}
             <span class="custom-info-element__special">
               {{getTimeString element.total}}
             </span>

@@ -549,9 +549,15 @@
   margin-top: 50px;
 
   &-element {
-    width: 100%;
-    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+
+    width: 45%;
+    min-width: 500px;
+
     margin: 0 10px 20px;
+
     border-radius: 10px;
     background: rgb(245, 244, 244);
 
@@ -622,6 +628,7 @@
         width: 100%;
         padding: 10px;
         border-radius: 5px;
+        background: rgb(230, 230, 235);
         cursor: pointer;
 
         &:hover {
@@ -645,6 +652,7 @@
       height: 0;
       overflow: hidden;
       margin-bottom: 10px;
+      padding-left: 20px;
     }
 
     &__checkbox:checked + &__body {
