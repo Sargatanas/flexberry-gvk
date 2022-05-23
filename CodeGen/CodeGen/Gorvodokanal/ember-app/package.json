@@ -21,7 +21,7 @@
   "devDependencies": {
     "broccoli-asset-rev": "^2.4.2",
     "broccoli-jscs": "1.2.2",
-    "dexie": "1.4.2",
+    "dexie": "3.2.2",
     "ember-ajax": "0.7.1",
     "ember-async-await-helper": "0.2.0",
     "ember-block-slots": "1.1.3",
